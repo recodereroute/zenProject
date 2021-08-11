@@ -68,19 +68,22 @@
     <a href="#">즐겨찾기</a>
   </div>
 </div>
-	<form action="login/login" method="post" name="frm">
-<table align="center">
-      <tr><td colspan="4">
-      <a href="search/idFind">아이디 찾기</a> |
-      <a href = "search/findPassword">비밀번호 찾기</a>| 
-      <a href="register/regist">회원 가입</a>
-      <a href="login/login">
-      <input type="submit" value="login">
-      </a>
-      
-      </td></tr>
-</table>
+<form action="login/login" method="post" name="frm">
+	<table align="center">
+	      <tr><td colspan="4">
+	      <a href="search/idFind">아이디 찾기</a> |
+	      <a href = "search/findPassword">비밀번호 찾기</a>| 
+	      <a href="register/regist">회원 가입</a>
+	      <a href="login/login">
+	      <input type="submit" value="login">
+	      </a>
+	      
+	      </td></tr>
+	</table>
 </form>
+<c:if test="${!empty authInfo }">
+	<a href="edit/myPage">마이페이지</a>
+</c:if>
 <!-- jquery -->
 
 		<script src="//code.jquery.com/jquery.min.js"></script>
