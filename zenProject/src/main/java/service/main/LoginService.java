@@ -19,7 +19,7 @@ public class LoginService {
 	LoginRepository loginRepository;
 	@Autowired
 	BCryptPasswordEncoder bcryptPasswordEncoder;
-	public void logIn1(LoginCommand loginCommand, Errors errors,
+	public void logIn(LoginCommand loginCommand, Errors errors,
 			HttpSession session, HttpServletResponse response) {
 		String userId = loginCommand.getUserId();
 		AuthInfoDTO authInfo = loginRepository.logIn(userId);
@@ -53,10 +53,5 @@ public class LoginService {
 				errors.rejectValue("userPw", "notPw");
 			}
 		}
-	}
-	public AuthInfoDTO logIn(String userId, String userPw) {
-		AuthInfoDTO authInfo = loginRepository.logIn(userId); 
-		return authInfo;
-	}
-	
+	}	
 }

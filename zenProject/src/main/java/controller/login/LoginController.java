@@ -30,7 +30,7 @@ public class LoginController {
 		if(errors.hasErrors()) {
 			return "main/login";
 		}
-		loginService.logIn1(loginCommand, errors, session, response); 
+		loginService.logIn(loginCommand, errors, session, response); 
 		if(errors.hasErrors()) {
 			return "main/login";
 		}
