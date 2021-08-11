@@ -10,7 +10,7 @@ import command.MemberCommand;
 
 @Controller
 public class MainController {
-	@RequestMapping(value = "/register/regist", method = RequestMethod.POST)
+	@RequestMapping(value = "/register/regist")
 	public String regist(@ModelAttribute(value = "memberCommand")
 						MemberCommand memberCommand, Model model) {
 		return "main/regist";
