@@ -27,6 +27,7 @@
   			classpath:spring-context.xml
   			classpath:spring-jdbc.xml
   			classpath:spring-main.xml
+  			classpath:spring-login.xml
   		</param-value>
   	</init-param>
   </servlet>
@@ -34,5 +35,5 @@
   	<servlet-name>dispatcher</servlet-name>
   	<url-pattern>/</url-pattern>
   </servlet-mapping>
-  
+
 </web-app>
