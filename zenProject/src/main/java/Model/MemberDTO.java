@@ -1,22 +1,17 @@
-package command;
+package Model;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
-public class MemberCommand {
+public class MemberDTO {
 	String memId;
 	String memPw;
-	String memPwCon;
-	String memName;
 	String memNick;
+	String memName;
 	String memPhone;
 	String memSex;
 	String memEmail;
 	String memEmailChk;
-	
-	public boolean pwMatching() {
-		return memPw.equals(memPwCon);
-	}
 }

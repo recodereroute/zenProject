@@ -8,7 +8,7 @@
 <title>회원 가입</title>
 </head>
 <body>
-<form:form action="memJoin" method="post" name="frm" modelAttribute="memberCommand"> 
+<form:form action="memRegist" method="post" name="frm" modelAttribute="memberCommand"> 
 	<table border = 1 align="center">
 		<tr><td>아이디</td>
 			<td><form:input path="memId" />

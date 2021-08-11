@@ -7,4 +7,7 @@
 			"
 >
 		<bean class = "controller.main.MainController"/>
+		<bean class = "service.main.MemberJoinService"/>
+		<bean class = "service.main.ChekcIdService"/>
+		<bean class = "repository.RegisterRepository"/>
 </beans>
