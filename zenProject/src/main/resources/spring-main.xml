@@ -10,4 +10,5 @@
 		<bean class = "service.main.MemberJoinService"/>
 		<bean class = "service.main.ChekcIdService"/>
 		<bean class = "repository.RegisterRepository"/>
+		<bean class="service.main.CookieService"/>
 </beans>

@@ -82,7 +82,9 @@
 	      </a>
 	      </c:if>
 	      <c:if test="${!empty authInfo }">
-	     <a href="login/logOut">logOut
+	      
+	     <a href="login/logOut">
+			logOut
 	      
 	      </a>
 	            </c:if>
