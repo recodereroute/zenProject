@@ -22,4 +22,8 @@
 	set MEM_PW = #{memPw}
 	where mem_id = #{memId}
 </update>
+<delete id="memOut" parameterType="string">
+	delete from member
+	where MEM_ID = #{memId}
+</delete>
 </mapper>

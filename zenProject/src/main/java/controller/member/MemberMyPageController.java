@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import command.MemberCommand;
 import service.member.MemberDetailService;
 import service.member.MemberEditService;
+import service.member.MemberOutService;
 import service.member.MemberPwConfirmService;
 import service.member.MemberPwUpdateService;
 import validator.MemberPasswordValidator;
@@ -29,7 +30,8 @@ public class MemberMyPageController {
 	MemberPwConfirmService memberPwConfirmService;
 	@Autowired
 	MemberPwUpdateService memberPwUpdateService;
-	
+	@Autowired
+	MemberOutService memberOutService;
 	
 	@RequestMapping("myPage")
 	public String myPage() {
@@ -78,5 +80,15 @@ public class MemberMyPageController {
 			return "member/memPwChangeOk";
 		}
 		return "redirect:/";
+	}
+	@RequestMapping("memOut")
+	public String memOut() {
+		return"member/memFinalChk";
+	}
+	@RequestMapping(value = "memOutOk", method = RequestMethod.POST)
+	public String memOutOk(@RequestParam(value="memPw")String memPw,
+				HttpSession session, Model model) {
+		String path = memberOutService.memOut(memPw, session, model);
+		return path;
 	}
 }

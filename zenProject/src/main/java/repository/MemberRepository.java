@@ -24,4 +24,8 @@ public class MemberRepository {
 		statement = namespace + ".memInfo";
 		return sqlSession.selectOne(statement, memId);
 	}
+	public void memOut(String memId) {
+		statement = namespace + ".memOut";
+		sqlSession.delete(statement, memId);
+	}
 }
