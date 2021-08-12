@@ -37,7 +37,7 @@
 			<td><input type="radio" name="memEmailChk" value="Y"
 				 	<c:if test="${memberCommand.memEmailChk == 'Y'}">checked</c:if> 
 				 >예			
-				<input type="radio" name="memEmailCk" value="N" 
+				<input type="radio" name="memEmailChk" value="N" 
 					<c:if test="${memberCommand.memEmailChk == 'N'}">checked</c:if> 
 				>아니오</td></tr>	
 			<tr><td colspan="2" align="center">

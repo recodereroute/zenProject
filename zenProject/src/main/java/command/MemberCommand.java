@@ -15,6 +15,7 @@ public class MemberCommand {
 	String memSex;
 	String memEmail;
 	String memEmailChk;
+	String oldPw;
 	
 	public boolean pwMatching() {
 		return memPw.equals(memPwCon);

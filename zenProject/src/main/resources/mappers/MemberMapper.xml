@@ -17,4 +17,9 @@
 		MEM_NICK = #{memNick}
 	where mem_id = #{memId}
 </update>
+<update id="memPwUpdate" parameterType="Model.MemberDTO">
+	update member
+	set MEM_PW = #{memPw}
+	where mem_id = #{memId}
+</update>
 </mapper>

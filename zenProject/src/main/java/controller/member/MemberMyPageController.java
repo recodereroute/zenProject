@@ -9,10 +9,14 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import command.MemberCommand;
 import service.member.MemberDetailService;
 import service.member.MemberEditService;
+import service.member.MemberPwConfirmService;
+import service.member.MemberPwUpdateService;
+import validator.MemberPasswordValidator;
 
 @Controller
 @RequestMapping("edit")
@@ -21,6 +25,10 @@ public class MemberMyPageController {
 	MemberDetailService memberDetailService;
 	@Autowired
 	MemberEditService memberEditService;
+	@Autowired
+	MemberPwConfirmService memberPwConfirmService;
+	@Autowired
+	MemberPwUpdateService memberPwUpdateService;
 	
 	
 	@RequestMapping("myPage")
@@ -47,5 +55,28 @@ public class MemberMyPageController {
 		}
 		return "redirect:memDetail";
 	}
-
+	@RequestMapping("memPwChange")
+	public String memPwChange() {
+		return "member/memPwChange";
+	}
+	@RequestMapping("memPwChangeOk")
+	public String memPwChangeOk(@RequestParam(value = "memPw")String memPw, 
+			HttpSession session, Model model,
+			@ModelAttribute MemberCommand memberCommand) {
+		String path = memberPwConfirmService.memPw(memPw, session, model);
+		return path;
+	}
+	@RequestMapping("memPwUpdate")
+	public String memPwUpdate(MemberCommand memberCommand, Errors errors, 
+							HttpSession session) {
+		new MemberPasswordValidator().validate(memberCommand, errors);
+		if(errors.hasErrors()) {
+			return "member/memPwChangeOk";
+		}
+		memberPwUpdateService.memPwUpdate(memberCommand,errors, session);
+		if(errors.hasErrors()) {
+			return "member/memPwChangeOk";
+		}
+		return "redirect:/";
+	}
 }
