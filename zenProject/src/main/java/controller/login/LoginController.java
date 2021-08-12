@@ -1,6 +1,7 @@
 package controller.login;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -11,14 +12,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import command.LoginCommand;
+import service.main.CookieService;
 import service.main.LoginService;
 import validator.LoginCommandValidator;
 
 @Controller
 @RequestMapping("login")
 public class LoginController {
+	@Autowired
+	CookieService cookieService;
+	
 	@RequestMapping(value="login", method = RequestMethod.POST)
-	public String main(LoginCommand loginCommand) {
+	public String main(LoginCommand loginCommand,HttpServletRequest request) {
+		cookieService.getCookie(request);
 		return "main/login";
 	}
 	@Autowired
@@ -30,6 +36,7 @@ public class LoginController {
 		if(errors.hasErrors()) {
 			return "main/login";
 		}
+		
 		loginService.logIn(loginCommand, errors, session, response); 
 		if(errors.hasErrors()) {
 			return "main/login";

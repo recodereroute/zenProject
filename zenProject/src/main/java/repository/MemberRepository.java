@@ -28,4 +28,8 @@ public class MemberRepository {
 		statement = namespace + ".memOut";
 		sqlSession.delete(statement, memId);
 	}
+	public String idFind(MemberDTO dto) {
+		statement = namespace + ".idFind";
+		return sqlSession.selectOne(statement, dto);
+	}
 }

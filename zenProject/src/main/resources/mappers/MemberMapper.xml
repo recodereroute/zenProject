@@ -9,6 +9,12 @@
 	from member
 	where MEM_ID = #{memId}
 </select>
+<select id="idFind" parameterType="Model.MemberDTO" 
+	resultType="string">
+select rpad(substr(MEM_ID,1, 4), length(mem_id), '*') from member
+where mem_phone = #{memPhone} and MEM_EMAIL = #{memEmail} 
+and mem_name = #{memName} 
+</select>
 <update id="memEdit" parameterType="Model.MemberDTO">
 	update member
 	set MEM_EMAIL = #{memEmail}, MEM_EMAIL_CHK = #{memEmailChk},
