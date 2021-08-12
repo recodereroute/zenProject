@@ -74,15 +74,35 @@
 	      <a href="search/idFind">아이디 찾기</a> |
 	      <a href = "search/findPassword">비밀번호 찾기</a>| 
 	      <a href="register/regist">회원 가입</a>
+	      
+	      
+	      <c:if test="${empty authInfo }">
 	      <a href="login/login">
 	      <input type="submit" value="login">
 	      </a>
+	      </c:if>
+	      <c:if test="${!empty authInfo }">
+	     <a href="login/logOut">logOut
 	      
+	      </a>
+	            </c:if>
 	      </td></tr>
 	</table>
 </form>
 <c:if test="${!empty authInfo }">
-	<a href="edit/myPage">마이페이지</a>
+	<!-- 로그인 되었을 때 -->
+	<c:if test="${authInfo.grade == 1 }">
+	<!-- 일반 사용자 -->
+		<a href="edit/myPage">마이페이지</a>
+	</c:if>
+	<c:if test="${authInfo.grade != 1 }">
+	<!-- 관리자 -->
+	<a href="employee/empMyPage">마이페이지</a>
+	<a href="member/memList" >회원리스트</a>
+	<a href="emp/empList">직원 리스트</a>
+	<a href="admin/noticeList">공지사항</a>
+	</c:if>
+
 </c:if>
 <!-- jquery -->
 
