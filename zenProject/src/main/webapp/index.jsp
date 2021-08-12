@@ -76,7 +76,7 @@
 	      <c:if test="${empty authInfo }">
 	         <a href="search/idFind">아이디 찾기</a> |
 	      <a href = "search/findPassword">비밀번호 찾기</a>| 
-	      <a href="register/regist">회원 가입</a>
+	      <a href="register">회원 가입</a>
 	      
 	      <a href="login/login">
 	      <input type="submit" value="login">
