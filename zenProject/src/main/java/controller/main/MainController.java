@@ -27,6 +27,11 @@ public class MainController {
 	IdFindFinishService idFindFinishService;
 	@Autowired
 	FindPasswordService findPasswordService;
+	@Autowired
+	ChekcIdService checkIdService;
+	@Autowired
+	MemberJoinService memberJoinService;
+	
 	@RequestMapping("/search/findPasswordPro")
 	public String  findPasswordPro(MemberCommand memberCommand,
 			Model model) {
@@ -49,18 +54,12 @@ public class MainController {
 		return "main/idSearch";
 	}
 	
-	@RequestMapping("/main")
-	public String aaa(
-			@ModelAttribute LoginCommand loginCommand,
-			Model model) {
-		
-		return "main/index";
-	}
-	@Autowired
-	ChekcIdService checkIdService;
-	@Autowired
-	MemberJoinService memberJoinService;
+
 	
+	@RequestMapping("register")
+	public String register() {
+		return "main/registChoice";
+	}
 	@RequestMapping("/register/regist")
 	public String regist(@ModelAttribute(value = "memberCommand")
 						MemberCommand memberCommand, Model model) {
