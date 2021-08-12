@@ -1,7 +1,5 @@
 package controller.main;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,13 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import Model.AuthInfoDTO;
-import command.LoginCommand;
+import command.EmployeeCommand;
 import command.MemberCommand;
+import service.employee.EmployeeNumService;
 import service.main.ChekcIdService;
-import service.main.CookieService;
+import service.main.EmployeeJoinService;
 import service.main.FindPasswordService;
 import service.main.IdFindFinishService;
 import service.main.MemberJoinService;
+import validator.EmployeeCommandValidator;
 import validator.MemberCommandValidator;
 
 @Controller
@@ -31,12 +31,15 @@ public class MainController {
 	ChekcIdService checkIdService;
 	@Autowired
 	MemberJoinService memberJoinService;
+	@Autowired
+	EmployeeNumService employeeNumService;
+	@Autowired
+	EmployeeJoinService employeeJoinService;
 	
 	@RequestMapping("/search/findPasswordPro")
 	public String  findPasswordPro(MemberCommand memberCommand,
 			Model model) {
-		String path = 
-				findPasswordService.findPassword(memberCommand, model);
+		String path = findPasswordService.findPassword(memberCommand, model);
 		return path;
 	}
 	@RequestMapping("/search/findPassword")
@@ -53,9 +56,6 @@ public class MainController {
 	public String idFind() {
 		return "main/idSearch";
 	}
-	
-
-	
 	@RequestMapping("register")
 	public String register() {
 		return "main/registChoice";
@@ -79,5 +79,23 @@ public class MainController {
 		memberJoinService.memJoin(memberCommand);
 		return "redirect:/";
 	}
-
+	@RequestMapping("/register/empRegist")
+	public String empRegist(Model model, EmployeeCommand employeeCommand) {
+		employeeNumService.empNo(model, employeeCommand);
+	    return "main/empRegist";
+	   }
+	@RequestMapping(value = "/register/empJoin", method = RequestMethod.POST)
+	public String empJoin(EmployeeCommand employeeCommand, Errors errors) {
+		new EmployeeCommandValidator().validate(employeeCommand, errors);
+		if(errors.hasErrors()) {
+			return "main/empRegist";
+		}
+		AuthInfoDTO authInfo = checkIdService.check(employeeCommand.getEmpId());
+		if(authInfo != null) {
+			errors.rejectValue("empId", "duplicate");
+			return "main/empRegist";
+		}
+		employeeJoinService.empJoin(employeeCommand);
+		return "redirect:/";
+	}
 }
