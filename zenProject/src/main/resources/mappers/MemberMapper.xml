@@ -9,5 +9,12 @@
 	from member
 	where MEM_ID = #{memId}
 </select>
-
+<update id="memEdit" parameterType="Model.MemberDTO">
+	update member
+	set MEM_EMAIL = #{memEmail}, MEM_EMAIL_CHK = #{memEmailChk},
+		MEM_PHONE = <if test="memPhone == null">null</if>
+					<if test="memPhone != null">#{memPhone}</if>,
+		MEM_NICK = #{memNick}
+	where mem_id = #{memId}
+</update>
 </mapper>

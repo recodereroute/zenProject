@@ -11,4 +11,5 @@
 	<bean class = "repository.MemberRepository"/>
 	
 	<bean class = "service.member.MemberDetailService"/>
+	<bean class = "service.member.MemberEditService"/>
 </beans>

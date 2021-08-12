@@ -11,6 +11,11 @@ public class MemberRepository {
 	String namespace = "mappers.memberMapper";
 	String statement;
 	
+	public void memEdit(MemberDTO dto) {
+		statement = namespace + ".memEdit";
+		sqlSession.update(statement, dto);
+	}
+	
 	public MemberDTO memInfo(String memId) {
 		statement = namespace + ".memInfo";
 		return sqlSession.selectOne(statement, memId);
