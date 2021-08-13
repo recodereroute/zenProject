@@ -14,4 +14,5 @@ public class BoardDTO {
     String boardFile;
     Date boardDate;
     int boardCnt;
+    String boardCon;
 }
