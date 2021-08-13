@@ -40,4 +40,5 @@ public class EmployeeMyPageController {
 			HttpSession session, Model model) {
 		return employeeOutService.empOut(empPw, session, model);
 	}
+	
 }
