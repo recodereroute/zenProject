@@ -22,4 +22,8 @@ public class EmployeeRepository {
 		statement = namespace + ".empInfo";
 		return sqlSession.selectOne(statement, empNo);
 	}
+	public void empOut(String empNo) {
+		statement = namespace + ".empOut";
+		sqlSession.delete(statement,empNo);
+	}
 }

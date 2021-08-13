@@ -14,13 +14,13 @@ public class MemberOutService {
 	MemberRepository memberRepository;
 	@Autowired
 	BCryptPasswordEncoder bcryptPasswordEncoder;
-	
+
 	public String memOut(String memPw, HttpSession session, Model model) {
-		AuthInfoDTO authInfo = (AuthInfoDTO)session.getAttribute("authInfo");
-		if(bcryptPasswordEncoder.matches(memPw, authInfo.getUserPw())) {
+		AuthInfoDTO authInfo = (AuthInfoDTO) session.getAttribute("authInfo");
+		if (bcryptPasswordEncoder.matches(memPw, authInfo.getUserPw())) {
 			memberRepository.memOut(authInfo.getUserId());
 			return "redirect:/login/logOut";
-		}else {
+		} else {
 			model.addAttribute("pwFail", "비밀번호가 틀립니다.");
 			return "member/memFinalChk";
 		}

@@ -24,4 +24,8 @@
 	from employees
 	where EMP_NO = #{empNo}
 </select>
+<delete id="empOut" parameterType="string">
+	delete from employees
+	where EMP_NO = #{empNo}
+</delete>
 </mapper>

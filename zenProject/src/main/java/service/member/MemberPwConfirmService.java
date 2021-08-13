@@ -15,12 +15,13 @@ public class MemberPwConfirmService {
 	MemberRepository memberRepository;
 	@Autowired
 	BCryptPasswordEncoder bcryptPasswordEncoder;
+
 	public String memPw(String memPw, HttpSession session, Model model) {
-		AuthInfoDTO authInfo = (AuthInfoDTO)session.getAttribute("authInfo");
+		AuthInfoDTO authInfo = (AuthInfoDTO) session.getAttribute("authInfo");
 		MemberDTO dto = memberRepository.memInfo(authInfo.getUserId());
-		if(bcryptPasswordEncoder.matches(memPw,dto.getMemPw())) {
+		if (bcryptPasswordEncoder.matches(memPw, dto.getMemPw())) {
 			return "member/memPwChangeOk";
-		}else {
+		} else {
 			model.addAttribute("pwFail", "비밀번호가 틀립니다");
 			return "member/memPwChange";
 		}
