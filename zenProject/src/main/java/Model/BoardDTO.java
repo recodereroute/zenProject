@@ -15,4 +15,6 @@ public class BoardDTO {
     Date boardDate;
     int boardCnt;
     String boardCon;
+    String boardOrgFile;
+    String boardFileSize;
 }

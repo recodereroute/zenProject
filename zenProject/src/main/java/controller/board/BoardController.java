@@ -65,9 +65,10 @@ public String boardUpdate(
 
 @RequestMapping(value="boardModify",method = RequestMethod.POST)
 public String boardModify(
-		BoardCommand boardCommand
+		BoardCommand boardCommand,
+		HttpSession session
 		) {
-	boardModifyService.boardModify(boardCommand);
+	boardModifyService.boardModify(boardCommand,session);
 	
 	return"redirect:boardList";
 }

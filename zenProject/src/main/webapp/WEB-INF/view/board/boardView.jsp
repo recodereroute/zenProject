@@ -14,6 +14,20 @@
 등록일 : <fmt:formatDate value="${dto.boardDate }" type="date" pattern="yy-MM-dd"/><br/>
 조회수 : ${dto.boardCnt }<br/>
 등록한 아이디 : ${dto.memId }<br/>
+파일 :
+	<c:forTokens items="${dto.boardOrgFile }" delims="," var="fileName" 
+			varStatus="idx">
+		<a href="fileDown?str=${dto.boardFile.split(',')[idx.index]}&org=${fileName}" >
+		${fileName }</a> / ${dto.boardFileSize.split(',')[idx.index]}KB<br />
+	</c:forTokens>
+	<br /> 
+
+
+
+
+
+
+
 <c:if test="${!empty authInfo }">
 <a href="boardUpdate?boardNo=${dto.boardNo }">수정</a>
 </c:if>

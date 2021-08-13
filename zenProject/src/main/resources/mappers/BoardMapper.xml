@@ -10,12 +10,16 @@
 <insert id="boardWrite" >
 	insert into Board(
 	
-	board_no,board_title,board_con,board_cnt,mem_id, board_date
-	
+	board_no,board_title,board_con,board_cnt,mem_id, board_date,board_file
+	,board_org_file,board_file_size
 	)
 	
 	values(
-	(<include refid="boardNo"/>),#{boardTitle},#{boardCon},0,#{memId},sysdate
+	(<include refid="boardNo"/>),#{boardTitle},#{boardCon},0,#{memId},sysdate,
+	<if test="boardFile == null">null,null,null</if>
+	<if test="boardFile != null">
+		#{boardFile},#{boardOrgFile},#{boardFileSize}
+	</if>
 	)
 
 </insert>
@@ -37,13 +41,20 @@ select
 <select id="boardDetail" parameterType="string" resultType="Model.BoardDTO">
 select board_NO boardNo, board_title boardTitle,board_con boardCon, 
 		board_date boardDate, board_FILE, board_Cnt boardCnt,
-		mem_id memID
+		mem_id memID ,board_org_file boardOrgFile,board_file_size boardFileSize
 		from board
 		where board_no= #{boardNo}
 </select>
 <update id="boardModify" parameterType="Model.BoardDTO">
 		update board
-		set board_title = #{boardTitle}, board_Con = #{boardCon}
+		set board_title = #{boardTitle}, board_Con = #{boardCon} ,
+		
+		<if test="boardFile == null">board_org_file = null,board_file_size = null, board_file = null</if>
+		<if test="boardFile != null">
+		board_org_file =#{boardOrgFile},
+		board_file_size =#{boardFileSize},
+		board_file=#{boardFile}
+		</if>
 		where board_no = #{boardNo}
 	</update>
 

@@ -7,12 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action ="boardWrite" method="post">
+<form action ="boardWrite" method="post" enctype="multipart/form-data">
 title :<input type="text" name="boardTitle"/> <br/>
 content : <textarea rows="5" cols="60" name="boardCon"></textarea> <br/>
-
+file : <input type="file" name="boardFile" multiple="multiple"/>
 <input type="submit" value="submit">
-
+<input type="reset" value="reset"/>
 
 
 </form>
