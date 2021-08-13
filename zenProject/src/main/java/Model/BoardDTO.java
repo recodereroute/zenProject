@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.Date;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,5 +12,6 @@ public class BoardDTO {
     int boardNo;
     String boardTitle;
     String boardFile;
+    Date boardDate;
     int boardCnt;
 }

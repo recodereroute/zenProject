@@ -91,7 +91,7 @@
       </tr>
       <tr>
          <td>직무</td>
-         <td><form:input path="empJob" /> <!-- <input type="text" name="jobId" value="${jobId}" -->
+         <td><form:input path="empJob" />
             <form:errors path="empJob" /></td>
       </tr>
       <tr>
