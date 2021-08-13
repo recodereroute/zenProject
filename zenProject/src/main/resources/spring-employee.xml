@@ -12,4 +12,5 @@
 	<bean class = "service.employee.EmployeeInfoService"/>
 	<bean class = "service.employee.EmployeeOutService"/>
 	<bean class = "service.employee.EmployeeModifyService"/>
+	<bean class = "service.employee.EmployeeDeleteService"/>
 </beans>

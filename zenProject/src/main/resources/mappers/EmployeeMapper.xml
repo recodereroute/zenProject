@@ -35,4 +35,8 @@
 		EMP_DETAIL_ADDR = #{empDetailAddr}, EMP_POST = #{empPost}
 	WHERE EMP_NO = #{empNo}
 </update>
+<delete id="empDelete" parameterType="string">
+	DELETE EMPLOYEES
+	WHERE EMP_NO = #{empNo}
+</delete>
 </mapper>
