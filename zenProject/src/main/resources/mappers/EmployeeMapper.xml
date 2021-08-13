@@ -28,4 +28,11 @@
 	delete from employees
 	where EMP_NO = #{empNo}
 </delete>
+<update id="empModify" parameterType="Model.EmployeesDTO">
+	UPDATE EMPLOYEES
+	SET EMP_PHONE = #{empPhone}, EMP_OFFICE_NUM = #{empOfficeNum}, 
+		EMP_EMAIL = #{empEmail}, EMP_ADDR = #{empAddr}, 
+		EMP_DETAIL_ADDR = #{empDetailAddr}, EMP_POST = #{empPost}
+	WHERE EMP_NO = #{empNo}
+</update>
 </mapper>

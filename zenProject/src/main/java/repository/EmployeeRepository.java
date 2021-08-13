@@ -26,4 +26,8 @@ public class EmployeeRepository {
 		statement = namespace + ".empOut";
 		sqlSession.delete(statement,empNo);
 	}
+	public void empModify(EmployeesDTO dto) {
+		statement = namespace + ".empModify";
+		sqlSession.update(statement, dto);
+	}
 }

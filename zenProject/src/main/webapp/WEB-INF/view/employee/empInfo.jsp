@@ -16,7 +16,9 @@
 연락처 : ${emp.empPhone }<br />
 사무실번호 : ${emp.empOfficeNum }<br />
 이메일: ${emp.empEmail }<br />
+우편번호 : ${emp.empPost}<br />
 주소 : ${emp.empAddr }<br />
+상세주소 : ${emp.empDetailAddr }<br />
 <a href="empModify?empNo=${emp.empNo }">수정</a> | 
 <a href="#" onclick = "javascript:history.back();">뒤로가기</a>
 </body>
