@@ -18,4 +18,8 @@ public class EmployeeRepository {
 		statement = namespace + ".empJoin";
 		sqlSession.insert(statement, dto);
 	}
+	public EmployeesDTO empInfo(String empNo) {
+		statement = namespace + ".empInfo";
+		return sqlSession.selectOne(statement, empNo);
+	}
 }
