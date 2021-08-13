@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +17,9 @@ import service.employee.EmployeeDeleteService;
 import service.employee.EmployeeInfoService;
 import service.employee.EmployeeModifyService;
 import service.employee.EmployeeOutService;
+import service.employee.EmployeePwConfirmService;
+import service.employee.EmployeePwUpdateService;
+import validator.EmployeePassWordValidator;
 
 @Controller
 @RequestMapping("employee")
@@ -28,6 +32,11 @@ public class EmployeeMyPageController {
 	EmployeeModifyService employeeModifyService;
 	@Autowired
 	EmployeeDeleteService employeeDeleteService;
+	@Autowired
+	EmployeePwConfirmService employeePwConfirmService;
+	@Autowired
+	EmployeePwUpdateService employeePwUpdateService;
+	
 	@RequestMapping("empMyPage")
 	public String empMyPage() {
 		return "employee/empMyPage";
@@ -70,4 +79,28 @@ public class EmployeeMyPageController {
 		return employeeOutService.empOut(empPw, session, model);
 	}
 	
+	//비밀번호 변경
+	@RequestMapping("empPwEdit")
+	public String empPwEdit() {
+		return "employee/empPwChk";
+	}
+	@RequestMapping("empPwConfirm")
+	public String empPwConfirm(@RequestParam(value = "empPw")String empPw,
+			HttpSession session, Model model,
+			@ModelAttribute EmployeeCommand employeeCommand) {
+		return employeePwConfirmService.checkPw(empPw,session, model);
+	}
+	@RequestMapping("empPwUpdate")
+	public String empPwUpdate(EmployeeCommand employeeCommand,
+			Errors errors, HttpSession session) {
+		new EmployeePassWordValidator().validate(employeeCommand,errors);
+		if(errors.hasErrors()) {
+			return "employee/empPwEditOk";
+		}
+		employeePwUpdateService.empPwUpdate(employeeCommand, errors, session);
+		if(errors.hasErrors()) {
+			return "employee/empPwEditOk";
+		}
+		return "redirect:/";
+	}
 }

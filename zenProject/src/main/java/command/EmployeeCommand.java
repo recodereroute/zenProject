@@ -25,6 +25,7 @@ public class EmployeeCommand {
 	String empAddr;
 	String empDetailAddr;
 	
+	String oldPw;
 	public boolean pwMatching() {
 		return empPw.equals(empPwCon);
 	}

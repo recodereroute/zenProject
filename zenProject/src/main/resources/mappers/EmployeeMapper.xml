@@ -39,4 +39,9 @@
 	DELETE EMPLOYEES
 	WHERE EMP_NO = #{empNo}
 </delete>
+<update id="empPwUpdate" parameterType="Model.EmployeesDTO">
+	update employees
+	set EMP_PW = #{empPw}
+	where EMP_ID = #{empId}
+</update>
 </mapper>
