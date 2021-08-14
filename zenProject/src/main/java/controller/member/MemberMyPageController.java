@@ -20,7 +20,7 @@ import service.member.MemberPwUpdateService;
 import validator.MemberPasswordValidator;
 
 @Controller
-@RequestMapping("edit")
+@RequestMapping("member")
 public class MemberMyPageController {
 	@Autowired
 	MemberDetailService memberDetailService;

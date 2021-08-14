@@ -96,12 +96,12 @@
 	<!-- 로그인 되었을 때 -->
 	<c:if test="${authInfo.grade == 1 }">
 	<!-- 일반 사용자 -->
-		<a href="edit/myPage">마이페이지</a>
+		<a href="member/myPage">마이페이지</a>
 	</c:if>
 	<c:if test="${authInfo.grade != 1 }">
 	<!-- 관리자 -->
 	<a href="employee/empMyPage">마이페이지</a>
-	<a href="member/memList" >회원리스트</a>
+	<a href="memList" >회원리스트</a>
 	<a href="emp/empList">직원 리스트</a>
 	<a href="admin/noticeList">공지사항</a>
 	</c:if>

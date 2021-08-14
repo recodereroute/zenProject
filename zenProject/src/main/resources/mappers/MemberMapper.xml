@@ -9,6 +9,11 @@
 	from member
 	where MEM_ID = #{memId}
 </select>
+<select id="memList" resultType="Model.MemberDTO">
+	select ROWNUM rn, MEM_ID memId, MEM_NICK memNick,
+		   MEM_NAME memName, MEM_EMAIL memEmail
+	from member
+</select>	
 <select id="idFind" parameterType="Model.MemberDTO" 
 	resultType="string">
 select rpad(substr(MEM_ID,1, 4), length(mem_id), '*') from member

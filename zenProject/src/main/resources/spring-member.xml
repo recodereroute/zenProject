@@ -8,6 +8,7 @@
 >
 
 	<bean class = "controller.member.MemberMyPageController"/>
+	<bean class = "controller.member.MemberController"/>
 	<bean class = "repository.MemberRepository"/>
 	
 	<bean class = "service.member.MemberDetailService"/>
@@ -15,4 +16,5 @@
 	<bean class = "service.member.MemberPwConfirmService"/>
 	<bean class = "service.member.MemberPwUpdateService"/>
 	<bean class = "service.member.MemberOutService"/>
+	<bean class = "service.member.MemberListService"/>
 </beans>
