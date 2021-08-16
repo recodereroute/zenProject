@@ -40,62 +40,60 @@ BoardDeleteService boardDeleteService;
 		boardListService.boardList(model,page);
 		return "board/boardList";
 	}
-@RequestMapping("boardWrite")
-public String bouarWrite(
-		BoardCommand boardCommand,HttpSession httpsession
-		) {
-	boardWriteService.boardWrite(boardCommand, httpsession);
-	return "redirect:boardList";
-}
-@RequestMapping("boardForm")
-public String noticeForm() {
+	@RequestMapping("boardWrite")
+	public String bouarWrite(
+			BoardCommand boardCommand,HttpSession httpsession
+			) {
+		boardWriteService.boardWrite(boardCommand, httpsession);
+		return "redirect:boardList";
+	}
+	@RequestMapping("boardForm")
+	public String noticeForm() {
+		return "board/boardForm"; 
+	}
+	@RequestMapping("boardDetail")
+	public String boardDetail(
+			@RequestParam(value="boardNo")String boardNo,
+			Model model
+			) {
+		boardDetailService.boardDetail(boardNo, model);
+		return "board/boardView";
+	}
+	@RequestMapping("boardUpdate")
+	public String boardUpdate(
+			@RequestParam(value="boardNo")String boardNo,
+			Model model
+			) {
+		boardDetailService.boardUpdate(boardNo, model);
+		return "board/boardModify";
+	}
 	
-	return "board/boardForm"; 
-	
-}
-@RequestMapping("boardDetail")
-public String boardDetail(
-		@RequestParam(value="boardNo")String boardNo,
-		Model model
-		) {
-	boardDetailService.boardDetail(boardNo, model);
-	return "board/boardView";
-}
-@RequestMapping("boardUpdate")
-public String boardUpdate(
-		@RequestParam(value="boardNo")String boardNo,
-		Model model
-		) {
-	boardDetailService.boardDetail(boardNo, model);
-	return "board/boardModify";
-}
-
-@RequestMapping(value="boardModify",method = RequestMethod.POST)
-public String boardModify(
-		BoardCommand boardCommand,
-		HttpSession session
-		) {
-	boardModifyService.boardModify(boardCommand,session);
-	
-	return"redirect:boardList";
-}
-@RequestMapping("boardDel")
-public String boardDel(
-		@RequestParam(value="boardNo") String boardNo,
-		HttpSession session
-		) {
-	boardDeleteService.boardDel(boardNo,session);
-	return "redirect:boardList";
-}
-@RequestMapping("fileDown")
-public void fileDown(
-		@RequestParam(value="str")String store,
-		@RequestParam(value="org") String original,
-		HttpServletRequest request,HttpServletResponse response
-		) {
-	String path="WEB-INF/view/library/upload";
-	FileDownLoad fileDownLoad= new FileDownLoad();
-	fileDownLoad.fileDownLoad(path,store,original,request,response);
-	
-}
+	@RequestMapping(value="boardModify",method = RequestMethod.POST)
+	public String boardModify(
+			BoardCommand boardCommand,
+			HttpSession session
+			) {
+		boardModifyService.boardModify(boardCommand,session);
+		
+		return"redirect:boardList";
+	}
+	@RequestMapping("boardDel")
+	public String boardDel(
+			@RequestParam(value="boardNo") String boardNo,
+			HttpSession session
+			) {
+		boardDeleteService.boardDel(boardNo,session);
+		return "redirect:boardList";
+	}
+	@RequestMapping("fileDown")
+	public void fileDown(
+			@RequestParam(value="str")String store,
+			@RequestParam(value="org") String original,
+			HttpServletRequest request,HttpServletResponse response
+			) {
+		String path="WEB-INF/view/library/upload";
+		FileDownLoad fileDownLoad= new FileDownLoad();
+		fileDownLoad.fileDownLoad(path,store,original,request,response);
+		
+	}
 }

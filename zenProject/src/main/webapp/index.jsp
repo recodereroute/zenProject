@@ -61,7 +61,7 @@
 <div class="dropdown">
   <button class="dropbtn">메뉴</button>
   <div class="dropdown-content">
-    <a href="#">공지사항</a>
+    <a href="notice/noticeList">공지사항</a>
     <a href="board/boardList">게시판</a>
     <a href="#">음식</a>
     <a href="#">칼럼</a>

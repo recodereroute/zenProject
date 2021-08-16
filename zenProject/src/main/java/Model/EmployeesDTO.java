@@ -20,4 +20,6 @@ public class EmployeesDTO {
     String empPost;
     String empAddr;
     String empDetailAddr;
+    
+    StartEndPageDTO startEndPageDTO;
 }

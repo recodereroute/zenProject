@@ -21,15 +21,12 @@ public void boardModify(BoardCommand boardCommand,HttpSession session) {
 		dto.setBoardCon(boardCommand.getBoardCon());
 		dto.setBoardTitle(boardCommand.getBoardTitle());
 
-		BoardDTO fdto = 
-				boardRepository.boardDetail(boardCommand.getBoardNo());
+		BoardDTO fdto = boardRepository.boardDetail(boardCommand.getBoardNo());
 		
 		String original = fdto.getBoardOrgFile();
 		String store = fdto.getBoardFile();
 		String fileSize = fdto.getBoardFileSize();
-		String realPath = 
-				session.getServletContext()
-				       .getRealPath("WEB-INF/view/library/upload");
+		String realPath = session.getServletContext().getRealPath("WEB-INF/view/library/upload");
 		
 		String [] fileNames = boardCommand.getFileDel().split("/");
 		if(!fileNames[0].equals("")) {
@@ -83,10 +80,6 @@ public void boardModify(BoardCommand boardCommand,HttpSession session) {
 			dto.setBoardFile(store);
 			dto.setBoardFileSize(fileSize);
 		}	
-		
-		
-		
 		boardRepository.boardModify(dto);
-		
 }
 }

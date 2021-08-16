@@ -37,4 +37,7 @@ and mem_name = #{memName}
 	delete from member
 	where MEM_ID = #{memId}
 </delete>
+<select id="count" resultType="int">
+	SELECT COUNT(*) FROM MEMBER
+</select>
 </mapper>

@@ -42,8 +42,7 @@ BoardRepository boardRepository;
 				storeTotal +=store+",";
 				fileSizeTotal+= fileSize+",";
 				String path="WEB-INF/view/library/upload";
-				String realPath=
-						session.getServletContext().getRealPath(path);
+				String realPath = session.getServletContext().getRealPath(path);
 				File  file=new File(realPath+"/"+store);
 				try {
 					mf.transferTo(file);
@@ -53,15 +52,8 @@ BoardRepository boardRepository;
 				dto.setBoardOrgFile(originalTotal);
 				dto.setBoardFile(storeTotal);
 				dto.setBoardFileSize(fileSizeTotal);
-				
-			
-				
 			}
 		}
-		
-		
-		
 		boardRepository.boardWrite(dto);
-		
 	}
 }

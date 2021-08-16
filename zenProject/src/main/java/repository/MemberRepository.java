@@ -39,4 +39,8 @@ public class MemberRepository {
 		statement = namespace + ".idFind";
 		return sqlSession.selectOne(statement, dto);
 	}
+	public int count() {
+		statement = namespace + ".count";
+		return sqlSession.selectOne(statement);
+	}
 }

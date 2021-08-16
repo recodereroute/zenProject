@@ -33,9 +33,6 @@ select
 		BOARD_DATE boardDate, BOARD_FILE, BOARD_CNT boardCnt,
 		MEM_ID memId
 		from BOARD 
-		
-
-
 </select>
 <update id="boardCnt" parameterType="string" >
 	update board

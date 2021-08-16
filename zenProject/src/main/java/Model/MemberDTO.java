@@ -14,4 +14,6 @@ public class MemberDTO {
 	String memSex;
 	String memEmail;
 	String memEmailChk;
+	StartEndPageDTO startEndPageDTO;
+	
 }

@@ -9,6 +9,7 @@ public class PageAction {
 		int startPage = (int)((double) page / limitPage + 0.99); 
 		int endPage = startPage + limitPage - 1;
 		if(endPage > maxPage)endPage = maxPage;
+		
 		model.addAttribute("maxPage", maxPage);
 		model.addAttribute("startPage", startPage);
 		model.addAttribute("endPage", endPage);

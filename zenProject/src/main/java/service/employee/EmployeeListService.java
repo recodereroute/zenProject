@@ -14,19 +14,22 @@ public class EmployeeListService {
 	@Autowired
 	EmployeeRepository employeeRepository;
 	public void empList(Model model, int page) {
-		EmployeesDTO dto = new EmployeesDTO();
+		int limit = 5;
+		int limitPage = 10;
 		
+		Long startRow = ((long)page - 1) * limit + 1;
+		Long endRow = startRow + limit - 1;
+		StartEndPageDTO sep = new StartEndPageDTO();
+		sep.setStartRow(startRow);
+		sep.setEndRow(endRow);
+		
+		EmployeesDTO dto = new EmployeesDTO();
+		dto.setStartEndPageDTO(sep);
 		List<EmployeesDTO> list = employeeRepository.empList();
 		model.addAttribute("list",list);
-		
 		int count = list.size();
-		int limit = 3;
-		int limitPage = 5;
 		
-		model.addAttribute("maxPage", count/limit);
-		model.addAttribute("startPage", page/limitPage);
-		model.addAttribute("endPage", limitPage);
-		model.addAttribute("page", page);
-		model.addAttribute("pageUrl", "empList");
+		PageAction pageAction = new PageAction();
+		pageAction.page(count, limit, page, limitPage, model, "empList");
 	}
 }

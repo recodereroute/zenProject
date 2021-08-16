@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
-<%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ include file = "../include/includeTags.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +25,7 @@
 			<td><a href="empInfo?empNo=${empDTO.empNo }">${empDTO.empNo }</a></td>
 			<td>${empDTO.empName }</td>
 			<td>${empDTO.empJob }</td>
-			<td>${empDTO.empHireDate }</td>
+			<td><fmt:formatDate value = "${empDTO.empHireDate }" type = "date" pattern = "yy-MM-dd"/></td>
 			<td>${empDTO.empOfficeNum }</td>
 		</tr>
 		</c:forEach>
