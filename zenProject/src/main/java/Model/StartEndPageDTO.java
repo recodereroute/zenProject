@@ -9,6 +9,4 @@ import lombok.Setter;
 public class StartEndPageDTO {
 	Long startRow;
 	Long endRow;
-
-	
 }

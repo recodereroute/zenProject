@@ -102,7 +102,7 @@
 	<!-- 관리자 -->
 	<a href="employee/empMyPage">마이페이지</a>
 	<a href="memList" >회원리스트</a>
-	<a href="emp/empList">직원 리스트</a>
+	<a href="employee/empList">직원 리스트</a>
 	<a href="admin/noticeList">공지사항</a>
 	</c:if>
 

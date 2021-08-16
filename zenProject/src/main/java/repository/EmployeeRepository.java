@@ -1,5 +1,7 @@
 package repository;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -37,5 +39,11 @@ public class EmployeeRepository {
 	public void empPwUpdate(EmployeesDTO dto) {
 		statement = namespace + ".empPwUpdate";
 		sqlSession.update(statement,dto);
+	}
+	
+	//직원 리스트
+	public List<EmployeesDTO> empList(){
+		statement = namespace + ".empList";
+		return sqlSession.selectList(statement);
 	}
 }
