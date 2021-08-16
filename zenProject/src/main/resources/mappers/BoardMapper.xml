@@ -44,21 +44,19 @@ select
 </update>
 <select id="boardDetail" parameterType="string" resultType="Model.BoardDTO">
 select board_NO boardNo, board_title boardTitle,board_con boardCon, 
-		board_date boardDate, board_FILE, board_Cnt boardCnt,
+		board_date boardDate, board_FILE boardFile, board_Cnt boardCnt,
 		mem_id memID ,board_org_file boardOrgFile,board_file_size boardFileSize
 		from board
 		where board_no= #{boardNo}
 </select>
 <update id="boardModify" parameterType="Model.BoardDTO">
 		update board
-		set board_title = #{boardTitle}, board_Con = #{boardCon} ,
+		set board_title = #{boardTitle}, 
+		board_Con = #{boardCon} ,
 		
-		<if test="boardFile == null">board_org_file = null,board_file_size = null, board_file = null</if>
-		<if test="boardFile != null">
 		board_org_file =#{boardOrgFile},
 		board_file_size =#{boardFileSize},
 		board_file=#{boardFile}
-		</if>
 		where board_no = #{boardNo}
 	</update>
 <select id="count" resultType="int">

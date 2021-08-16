@@ -10,11 +10,11 @@ import lombok.Setter;
 @Getter
 public class BoardDTO {
     String memId;
-    int boardNo;
+    String boardNo;
     String boardTitle;
     String boardFile;
     Date boardDate;
-    int boardCnt;
+    String boardCnt;
     String boardCon;
     String boardOrgFile;
     String boardFileSize;

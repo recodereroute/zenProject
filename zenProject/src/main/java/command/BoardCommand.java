@@ -7,8 +7,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class BoardCommand {
-	int boardNo;
+	String boardNo;
 	String boardTitle;
 	String boardCon;
 	MultipartFile[]boardFile;
+	String fileDel;
 }

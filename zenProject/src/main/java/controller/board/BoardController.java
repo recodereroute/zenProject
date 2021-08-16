@@ -81,9 +81,10 @@ public String boardModify(
 }
 @RequestMapping("boardDel")
 public String boardDel(
-		@RequestParam(value="boardNo") String boardNo
+		@RequestParam(value="boardNo") String boardNo,
+		HttpSession session
 		) {
-	boardDeleteService.boardDel(boardNo);
+	boardDeleteService.boardDel(boardNo,session);
 	return "redirect:boardList";
 }
 @RequestMapping("fileDown")
@@ -92,7 +93,7 @@ public void fileDown(
 		@RequestParam(value="org") String original,
 		HttpServletRequest request,HttpServletResponse response
 		) {
-	String path="WEB-INF/view/lib/upload";
+	String path="WEB-INF/view/library/upload";
 	FileDownLoad fileDownLoad= new FileDownLoad();
 	fileDownLoad.fileDownLoad(path,store,original,request,response);
 	

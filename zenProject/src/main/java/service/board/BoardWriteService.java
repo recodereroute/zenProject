@@ -33,22 +33,17 @@ BoardRepository boardRepository;
 			for(MultipartFile mf:boardCommand.getBoardFile()) {
 				String original=mf.getOriginalFilename();
 				String originalExt=
-						//ㄹㅇ 이름
 						original.substring(original.lastIndexOf("."));
 				String store=
-						//랜덤 이름 주기
 						UUID.randomUUID().toString().replace("- ", "")+
 						originalExt;
-				//파일 사이즈 가지고와
 				String fileSize =Double.toString(Math.round((mf.getSize()/1024.0) * 100)/(double)100);
 				originalTotal+=original+",";
 				storeTotal +=store+",";
 				fileSizeTotal+= fileSize+",";
-				//파일경로 가지고오기
-				String path="WEB-INF/view/lib/upload";
+				String path="WEB-INF/view/library/upload";
 				String realPath=
 						session.getServletContext().getRealPath(path);
-				//파일 저장하기 
 				File  file=new File(realPath+"/"+store);
 				try {
 					mf.transferTo(file);
