@@ -12,6 +12,7 @@
 <bean class="service.board.BoardListService"/>
 <bean class="service.board.BoardDetailService"/>
 <bean class="service.board.BoardModifyService"/>
+<bean class="service.board.BoardDeleteService"/>
 
 
 

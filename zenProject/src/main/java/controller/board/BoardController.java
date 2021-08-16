@@ -1,5 +1,7 @@
 package controller.board;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import command.BoardCommand;
+import service.board.BoardDeleteService;
 import service.board.BoardDetailService;
 import service.board.BoardListService;
 import service.board.BoardModifyService;
@@ -26,11 +29,15 @@ BoardListService boardListService;
 BoardDetailService boardDetailService;
 @Autowired
 BoardModifyService boardModifyService;
+@Autowired
+BoardDeleteService boardDeleteService;
 	@RequestMapping("boardList")
 	public String boardList(
+			@RequestParam(value="page",defaultValue = "1")
+			Integer page,
 			Model model
 			) {
-		boardListService.boardList(model);
+		boardListService.boardList(model,page);
 		return "board/boardList";
 	}
 @RequestMapping("boardWrite")
@@ -71,5 +78,23 @@ public String boardModify(
 	boardModifyService.boardModify(boardCommand,session);
 	
 	return"redirect:boardList";
+}
+@RequestMapping("boardDel")
+public String boardDel(
+		@RequestParam(value="boardNo") String boardNo
+		) {
+	boardDeleteService.boardDel(boardNo);
+	return "redirect:boardList";
+}
+@RequestMapping("fileDown")
+public void fileDown(
+		@RequestParam(value="str")String store,
+		@RequestParam(value="org") String original,
+		HttpServletRequest request,HttpServletResponse response
+		) {
+	String path="WEB-INF/view/lib/upload";
+	FileDownLoad fileDownLoad= new FileDownLoad();
+	fileDownLoad.fileDownLoad(path,store,original,request,response);
+	
 }
 }

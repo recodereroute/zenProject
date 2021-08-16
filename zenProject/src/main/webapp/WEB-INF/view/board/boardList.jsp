@@ -25,9 +25,9 @@
 		</tr>
 		</c:forEach>
 		<tr>
-		<%-- <td colspan ="4">
+		<td colspan ="4">
 			<%@ include file="../include/includePage.jsp" %>
-		</td> --%>
+		</td>
 		</tr>
 	</table>
 	 <c:if test="${!empty authInfo }">

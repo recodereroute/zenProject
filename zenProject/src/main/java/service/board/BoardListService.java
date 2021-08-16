@@ -6,15 +6,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 
 import Model.BoardDTO;
+import Model.StartEndPageDTO;
+import controller.board.PageAction;
 import repository.BoardRepository;
 
 public class BoardListService {
 @Autowired
 BoardRepository boardRepository;
-	public void boardList(Model model) {
+	public void boardList(Model model, Integer page) {
 		BoardDTO dto= new BoardDTO();
-		
+		int limit =3;
+		int limitPage=10;
+		if(page!=null) {
+		 Long startRow=((long)page-1)*limit +1;
+			 Long endRow=startRow+limit -1 ;
+			 StartEndPageDTO sep= new StartEndPageDTO();
+			 sep.setStartRow(startRow);
+			 sep.setEndRow(endRow);
+			 dto.setStartEndPageDTO(sep);
+		}
 		List<BoardDTO> list=boardRepository.boardList(dto);
-		 model.addAttribute("lists",list); 
+		int count =boardRepository.count();
+		 model.addAttribute("lists",list);
+		 model.addAttribute("count",count);
+			if(page!=null) { PageAction pageAction= new PageAction();
+			 pageAction.page(count, limit, page, limitPage, model, "boardList");
+			 }
 	}
 }

@@ -13,6 +13,10 @@ public class BoardRepository {
 	SqlSession sqlSession;
 	String namespace  = "mappers.BoardMapper";
 	String statement; 
+	public void boardDel(String boardNo) {
+		statement=namespace+".boardDel";
+		sqlSession.delete(statement,boardNo);
+	}
 	public void boardWrite(BoardDTO dto) {
 		statement=namespace+".boardWrite";
 		sqlSession.insert(statement,dto);
@@ -36,5 +40,9 @@ public class BoardRepository {
 	{
 		statement=namespace+".boardModify";
 		sqlSession.update(statement,dto);
+	}
+	public int count() {
+		statement = namespace +".count";
+		return sqlSession.selectOne(statement);
 	}
 }
