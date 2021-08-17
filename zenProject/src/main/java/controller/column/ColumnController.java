@@ -63,7 +63,7 @@ return "column/columnDetail";
 			Model model
 		 )
  {
-	 columnDetailService.columnDetail(noticeNo, model);
+	 columnDetailService.columnUpdate(noticeNo, model);
 	 return "column/columnModify";
  }
  @RequestMapping(value="columnModify",method = RequestMethod.POST)
