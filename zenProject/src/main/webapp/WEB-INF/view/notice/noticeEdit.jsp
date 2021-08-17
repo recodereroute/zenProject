@@ -20,7 +20,7 @@
 	<c:forTokens items="${dto.noticeOrgFile }" delims="," var="original" varStatus="idx">
 		<p>
 		<span id = "file" >
-		${original }, ${dto.noticeFile.split(',')[idx.index] }, ${dto.noticeFileSize.split(',')[idx.index] }
+		${original }, ${dto.noticeFileSize.split(',')[idx.index] }KB
 		</span>
 		<input type="button" id = "btn" onclick = "fileDel1(this)" value="파일 삭제">
 		</p>

@@ -25,7 +25,7 @@ public class NoticeWriteService {
 		dto.setNoticeTitle(noticeCommand.getNoticeTitle());
 		dto.setNoticeCon(noticeCommand.getNoticeCon());
 		
-		int noticeNo = Integer.parseInt(noticeRepository.noticeNo());
+		String noticeNo = noticeRepository.noticeNo();
 		dto.setNoticeNo(noticeNo);
 		
 		String originalTotal = "";
