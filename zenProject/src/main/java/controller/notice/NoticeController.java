@@ -73,8 +73,8 @@ public class NoticeController {
 	}
 	//공지사항 수정
 	@RequestMapping(value = "noticeEditOk", method = RequestMethod.POST)
-	public String notieEditOk(NoticeCommand noticeCommand) {
-		noticeEditService.notieceEdit(noticeCommand);
+	public String notieEditOk(NoticeCommand noticeCommand,HttpSession session) {
+		noticeEditService.notieceEdit(noticeCommand,session);
 		return "redirect:noticeList";
 	}
 }

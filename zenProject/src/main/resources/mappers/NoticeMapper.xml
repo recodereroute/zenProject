@@ -39,7 +39,11 @@
 </delete>
 <update id="noticeEdit" parameterType="Model.NoticeDTO">
 	update notice
-	set notice_title = #{noticeTitle}, notice_con = #{noticeCon}
+	set 
+		notice_title = #{noticeTitle}, notice_con = #{noticeCon},
+		notice_file = <if test="noticeFile == null">null</if><if test="noticeFile != null">#{noticeFile}</if>,
+		notice_org_file = <if test="noticeFile == null">null</if><if test="noticeFile != null">#{noticeOrgFile}</if>,
+		notice_file_size = <if test="noticeFile == null">null</if><if test="noticeFile != null">#{noticeFileSize}</if>
 	where notice_no = #{noticeNo}
 </update>
 </mapper>
