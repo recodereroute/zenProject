@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import command.NoticeCommand;
 import controller.board.FileDownLoad;
+import service.notice.NoticeDeleteService;
 import service.notice.NoticeDetailService;
+import service.notice.NoticeEditService;
 import service.notice.NoticeListService;
 import service.notice.NoticeWriteService;
 
@@ -26,7 +28,10 @@ public class NoticeController {
 	NoticeWriteService noticeWriteService;
 	@Autowired
 	NoticeDetailService noticeDetailService;
-	
+	@Autowired
+	NoticeDeleteService noticeDeleteService;
+	@Autowired
+	NoticeEditService noticeEditService;
 	@RequestMapping("fileDown")
 	public void fileDown(@RequestParam(value="str")String store,
 						 @RequestParam(value="org")String original,
@@ -59,5 +64,17 @@ public class NoticeController {
 	public String noticeEdit(@RequestParam(value = "noticeNo")String noticeNo, Model model) {
 		noticeDetailService.noticeInfo(noticeNo, model);
 		return "notice/noticeEdit";
+	}
+	//공지사항 삭제
+	@RequestMapping("noticeDel")
+	public String noticeDel(String noticeNo) {
+		noticeDeleteService.noticeDel(noticeNo);
+		return "redirect:noticeList";
+	}
+	//공지사항 수정
+	@RequestMapping(value = "noticeEditOk", method = RequestMethod.POST)
+	public String notieEditOk(NoticeCommand noticeCommand) {
+		noticeEditService.notieceEdit(noticeCommand);
+		return "redirect:noticeList";
 	}
 }

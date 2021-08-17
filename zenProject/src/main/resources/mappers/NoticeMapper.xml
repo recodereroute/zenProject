@@ -32,4 +32,13 @@
 	from NOTICE
 	where notice_kind = 1 and notice_no = #{noticeNo}
 </select>
+<delete id="noticeDel" parameterType="string">
+	delete from notice
+	where NOTICE_NO = #{noticeNo}
+</delete>
+<update id="noticeEdit" parameterType="Model.NoticeDTO">
+	update notice
+	set notice_title = #{noticeTitle}, notice_con = #{noticeCon}
+	where notice_no = #{noticeNo}
+</update>
 </mapper>

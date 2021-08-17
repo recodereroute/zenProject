@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import Model.NoticeDTO;
+import command.NoticeCommand;
 
 public class NoticeRepository {
 	@Autowired
@@ -31,5 +32,15 @@ public class NoticeRepository {
 	public NoticeDTO noticeDetail(String noticeNo) {
 		statement = namespace + ".noticeDetail";
 		return sqlSession.selectOne(statement, noticeNo);
+	}
+	//공지사항 삭제
+	public void noticeDel(String noticeNo) {
+		statement = namespace + ".noticeDel";
+		sqlSession.delete(statement,noticeNo);
+	}
+	//공지사항 수정
+	public void noticeEdit(NoticeDTO dto) {
+		statement = namespace + ".noticeEdit";
+		sqlSession.update(statement,dto);
 	}
 }
