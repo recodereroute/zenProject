@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans.xsd
+			"
+>
+
+<bean class="controller.column.ColumnController"/>
+<!-- 서비스  -->
+<bean class="service.column.ColumnWriteService"/>
+<bean class="service.column.ColumnListService"/>
+<bean class="service.column.ColumnDetailService"/>
+<bean class="service.column.ColumnModifyService"/>
+<bean class="service.column.ColumnDeleteService"/>
+
+
+
+
+
+<bean class="repository.ColumnRepository"/>
+
+
+</beans>

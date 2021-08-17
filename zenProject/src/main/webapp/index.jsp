@@ -64,7 +64,7 @@
     <a href="notice/noticeList">공지사항</a>
     <a href="board/boardList">게시판</a>
     <a href="#">음식</a>
-    <a href="#">칼럼</a>
+    <a href="column/columnList">칼럼</a>
     <a href="#">즐겨찾기</a>
   </div>
 </div>

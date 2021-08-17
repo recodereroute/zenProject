@@ -33,6 +33,7 @@
   			classpath:spring-mail-config.xml
   			classpath:spring-board.xml
   			classpath:spring-notice.xml
+  			classpath:spring-column.xml
   		</param-value>
   	</init-param>
   </servlet>
