@@ -14,4 +14,8 @@ ColumnRepository columnRepository;
 		NoticeDTO dto= columnRepository.columnDetail(noticeNo);
 		model.addAttribute("dto",dto);
 	}
+	public void columnUpdate(String noticeNo, Model model) {
+		NoticeDTO dto= columnRepository.columnDetail(noticeNo);
+		model.addAttribute("dto",dto);
+	}
 }

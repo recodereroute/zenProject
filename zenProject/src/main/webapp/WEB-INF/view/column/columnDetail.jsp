@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false" %>
+    <%@include file="../include/includeTags.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,8 +15,10 @@
 종류 : ${dto.noticeKind }<br/>
 조회수 : ${dto.noticeCnt }<br/>
 등록한 직원번호 : ${dto.empNo }<br/>
-<a href="columnUpdate?noticeNo=${dto.noticeNo }">수정</a>
 
+<c:if test="${authInfo.grade > 1 }">
+<a href="columnUpdate?noticeNo=${dto.noticeNo }">수정</a>
+</c:if>
 
 </body>
 </html>

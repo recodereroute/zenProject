@@ -30,7 +30,7 @@
 		</td>
 		</tr>
 	</table>
-	<c:if test="${authInfo.grade != 1 }">
+	<c:if test="${authInfo.grade > 1 }">
 	<a href="columnForm"> 칼럼 등록</a>
 </c:if>
 </body>
