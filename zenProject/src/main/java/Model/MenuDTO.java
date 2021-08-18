@@ -15,4 +15,6 @@ public class MenuDTO {
     int menuRecmnd;
     int menuCnt;
     int empNo;
+    
+    StartEndPageDTO startEndPageDTO;
 }

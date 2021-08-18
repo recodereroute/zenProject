@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.MenuMapper">
+	<select id="menuList" parameterType="Model.MenuDTO" resultType="Model.MenuDTO">
+		select
+			MENU_NO menuNo,
+			MENU_RECIPE menuRecipe, 
+			MENU_NAME menuName,  
+			MENU_IMG menuImg,  
+			MENU_MAIN_ITEM menuMainItem,  
+			MENU_SUB_ITEM menuSubItem,  
+			MENU_RECMND menuRecmnd,         
+			MENU_CNT menuCnt,         
+			EMP_NO empNo,         
+			MENU_DATE menuDate  
+		from menu
+	</select>
+	
+	<select id="count" resultType="int">
+		select count(*) from notice
+	</select>
+	
+</mapper>
