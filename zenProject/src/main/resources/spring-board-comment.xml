@@ -6,13 +6,10 @@
 			http://www.springframework.org/schema/beans/spring-beans.xsd
 			"
 >
-<bean class="controller.boardComment.BoardCommentController"/>
-
-
-<bean class="service.boardComment.BoardCommentListService"/>
-<bean class="repository.BoardCommentRepository"/>
-
-
-
+	<bean class="controller.boardComment.BoardCommentController"/>
+	<bean class="repository.BoardCommentRepository"/>
+	
+	<bean class="service.boardComment.BoardCommentListService"/>
+	<bean class = "service.boardComment.BoardCommentWriteService"/>
 
 </beans>

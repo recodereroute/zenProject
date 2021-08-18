@@ -13,11 +13,16 @@ public class BoardCommentRepository {
 	String namespace  = "mappers.BoardCommentMapper";
 	String statement; 
 	
-	
-	
 	public List<BoardCommentDTO> cmntList(String boardNo){
 		statement=namespace+".cmntList";
 		return sqlSession.selectList(statement,boardNo);
-		
+	}
+	public String bcmntNo(BoardCommentDTO dto) {
+		statement = namespace + ".bcmntNo";
+		return sqlSession.selectOne(statement, dto);
+	}
+	public void bcmntWrite(BoardCommentDTO dto) {
+		statement = namespace + ".bcmntWrite";
+		sqlSession.insert(statement, dto);
 	}
 }
