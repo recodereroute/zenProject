@@ -32,7 +32,7 @@ public class MenuWriteService {
 				File file = new File(path + "/" + original);
 				try {
 					mf.transferTo(file);
-				} catch (Exception e) {
+				} catch (Exception e) { 
 					e.printStackTrace();
 				}
 				dto.setMenuImg(original+ ",");
