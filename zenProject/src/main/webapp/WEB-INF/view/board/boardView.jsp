@@ -28,9 +28,9 @@
 	
 	
 	<form action="bcmntWrite" method="post" >
-		<input type="hidden" name="cmntMemId", value="${authInfo.userId}"/>
-		<input type ="hidden" name = "boardNo", value = "${dto.boardNo }"/>
-		<input type = "hidden" name = "boardMemId", value = "${dto.memId }"/>
+		<input type="hidden" name="cmntMemId" value="${authInfo.userId}"/>
+		<input type ="hidden" name = "boardNo" value = "${dto.boardNo }"/>
+		<input type = "hidden" name = "boardMemId" value = "${dto.memId }"/>
 		<table>
 			<tr>
 				<td>${authInfo.userId}</td>
@@ -40,19 +40,22 @@
 		</table>
 	</form>
 	
-	<table border = 1>
-		<c:forEach items="${bcmntList }" var="bcmnt">
-			<tr>
-				<td>${bcmnt.cmntMemId }</td>
-				<td>${bcmnt.boardCmntCon }</td>
-				<td>${bcmnt.boardCmntDate }</td>
-				<c:if test="${authInfo.userId == bcmnt.cmntMemId }">
-					<td><a href="">수정</a> /<a href="">삭제</a></td>
-				</c:if>
-			</tr>
-		</c:forEach>
-
-	</table>
+	   <table border = 1>
+      <c:forEach items="${bcmntList }" var="bcmnt">
+         <tr>
+         	
+            <td>${bcmnt.cmntMemId }</td>
+            <td id="nowComment">${bcmnt.boardCmntCon }</td>
+            <td id ="nowDate">${bcmnt.boardCmntDate }</td>
+            <c:if test="${authInfo.userId == bcmnt.cmntMemId }">
+               <td>
+                  <input type="button" id="modifyBtn" onclick="cmntModify" value="댓글수정"> 
+                  /<a href="javascript:location.href='bcmntDel?boardCmntNo=${bcmnt.boardCmntNo }&boardNo=${dto.boardNo}'">삭제</a></td>
+                  
+            </c:if>
+         </tr>
+      </c:forEach>
+   </table>
 
 
 
@@ -60,4 +63,31 @@
 
 
 </body>
+
+
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-latest.js">
+	
+</script>
+<script type="text/javascript">
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </html>

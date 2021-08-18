@@ -9,7 +9,7 @@
 		WHERE BOARD_NO = #{boardNo}
 	</select>
 	<select id="cmntList" resultType="bcDTO" parameterType="string">
-		select CMNT_MEM_ID cmntMemId, B_CMNT_CON boardCmntCon, B_CMNT_DATE boardCmntDate
+		select B_CMNT_NO boardCmntNo,CMNT_MEM_ID cmntMemId, B_CMNT_CON boardCmntCon, B_CMNT_DATE boardCmntDate
 		from board_comment
 		where BOARD_NO = #{boardNo}
 	</select>

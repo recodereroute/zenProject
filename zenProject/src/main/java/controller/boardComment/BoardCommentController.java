@@ -21,4 +21,10 @@ public class BoardCommentController {
 		return "redirect:boardDetail?boardNo="+boardNo;
 	}
 	
+	@RequestMapping("bcmntDelete")
+	public String bcmntDelete() {
+		return null;
+		
+	}
+	
 }

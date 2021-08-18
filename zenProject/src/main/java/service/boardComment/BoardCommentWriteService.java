@@ -11,6 +11,11 @@ public class BoardCommentWriteService {
 	public void bcmntWrite(BoardCommentDTO boardCommentDTO) {
 		String bcmntNo = boardCommentRepository.bcmntNo(boardCommentDTO);
 		boardCommentDTO.setBoardCmntNo(bcmntNo);
+		
+		
+		
+		
+		
 		boardCommentRepository.bcmntWrite(boardCommentDTO);
 	}
 }
