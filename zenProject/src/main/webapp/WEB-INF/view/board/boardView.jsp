@@ -28,9 +28,9 @@
 	
 	
 	<form action="bcmntWrite" method="post" >
-		<input type="hidden" name="cmntMemId", value="${authInfo.userId}"/>
-		<input type ="hidden" name = "boardNo", value = "${dto.boardNo }"/>
-		<input type = "hidden" name = "boardMemId", value = "${dto.memId }"/>
+		<input type="hidden" name="cmntMemId"  value="${authInfo.userId}"/>
+		<input type ="hidden" name = "boardNo" value = "${dto.boardNo }"/>
+		<input type = "hidden" name = "boardMemId" value = "${dto.memId }"/>
 		<table>
 			<tr>
 				<td>${authInfo.userId}</td>
@@ -48,7 +48,7 @@
 				<td id ="nowDate">${bcmnt.boardCmntDate }</td>
 				<c:if test="${authInfo.userId == bcmnt.cmntMemId }">
 					<td>
-						<input type="button" id="modifyBtn" value="댓글수정"> 
+						<a href="bcmntModify?boardCmntNo=${bcmnt.boardCmntNo }&boardNo=${dto.boardNo}">수정</a>
 						/<a href="bcmntDelete?boardCmntNo=${bcmnt.boardCmntNo }&boardNo=${dto.boardNo}">삭제</a></td>
 				</c:if>
 			</tr>

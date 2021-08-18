@@ -12,4 +12,5 @@
 	<bean class="service.boardComment.BoardCommentListService"/>
 	<bean class="service.boardComment.BoardCommentWriteService"/>
 	<bean class="service.boardComment.BoardCommentDeleteService"/>
+	<bean class="service.boardComment.BoardCommentModifyService"/>
 </beans>

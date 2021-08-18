@@ -38,4 +38,5 @@ public class ColumnRepository {
 		statement = namespace +".columnDel";
 		sqlSession.delete(statement, noticeNo);
 	}
+	
 }

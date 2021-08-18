@@ -22,4 +22,10 @@
 		DELETE FROM BOARD_COMMENT
 		WHERE BOARD_NO = #{boardNo} and B_CMNT_NO = #{boardCmntNo}
 	</delete>
+	<update id="bcmntModify" parameterType="bcDTO">
+	update board_Commnet
+		set B_CMNT_CON =#{boardCmntCon}
+		where B_CMNT_NO= #{boardCmntNo} and BOARD_NO= #{boardNo}
+	
+	 </update>
 </mapper>

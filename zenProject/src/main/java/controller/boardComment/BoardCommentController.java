@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import Model.BoardCommentDTO;
 import service.boardComment.BoardCommentDeleteService;
+import service.boardComment.BoardCommentModifyService;
 import service.boardComment.BoardCommentWriteService;
 
 @Controller
@@ -16,6 +17,10 @@ public class BoardCommentController {
 	BoardCommentWriteService boardCommentWriteService;
 	@Autowired
 	BoardCommentDeleteService boardCommentDeleteService;
+	@Autowired
+	BoardCommentModifyService boardCommentModifyService;
+	
+	
 	@RequestMapping("bcmntWrite")
 	public String bcmntWrite(@RequestParam(value="boardNo")String boardNo,
 							BoardCommentDTO boardCommentDTO) {
@@ -28,4 +33,13 @@ public class BoardCommentController {
 		boardCommentDeleteService.bcmntDelete(boardCmntNo, boardNo);
 		return "redirect:boardDetail?boardNo="+boardNo;
 	}
+	@RequestMapping("bcmntModify")
+	public String bcmntModify(
+			@RequestParam(value="boardCmntNo")String boardCmntNo,
+			@RequestParam(value="boardNo")String boardNo
+			) {
+		boardCommentModifyService.bcmntModify(boardCmntNo,boardNo);
+		return  "redirect:boardDetail?boardNo="+boardNo;
+	}
+	
 }
