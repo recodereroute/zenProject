@@ -27,7 +27,5 @@ public class EmployeeJoinService {
 		dto.setEmpPw(bcryptPasswordEncoder.encode(employeeCommand.getEmpPw()));
 		dto.setEmpHireDate(employeeCommand.getEmpHireDate());
 		employeeRepository.empJoin(dto);
-		
 	}
-
 }

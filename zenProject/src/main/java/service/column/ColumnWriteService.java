@@ -12,18 +12,13 @@ import repository.ColumnRepository;
 public class ColumnWriteService {
 	@Autowired
 	ColumnRepository columnRepository;
- public void columnWrite(NoticeCommand noticeCommand , HttpSession session) {
-	 NoticeDTO dto= new NoticeDTO();
-	 dto.setNoticeCon(noticeCommand.getNoticeCon());
-	 dto.setNoticeTitle(noticeCommand.getNoticeTitle());
-	 AuthInfoDTO authInfo=(AuthInfoDTO)session.getAttribute("authInfo");
-	 String empNo=authInfo.getGrade();
-	 dto.setEmpNo(empNo);
-	 
-	 
-	 System.out.println(noticeCommand.getNoticeCon());
-	 System.out.println(noticeCommand.getNoticeTitle());
-	 System.out.println(empNo);
-		columnRepository.columnWrite(dto);
- }
+	public void columnWrite(NoticeCommand noticeCommand , HttpSession session) {
+		 NoticeDTO dto= new NoticeDTO();
+		 dto.setNoticeCon(noticeCommand.getNoticeCon());
+		 dto.setNoticeTitle(noticeCommand.getNoticeTitle());
+		 AuthInfoDTO authInfo=(AuthInfoDTO)session.getAttribute("authInfo");
+		 String empNo=authInfo.getGrade();
+		 dto.setEmpNo(empNo);
+			columnRepository.columnWrite(dto);
+	}
 }

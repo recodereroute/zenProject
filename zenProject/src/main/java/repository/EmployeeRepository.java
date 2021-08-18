@@ -40,7 +40,6 @@ public class EmployeeRepository {
 		statement = namespace + ".empPwUpdate";
 		sqlSession.update(statement,dto);
 	}
-	
 	//직원 리스트
 	public List<EmployeesDTO> empList(){
 		statement = namespace + ".empList";

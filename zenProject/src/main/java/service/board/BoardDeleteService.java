@@ -13,7 +13,6 @@ public class BoardDeleteService {
 @Autowired
 BoardRepository boardRepository;
 	public void boardDel(String boardNo, HttpSession session) {
-		
 		BoardDTO dto= boardRepository.boardDetail(boardNo);
 		String []fileNames=dto.getBoardFile().split(",");
 		
@@ -23,6 +22,5 @@ BoardRepository boardRepository;
 			if(f.exists()) f.delete();
 		}
 		boardRepository.boardDel(boardNo);
-		
 	}
 }

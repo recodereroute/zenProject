@@ -18,13 +18,11 @@ public class ColumnRepository {
 		sqlSession.insert(statement,dto);
 	}
 	
-	public List<NoticeDTO> columnList(NoticeDTO dto)
-	{
+	public List<NoticeDTO> columnList(NoticeDTO dto){
 		statement = namespace + ".columnList";
 		return sqlSession.selectList(statement,dto);
 	}
-	public void columnReadUpdate(String noticeNo)
-	{
+	public void columnReadUpdate(String noticeNo){
 		statement=namespace+".columnCount";
 		sqlSession.update(statement,noticeNo);
 	}
@@ -32,12 +30,10 @@ public class ColumnRepository {
 		statement=namespace+".columnDetail";
 		return sqlSession.selectOne(statement,noticeNo);
 	}
-	public void columnModify(NoticeDTO dto)
-	{
+	public void columnModify(NoticeDTO dto){
 		statement=namespace+".columnModify";
 		sqlSession.update(statement,dto);
 	}	
-
 	public void columnDel(String noticeNo) {
 		statement = namespace +".columnDel";
 		sqlSession.delete(statement, noticeNo);

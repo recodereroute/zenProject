@@ -18,8 +18,7 @@
 				 NOTICE_KIND, NOTICE_CNT, EMP_NO
 				)
 	values((<include refid="noticeNum"/>),#{noticeTitle},#{noticeCon},sysdate,2,0,#{empNo})
-	</insert>
-	
+</insert>	
 
 <update id="columnCount" parameterType="string">
 	update NOTICE

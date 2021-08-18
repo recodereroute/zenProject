@@ -27,7 +27,6 @@ public class MenuListService {
 			sep.setEndRow(endRow);
 			dto.setStartEndPageDTO(sep);
 		}
-		
 		List<MenuDTO> list = menuRepository.menuList(dto);
 		int count = menuRepository.count();
 		model.addAttribute("lists", list);

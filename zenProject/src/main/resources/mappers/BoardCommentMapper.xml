@@ -18,5 +18,8 @@
 								  BOARD_NO, B_CMNT_CON, B_CMNT_DATE)
 		VALUES (#{boardCmntNo},#{cmntMemId},#{boardMemId},#{boardNo},#{boardCmntCon},sysdate)
 	</insert>
-
+	<delete id="bcmntDelete" parameterType="bcDTO">
+		DELETE FROM BOARD_COMMENT
+		WHERE BOARD_NO = #{boardNo} and B_CMNT_NO = #{boardCmntNo}
+	</delete>
 </mapper>

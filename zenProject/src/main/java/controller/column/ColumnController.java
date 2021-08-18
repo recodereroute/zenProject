@@ -30,43 +30,42 @@ public class ColumnController {
 	@Autowired
 	ColumnDeleteService columnDeleteService;
 	
- @RequestMapping("columnForm")
-	public String columnForm() {
-	 return "column/columnForm";
-	}
- @RequestMapping("columnWrite")
- public String columnWrite(
-		 NoticeCommand noticeCommand,HttpSession session
-		 ) {
-	 columnWriteService.columnWrite(noticeCommand, session);
-	 return "redirect:columnList";
- }
- @RequestMapping("columnList")
- public String columnList(
-			@RequestParam(value="page",defaultValue = "1") Integer page,
-		 Model model
-		 ) {
-	 columnListService.columnList(model,page);
-	 return "column/columnList";
- }
- @RequestMapping("columnDetail")
- public String columnDetail(
-			@RequestParam(value="noticeNo")String noticeNo,
-			Model model
-		 ) {
-	 columnDetailService.columnDetail(noticeNo, model);
-return "column/columnDetail";	 
- }
- @RequestMapping("columnUpdate")
- public String columnUpdate(
-		 @RequestParam(value="noticeNo")String noticeNo,
-			Model model
-		 )
- {
-	 columnDetailService.columnUpdate(noticeNo, model);
-	 return "column/columnModify";
- }
- @RequestMapping(value="columnModify",method = RequestMethod.POST)
+	 @RequestMapping("columnForm")
+		public String columnForm() {
+		 return "column/columnForm";
+		}
+	 @RequestMapping("columnWrite")
+	 public String columnWrite(
+			 NoticeCommand noticeCommand,HttpSession session
+			 ) {
+		 columnWriteService.columnWrite(noticeCommand, session);
+		 return "redirect:columnList";
+	 }
+	 @RequestMapping("columnList")
+	 public String columnList(
+				@RequestParam(value="page",defaultValue = "1") Integer page,
+			 Model model
+			 ) {
+		 columnListService.columnList(model,page);
+		 return "column/columnList";
+	 }
+	 @RequestMapping("columnDetail")
+	 public String columnDetail(
+				@RequestParam(value="noticeNo")String noticeNo,
+				Model model
+			 ) {
+		 columnDetailService.columnDetail(noticeNo, model);
+		 return "column/columnDetail";	 
+	 }
+	 @RequestMapping("columnUpdate")
+	 public String columnUpdate(
+			 @RequestParam(value="noticeNo")String noticeNo,
+				Model model
+			 ){
+		 columnDetailService.columnUpdate(noticeNo, model);
+		 return "column/columnModify";
+	 }
+ 	@RequestMapping(value="columnModify",method = RequestMethod.POST)
 	public String columnModify(
 			NoticeCommand noticeCommand
 			) {
@@ -81,9 +80,4 @@ return "column/columnDetail";
 		columnDeleteService.columnDel(noticeNo);
 		return "redirect:columnList";
 	}
- 
- 
- 
- 
- 
 }

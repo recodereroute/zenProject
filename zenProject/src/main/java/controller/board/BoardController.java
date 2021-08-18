@@ -22,18 +22,18 @@ import service.boardComment.BoardCommentListService;
 @Controller
 @RequestMapping("board")
 public class BoardController {
-@Autowired
-BoardWriteService boardWriteService;
-@Autowired
-BoardListService boardListService;
-@Autowired
-BoardDetailService boardDetailService;
-@Autowired
-BoardModifyService boardModifyService;
-@Autowired
-BoardDeleteService boardDeleteService;
-@Autowired
-BoardCommentListService boardCommentListService;
+	@Autowired
+	BoardWriteService boardWriteService;
+	@Autowired
+	BoardListService boardListService;
+	@Autowired
+	BoardDetailService boardDetailService;
+	@Autowired
+	BoardModifyService boardModifyService;
+	@Autowired
+	BoardDeleteService boardDeleteService;
+	@Autowired
+	BoardCommentListService boardCommentListService;
 	@RequestMapping("boardList")
 	public String boardList(
 			@RequestParam(value="page",defaultValue = "1")
@@ -98,6 +98,5 @@ BoardCommentListService boardCommentListService;
 		String path="WEB-INF/view/library/upload";
 		FileDownLoad fileDownLoad= new FileDownLoad();
 		fileDownLoad.fileDownLoad(path,store,original,request,response);
-		
 	}
 }

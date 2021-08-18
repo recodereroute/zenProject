@@ -19,6 +19,4 @@ public class BoardDetailService {
 		BoardDTO dto= boardRepository.boardDetail(boardNo);
 		model.addAttribute("dto",dto);
 	}
-	
-	
 }

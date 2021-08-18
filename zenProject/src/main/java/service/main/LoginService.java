@@ -13,8 +13,6 @@ import command.LoginCommand;
 import repository.LoginRepository;
 
 public class LoginService {
-
-	
 	@Autowired
 	LoginRepository loginRepository;
 	@Autowired

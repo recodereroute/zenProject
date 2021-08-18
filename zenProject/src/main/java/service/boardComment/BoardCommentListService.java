@@ -12,13 +12,7 @@ public class BoardCommentListService {
  @Autowired
  BoardCommentRepository boardCommentRepository;
 	public void cmntList(Model model,String boardNo) {
-		
-		List<BoardCommentDTO> bclist=boardCommentRepository.cmntList(boardNo);
-		System.out.println(bclist.get(1).getBoardCmntNo());
-		System.out.println(bclist.get(0).getBoardCmntNo());
-		System.out.println(bclist.get(0).getBoardCmntDate());
-		
-		model.addAttribute("bcmntList", bclist);
-		
+		List<BoardCommentDTO> list = boardCommentRepository.cmntList(boardNo);		
+		model.addAttribute("bcmntList", list);
 	}
 }
