@@ -19,8 +19,8 @@ public class MenuRepository {
 		return sqlSession.selectList(statement,dto);
 	}
 	//메뉴 번호
-	public int count() {
-		statement = nameSpace +".count";
+	public String menuNo() {
+		statement = nameSpace +".menuNo";
 		return sqlSession.selectOne(statement);
 	}
 	//메뉴 디테일
@@ -32,5 +32,9 @@ public class MenuRepository {
 	public void menuWrite(MenuDTO dto) {
 		statement = nameSpace + ".menuWrite";
 		sqlSession.selectList(statement,dto);
+	}
+	public int count() {
+		statement = nameSpace +".count";
+		return sqlSession.selectOne(statement);
 	}
 }

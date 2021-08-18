@@ -17,8 +17,8 @@
 		from menu
 	</select>
 	
-	<select id="count" resultType="int">
-		select count(*) from notice
+	<select id="menuNo" resultType="string">
+		select nvl(max(MENU_NO),0) + 1 from menu
 	</select>
 	
 	<select id="menuDetail" parameterType="string" resultType="Model.MenuDTO">
@@ -36,6 +36,7 @@
 		from menu
 		where MENU_NO = #{menuNO}
 	</select>
+	
 	<insert id="menuWrite" parameterType="Model.MenuDTO">
 		insert into menu(
 			MENU_NAME, MENU_MAIN_ITEM, MENU_SUB_ITEM, MENU_RECIPE,
@@ -50,6 +51,11 @@
 			,0,0
 		)
 	</insert>
+	
+	<select id="count" resultType="int">
+		select count(*) from notice
+	</select>
+	
 </mapper>
 <!-- 
 MENU_NO        NOT NULL NUMBER         

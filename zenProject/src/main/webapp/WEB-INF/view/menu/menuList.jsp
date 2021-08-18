@@ -18,7 +18,7 @@
 		</tr>
 	<c:forEach items="${lists }" var="dto" varStatus="cnt">
 		<tr>
-			<td>${ctn.count }</td>
+			<td>${dto.menuNo }</td>
 			<td><a href="menuDetail?menuNo=${dto.menuNo }">${dto.menuImg }</a></td>
 			<td><a href="menuDetail?menuNo=${dto.menuNo }">${dto.menuName }</a></td>
 			<td><fmt:formatDate value="${dto.menuDate }" type="date" pattern="yy-MM-dd"/></td>
@@ -32,6 +32,7 @@
 	</table>
 	<c:if test="${authInfo.grade >1}">
 	<a href="menuForm">메뉴 등록</a>
+	<a href="../index.jsp">메인으로 돌아가기</a>
 	</c:if>
 </body>
 </html>

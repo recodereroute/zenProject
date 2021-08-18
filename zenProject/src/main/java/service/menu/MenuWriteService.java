@@ -17,7 +17,7 @@ public class MenuWriteService {
 	MenuRepository menuRepository;
 	public void menuWrite(MenuCommand menuCommand, HttpSession session) {
 		MenuDTO dto = new MenuDTO();
-		String menuNo = String.valueOf(menuRepository.count());
+		String menuNo = menuRepository.menuNo();
 		dto.setMenuName(menuCommand.getMenuName());
 		dto.setMenuMainItem(menuCommand.getMenuMainItem());
 		dto.setMenuSubItem(menuCommand.getMenuSubItem());
