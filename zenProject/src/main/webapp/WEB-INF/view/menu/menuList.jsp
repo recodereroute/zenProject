@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
 <%@include file="../include/includeTags.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -19,7 +19,14 @@
 	<c:forEach items="${lists }" var="dto" varStatus="cnt">
 		<tr>
 			<td>${dto.menuNo }</td>
-			<td><a href="menuDetail?menuNo=${dto.menuNo }">${dto.menuImg }</a></td>
+			<td>
+				<c:if test="${empty dto.menuImg }">
+					등록된 이미지가 없습니다.			
+				</c:if>
+				<c:if test="${!empty dto.menuImg }">
+					<img src="../WEB-INF/view/menu/upload/${dto.menuImg }" alt="이미지 불러오기 실패">
+				</c:if>
+			</td>
 			<td><a href="menuDetail?menuNo=${dto.menuNo }">${dto.menuName }</a></td>
 			<td><fmt:formatDate value="${dto.menuDate }" type="date" pattern="yy-MM-dd"/></td>
 			<td>${dto.menuCnt}</td>

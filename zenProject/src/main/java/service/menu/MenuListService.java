@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 
 import Model.MenuDTO;
 import Model.StartEndPageDTO;
+import command.MenuCommand;
 import controller.board.PageAction;
 import repository.MenuRepository;
 
@@ -16,6 +17,7 @@ public class MenuListService {
 
 	public void menuList(Integer page, Model model) {
 		MenuDTO dto = new MenuDTO();
+		
 		int limit = 3;
 		int limitPage = 10;
 
@@ -36,6 +38,5 @@ public class MenuListService {
 			PageAction pageAction = new PageAction();
 			pageAction.page(count, limit, page, limitPage, model, "menuList");
 		}
-
 	}
 }

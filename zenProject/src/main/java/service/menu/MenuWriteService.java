@@ -25,17 +25,18 @@ public class MenuWriteService {
 		dto.setMenuNo(menuNo);
 		
 		String path = session.getServletContext().getRealPath("WEB-INF/view/menu/upload");
-		
+		String originalTotal = "";
 		if(!menuCommand.getMenuImg()[0].getOriginalFilename().equals("")) {
 			for(MultipartFile mf : menuCommand.getMenuImg()) {
 				String original = mf.getOriginalFilename();
+				originalTotal += original + ",";
 				File file = new File(path + "/" + original);
 				try {
 					mf.transferTo(file);
 				} catch (Exception e) { 
 					e.printStackTrace();
 				}
-				dto.setMenuImg(original+ ",");
+				dto.setMenuImg(originalTotal);
 			}
 		}
 		menuRepository.menuWrite(dto);

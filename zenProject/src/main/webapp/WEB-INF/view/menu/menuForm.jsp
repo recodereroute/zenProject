@@ -1,3 +1,7 @@
+<%@page import="java.security.Policy"%>
+<%@page import="org.apache.commons.fileupload.DefaultFileItem"%>
+<%@page import="org.springframework.web.multipart.MultipartRequest"%>
+<%@page import="java.io.File"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -27,9 +31,25 @@
                		<label for="menuSubItem">마늘</label> <br />
 		조리방법 : <textarea rows="5" cols="60" name="menuRecipe"></textarea> <br />
 		사진 첨부 : 
-			<input type="file" name="menuImg" multiple="multiple" />
+			<input type="file" name="menuImg" multiple="multiple" onchange="setThumbNail(event)"/>
 			<input type="submit" value="submit">
 			<input type="reset" value="reset" />
+			<div id="image-feild"></div>
 	</form>
 </body>
+<script type="text/javascript">
+	function setThumbNail(event) {
+		for(var image of event.target.files){
+			var reader = new FileReader();
+			reader.onload = function(event){
+				var img = document.createElement("img");
+				img.setAttribute("src",event.target.result);
+				document.querySelector("#image-feild").appendChild(img);
+			};
+			
+			console.log(image);
+			reader.readAsDataURL(image);			
+		}
+	}
+</script>
 </html>

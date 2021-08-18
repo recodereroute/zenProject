@@ -23,6 +23,7 @@ public class MenuController {
 	MenuDetailService menuDetailService;
 	@Autowired
 	MenuWriteService menuWriteService;
+	
 	//메뉴 리스트
 	@RequestMapping("menuList")
 	public String menuList(@RequestParam(value = "page", defaultValue = "1")Integer page, Model model){
@@ -44,6 +45,7 @@ public class MenuController {
 	@RequestMapping(value = "menuWrite", method = RequestMethod.POST)
 	public String menuWrite(MenuCommand menuCommand, HttpSession session) {
 		menuWriteService.menuWrite(menuCommand, session);
+//		menuThumbNailService.menuThumbNail();
 		return "redirect:menuList";
 	}
 	//메뉴 수정
