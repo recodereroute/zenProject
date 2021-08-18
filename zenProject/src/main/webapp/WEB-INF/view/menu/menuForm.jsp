@@ -1,5 +1,3 @@
-<%@page import="java.security.Policy"%>
-<%@page import="org.apache.commons.fileupload.DefaultFileItem"%>
 <%@page import="org.springframework.web.multipart.MultipartRequest"%>
 <%@page import="java.io.File"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"

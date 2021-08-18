@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
 <%@include file="../include/includeTags.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -18,7 +18,8 @@
 	조회수 : ${dto.menuCnt }<br>
 	<a href="menuList">리스트로 돌아가기</a><br>
 	<c:if test="${authInfo.grade > 1 }">
-		<a href="menuEdit?menuNo?=${dto.menuNo }">메뉴 수정</a>
+		<a href="menuEdit?menuNo=${dto.menuNo }">메뉴 수정</a>
+		<a href="menuDel?menuNo=${dto.menuNo }">메뉴 삭제</a>
 	</c:if>
 </body>
 </html>

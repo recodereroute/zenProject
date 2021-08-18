@@ -23,15 +23,20 @@ public class MenuRepository {
 		statement = nameSpace +".menuNo";
 		return sqlSession.selectOne(statement);
 	}
+	//메뉴 작성
+	public void menuWrite(MenuDTO dto) {
+		statement = nameSpace + ".menuWrite";
+		sqlSession.selectList(statement,dto);
+	}
 	//메뉴 디테일
 	public MenuDTO menuDetail(String menuNo) {
 		statement = nameSpace + ".menuDetail";
 		return sqlSession.selectOne(statement,menuNo);
 	}
-	//메뉴 작성
-	public void menuWrite(MenuDTO dto) {
-		statement = nameSpace + ".menuWrite";
-		sqlSession.selectList(statement,dto);
+	//메뉴 삭제
+	public void menuDel(String menuNo) {
+		statement = nameSpace + ".menuDel";
+		sqlSession.delete(statement,menuNo);
 	}
 	public int count() {
 		statement = nameSpace +".count";

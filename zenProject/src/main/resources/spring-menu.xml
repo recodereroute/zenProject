@@ -9,6 +9,7 @@
 	<bean class="service.menu.MenuListService"/>
 	<bean class="service.menu.MenuDetailService"/>
 	<bean class="service.menu.MenuWriteService"/>
+	<bean class="service.menu.MenuDeleteService"/>
 	
 	<bean class="repository.MenuRepository"/>
 </beans>

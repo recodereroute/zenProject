@@ -56,6 +56,11 @@
 		select count(*) from notice
 	</select>
 	
+	<delete id="menuDel" parameterType="string">
+		delete from menu
+		where MENU_NO = #{menuNo}
+	</delete>
+	
 </mapper>
 <!-- 
 MENU_NO        NOT NULL NUMBER         
