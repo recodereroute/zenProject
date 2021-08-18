@@ -33,7 +33,7 @@ public class NoticeEditService {
 			String org = "";
 			String str = "";
 			String fSize = "";
-			for(String s : fileNames) {
+			for(String s : fileNames) { 
 				org += s.split(",")[0] + ",";
 				str += s.split(",")[1] + ",";
 				fSize += s.split(",")[2] + ",";
