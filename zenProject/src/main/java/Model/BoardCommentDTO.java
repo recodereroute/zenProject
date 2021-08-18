@@ -8,10 +8,10 @@ import lombok.Setter;
 @Setter
 @Getter
 public class BoardCommentDTO {
-    int boardCmntNo;
+	String boardCmntNo;
     String cmntMemId;
     String boardMemId;
-    int boardNo;
+    String boardNo;
     String boardCmntCon;
     Date boardCmntDate;
 }

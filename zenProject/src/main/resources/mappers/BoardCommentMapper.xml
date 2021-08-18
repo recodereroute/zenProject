@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.BoardCommentMapper">
+
+	<select id="cmntList" resultType="bcDTO" parameterType="string">
+		select CMNT_MEM_ID cmntMemId, B_CMNT_CON boardCmntCon, B_CMNT_DATE boardCmntDate
+		from board_comment
+		where BOARD_NO = #{boardNo}
+	</select>
+
+
+</mapper>

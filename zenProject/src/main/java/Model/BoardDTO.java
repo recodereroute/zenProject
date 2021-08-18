@@ -19,4 +19,5 @@ public class BoardDTO {
     String boardOrgFile;
     String boardFileSize;
     StartEndPageDTO startEndPageDTO;
+    BoardCommentDTO boardCommentDTO;
 }
