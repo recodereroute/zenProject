@@ -18,9 +18,19 @@ public class MenuRepository {
 		statement = nameSpace + ".menuList";
 		return sqlSession.selectList(statement,dto);
 	}
-	//번호
+	//메뉴 번호
 	public int count() {
 		statement = nameSpace +".count";
 		return sqlSession.selectOne(statement);
+	}
+	//메뉴 디테일
+	public MenuDTO menuDetail(String menuNo) {
+		statement = nameSpace + ".menuDetail";
+		return sqlSession.selectOne(statement,menuNo);
+	}
+	//메뉴 작성
+	public void menuWrite(MenuDTO dto) {
+		statement = nameSpace + ".menuWrite";
+		sqlSession.selectList(statement,dto);
 	}
 }

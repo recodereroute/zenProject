@@ -22,7 +22,6 @@ public class BoardRepository {
 		sqlSession.insert(statement,dto);
 		
 	}
-	//
 	public List<BoardDTO> boardList(BoardDTO dto){
 		statement=namespace+".boardList";
 		return sqlSession.selectList(statement,dto);
@@ -32,7 +31,7 @@ public class BoardRepository {
 	{
 		statement=namespace+".boardCnt";
 		sqlSession.update(statement,boardNo);
-	}
+	}//
 	public BoardDTO boardDetail(String boardNo) {
 		statement=namespace+".boardDetail";
 		return sqlSession.selectOne(statement,boardNo);

@@ -1,20 +1,24 @@
 package Model;
 
+
+import java.util.Date;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
 public class MenuDTO {
-    int menuNo;
+    String menuNo;
     String menuRecipe;
     String menuName;
     String menuImg;
     String menuMainItem;
     String menuSubItem;
-    int menuRecmnd;
-    int menuCnt;
-    int empNo;
+    String menuRecmnd;
+    String menuCnt;
+    String empNo;
+    Date menuDate;
     
     StartEndPageDTO startEndPageDTO;
 }
