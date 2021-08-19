@@ -49,4 +49,11 @@ public class MenuRepository {
 		statement = nameSpace + ".menuModify";
 		sqlSession.update(statement,dto);
 	}
+	
+	public void menuReadUpdate(String menuNo)
+	{
+		statement=nameSpace+".menuCnt";
+		sqlSession.update(statement,menuNo);
+	}
+	
 }

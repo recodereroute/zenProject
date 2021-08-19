@@ -70,7 +70,12 @@
       menu_img = #{menuImg} 
       where menu_no = #{menuNo}
    </update>
-	
+   
+	<update id="menuCnt" parameterType="string">
+	update menu
+	set menu_CNT = menu_CNT + 1
+	where menu_NO = #{menuNo}
+</update>
 	
 	
 </mapper>

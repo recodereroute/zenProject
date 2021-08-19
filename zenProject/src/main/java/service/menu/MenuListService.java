@@ -14,12 +14,12 @@ import repository.MenuRepository;
 public class MenuListService {
 	@Autowired
 	MenuRepository menuRepository;
-
+	
 	public void menuList(Integer page, Model model) {
 		MenuDTO dto = new MenuDTO();
 		
 		int limit = 1;
-		//페이지 리스트 제한
+		//�럹�씠吏� 由ъ뒪�듃 �젣�븳
 		int limitPage = 5;
 		
 		if (page != null) {

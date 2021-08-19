@@ -6,46 +6,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet"> 
 <meta charset="UTF-8">
 <title>메인 화면</title>
 <style>
-.dropbtn {
-  background-color: #ea2129;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
 </style>
 </head>
 <body>
+
 <nav class="navbar navbar-default">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed"
@@ -107,25 +78,6 @@
 	</c:if>
 
 </c:if>
-<!-- jquery -->
 
-		<script src="//code.jquery.com/jquery.min.js"></script>
-
-		
-
-        <!-- BootStrap -->
-
-		<!-- 합쳐지고 최소화된 최신 CSS -->
-
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-		<!-- 부가적인 테마 -->
-
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
- 
-		<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-	
 </body>
 </html>
