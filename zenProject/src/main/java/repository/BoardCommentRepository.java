@@ -29,8 +29,12 @@ public class BoardCommentRepository {
 		statement = namespace + ".bcmntDelete";
 		sqlSession.delete(statement, dto);
 	}
+	public BoardCommentDTO bcmntInfo(BoardCommentDTO dto) {
+		statement = namespace + ".bcmntInfo";
+		return sqlSession.selectOne(statement, dto);
+	}
 	public void bcmntModify(BoardCommentDTO dto) {
 		statement = namespace + ".bcmntModify";
-		sqlSession.update(statement,dto);
+		sqlSession.update(statement, dto);
 	}
 }

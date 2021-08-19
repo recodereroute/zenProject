@@ -13,19 +13,25 @@
 		from board_comment
 		where BOARD_NO = #{boardNo}
 	</select>
+	<select id="bcmntInfo" parameterType="bcDTO" resultType="bcDTO">
+		select B_CMNT_NO boardCmntNo, BOARD_NO boardNo, CMNT_MEM_ID cmntMemId, B_CMNT_CON boardCmntCon
+		from board_comment
+		where BOARD_NO = #{boardNo} and B_CMNT_NO = #{boardCmntNo}
+	</select>
 	<insert id="bcmntWrite" parameterType="bcDTO">
 		INSERT INTO BOARD_COMMENT(B_CMNT_NO, CMNT_MEM_ID, BOARD_MEM_ID, 
 								  BOARD_NO, B_CMNT_CON, B_CMNT_DATE)
-		VALUES (#{boardCmntNo},#{cmntMemId},#{boardMemId},#{boardNo},#{boardCmntCon},sysdate)
+		VALUES (#{boardCmntNo},#{cmntMemId},#{boardMemId},#{boardNo},#{boardCmntCon},SYSDATE)
 	</insert>
 	<delete id="bcmntDelete" parameterType="bcDTO">
 		DELETE FROM BOARD_COMMENT
 		WHERE BOARD_NO = #{boardNo} and B_CMNT_NO = #{boardCmntNo}
 	</delete>
 	<update id="bcmntModify" parameterType="bcDTO">
-	update board_Commnet
-		set B_CMNT_CON =#{boardCmntCon}
-		where B_CMNT_NO= #{boardCmntNo} and BOARD_NO= #{boardNo}
+		UPDATE BOARD_COMMENT
+		SET B_CMNT_CON = #{boardCmntCon}, 
+			B_CMNT_DATE = SYSDATE
+		WHERE B_CMNT_NO= #{boardCmntNo} and BOARD_NO= #{boardNo}
 	
 	 </update>
 </mapper>

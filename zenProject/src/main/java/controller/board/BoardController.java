@@ -35,12 +35,8 @@ public class BoardController {
 	@Autowired
 	BoardCommentListService boardCommentListService;
 	@RequestMapping("boardList")
-	public String boardList(
-			@RequestParam(value="page",defaultValue = "1")
-			Integer page,
-			Model model
-			) {
-		boardListService.boardList(model,page);
+	public String boardList(@RequestParam(value="page",defaultValue = "1")Integer page, Model model) {
+		boardListService.boardList(model, page);
 		return "board/boardList";
 	}
 	@RequestMapping("boardWrite")
@@ -55,10 +51,7 @@ public class BoardController {
 		return "board/boardForm"; 
 	}
 	@RequestMapping("boardDetail")
-	public String boardDetail(
-			@RequestParam(value="boardNo")String boardNo,
-			Model model
-			) {
+	public String boardDetail(@RequestParam(value="boardNo")String boardNo, Model model) {
 		boardDetailService.boardDetail(boardNo, model);
 		boardCommentListService.cmntList(model,boardNo); 
 		return "board/boardView";

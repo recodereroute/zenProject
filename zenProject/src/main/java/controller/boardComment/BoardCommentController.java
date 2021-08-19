@@ -2,11 +2,13 @@ package controller.boardComment;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import Model.BoardCommentDTO;
 import service.boardComment.BoardCommentDeleteService;
+import service.boardComment.BoardCommentInfoService;
 import service.boardComment.BoardCommentModifyService;
 import service.boardComment.BoardCommentWriteService;
 
@@ -19,6 +21,8 @@ public class BoardCommentController {
 	BoardCommentDeleteService boardCommentDeleteService;
 	@Autowired
 	BoardCommentModifyService boardCommentModifyService;
+	@Autowired
+	BoardCommentInfoService boardCommentInfoService;
 	
 	
 	@RequestMapping("bcmntWrite")
@@ -34,12 +38,15 @@ public class BoardCommentController {
 		return "redirect:boardDetail?boardNo="+boardNo;
 	}
 	@RequestMapping("bcmntModify")
-	public String bcmntModify(
-			@RequestParam(value="boardCmntNo")String boardCmntNo,
-			@RequestParam(value="boardNo")String boardNo
-			) {
-		boardCommentModifyService.bcmntModify(boardCmntNo,boardNo);
-		return  "redirect:boardDetail?boardNo="+boardNo;
+	public String bcmntModify(@RequestParam(value="boardCmntNo")String boardCmntNo,
+						@RequestParam(value="boardNo")String boardNo, Model model) {
+		boardCommentInfoService.bcmntInfo(boardCmntNo, boardNo, model);
+		return  "board/bcmntModify";
+	}
+	@RequestMapping("bcmntModifyOk")
+	public String bcmntModifyOk(BoardCommentDTO boardCommentDTO) {
+		boardCommentModifyService.bcmntModify(boardCommentDTO);
+		return "redirect:boardDetail?boardNo="+boardCommentDTO.getBoardNo();
 	}
 	
 }
