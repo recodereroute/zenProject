@@ -39,7 +39,6 @@
 		<c:forEach items="${mcmntList }" var="mcmnt">
 			<tr>
 				<td>${mcmnt.memId }</td>
-				<td id="nowCommentNo">${mcmnt.menuCmntNo }</td>
 				<td id="nowComment">${mcmnt.menuCmntCon }</td>
 				<td id ="nowDate">${mcmnt.menuCmntDate }</td>
 				<c:if test="${authInfo.userId == mcmnt.memId }">
