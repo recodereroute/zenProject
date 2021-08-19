@@ -57,7 +57,7 @@
 	</select>
 	
 	<delete id="menuDel" parameterType="string">
-		delete from menu
+		delete from menu 
 		where MENU_NO = #{menuNo}
 	</delete>
 	 <update id="menuModify" parameterType="Model.MenuDTO">
