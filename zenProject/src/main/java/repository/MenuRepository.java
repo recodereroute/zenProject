@@ -23,7 +23,7 @@ public class MenuRepository {
 		statement = nameSpace +".menuNo";
 		return sqlSession.selectOne(statement);
 	}
-	//硫붾돱 �옉�꽦
+	//硫붾돱 �옉�꽦 
 	public void menuWrite(MenuDTO dto) {
 		statement = nameSpace + ".menuWrite";
 		sqlSession.selectList(statement,dto);
