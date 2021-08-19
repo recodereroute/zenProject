@@ -58,7 +58,7 @@
 	 
 	<delete id="menuDel" parameterType="string">
 		delete from menu 
-		where MENU_NO = #{menuNo}
+		where MENU_NO = #{menuNo} 
 	</delete>
 	 <update id="menuModify" parameterType="Model.MenuDTO">
       update menu
