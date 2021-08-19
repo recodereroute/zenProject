@@ -27,7 +27,7 @@ public class MenuRepository {
 	public void menuWrite(MenuDTO dto) {
 		statement = nameSpace + ".menuWrite";
 		sqlSession.selectList(statement,dto);
-	}
+	} 
 	//硫붾돱 �뵒�뀒�씪
 	public MenuDTO menuDetail(String menuNo) {
 		statement = nameSpace + ".menuDetail";
