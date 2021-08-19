@@ -38,6 +38,8 @@ public class MenuRepository {
 		statement = nameSpace + ".menuDel";
 		sqlSession.delete(statement,menuNo);
 	}
+	//메뉴 수정
+	
 	public int count() {
 		statement = nameSpace +".count";
 		return sqlSession.selectOne(statement);

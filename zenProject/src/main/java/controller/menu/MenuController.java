@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import command.MenuCommand;
 import service.menu.MenuDeleteService;
 import service.menu.MenuDetailService;
+import service.menu.MenuEditService;
 import service.menu.MenuListService;
 import service.menu.MenuWriteService;
 
@@ -26,6 +27,8 @@ public class MenuController {
 	MenuWriteService menuWriteService;
 	@Autowired
 	MenuDeleteService menuDeleteService;
+	@Autowired
+	MenuEditService menuEditService;
 	
 	//메뉴 리스트
 	@RequestMapping("menuList")
@@ -52,6 +55,11 @@ public class MenuController {
 		return "menu/menuView";
 	}
 	//메뉴 수정
+	@RequestMapping("menuEdit")
+	public String menuEdit(@RequestParam(value = "menuNo")String menuNo,Model model) {
+		menuEditService.menuEdit(menuNo, model);
+		return "menu/menuModify";
+	}
 	//메뉴 삭제
 	@RequestMapping("menuDel")
 	public String menuDel(@RequestParam(value = "menuNo")String menuNo,HttpSession session){

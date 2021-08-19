@@ -39,6 +39,7 @@ public class MenuWriteService {
 				dto.setMenuImg(originalTotal);
 			}
 		}
+		System.out.println(path);
 		menuRepository.menuWrite(dto);
 	}
 }

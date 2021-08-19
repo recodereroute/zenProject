@@ -16,7 +16,7 @@
 			<td>등록일</td>
 			<td>조회수</td>	
 		</tr>
-	<c:forEach items="${lists }" var="dto" varStatus="cnt">
+	<c:forEach items="${lists }" var="dto" >
 		<tr>
 			<td>${dto.menuNo }</td>
 			<td>
@@ -24,7 +24,7 @@
 					등록된 이미지가 없습니다.			
 				</c:if>
 				<c:if test="${!empty dto.menuImg }">
-					<img src="../WEB-INF/view/menu/upload/${dto.menuImg }" alt="이미지 불러오기 실패">
+					<img src='../menu/upload/${dto.menuImg.split(",")[0] }' alt="이미지 불러오기 실패">
 				</c:if>
 			</td>
 			<td><a href="menuDetail?menuNo=${dto.menuNo }">${dto.menuName }</a></td>

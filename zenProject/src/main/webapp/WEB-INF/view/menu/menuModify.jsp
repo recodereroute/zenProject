@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>메뉴 수정</title>
 </head>
 <body>
-
+	<form action="menuMofiy" method="post" ectype="multipart">>
+	
+	</form>
 </body>
 </html>
