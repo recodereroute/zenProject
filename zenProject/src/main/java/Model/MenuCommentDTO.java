@@ -8,8 +8,8 @@ import lombok.Setter;
 @Setter
 @Getter
 public class MenuCommentDTO {
-    int menuCmntNo;
-    int menuNo;
+    String menuCmntNo;
+    String menuNo;
     String menuRecipe;
     String memId;
     String menuCmntCon;

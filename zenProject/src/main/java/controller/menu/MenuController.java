@@ -15,6 +15,7 @@ import service.menu.MenuDetailService;
 import service.menu.MenuEditService;
 import service.menu.MenuListService;
 import service.menu.MenuWriteService;
+import service.menuComment.MenuCommentListService;
 
 @Controller
 @RequestMapping("menu")
@@ -29,6 +30,8 @@ public class MenuController {
 	MenuDeleteService menuDeleteService;
 	@Autowired
 	MenuEditService menuEditService;
+	@Autowired
+	MenuCommentListService menuCommentListService;
 	
 	//메뉴 리스트
 	@RequestMapping("menuList")
@@ -52,6 +55,7 @@ public class MenuController {
 	@RequestMapping("menuDetail")
 	public String menuDetail(@RequestParam(value = "menuNo")String menuNo, Model model) {
 		menuDetailService.menuDetail(menuNo,model);
+		menuCommentListService.mcmntList(model, menuNo);
 		return "menu/menuView";
 	}
 	//메뉴 수정

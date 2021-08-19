@@ -48,7 +48,7 @@
 				<td id ="nowDate">${bcmnt.boardCmntDate }</td>
 				<c:if test="${authInfo.userId == bcmnt.cmntMemId }">
 					<td>
-						<a href="bcmntModify?boardCmntNo=${bcmnt.boardCmntNo }&boardNo=${dto.boardNo}">수정</a>
+						<a href="bcmntUpdate?boardCmntNo=${bcmnt.boardCmntNo }&boardNo=${dto.boardNo}">수정</a>
 						/<a href="bcmntDelete?boardCmntNo=${bcmnt.boardCmntNo }&boardNo=${dto.boardNo}">삭제</a></td>
 				</c:if>
 			</tr>

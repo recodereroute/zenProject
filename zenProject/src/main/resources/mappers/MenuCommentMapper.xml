@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.MenuCommentMapper">
+
+	<select id="mcmntNo" parameterType="mcDTO" resultType="string">
+		SELECT NVL(MAX(M_CMNT_NO), 0) + 1
+		FROM Menu_COMMENT
+		WHERE menu_NO = #{menuNo}
+	</select>
+	<select id="mcmntList" resultType="mcDTO" parameterType="string">
+		select M_CMNT_NO menuCmntNo,MEM_ID memId, M_CMNT_CON menuCmntCon, M_CMNT_DATE menuCmntDate
+		
+		from menu_comment
+		where menu_NO = #{menuNo}
+	</select>
+	
+	<insert id="mcmntWrite" parameterType="bcDTO">
+		INSERT INTO menu_comment(M_CMNT_NO, MEM_ID, 
+								  MENU_NO, M_CMNT_CON, M_CMNT_DATE)
+		VALUES (#{menuCmntNo},#{memId},#{menuNo},#{menuCmntCon},SYSDATE)
+	</insert>
+
+</mapper>

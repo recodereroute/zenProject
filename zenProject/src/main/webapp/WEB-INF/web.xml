@@ -36,6 +36,7 @@
   			classpath:spring-column.xml
   			classpath:spring-board-comment.xml
   			classpath:spring-menu.xml
+  			classpath:spring-menu-comment.xml
   		</param-value>
   	</init-param>
   </servlet>
