@@ -44,6 +44,8 @@
 				var idNum = 0;
 				var img = document.createElement("img");
 				img.setAttribute("src",event.target.result);
+				img.style.width = "300px";
+				img.style.height = "300px";
 				if(img.src.indexOf("jpeg") < 0 && img.src.indexOf("png") < 0){
 					img.src = "";
 					alert("jpg, png 파일만 등록할 수 있습니다.")
