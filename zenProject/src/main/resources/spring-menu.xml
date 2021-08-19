@@ -10,7 +10,7 @@
 	<bean class="service.menu.MenuDetailService"/>
 	<bean class="service.menu.MenuWriteService"/>
 	<bean class="service.menu.MenuDeleteService"/>
-	<bean class="service.menu.MenuEditService"/>
+	<bean class="service.menu.MenuModifyService"/>
 	
 	<bean class="repository.MenuRepository"/>
 </beans>

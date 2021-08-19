@@ -14,4 +14,8 @@ public class MenuDetailService {
 		MenuDTO dto = menuRepository.menuDetail(menuNo);
 		model.addAttribute("dto",dto);
 	}
+	public void menuEdit(String menuNo, Model model) {
+		MenuDTO dto = menuRepository.menuDetail(menuNo);
+		model.addAttribute("dto",dto);
+	}
 }

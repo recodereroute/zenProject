@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import command.MenuCommand;
 import service.menu.MenuDeleteService;
 import service.menu.MenuDetailService;
-import service.menu.MenuEditService;
+import service.menu.MenuModifyService;
 import service.menu.MenuListService;
 import service.menu.MenuWriteService;
 import service.menuComment.MenuCommentListService;
@@ -29,45 +29,50 @@ public class MenuController {
 	@Autowired
 	MenuDeleteService menuDeleteService;
 	@Autowired
-	MenuEditService menuEditService;
+	MenuModifyService menuModifyService;
 	@Autowired
 	MenuCommentListService menuCommentListService;
 	
-	//메뉴 리스트
+	//硫붾돱 由ъ뒪�듃
 	@RequestMapping("menuList")
 	public String menuList(@RequestParam(value = "page", defaultValue = "1")Integer page, Model model){
 		menuListService.menuList(page, model);
 		return "menu/menuList";
 	}
-	//메뉴 작성 페이지
+	//硫붾돱 �옉�꽦 �럹�씠吏�
 	@RequestMapping("menuForm")
 	public String menuForm() {
 		return "menu/menuForm";
 	}
-	//메뉴 작성
+	//硫붾돱 �옉�꽦
 	@RequestMapping(value = "menuWrite", method = RequestMethod.POST)
 	public String menuWrite(MenuCommand menuCommand, HttpSession session) {
 		menuWriteService.menuWrite(menuCommand, session);
 		
 		return "redirect:menuList";
 	}
-	//메뉴 디테일
+	//硫붾돱 �뵒�뀒�씪
 	@RequestMapping("menuDetail")
 	public String menuDetail(@RequestParam(value = "menuNo")String menuNo, Model model) {
 		menuDetailService.menuDetail(menuNo,model);
 		menuCommentListService.mcmntList(model, menuNo);
 		return "menu/menuView";
 	}
-	//메뉴 수정
+	//硫붾돱 �닔�젙
 	@RequestMapping("menuEdit")
 	public String menuEdit(@RequestParam(value = "menuNo")String menuNo,Model model) {
-		menuEditService.menuEdit(menuNo, model);
+		menuDetailService.menuEdit(menuNo, model);
 		return "menu/menuModify";
 	}
-	//메뉴 삭제
+	//硫붾돱 �궘�젣
 	@RequestMapping("menuDel")
 	public String menuDel(@RequestParam(value = "menuNo")String menuNo,HttpSession session){
 		menuDeleteService.menuDel(menuNo,session);
 		return "redirect:menuList";
+	}
+	@RequestMapping(value="menuModify", method= RequestMethod.POST)
+	public String menuModify(MenuCommand menuCommand, HttpSession session){	
+		menuModifyService.menuModify(menuCommand,session);
+		return "redirect:menuList";	
 	}
 }

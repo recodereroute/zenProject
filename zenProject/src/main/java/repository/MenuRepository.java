@@ -13,35 +13,40 @@ public class MenuRepository {
 	String nameSpace = "mappers.MenuMapper";
 	String statement;
 	
-	//메뉴 리스트 불러오기
+	//硫붾돱 由ъ뒪�듃 遺덈윭�삤湲�
 	public List<MenuDTO> menuList(MenuDTO dto){
 		statement = nameSpace + ".menuList";
 		return sqlSession.selectList(statement,dto);
 	}
-	//메뉴 번호
+	//硫붾돱 踰덊샇
 	public String menuNo() {
 		statement = nameSpace +".menuNo";
 		return sqlSession.selectOne(statement);
 	}
-	//메뉴 작성
+	//硫붾돱 �옉�꽦
 	public void menuWrite(MenuDTO dto) {
 		statement = nameSpace + ".menuWrite";
 		sqlSession.selectList(statement,dto);
 	}
-	//메뉴 디테일
+	//硫붾돱 �뵒�뀒�씪
 	public MenuDTO menuDetail(String menuNo) {
 		statement = nameSpace + ".menuDetail";
 		return sqlSession.selectOne(statement,menuNo);
 	}
-	//메뉴 삭제
+	//硫붾돱 �궘�젣
 	public void menuDel(String menuNo) {
 		statement = nameSpace + ".menuDel";
 		sqlSession.delete(statement,menuNo);
 	}
-	//메뉴 수정
+	//硫붾돱 �닔�젙
 	
 	public int count() {
 		statement = nameSpace +".count";
 		return sqlSession.selectOne(statement);
+	}
+	
+	public void menuModify(MenuDTO dto) {
+		statement = nameSpace + ".menuModify";
+		sqlSession.update(statement,dto);
 	}
 }

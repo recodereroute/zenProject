@@ -17,4 +17,5 @@ public class MenuCommand {
     String menuRecmnd;
     String menuCnt;
     String empNo;
+    String FileDel;
 }
