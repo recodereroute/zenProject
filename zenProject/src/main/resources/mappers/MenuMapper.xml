@@ -55,7 +55,7 @@
 	<select id="count" resultType="int">
 		select count(*) from menu
 	</select>
-	
+	 
 	<delete id="menuDel" parameterType="string">
 		delete from menu 
 		where MENU_NO = #{menuNo}
