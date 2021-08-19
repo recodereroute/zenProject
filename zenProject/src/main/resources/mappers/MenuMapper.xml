@@ -67,7 +67,7 @@
       menu_main_item = #{menuMainItem},
       menu_sub_item = #{menuSubItem},
       menu_recipe = #{menuRecipe},
-      menu_img = #{menuImg}
+      menu_img = #{menuImg} 
       where menu_no = #{menuNo}
    </update>
 	
