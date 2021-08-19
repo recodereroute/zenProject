@@ -40,7 +40,7 @@
 	function setThumbNail(event) {
 		for(var image of event.target.files){
 			var reader = new FileReader();
-			reader.onload = function(event){
+			reader.onload = function(event){ 
 				var idNum = 0;
 				var img = document.createElement("img");
 				img.setAttribute("src",event.target.result);
