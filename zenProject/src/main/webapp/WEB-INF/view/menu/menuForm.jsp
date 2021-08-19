@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
 	<form action="menuWrite" method="post" enctype="multipart/form-data">
@@ -29,7 +30,7 @@
                		<label for="menuSubItem">마늘</label> <br />
 		조리방법 : <textarea rows="5" cols="60" name="menuRecipe"></textarea> <br />
 		사진 첨부 : 
-			<input type="file" name="menuImg" multiple="multiple" onchange="setThumbNail(event)"/>
+			<input type="file" name="menuImg" multiple="multiple" onchange="setThumbNail(event);">
 			<input type="submit" value="submit">
 			<input type="reset" value="reset" />
 			<div id="image-feild"></div>
@@ -40,12 +41,15 @@
 		for(var image of event.target.files){
 			var reader = new FileReader();
 			reader.onload = function(event){
+				var idNum = 0;
 				var img = document.createElement("img");
 				img.setAttribute("src",event.target.result);
+				if(img.src.indexOf("jpeg") < 0 && img.src.indexOf("png") < 0){
+					img.src = "";
+					alert("jpg, png 파일만 등록할 수 있습니다.")
+				}
 				document.querySelector("#image-feild").appendChild(img);
-			};
-			
-			console.log(image);
+			}
 			reader.readAsDataURL(image);			
 		}
 	}

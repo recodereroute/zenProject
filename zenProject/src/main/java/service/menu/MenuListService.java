@@ -18,9 +18,10 @@ public class MenuListService {
 	public void menuList(Integer page, Model model) {
 		MenuDTO dto = new MenuDTO();
 		
-		int limit = 3;
-		int limitPage = 10;
-
+		int limit = 1;
+		//페이지 리스트 제한
+		int limitPage = 5;
+		
 		if (page != null) {
 			Long startRow = ((long) page - 1) * limit + 1;
 			Long endRow = startRow + limit - 1;
@@ -29,6 +30,7 @@ public class MenuListService {
 			sep.setEndRow(endRow);
 			dto.setStartEndPageDTO(sep);
 		}
+
 		List<MenuDTO> list = menuRepository.menuList(dto);
 		int count = menuRepository.count();
 		model.addAttribute("lists", list);

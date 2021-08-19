@@ -53,7 +53,7 @@
 	</insert>
 	
 	<select id="count" resultType="int">
-		select count(*) from notice
+		select count(*) from menu
 	</select>
 	
 	<delete id="menuDel" parameterType="string">

@@ -24,7 +24,7 @@
 					등록된 이미지가 없습니다.			
 				</c:if>
 				<c:if test="${!empty dto.menuImg }">
-					<img src='../menu/upload/${dto.menuImg.split(",")[0] }' alt="이미지 불러오기 실패">
+					<img src='../menu/upload/${dto.menuImg.split(",")[0] }' alt="이미지 불러오기 실패" width="300px" height="300px" >
 				</c:if>
 			</td>
 			<td><a href="menuDetail?menuNo=${dto.menuNo }">${dto.menuName }</a></td>
