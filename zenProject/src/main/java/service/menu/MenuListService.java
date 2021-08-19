@@ -18,9 +18,9 @@ public class MenuListService {
 	public void menuList(Integer page, Model model) {
 		MenuDTO dto = new MenuDTO();
 		
-		int limit = 1;
-		//�럹�씠吏� 由ъ뒪�듃 �젣�븳
-		int limitPage = 5;
+		int limit = 2;
+		
+		int limitPage = 1;
 		
 		if (page != null) {
 			Long startRow = ((long) page - 1) * limit + 1;

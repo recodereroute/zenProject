@@ -16,9 +16,9 @@
 			<td>등록일</td>
 			<td>조회수</td>	
 		</tr>
-	<c:forEach items="${lists }" var="dto" >
+	<c:forEach items="${lists }" var="dto" varStatus="cnt">
 		<tr>
-			<td>${dto.menuNo }</td>
+			<td>${cnt.count }</td>
 			<td>
 				<c:if test="${empty dto.menuImg }">
 					등록된 이미지가 없습니다.			

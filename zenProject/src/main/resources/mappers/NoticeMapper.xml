@@ -31,7 +31,7 @@
 			NOTICE_CNT noticeCnt, EMP_NO empNo,
 			NOTICE_ORG_FILE noticeOrgFile, NOTICE_FILE_SIZE noticeFileSize
 	from NOTICE
-	where notice_kind = 1 and notice_no = #{noticeNo}
+	where notice_no = #{noticeNo}
 </select>
 <delete id="noticeDel" parameterType="string">
 	delete from notice
@@ -42,9 +42,9 @@
 	set 
 		notice_title = #{noticeTitle},
 		notice_con = #{noticeCon},
-		notice_org_file = #{noticeOrgFile},
-		notice_file = #{noticeFile},
-		notice_file_size = #{noticeFileSize}
+		notice_org_file =#{noticeOrgFile},
+		notice_file_size =#{noticeFileSize},
+		notice_file=#{noticeFile}
 	where notice_no = #{noticeNo}
 </update>
 </mapper>

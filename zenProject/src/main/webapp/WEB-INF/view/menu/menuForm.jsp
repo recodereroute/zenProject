@@ -46,11 +46,11 @@
 				img.setAttribute("src",event.target.result);
 				img.style.width = "300px";
 				img.style.height = "300px";
-				if(img.src.indexOf("jpeg") < 0 && img.src.indexOf("png") < 0){
-					img.src = "";
-					alert("jpg, png 파일만 등록할 수 있습니다.")
-				}
 				document.querySelector("#image-feild").appendChild(img);
+				if(img.src.indexOf("jpeg") < 0 && img.src.indexOf("png") < 0){
+					alert("jpg, png 파일만 등록할 수 있습니다.");
+					img.parentNode.removeChild(img);
+				}
 			}
 			reader.readAsDataURL(image);			
 		}

@@ -60,8 +60,7 @@ public void boardModify(BoardCommand boardCommand,HttpSession session) {
 		if(boardCommand.getBoardFile()[0].getOriginalFilename()!= "") {
 			for(MultipartFile mf : boardCommand.getBoardFile()) {
 				String original1 = mf.getOriginalFilename();
-				String originalExt =
-						original1.substring(original1.lastIndexOf("."));
+				String originalExt = original1.substring(original1.lastIndexOf("."));
 				String store1 = //xnbsvklbsvfwssvsvfws.hwp
 						UUID.randomUUID().toString().replace("-","")
 						+ originalExt;
@@ -81,5 +80,5 @@ public void boardModify(BoardCommand boardCommand,HttpSession session) {
 			dto.setBoardFileSize(fileSize);
 		}	
 		boardRepository.boardModify(dto);
-}
+	}
 }
