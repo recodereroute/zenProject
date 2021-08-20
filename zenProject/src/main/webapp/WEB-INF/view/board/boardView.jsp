@@ -26,7 +26,7 @@
 		<a href="boardUpdate?boardNo=${dto.boardNo }">수정</a>
 	</c:if>
 	
-	
+	<c:if test="${authInfo.grade == 1 }">
 	<form action="bcmntWrite" method="post" >
 		<input type="hidden" name="cmntMemId"  value="${authInfo.userId}"/>
 		<input type ="hidden" name = "boardNo" value = "${dto.boardNo }"/>
@@ -39,7 +39,7 @@
 			</tr>
 		</table>
 	</form>
-	
+	</c:if>
 	<table border = 1>
 		<c:forEach items="${bcmntList }" var="bcmnt">
 			<tr>
