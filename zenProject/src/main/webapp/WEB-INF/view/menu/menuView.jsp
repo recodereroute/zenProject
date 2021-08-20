@@ -36,7 +36,8 @@
 		</table>
 	</form>
 	</c:if>
-	<c:forEach items="${mcmntList }" var="mcmnt">
+	<c:forEach items="${mcmntList }" var="mcmnt" varStatus="cnt">
+		<div id ="content${cnt.count }">
 		<table border = 1>
 			<tr>
 				<td>${mcmnt.memId }</td>
@@ -44,11 +45,32 @@
 				<td id ="nowDate">${mcmnt.menuCmntDate }</td>
 				<c:if test="${authInfo.userId == mcmnt.memId }">
 					<td>
-						<a href="mcmntModify?menuCmntNo=${mcmnt.menuCmntNo }&menuNo=${dto.menuNo }">수정</a>
+						<a href="javascript:mcmntModify('content${cnt.count}','${mcmnt.menuCmntNo }','${dto.menuNo}');">수정</a>
 						/<a href="mcmntDelete?menuCmntNo=${mcmnt.menuCmntNo }&menuNo=${dto.menuNo }">삭제</a></td>
 				</c:if>
 			</tr>
 		</table>
+		</div>
 	</c:forEach>
 </body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.js"></script>
+<script type="text/javascript">
+function mcmntModify(ele,b,c){
+	$.ajax({ //비동기식 - jquery.form.js가 있어야만 사용가능
+		type : "post",
+		url : "mcmntModify",// 여기로부터 받아온 값
+		dataType : "html",//보여주려는 결과 data-type
+		data : {"menuCmntNo":b,"menuNo":c},
+		//익명함수(이름이 없는 함수) : 직접 실행시킬수 없음 - 실행시키기 위한 객체가 필요
+		success : function(result){//result : data 넘겨줘서 나온 동기식 결과 페이지
+			$("#"+ele).html(result);
+		},
+		error : function(){
+			alert("에러가 발생했습니다.");
+			return;
+		}
+	});
+}
+</script>
 </html>

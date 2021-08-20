@@ -53,11 +53,9 @@ public class MenuController {
 	}
 	//硫붾돱 �뵒�뀒�씪
 	@RequestMapping("menuDetail")
-	public String menuDetail(@RequestParam(value = "menuNo")String menuNo,
-			@RequestParam(value = "flag", defaultValue = "F")String flag,Model model) {
+	public String menuDetail(@RequestParam(value = "menuNo")String menuNo, Model model) {
 		menuDetailService.menuDetail(menuNo,model);
 		menuCommentListService.mcmntList(model, menuNo);
-		model.addAttribute("flag",flag);
 		return "menu/menuView";
 	}
 	//硫붾돱 �닔�젙

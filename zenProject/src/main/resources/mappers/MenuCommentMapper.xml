@@ -26,7 +26,13 @@
 	</insert>
 	<delete id="mcmntDelete" parameterType="mcDTO">
 		DELETE FROM MENU_COMMENT
-		WHERE M_CMNT_NO = #{menuCmntNo} AND MENU_NO = ${menuNo}
+		WHERE M_CMNT_NO = #{menuCmntNo} AND MENU_NO = #{menuNo}
 	</delete>
-
+	<update id="mcmntModify" parameterType="mcDTO">
+		UPDATE MENU_COMMENT
+		SET M_CMNT_CON = #{menuCmntCon},
+			M_CMNT_DATE = SYSDATE
+		WHERE M_CMNT_NO = #{menuCmntNo} AND MENU_NO = #{menuNo}
+	</update>
+	
 </mapper>

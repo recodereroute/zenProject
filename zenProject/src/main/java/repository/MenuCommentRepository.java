@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import Model.MenuCommentDTO;
 
 public class MenuCommentRepository {
-
 	@Autowired
 	SqlSession sqlSession;
 	String namespace  = "mappers.MenuCommentMapper";
@@ -33,5 +32,9 @@ public class MenuCommentRepository {
 	public MenuCommentDTO mncntInfo(MenuCommentDTO dto) {
 		statement = namespace + ".mncntInfo";
 		return sqlSession.selectOne(statement, dto);
+	}
+	public void mcmntModify(MenuCommentDTO dto) {
+		statement = namespace + ".mcmntModify";
+		sqlSession.update(statement, dto);
 	}
 }

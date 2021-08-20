@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import Model.MenuCommentDTO;
 import service.menuComment.MenuCommentDeleteService;
 import service.menuComment.MenuCommentInfoService;
+import service.menuComment.MenuCommentModifyService;
 import service.menuComment.MenuCommentWriteService;
 
 @Controller
@@ -20,6 +21,8 @@ public class MenuCommentController {
 	MenuCommentDeleteService menuCommentDeleteService;
 	@Autowired
 	MenuCommentInfoService menuCommentInfoService;
+	@Autowired
+	MenuCommentModifyService menuCommentModifyService;
 	
 	@RequestMapping("mcmntWrite")
 	public String mcmntWrite(@RequestParam(value="menuNo") String menuNo,
@@ -38,5 +41,10 @@ public class MenuCommentController {
 			@RequestParam(value = "menuNo")String menuNo, Model model) {
 		menuCommentInfoService.mcmntInfo(menuCmntNo, menuNo, model);
 		return "menu/mcmntModify";
+	}
+	@RequestMapping("mcmntModifyOk")
+	public String mcmntModifyOk(MenuCommentDTO menuCommentDTO) {
+		menuCommentModifyService.mcmntModify(menuCommentDTO);
+		return "redirect:menuDetail?menuNo="+menuCommentDTO.getMenuNo();
 	}
 }
