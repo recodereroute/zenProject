@@ -17,7 +17,6 @@ public class MenuCommentRepository {
 	public String mcmntNo(MenuCommentDTO dto) {
 		statement=namespace+".mcmntNo";
 		return sqlSession.selectOne(statement,dto);
-		
 	}
 	public void mcmntWrite(MenuCommentDTO dto) {
 		statement = namespace + ".mcmntWrite";
@@ -26,5 +25,13 @@ public class MenuCommentRepository {
 	public List<MenuCommentDTO> mcmntList(String menuNo){
 		statement=namespace+".mcmntList";
 		return sqlSession.selectList(statement,menuNo);
+	}
+	public void mcmntDelete(MenuCommentDTO dto) {
+		statement = namespace + ".mcmntDelete";
+		sqlSession.delete(statement, dto);
+	}
+	public MenuCommentDTO mncntInfo(MenuCommentDTO dto) {
+		statement = namespace + ".mncntInfo";
+		return sqlSession.selectOne(statement, dto);
 	}
 }

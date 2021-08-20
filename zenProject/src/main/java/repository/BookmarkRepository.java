@@ -11,14 +11,4 @@ public class BookmarkRepository {
 	String namespace  = "mappers.BookmarkMapper";
 	String statement; 
 	
-	public void boomarkAdd(BookmarkDTO dto) {
-		statement = namespace + ".boomarkAdd";
-		sqlSession.insert(statement, dto);
-	}
-	public String bmkmenuNo(BookmarkDTO dto) {
-		
-		statement = namespace + ".bmkmenuNo";
-		return sqlSession.selectOne(statement, dto);
-	}
-	
 }

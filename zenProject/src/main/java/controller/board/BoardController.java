@@ -57,28 +57,19 @@ public class BoardController {
 		return "board/boardView";
 	}
 	@RequestMapping("boardUpdate")
-	public String boardUpdate(
-			@RequestParam(value="boardNo")String boardNo,
-			Model model
-			) {
+	public String boardUpdate(@RequestParam(value="boardNo")String boardNo, Model model) {
 		boardDetailService.boardUpdate(boardNo, model);
 		return "board/boardModify";
 	}
 	
 	@RequestMapping(value="boardModify",method = RequestMethod.POST)
-	public String boardModify(
-			BoardCommand boardCommand,
-			HttpSession session
-			) {
+	public String boardModify(BoardCommand boardCommand, HttpSession session) {
 		boardModifyService.boardModify(boardCommand,session);
-		
 		return"redirect:boardList";
 	}
 	@RequestMapping("boardDel")
-	public String boardDel(
-			@RequestParam(value="boardNo") String boardNo,
-			HttpSession session
-			) {
+	public String boardDel(@RequestParam(value="boardNo") String boardNo,
+						HttpSession session) {
 		boardDeleteService.boardDel(boardNo,session);
 		return "redirect:boardList";
 	}

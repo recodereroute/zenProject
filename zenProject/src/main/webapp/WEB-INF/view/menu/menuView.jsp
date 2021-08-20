@@ -16,32 +16,17 @@
 	조리법 : ${dto.menuRecipe }<br>
 	등록일 : <fmt:formatDate value="${dto.menuDate }" type="date" pattern="yy-MM-dd"/><br>
 	조회수 : ${dto.menuCnt }<br>
-	
-	<a href="" id ="bookmarkAdd"><input type="button" value="즐겨찾기 등록"/></a><br/>
-	
 	<a href="menuList">리스트로 돌아가기</a><br>
-	<c:if test="${authInfo.grade > 1 }">
+	
+	<c:if test="${authInfo.grade == dto.empNo }">
 		<a href="menuEdit?menuNo=${dto.menuNo }">메뉴 수정</a>
 		<a href="menuDel?menuNo=${dto.menuNo }">메뉴 삭제</a>
 	</c:if>
-		<c:if test="${authInfo.grade == 1 }">
-		
-		
-	  <form action="../bookmark/bookmarkList" method="post" name="bmkfrm"
-	  onsubmit="return bmkAddConfirm()">
-	  	<input type="hidden" name="memId"  value="${authInfo.userId}"/>
-		<input type ="hidden" name = "menuNo" value = "${dto.menuNo }"/>
-		<input type="submit" value="즐겨찾기 등록"/>
 	
-	  </form>
-	
-		
-		
-		
+	<c:if test="${authInfo.grade == 1 }">
 	<form action="mcmntWrite" method="post" >
 		<input type="hidden" name="memId"  value="${authInfo.userId}"/>
 		<input type ="hidden" name = "menuNo" value = "${dto.menuNo }"/>
-		
 		<table>
 			<tr>
 				<td>${authInfo.userId}</td>
@@ -51,41 +36,19 @@
 		</table>
 	</form>
 	</c:if>
-	<table border = 1>
-		<c:forEach items="${mcmntList }" var="mcmnt">
+	<c:forEach items="${mcmntList }" var="mcmnt">
+		<table border = 1>
 			<tr>
 				<td>${mcmnt.memId }</td>
 				<td id="nowComment">${mcmnt.menuCmntCon }</td>
 				<td id ="nowDate">${mcmnt.menuCmntDate }</td>
 				<c:if test="${authInfo.userId == mcmnt.memId }">
 					<td>
-						<a href="#">수정</a>
-						/<a href="#">삭제</a></td>
+						<a href="mcmntModify?menuCmntNo=${mcmnt.menuCmntNo }&menuNo=${dto.menuNo }">수정</a>
+						/<a href="mcmntDelete?menuCmntNo=${mcmnt.menuCmntNo }&menuNo=${dto.menuNo }">삭제</a></td>
 				</c:if>
 			</tr>
-		</c:forEach>
-	</table>
-	
-	
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript">
-	
-		function bmkAddConfirm(){
-		if(confirm("이동하시겠습니까?")){
-			document.frm.submit();
-		}else{
-			return false;
-		}
-	}
-	
-	</script>
-	
-	
-	
-	
-	
-	
-	
-	
+		</table>
+	</c:forEach>
 </body>
 </html>

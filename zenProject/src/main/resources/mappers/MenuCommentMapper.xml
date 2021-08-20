@@ -5,20 +5,28 @@
 
 	<select id="mcmntNo" parameterType="mcDTO" resultType="string">
 		SELECT NVL(MAX(M_CMNT_NO), 0) + 1
-		FROM Menu_COMMENT
+		FROM MENU_COMMENT
 		WHERE menu_NO = #{menuNo}
 	</select>
 	<select id="mcmntList" resultType="mcDTO" parameterType="string">
-		select M_CMNT_NO menuCmntNo,MEM_ID memId, M_CMNT_CON menuCmntCon, M_CMNT_DATE menuCmntDate
-		
+		select M_CMNT_NO menuCmntNo, MEM_ID memId, M_CMNT_CON menuCmntCon, M_CMNT_DATE menuCmntDate
 		from menu_comment
 		where menu_NO = #{menuNo}
 	</select>
+	<select id="mncntInfo" parameterType="mcDTO" resultType="mcDTO">
+		SELECT M_CMNT_NO menuCmntNo, MEM_ID memId, M_CMNT_CON menuCmntCon, MENU_NO menuNo
+		FROM MENU_COMMENT
+		WHERE MENU_NO = #{menuNo} AND M_CMNT_NO = #{menuCmntNo}
+	</select>
 	
-	<insert id="mcmntWrite" parameterType="bcDTO">
+	<insert id="mcmntWrite" parameterType="mcDTO">
 		INSERT INTO menu_comment(M_CMNT_NO, MEM_ID, 
-								  MENU_NO, M_CMNT_CON, M_CMNT_DATE)
+								 MENU_NO, M_CMNT_CON, M_CMNT_DATE)
 		VALUES (#{menuCmntNo},#{memId},#{menuNo},#{menuCmntCon},SYSDATE)
 	</insert>
+	<delete id="mcmntDelete" parameterType="mcDTO">
+		DELETE FROM MENU_COMMENT
+		WHERE M_CMNT_NO = #{menuCmntNo} AND MENU_NO = ${menuNo}
+	</delete>
 
 </mapper>

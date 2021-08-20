@@ -10,7 +10,6 @@ import lombok.Setter;
 public class MenuCommentDTO {
     String menuCmntNo;
     String menuNo;
-    String menuRecipe;
     String memId;
     String menuCmntCon;
     Date menuCmntDate;

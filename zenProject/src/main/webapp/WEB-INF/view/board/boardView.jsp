@@ -25,12 +25,8 @@
 	<c:if test="${authInfo.userId == dto.memId }">
 		<a href="boardUpdate?boardNo=${dto.boardNo }">수정</a>
 	</c:if>
+	
 	<c:if test="${authInfo.grade == 1 }">
-	
-
-	
-	
-	
 	<form action="bcmntWrite" method="post" >
 		<input type="hidden" name="cmntMemId"  value="${authInfo.userId}"/>
 		<input type ="hidden" name = "boardNo" value = "${dto.boardNo }"/>
@@ -44,34 +40,45 @@
 		</table>
 	</form>
 	</c:if>
-	<table border = 1>
-		<c:forEach items="${bcmntList }" var="bcmnt">
+	
+		<c:forEach items="${bcmntList }" var="bcmnt" varStatus="cnt">
+		<div id = "content${cnt.count }">
+		<table border = 1>
 			<tr>
 				<td>${bcmnt.cmntMemId }</td>
-				<td id="nowComment">${bcmnt.boardCmntCon }</td>
-				<td id ="nowDate">${bcmnt.boardCmntDate }</td>
+				<td id="nowcomment">${bcmnt.boardCmntCon }</td>
+				<td id ="nowdate">${bcmnt.boardCmntDate }</td>
 				<c:if test="${authInfo.userId == bcmnt.cmntMemId }">
 					<td>
-						<a href="bcmntModify?boardCmntNo=${bcmnt.boardCmntNo }&boardNo=${dto.boardNo}">수정</a>
-						/<a href="bcmntDelete?boardCmntNo=${bcmnt.boardCmntNo }&boardNo=${dto.boardNo}">삭제</a></td>
+						<div>
+						<a href="javascript:bcmntmodify('content${cnt.count }','${bcmnt.boardCmntNo }','${dto.boardNo}');">수정</a>
+						/<a href="bcmntdelete?boardcmntno=${bcmnt.boardCmntNo }&boardno=${dto.boardNo}">삭제</a>
+						</div></td>
 				</c:if>
 			</tr>
+		</table>
+		</div>
 		</c:forEach>
-	</table>
+	
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.js"></script>
 <script type="text/javascript">
-	function cmntModify(){
-	     
-
-	    }
-	function goPost(val1, val2){
-		var f = document.writeform;
-		f.val1.value=val1;
-		f.val2.value=val2;
-		f.submit();
-		}
-	
-
+	function bcmntmodify(ele,b,c){
+		$.ajax({ //비동기식 - jquery.form.js가 있어야만 사용가능
+			type : "post",
+			url : "bcmntModify",// 여기로부터 받아온 값
+			dataType : "html",//보여주려는 결과 data-type
+			data : {"boardCmntNo":b,"boardNo":c},
+			//익명함수(이름이 없는 함수) : 직접 실행시킬수 없음 - 실행시키기 위한 객체가 필요
+			success : function(result){//result : data 넘겨줘서 나온 동기식 결과 페이지
+				$("#"+ele).html(result);
+			},
+			error : function(){
+				alert("에러가 발생했습니다.");
+				return;
+			}
+		});
+	}
 </script>
 </html>

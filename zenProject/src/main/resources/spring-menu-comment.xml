@@ -11,4 +11,6 @@
 	
 	<bean class="service.menuComment.MenuCommentListService"/>
 	<bean class="service.menuComment.MenuCommentWriteService"/>
+	<bean class="service.menuComment.MenuCommentDeleteService"/>
+	<bean class="service.menuComment.MenuCommentInfoService"/>
 </beans>
