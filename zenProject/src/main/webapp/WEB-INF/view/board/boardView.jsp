@@ -25,8 +25,12 @@
 	<c:if test="${authInfo.userId == dto.memId }">
 		<a href="boardUpdate?boardNo=${dto.boardNo }">수정</a>
 	</c:if>
-	
 	<c:if test="${authInfo.grade == 1 }">
+	
+
+	
+	
+	
 	<form action="bcmntWrite" method="post" >
 		<input type="hidden" name="cmntMemId"  value="${authInfo.userId}"/>
 		<input type ="hidden" name = "boardNo" value = "${dto.boardNo }"/>
@@ -67,5 +71,7 @@
 		f.val2.value=val2;
 		f.submit();
 		}
+	
+
 </script>
 </html>
