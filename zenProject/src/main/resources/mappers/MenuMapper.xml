@@ -40,7 +40,7 @@
 	<insert id="menuWrite" parameterType="Model.MenuDTO">
 		insert into menu(
 			MENU_NAME, MENU_MAIN_ITEM, MENU_SUB_ITEM, MENU_RECIPE,
-			MENU_NO, MENU_DATE, MENU_IMG, MENU_CNT, MENU_RECMND
+			MENU_NO, MENU_DATE, MENU_IMG, MENU_CNT, MENU_RECMND, EMP_NO
 		)
 		
 		values(
@@ -48,7 +48,7 @@
 			#{menuNo},sysdate,
 			<if test="menuImg == null">null</if>
 			<if test="menuImg != null">#{menuImg}</if>
-			,0,0
+			,0,0, #{empNo}
 		)
 	</insert>
 	

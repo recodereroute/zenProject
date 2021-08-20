@@ -1,7 +1,7 @@
 <%@page import="org.springframework.web.multipart.MultipartRequest"%>
 <%@page import="java.io.File"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +11,7 @@
 </head>
 <body>
 	<form action="menuWrite" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="empNo" value="${authInfo.grade }"/>
 		메뉴이름 : <input type="text" name="menuName" /> <br />
 		주재료 : <input type="checkbox" name="menuMainItem" id="menuMainItem" value="육류"/>
                		<label for="menuMainItem">육류</label>

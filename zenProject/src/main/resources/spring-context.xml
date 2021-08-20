@@ -24,7 +24,7 @@
 	<!-- prefix 경로 지정 -->
 	<mvc:resources location="/WEB-INF/view/" mapping="/**" cache-period="14400"/>
 	<!-- password암호화 -->
-	<bean id = "bcryptPasswordEncoder" 
+	<bean id = "bcryptPasswordEncoder"  
 	class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
 		<constructor-arg value="10"/>
 	</bean>

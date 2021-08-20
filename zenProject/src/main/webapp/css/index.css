@@ -1,0 +1,53 @@
+/* all */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+div{
+    border: black 1px solid;
+}
+a{
+    text-decoration: none;
+}
+
+/* header */
+.header{
+    background-color: coral;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    ali
+}
+.logo{
+    padding: 20px
+}
+.search-box{
+}
+
+/* nav-bar */
+.nav{
+    background-color: cornflowerblue;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* menu-view */
+.menu-view-box{
+    background-color: orange;
+    height: 30vh;
+}
+
+/* contents */
+.contents{
+    background-color: gold;
+    height: 30vh;
+}
+
+/* footer */
+.footer{
+    background-color: pink;
+    height: 10vh;
+}
