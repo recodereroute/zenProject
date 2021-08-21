@@ -8,7 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table>
+<div class="container">
+<h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
+<table class="table table-hover">
 		<tr>
 			<td>번호</td>
 			<td>제목</td>
@@ -29,9 +31,27 @@
 			<%@ include file="../include/includePage.jsp" %>
 		</td>
 		</tr>
-	</table>
+</table>
 	<c:if test="${authInfo.grade > 1 }">
-	<a href="columnForm"> 칼럼 등록</a>
-</c:if>
+	<a class="btn btn-default" href="columnForm"> 칼럼 등록</a>
+	</c:if>
+</div>
+	<!-- jquery -->
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	
+	<!-- BootStrap -->
+
+      <!-- 합쳐지고 최소화된 최신 CSS -->
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+      <!-- 부가적인 테마 -->
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+ 
+      <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </body>
 </html>

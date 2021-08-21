@@ -8,6 +8,7 @@
 <title>공지사항 등록</title>
 </head>
 <body>
+
 <form action="noticeWrite" method="post" name = "frm" enctype="multipart/form-data">
 	<table border = 1>
 	<tr><td>제목</td><td><input type="text" name="noticeTitle" /></td></tr>

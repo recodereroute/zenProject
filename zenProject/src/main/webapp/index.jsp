@@ -4,65 +4,102 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/index.css">
+    <title>이젠 프로젝트 메인 페이지</title>
+    
+    <script src="https://kit.fontawesome.com/1b82e6f304.js" crossorigin="anonymous"></script>
+   <style>
+   #input1{
+		width: 300px;
+		height: 50px;
+		background-color: orange;
+		border: 3px solid black;
+		border-radius: 5px;	
+	}
+   </style>
+    <!-- jQuery -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+<!-- Bootstrap CSS -->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+
+
+<!-- common CSS -->
+
+<link rel="stylesheet" href="<c:url value='/resources/common/css/common.css'/>" >
 </head>
 
 <body>
-    <div class="header">
+    <header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        </a>
 
-        <div class="logo">
-            <a href="index.jsp">EZEN FOOD</a>
-        </div>
+        <h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        
+          <li><a href="notice/noticeList" class="nav-link px-2 text-white">공지사항</a></li>
+          <li><a href="board/boardList" class="nav-link px-2 text-white">게시판</a></li>
+          <li><a href="menu/menuList" class="nav-link px-2 text-white">음식</a></li>
+          <li><a href="column/columnList" class="nav-link px-2 text-white">칼럼</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">즐겨찾기</a></li>
+        </ul>
 
-        <div class="search-box">
-            <form action="">
-                <label for="search-bar">뭐 해 먹을까?</label>
-                <input type="search" name="search-bar" id="search-bar">
-                <input type="submit" value="검색">
-            </form>
-        </div>
-
-        <div class="login-box">
-            <form action="login/login" method="post" name="frm">
-                <c:if test="${empty authInfo }">
-                    <!--<a href="search/idFind">아이디 찾기</a> |
-                    <a href="search/findPassword">비밀번호 찾기</a>|-->
-                    <a href="register">회원가입</a>
-                    <a href="login/login">로그인</a><input type="submit" value="로그인">
-                </c:if>
-                <!--<c:if test="${!empty authInfo }">
-                    <a href="login/logOut">logOut</a>
-                </c:if>
-                <c:if test="${!empty authInfo }">
-                    <c:if test="${authInfo.grade == 1 }">
-                        <a href="member/myPage">마이페이지</a>
-                    </c:if>
-                    <c:if test="${authInfo.grade != 1 }">
-                        <a href="employee/empMyPage">마이페이지</a>
-                        <a href="memList">회원리스트</a>
-                        <a href="employee/empList">직원 리스트</a>
-                        <a href="notice/noticeList">공지사항</a>
-                    </c:if>
-                </c:if>-->
-            </form>
-        </div>
-
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+        </form>
+        
+        <form action="login/login" method="post" name="frm"> 
+			  <c:if test="${empty authInfo }">  
+			     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+					<li><a href="search/idFind" class="nav-link px-2 text-secondary">아이디 찾기</a></li>
+					<li><a href="search/findPassword" class="nav-link px-2 text-secondary">비밀번호 찾기</a></li>
+					<li><a href="register" class="nav-link px-2 text-secondary">회원가입</a></li>
+				</ul>
+			
+			      <input type="submit" id="input1" value="로그인 하기">
+			      </c:if>
+			      <c:if test="${!empty authInfo }"> 
+			      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+					<li><a href="login/logOut" class="nav-link px-2 text-secondary">로그아웃</a></li>
+				</ul>   
+			      </c:if>
+			      
+			      
+			     <c:if test="${!empty authInfo }">
+				<!-- 로그인 되었을 때 -->
+				<c:if test="${authInfo.grade == 1 }">
+				<!-- 일반 사용자 -->
+				<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+					<li><a href="member/myPage" class="nav-link px-2 text-secondary">마이페이지</a></li>
+				</ul>
+				</c:if>
+				
+				<c:if test="${authInfo.grade != 1 }">
+				<!-- 관리자 -->
+				<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+					<li><a href="employee/empMyPage" class="nav-link px-2 text-secondary">마이페이지</a></li>
+					<li><a href="memList" class="nav-link px-2 text-secondary">멤버리스트</a></li>
+					<li><a href="employee/empList" class="nav-link px-2 text-secondary">직원리스트</a></li>
+				</ul>
+</c:if>
+			</c:if>		
+		    </form>
+     
+      </div>
     </div>
-
-    <div class="nav">
-        <a href="notice/noticeList">공지사항</a>
-        <a href="board/boardList">게시판</a>
-        <a href="menu/menuList">음식</a>
-        <a href="column/columnList">칼럼</a>
-        <a href="#">즐겨찾기</a>
-    </div>
+  </header>
+</body>
 
     <div class="menu-view-box">
 
@@ -72,10 +109,10 @@
 
         <div class="menu-thumbnail">
             <button>prev button </button>
-            <a href="#"><img src="" alt="조회수가 높은 이미지"></a>
-            <a href="#"><img src="" alt="조회수가 높은 이미지"></a>
-            <a href="#"><img src="" alt="조회수가 높은 이미지"></a>
-            <button> next button</button>
+                    <a href="#"><img src="" alt="조회수가 높은 이미지"></a>
+                    <a href="#"><img src="" alt="조회수가 높은 이미지"></a>
+                    <a href="#"><img src="" alt="조회수가 높은 이미지"></a>
+                    <button> next button</button>
         </div>
 
         <div class="more-menu">

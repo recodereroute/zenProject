@@ -17,7 +17,7 @@
          
          
    메뉴이미지:   <p>
-            <span id="file"> ${dto.menuImg.split(',')[0]}
+            <span id="file"> ${dto.menuImg.split(',')[idx.index]}
             </span> <input type="button" id="btn" onclick="fileDel1(this)"
                value="이미지 삭제" />
          </p>

@@ -8,6 +8,7 @@
 <title>공지 사항</title>
 </head>
 <body>
+
 	글 번호 : ${dto.noticeNo }<br />
 	제목 : ${dto.noticeTitle }<br />
 	내용 : ${dto.noticeCon }<br />

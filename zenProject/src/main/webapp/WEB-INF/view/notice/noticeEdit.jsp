@@ -8,6 +8,7 @@
 <title>공지사항 수정</title>
 </head>
 <body>
+
 	<form action="noticeEditOk" method="post" enctype="multipart/form-data">
 		글번호 : <input type="text" value="${dto.noticeNo }" readonly="readonly" name="noticeNo" /> <br />
 		제목 : <input type="text" value="${dto.noticeTitle }" name="noticeTitle" /><br />
