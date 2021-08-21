@@ -4,13 +4,14 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>이젠 프로젝트 메인 페이지</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="css/index.css">
-    <script src="https://kit.fontawesome.com/1b82e6f304.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -25,7 +26,7 @@
                 <label for="search-bar">뭐 해 먹을까?</label>
                 <input type="search" name="search-bar" id="search-bar">
                 <input type="submit" value="검색">
-        </form>
+            </form>
         </div>
 
         <div class="login-box">
@@ -33,8 +34,8 @@
                 <c:if test="${empty authInfo }">
                     <!--<a href="search/idFind">아이디 찾기</a> |
                     <a href="search/findPassword">비밀번호 찾기</a>|-->
-                    <a href="register"><i class="fas fa-user-check"></i></a>
-                    <a href="login/login"><i class="fab fa-keycdn"></i></a>
+                    <a href="register">회원가입</a>
+                    <a href="login/login">로그인</a><input type="submit" value="로그인">
                 </c:if>
                 <!--<c:if test="${!empty authInfo }">
                     <a href="login/logOut">logOut</a>
@@ -71,10 +72,10 @@
 
         <div class="menu-thumbnail">
             <button>prev button </button>
-                    <a href="#"><img src="" alt="조회수가 높은 이미지"></a>
-                    <a href="#"><img src="" alt="조회수가 높은 이미지"></a>
-                    <a href="#"><img src="" alt="조회수가 높은 이미지"></a>
-                    <button> next button</button>
+            <a href="#"><img src="" alt="조회수가 높은 이미지"></a>
+            <a href="#"><img src="" alt="조회수가 높은 이미지"></a>
+            <a href="#"><img src="" alt="조회수가 높은 이미지"></a>
+            <button> next button</button>
         </div>
 
         <div class="more-menu">
