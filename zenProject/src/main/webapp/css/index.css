@@ -1,53 +1,196 @@
 /* all */
 *{
-    margin: 0px;
-    padding: 0px;
-}
-div{
-    border: black 1px solid;
+  margin: 0px;
+  padding: 0px;
 }
 a{
-    text-decoration: none;
+  text-decoration: none;
+}
+a:visited{
+  color: #EFFFE9;
+}
+li{
+  list-style: none;
 }
 
 /* header */
-.header{
-    background-color: coral;
-    height: 20vh;
-    display: flex;
-    justify-content: space-between;
-    ali
+header{
+  display: flex;
+  justify-content: space-between;
+  background-image: url(https://static.vecteezy.com/system/resources/thumbnails/000/181/879/small/super-foods.jpg);
+  border-bottom: 3px #F68657 solid;
 }
-.logo{
-    padding: 20px;
+.project-logo{
+  margin: 20px;
+  position: relative;
 }
-.search-box{
+.project-logo a:link{
+  color: #E71D36;
+}
+.project-logo h1{
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.project-logo img{
+  width: 100%;
+  vertical-align: middle;
+  border-radius: 70px;
+  border: #E71D36 solid 2px;
+}
+.search-space{
+  padding: 20px;
+  align-items: center;
+  position: relative;
+}
+.search{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+#bar{
+  width: 400px;
+  height: 35px;
+  border-radius: 5px;
+  border: #E71D36 solid 2px;
+}
+#btn{
+  width: 100px;
+  height: 25px;
+  background-color: #754F44;
+  border: 0px;
+  border-radius: 5px;
+  color: #EFFFE9;
+  font-size: 15px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+.login-box{
+  margin: 10px;
+  padding: 5px 10px;
+  background-color: rgb(255, 230, 220);
+  height: 100px;
+  border-radius: 7px;
+}
+.login-box li{
+  margin: 2px;
+}
+.login-box a:link{
+	color: rgb(190, 161, 150);
+}
+.login-box a:visited{
+	color: rgb(190, 161, 150);
+}
+#login-btn {
+  width: 100px;
+  height: 30px;
+  background-color: #754F44;
+  border: 0px;
+  color: #EFFFE9;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
-/* nav-bar */
+/* nav */
 .nav{
-    background-color: cornflowerblue;
-    height: 10vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #E71D36;
+  border-bottom: 3px #F68657 solid;
+}
+.nav a:link{
+  color: #EFFFE9;
 }
 
-/* menu-view */
-.menu-view-box{
-    background-color: orange;
-    height: 30vh;
+/* menu-box */
+.menu-box
+{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  background-color: #E71D36;
+  padding: 20px;
+  border-bottom: 3px #F68657 solid;
+}
+.menu-box table{
+  background-color: #f53d53;
+  border: 3px solid #bd0d21;
+  border-radius: 7px;
+}
+.menu-box h1{
+  color: #EFFFE9;
+  margin-bottom: 10px;
+}
+.menu-box img{
+  margin: 0px 10px;
+  width: 250px;
+  height: 250px;
+  border-radius: 7px;
+}
+.menu-box p{
+  color: #EFFFE9;
+  margin: 10px;
+  font-size: 17px;
+}
+.menu-btn{
+  background-color: #754F44;
+  border: 0px;
+  border-radius: 5px;
+  color: #EFFFE9;
+  font-size: 15px;
+  padding: 10px;
 }
 
 /* contents */
 .contents{
-    background-color: gold;
-    height: 30vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #E71D36;
+  border-bottom: 3px #F68657 solid;
+}
+.notice-box,.board-box{
+  width: 35%;
+  background-color: #f53d53;
+  border: 3px solid #bd0d21;
+  border-radius: 7px;
+  margin: 20px;
+}
+.notice-box a:link,.board-box a:link{
+  color: #EFFFE9;
+}
+.contents table{
+  width: 100%;
+  text-align: center;
+}
+.contents h3{
+  text-align: left;
+  padding: 5px 10px;
+  color: #d5e9cd;
+}
+.contents td{
+  padding: 5px
 }
 
 /* footer */
-.footer{
-    background-color: pink;
-    height: 10vh;
+footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ad0c1f;
+  padding: 15px;
+}
+.team-logo-box img{
+  width: 100px;
+  border-radius: 7px;
+}
+.team-name-box li,.team-addr-box li{
+  margin: 5px;
+  color: #ff5e00;
 }
