@@ -29,11 +29,17 @@
 	</insert>
 	<select id="boardList" parameterType="Model.BoardDTO"
 		resultType="Model.BoardDTO">
-		select
-		Board_NO boardNo, board_title boardTitle,BOARD_CON boardCon,
-		BOARD_DATE boardDate, BOARD_FILE, BOARD_CNT boardCnt,
-		MEM_ID memId
-		from BOARD
+		select rn, boardNo, boardTitle, boardCon, boardDate, BOARD_FILE, boardCnt, memId
+		from(
+			select
+			ROWNUM rn, Board_NO boardNo, board_title boardTitle,BOARD_CON boardCon,
+			BOARD_DATE boardDate, BOARD_FILE, BOARD_CNT boardCnt, MEM_ID memId
+			from BOARD)
+		<trim prefix="where">
+		<if test="startEndPageDTO != null">
+			rn between #{startEndPageDTO.startRow} and #{startEndPageDTO.endRow}
+		</if>
+	</trim>
 	</select>
 	<update id="boardCnt" parameterType="string">
 		update board
@@ -62,7 +68,6 @@
 	</update>
 	<select id="count" resultType="int">
 		select count(*) from notice
-
 	</select>
 
 </mapper>

@@ -19,4 +19,6 @@ public class NoticeDTO {
     
     String noticeOrgFile;
 	String noticeFileSize;
+	
+	StartEndPageDTO startEndPageDTO;
 }

@@ -42,10 +42,7 @@ public class ColumnController {
 		 return "redirect:columnList";
 	 }
 	 @RequestMapping("columnList")
-	 public String columnList(
-				@RequestParam(value="page",defaultValue = "1") Integer page,
-			 Model model
-			 ) {
+	 public String columnList(@RequestParam(value="page",defaultValue = "1") Integer page, Model model) {
 		 columnListService.columnList(model,page);
 		 return "column/columnList";
 	 }
@@ -70,7 +67,6 @@ public class ColumnController {
 			NoticeCommand noticeCommand
 			) {
 		columnModifyService.columnModify(noticeCommand);
-		
 		return"redirect:columnList";
 	}
 	@RequestMapping("columnDel")

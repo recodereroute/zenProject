@@ -48,7 +48,6 @@ public class MenuController {
 	@RequestMapping(value = "menuWrite", method = RequestMethod.POST)
 	public String menuWrite(MenuCommand menuCommand, HttpSession session) {
 		menuWriteService.menuWrite(menuCommand, session);
-		
 		return "redirect:menuList";
 	}
 	//硫붾돱 �뵒�뀒�씪

@@ -17,7 +17,6 @@
 	등록일 : <fmt:formatDate value="${dto.menuDate }" type="date" pattern="yy-MM-dd"/><br>
 	조회수 : ${dto.menuCnt }<br>
 	<a href="menuList">리스트로 돌아가기</a><br>
-	
 	<c:if test="${authInfo.grade == dto.empNo }">
 		<a href="menuEdit?menuNo=${dto.menuNo }">메뉴 수정</a>
 		<a href="menuDel?menuNo=${dto.menuNo }">메뉴 삭제</a>

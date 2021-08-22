@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>게시판</title>
 </head>
 <body>
 <div class="container">
@@ -17,9 +17,9 @@
 			<td>등록일</td>
 			<td>조회수</td>
 		</tr>
-		<c:forEach items="${lists }" var="dto" varStatus="cnt"> <!--리스트 서비스에서name값을 가지고온다 -->
+		<c:forEach items="${boardLists }" var="dto" varStatus="cnt"> <!--리스트 서비스에서name값을 가지고온다 -->
 		<tr>
-			<td>${cnt.count }</td>
+			<td>${(page-1) * 3 + cnt.count}</td>
 			
 			<td><a href="boardDetail?boardNo=${dto.boardNo }">${dto.boardTitle }</a></td>
 			<td><fmt:formatDate value="${dto.boardDate }" type="date" pattern="yy-MM-dd"/></td>

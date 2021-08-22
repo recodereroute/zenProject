@@ -28,7 +28,7 @@ public class BoardListService {
 		}
 		List<BoardDTO> list = boardRepository.boardList(dto);
 		int count = boardRepository.count();
-		model.addAttribute("lists", list);
+		model.addAttribute("boardLists", list);
 		model.addAttribute("count", count);
 		if (page != null) {
 			PageAction pageAction = new PageAction();

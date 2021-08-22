@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>칼럼</title>
 </head>
 <body>
 <div class="container">
@@ -17,7 +17,7 @@
 			<td>등록일</td>
 			<td>조회수</td>
 		</tr>
-		<c:forEach items="${lists }" var="dto" varStatus="cnt"> 
+		<c:forEach items="${columnLists }" var="dto" varStatus="cnt"> 
 		<tr>
 			<td>${cnt.count }</td>
 			
