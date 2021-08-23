@@ -18,14 +18,14 @@ public class BookmarkController {
 	@Autowired
 	BookmarkListService bookmarkListService;
 	@RequestMapping("bookmarkAdd")
-	public String bookmakrAdd(
+	public String bookmarkAdd(
 			@RequestParam(value="menuNo") String menuNo,
 			@RequestParam(value="memId") String memId,
 			Model model
 			) {
 		bookmarkAddService.boomarkAdd(menuNo, memId, model);
 		
-		return "";
+		return "bookmark/bookmarkList";
 	}
 	@RequestMapping("bookmarkList")
 	public String bookmarkList(
@@ -33,8 +33,18 @@ public class BookmarkController {
 			) {
 		bookmarkListService.bookmarkList(menuNo, model);
 
-	return "bookmark/bookmarkList";
+	return "redirect:bookmarkList";
 	}
+	@RequestMapping("bookmarkDelete")
+	public String bookmarkDel(
+			@RequestParam(value="menuNo") String menuNo,
+			@RequestParam(value="memId") String memId
+			
+			) {
+		
+		return "redirect:bookmarkList";
+	}
+	
 
 }
 	

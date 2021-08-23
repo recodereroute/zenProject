@@ -24,12 +24,10 @@
 	
 	<c:if test="${authInfo.grade == 1 }">
 	
-		  <form action="../bookmark/bookmarkList" method="post" name="bmkfrm"
+		  <form action="../bookmark/bookmarkAdd" method="post" name="bmkfrm"
 	  onsubmit="return bmkAddConfirm()">
 	  	<input type="hidden" name="memId"  value="${authInfo.userId}"/>
 		<input type ="hidden" name = "menuNo" value = "${dto.menuNo }"/>
-		
-		
 		<input type="submit" value="즐겨찾기 등록"/>
 	  </form>
 	

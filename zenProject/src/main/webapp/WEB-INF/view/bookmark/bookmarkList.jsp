@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" isELIgnored="false" %>
-    
-    <%@include file="../include/includeTags.jsp"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
+
+<%@include file="../include/includeTags.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,17 +9,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:forEach items="${bmkList }" var="bmk" varStatus="cnt">
-		<table border = 1>
+	<table border=1>
+		<c:forEach items="${bmkList }" var="bmk">
 			<tr>
 				<td>${bmk.bookmarkKind }</td>
-				<td >${bmk.menuNo }</td>
-				
+				<td><a href="menuDetail?menuNo${bmk.menuNo }"></a>${bmk.menuNo }</td>
 				<c:if test="${authInfo.userId == bmk.memId }">
-					<td>
+				<!--삭제 넣을꺼임   -->			
+				<a herf="bookmarkDel?menuNo=${bmk.menuNo }&memId=${bmk.memId}">삭제</a>
+						
 				</c:if>
+
 			</tr>
-		</table>
-	</c:forEach>
+		</c:forEach>
+	</table>
 </body>
 </html>

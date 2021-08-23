@@ -3,15 +3,22 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mappers.BookmarkMapper">
 
-<insert id="boomarkAdd" parameterType="Model.BookmarkDTO" >
-insert into bookmark
-(menu_No, bookmark_kind)
-values(
-#{menuNo},1)
+	<insert id="boomarkAdd" parameterType="Model.BookmarkDTO">
+		insert into bookmark
+		(menu_No,bookmark_kind,mem_id)
+		values(#{menuNo},1,#{memId})
 
-</insert>
-<select id="bookmarkList"  parameterType="Model.BookmarkDTO" resultType="string" >
-select menu_no menuNo,bookmark_kind bookmarkKind from bookmark
+	</insert>
+	<select id="bookmarkList" parameterType="Model.BookmarkDTO"
+		resultType="string">
+		select menu_no menuNo,bookmark_kind bookmarkKind 
+		from bookmark 
+		where mem_id=#{memId}
 
-</select>
+	</select>
+	<delete id="bookmarkDel" parameterType="Model.BookmarkDTO">
+	delete from bookmark
+	where mem_id =#{memID} and menu_No=#{menuNo}
+	
+	</delete>
 </mapper>

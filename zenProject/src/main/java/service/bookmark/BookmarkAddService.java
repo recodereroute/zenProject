@@ -14,7 +14,6 @@ public class BookmarkAddService {
 			bookmarkDTO.setBookMarkKind("1");
 			bookmarkDTO.setMemId(memId);
 			bookmarkDTO.setMenuNo(menuNo);
-			
 			bookmarkRepository.boomarkAdd(bookmarkDTO);
 			model.addAttribute("dto",bookmarkDTO);
 			

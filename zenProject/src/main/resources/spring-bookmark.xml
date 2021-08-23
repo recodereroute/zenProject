@@ -10,5 +10,6 @@
 	
 	<bean class="service.bookmark.BookmarkAddService"/>
 	<bean class="service.bookmark.BookmarkListService"/>
+	<bean class="service.bookmark.BookmarkDeleteService"/>
 	<bean class = "repository.BookmarkRepository"/>
 </beans>
