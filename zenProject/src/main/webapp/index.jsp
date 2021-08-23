@@ -12,21 +12,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이젠 푸드 프로젝트</title>
     <link rel="stylesheet" href="css/index.css">
+    <!--구글 폰트-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
 </head>
 <header class="header">
 
     <div class="project-logo">
-        <a href="../index.jsp">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0itTHT2c-YUs4XTgSWRfruN6wAMDNJKt_dv_F69pvU3e45EjusjxDPexHDd--vf6QWnQ&usqp=CAU"
-                alt="불러오기 실패">
-            <h1 id="logo-link">EZEN FOOD
-        </a></h1>
+        <a href="index.jsp">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0itTHT2c-YUs4XTgSWRfruN6wAMDNJKt_dv_F69pvU3e45EjusjxDPexHDd--vf6QWnQ&usqp=CAU" alt="불러오기 실패">
+            <h1 id="logo-link">EZEN FOOD</h1>
         </a>
     </div>
 
     <div class="search-space">
         <form action="ezensearch">
-            <div class="search">
+            <div class="search-zone">
                 <input id="bar" type="search" placeholder="뭘 먹을까?">
                 <input id="btn" type="submit" value="검색">
             </div>
@@ -43,7 +45,7 @@
                     <li><a href="search/findPassword">비밀번호 찾기</a></li>
                 </ul>
             </c:if>
-             <c:if test="${!empty authInfo }">
+             <!--<c:if test="${!empty authInfo }">
                     <ul class="">
                         <li><a href="login/logOut">로그아웃</a></li>
                     </ul>
@@ -66,7 +68,7 @@
                             <li><a href="employee/empList">직원리스트</a></li>
                         </ul>
                     </c:if>
-                </c:if>
+                </c:if>-->
         </form>
     </div>
 </header>
@@ -167,7 +169,8 @@
 <footer>
 
     <div class="team-logo-box">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0itTHT2c-YUs4XTgSWRfruN6wAMDNJKt_dv_F69pvU3e45EjusjxDPexHDd--vf6QWnQ&usqp=CAU" alt="팀 로고">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0itTHT2c-YUs4XTgSWRfruN6wAMDNJKt_dv_F69pvU3e45EjusjxDPexHDd--vf6QWnQ&usqp=CAU"
+            alt="팀 로고">
     </div>
 
     <div class="team-name-box">

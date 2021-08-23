@@ -1,0 +1,68 @@
+/* all */
+/* #72CC82 base #3CB371 main #109972 accent */
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Poor Story', cursive;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:link {
+	color: #EFFFE9;
+}
+
+a:visited {
+	color: #EFFFE9;
+}
+
+a:hover {
+	color: rgb(240, 236, 42);
+}
+
+li {
+	list-style: none;
+}
+
+/* select-zone */
+body {
+	background-color: #EFFFE9;
+	font-size: 30px;
+}
+
+.select-zone table {
+	border: #72CC82 solid 1px;
+	background-color: #109972;
+	border-radius: 10px;
+	width: 500px;
+	height: 500px;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-250px, -250px);
+}
+
+.tr1, .tr3 {
+	height: 100px;
+}
+
+.tr1 {
+	color: rgb(233, 253, 226);
+}
+
+.tr2 {
+	background-color: #3CB371;
+}
+
+td {
+	border-radius: 20px;
+}
+
+i {
+	color: #EFFFE9;
+	font-size: 100px;
+	margin-bottom: 10px;
+}
