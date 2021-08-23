@@ -23,6 +23,17 @@
 	</c:if>
 	
 	<c:if test="${authInfo.grade == 1 }">
+	
+		  <form action="../bookmark/bookmarkList" method="post" name="bmkfrm"
+	  onsubmit="return bmkAddConfirm()">
+	  	<input type="hidden" name="memId"  value="${authInfo.userId}"/>
+		<input type ="hidden" name = "menuNo" value = "${dto.menuNo }"/>
+		
+		
+		<input type="submit" value="즐겨찾기 등록"/>
+	  </form>
+	
+	
 	<form action="mcmntWrite" method="post" >
 		<input type="hidden" name="memId"  value="${authInfo.userId}"/>
 		<input type ="hidden" name = "menuNo" value = "${dto.menuNo }"/>
@@ -72,4 +83,17 @@ function mcmntModify(ele,b,c){
 	});
 }
 </script>
+
+
+<script type="text/javascript">
+	
+		function bmkAddConfirm(){
+		if(confirm("이동하시겠습니까?")){
+			document.frm.submit();
+		}else{
+			return false;
+		}
+	}
+	
+	</script>
 </html>

@@ -3,4 +3,15 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mappers.BookmarkMapper">
 
+<insert id="boomarkAdd" parameterType="Model.BookmarkDTO" >
+insert into bookmark
+(menu_No, bookmark_kind)
+values(
+#{menuNo},1)
+
+</insert>
+<select id="bookmarkList"  parameterType="Model.BookmarkDTO" resultType="string" >
+select menu_no menuNo,bookmark_kind bookmarkKind from bookmark
+
+</select>
 </mapper>

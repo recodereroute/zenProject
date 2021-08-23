@@ -7,5 +7,8 @@
 			"
 >
 	<bean class = "controller.bookmark.BookmarkController"/>
+	
+	<bean class="service.bookmark.BookmarkAddService"/>
+	<bean class="service.bookmark.BookmarkListService"/>
 	<bean class = "repository.BookmarkRepository"/>
 </beans>
