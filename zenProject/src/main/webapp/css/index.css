@@ -1,4 +1,5 @@
 /* all */
+/* #72CC82 base #3CB371 main #109972 accent */
 *{
   margin: 0px;
   padding: 0px;
@@ -6,8 +7,14 @@
 a{
   text-decoration: none;
 }
+a:link{
+  color: #EFFFE9;
+}
 a:visited{
   color: #EFFFE9;
+}
+a:hover{
+  color: rgb(240, 236, 42);
 }
 li{
   list-style: none;
@@ -17,15 +24,16 @@ li{
 header{
   display: flex;
   justify-content: space-between;
-  background-image: url(https://static.vecteezy.com/system/resources/thumbnails/000/181/879/small/super-foods.jpg);
-  border-bottom: 3px #F68657 solid;
+  background-image: url(https://as1.ftcdn.net/v2/jpg/01/06/04/78/500_F_106047879_gC1wZqXJoz1Xxa6ePN0e9LeoicA3uaqQ.jpg);
+  background-size: contain 100px;
+  border-bottom: 3px #72CC82 solid;
 }
 .project-logo{
   margin: 20px;
   position: relative;
 }
 .project-logo a:link{
-  color: #E71D36;
+  color: #3CB371;
 }
 .project-logo h1{
   text-align: center;
@@ -38,7 +46,7 @@ header{
   width: 100%;
   vertical-align: middle;
   border-radius: 70px;
-  border: #E71D36 solid 2px;
+  border: #72CC82 solid 2px;
 }
 .search-space{
   padding: 20px;
@@ -47,7 +55,7 @@ header{
 }
 .search{
   position: absolute;
-  left: 50%;
+  left: -140%;
   top: 50%;
   transform: translate(-50%,-50%);
 }
@@ -55,7 +63,7 @@ header{
   width: 400px;
   height: 35px;
   border-radius: 5px;
-  border: #E71D36 solid 2px;
+  border: #72CC82 solid 2px;
 }
 #btn{
   width: 100px;
@@ -72,18 +80,13 @@ header{
 .login-box{
   margin: 10px;
   padding: 5px 10px;
-  background-color: rgb(255, 230, 220);
+  background-color: #3CB371;
   height: 100px;
   border-radius: 7px;
 }
 .login-box li{
   margin: 2px;
-}
-.login-box a:link{
-	color: rgb(190, 161, 150);
-}
-.login-box a:visited{
-	color: rgb(190, 161, 150);
+  color: rgb(190, 161, 150);
 }
 #login-btn {
   width: 100px;
@@ -100,11 +103,8 @@ header{
   padding: 20px;
   display: flex;
   justify-content: space-evenly;
-  background-color: #E71D36;
-  border-bottom: 3px #F68657 solid;
-}
-.nav a:link{
-  color: #EFFFE9;
+  background-color: #3CB371;
+  border-bottom: 3px #72CC82 solid;
 }
 
 /* menu-box */
@@ -113,17 +113,16 @@ header{
   text-align: center;
   display: flex;
   justify-content: center;
-  background-color: #E71D36;
+  background-color: #EFFFE9;
   padding: 20px;
-  border-bottom: 3px #F68657 solid;
 }
 .menu-box table{
-  background-color: #f53d53;
-  border: 3px solid #bd0d21;
+  background-color: #109972;
+  border: 3px solid #72CC82;
   border-radius: 7px;
 }
 .menu-box h1{
-  color: #EFFFE9;
+  color: #d7ffc8;
   margin-bottom: 10px;
 }
 .menu-box img{
@@ -151,18 +150,19 @@ header{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background-color: #E71D36;
-  border-bottom: 3px #F68657 solid;
+  background-color: #EFFFE9;
+  border-bottom: 3px #72CC82 solid;
 }
 .notice-box,.board-box{
   width: 35%;
-  background-color: #f53d53;
-  border: 3px solid #bd0d21;
+  background-color: #109972;
+  border: 3px solid #72CC82;
   border-radius: 7px;
   margin: 20px;
 }
-.notice-box a:link,.board-box a:link{
-  color: #EFFFE9;
+#more-notice,#more-board{
+  text-align: right;
+  padding-right: 10px;
 }
 .contents table{
   width: 100%;
@@ -171,7 +171,7 @@ header{
 .contents h3{
   text-align: left;
   padding: 5px 10px;
-  color: #d5e9cd;
+  color: #d7ffc8;
 }
 .contents td{
   padding: 5px
@@ -183,7 +183,7 @@ footer{
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: #ad0c1f;
+  background-color: #085c44;
   padding: 15px;
 }
 .team-logo-box img{
@@ -192,5 +192,5 @@ footer{
 }
 .team-name-box li,.team-addr-box li{
   margin: 5px;
-  color: #ff5e00;
+  color: #EFFFE9;
 }

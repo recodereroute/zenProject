@@ -21,7 +21,6 @@
      </style>
 
 </head>
-<body>
 <body class="text-center">
  
  <h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>

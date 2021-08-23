@@ -36,14 +36,14 @@
     <div class="login-box">
         <form action="login/login" method="post" name="frm">
             <c:if test="${empty authInfo }">
+                <input type="submit" id="login-btn" value="로그인">
                 <ul class="">
+                    <li><a href="register">회원가입</a></li>
                     <li><a href="search/idFind">아이디 찾기</a></li>
                     <li><a href="search/findPassword">비밀번호 찾기</a></li>
-                    <li><a href="register">회원가입</a></li>
                 </ul>
-                <input type="submit" id="login-btn" value="로그인">
             </c:if>
-            <c:if test="${!empty authInfo }">
+             <c:if test="${!empty authInfo }">
                     <ul class="">
                         <li><a href="login/logOut">로그아웃</a></li>
                     </ul>
@@ -66,7 +66,7 @@
                             <li><a href="employee/empList">직원리스트</a></li>
                         </ul>
                     </c:if>
-                </c:if> 
+                </c:if>
         </form>
     </div>
 </header>
@@ -117,18 +117,21 @@
                     <td>
                         <h3>공지사항</h3>
                     </td>
+                    <td id="more-notice">
+                        <a href="notice/noticeList">더보기</a>
+                    </td>
                 </tr>
                 <tr>
-                    <td><a href="notice1">공지사항 1</a></td>
+                    <td colspan="2"><a href="notice1">공지사항 1</a></td>
                 </tr>
                 <tr>
-                    <td><a href="notice2">공지사항 2</a></td>
+                    <td colspan="2"><a href="notice2">공지사항 2</a></td>
                 </tr>
                 <tr>
-                    <td><a href="notice3">공지사항 3</a></td>
+                    <td colspan="2"><a href="notice3">공지사항 3</a></td>
                 </tr>
                 <tr>
-                    <td><a href="notice4">공지사항 4</a></td>
+                    <td colspan="2"><a href="notice4">공지사항 4</a></td>
                 </tr>
             </table>
         </div>
@@ -139,18 +142,21 @@
                     <td>
                         <h3>게시판</h3>
                     </td>
+                    <td id="more-board">
+                        <a href="board/boardList">더보기</a>
+                    </td>
                 </tr>
                 <tr>
-                    <td><a href="board1">게시판 글 1</a></td>
+                    <td colspan="2"><a href="board1">게시판 글 1</a></td>
                 </tr>
                 <tr>
-                    <td><a href="board2">게시판 글 2</a></td>
+                    <td colspan="2"><a href="board2">게시판 글 2</a></td>
                 </tr>
                 <tr>
-                    <td><a href="board3">게시판 글 3</a></td>
+                    <td colspan="2"><a href="board3">게시판 글 3</a></td>
                 </tr>
                 <tr>
-                    <td><a href="board4">게시판 글 4</a></td>
+                    <td colspan="2"><a href="board4">게시판 글 4</a></td>
                 </tr>
             </table>
         </div>
