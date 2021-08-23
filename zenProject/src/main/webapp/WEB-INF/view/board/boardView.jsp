@@ -51,8 +51,8 @@
 				<c:if test="${authInfo.userId == bcmnt.cmntMemId }">
 					<td>
 						<div>
-						<a href="javascript:bcmntmodify('content${cnt.count }','${bcmnt.boardCmntNo }','${dto.boardNo}');">수정</a>
-						/<a href="bcmntdelete?boardcmntno=${bcmnt.boardCmntNo }&boardno=${dto.boardNo}">삭제</a>
+						<a href="javascript:bcmntModify('content${cnt.count }','${bcmnt.boardCmntNo }','${dto.boardNo}');">수정</a>
+						/<a href="bcmntDelete?boardCmntNo=${bcmnt.boardCmntNo }&boardNo=${dto.boardNo}">삭제</a>
 						</div></td>
 				</c:if>
 			</tr>
@@ -64,7 +64,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.js"></script>
 <script type="text/javascript">
-	function bcmntmodify(ele,b,c){
+	function bcmntModify(ele,b,c){
 		$.ajax({ //비동기식 - jquery.form.js가 있어야만 사용가능
 			type : "post",
 			url : "bcmntModify",// 여기로부터 받아온 값
