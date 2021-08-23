@@ -20,8 +20,12 @@ public class BookmarkRepository {
 		statement = namespace + ".bookmarkList";
 		return sqlSession.selectList(statement, memId);
 	}
-	public void bookmarkDel(BookmarkDTO dto) {
-		statement = namespace + ".bookmarkDel";
+	public void bookmarkDelete(BookmarkDTO dto) {
+		statement = namespace + ".bookmarkDelete";
 		sqlSession.delete(statement,dto);
+	}
+	public List<String> getMemName(String memId) {
+		statement = namespace + ".getMemName";
+		return sqlSession.selectList(statement,memId);
 	}
 }

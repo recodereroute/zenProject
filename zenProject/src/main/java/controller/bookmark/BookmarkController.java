@@ -6,9 +6,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import Model.BookmarkDTO;
 import service.bookmark.BookmarkAddService;
 import service.bookmark.BookmarkDeleteService;
 import service.bookmark.BookmarkListService;
+import service.menu.MenuDetailService;
 
 @Controller
 @RequestMapping("bookmark")
@@ -20,32 +22,30 @@ public class BookmarkController {
 	BookmarkListService bookmarkListService;
 	@Autowired
 	BookmarkDeleteService bookmarkDeleteService;
+	@Autowired
+	MenuDetailService menuDetailService;
 	@RequestMapping("bookmarkAdd")
 	public String bookmarkAdd(
-			@RequestParam(value="menuNo") String menuNo,
-			@RequestParam(value="memId") String memId,
-			Model model
+			@RequestParam(value="memId") String memId,BookmarkDTO bookmarkDTO
 			) {
-		bookmarkAddService.bookmarkAdd(menuNo, memId, model);
+		bookmarkAddService.bookmarkAdd(memId, bookmarkDTO);
 		return "redirect:bookmarkList?memId="+memId;
 		
 	}
 	@RequestMapping("bookmarkList")
 	public String bookmarkList(
-			@RequestParam(value="memId") String memId, Model model
+			@RequestParam(value="memId")String memId , Model model
 			) {
 		bookmarkListService.bookmarkList(memId, model);
-	
 		return "bookmark/bookmarkList";
 	}
 	@RequestMapping("bookmarkDelete")
-	public String bookmarkDel(
-			@RequestParam(value="menuNo") String menuNo,
-			@RequestParam(value="memId") String memId
-			
+	public String bookmarkDelete(
+			@RequestParam(value="memId")String memId,
+			@RequestParam(value="menuNo") String menuNo
 			) {
-		bookmarkDeleteService.bookmarkDel(menuNo,memId);
-		return "redirect:bookmarkList";
+		bookmarkDeleteService.bookmarkDelete(memId,menuNo);
+		return "redirect:bookmarkList?memId="+memId;
 	}
 	
 

@@ -33,37 +33,31 @@ public class MenuController {
 	@Autowired
 	MenuCommentListService menuCommentListService;
 	
-	//硫붾돱 由ъ뒪�듃
 	@RequestMapping("menuList")
 	public String menuList(@RequestParam(value = "page", defaultValue = "1")Integer page, Model model){
 		menuListService.menuList(page, model);
 		return "menu/menuList";
 	}
-	//硫붾돱 �옉�꽦 �럹�씠吏�
 	@RequestMapping("menuForm")
 	public String menuForm() {
 		return "menu/menuForm";
 	}
-	//硫붾돱 �옉�꽦
 	@RequestMapping(value = "menuWrite", method = RequestMethod.POST)
 	public String menuWrite(MenuCommand menuCommand, HttpSession session) {
 		menuWriteService.menuWrite(menuCommand, session);
 		return "redirect:menuList";
 	}
-	//硫붾돱 �뵒�뀒�씪
 	@RequestMapping("menuDetail")
 	public String menuDetail(@RequestParam(value = "menuNo")String menuNo, Model model) {
 		menuDetailService.menuDetail(menuNo,model);
 		menuCommentListService.mcmntList(model, menuNo);
 		return "menu/menuView";
 	}
-	//硫붾돱 �닔�젙
 	@RequestMapping("menuEdit")
 	public String menuEdit(@RequestParam(value = "menuNo")String menuNo,Model model) {
 		menuDetailService.menuEdit(menuNo, model);
 		return "menu/menuModify";
 	}
-	//硫붾돱 �궘�젣
 	@RequestMapping("menuDel")
 	public String menuDel(@RequestParam(value = "menuNo")String menuNo,HttpSession session){
 		menuDeleteService.menuDel(menuNo,session);

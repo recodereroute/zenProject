@@ -15,13 +15,7 @@
 				<td>${bmk.bookMarkKind}</td>
 				<td><a href="../menu/menuDetail?menuNo=${bmk.menuNo }">${bmk.menuNo }</a></td>
 				<td>${menuName }</td>
-				
-				
-				<c:if test="${authInfo.userId==bmk.memId}">
-				<a href="bookmarkDel?menuNo=${bmk.menuNo }&memId=${bmk.memId}">삭제</a>
-						
-				</c:if>
-
+				<td><a href="bookmarkDelete?memId=${bmk.memId}&menuNo=${bmk.menuNo }">삭제</a><td>
 			</tr>
 		</c:forEach>
 	</table>

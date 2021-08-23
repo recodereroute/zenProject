@@ -7,20 +7,30 @@
 		insert into bookmark
 		(menu_No,bookmark_kind,mem_id)
 		values(#{menuNo},1,#{memId})
-
 	</insert>
-	<select id="bookmarkList"  parameterType="string"
+
+	<select id="bookmarkList" parameterType="string"
 		resultType="Model.BookmarkDTO">
-		select b.menu_no menuNo,bookmark_kind bookmarkKind,m.menu_name menuName
-		from bookmark b left join menu m
-		on b.menu_no =m.menu_no
+		select menu_no menuNo,bookmark_kind bookmarkKind ,MEM_ID
+		memId
+		from bookmark
 		where mem_id=#{memId}
-		
-	
+
+
 	</select>
-	<delete id="bookmarkDel" parameterType="Model.BookmarkDTO">
-	delete from bookmark
-	where mem_id =#{memID} and menu_No=#{menuNo}
-	
+	<select id="getMemName" parameterType="string"
+		resultType="string">
+		select menu_name
+		from menu
+		where menu_no =
+		( select menu_no from bookmark
+		where mem_id = #{memId})
+
+
+	</select>
+	<delete id="bookmarkDelete" parameterType="Model.BookmarkDTO">
+		delete from bookmark
+		where MEM_ID =#{memId} and MENU_NO=#{menuNo}
+
 	</delete>
 </mapper>

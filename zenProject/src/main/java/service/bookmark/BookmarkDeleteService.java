@@ -8,11 +8,11 @@ import repository.BookmarkRepository;
 public class BookmarkDeleteService {
 	@Autowired
 	BookmarkRepository bookmarkRepository;
-	public void bookmarkDel(String menuNo,  String memId) {
+	public void bookmarkDelete(String memId, String menuNo) {
 		BookmarkDTO bookmarkDTO=new BookmarkDTO();
-		bookmarkDTO.setMenuNo(menuNo);
 		bookmarkDTO.setMemId(memId);
-		bookmarkRepository.bookmarkDel(bookmarkDTO);
+		bookmarkDTO.setMenuNo(menuNo);
+		bookmarkRepository.bookmarkDelete(bookmarkDTO);
 			
 	}
 }

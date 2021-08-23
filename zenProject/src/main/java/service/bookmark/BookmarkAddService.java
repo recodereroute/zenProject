@@ -9,14 +9,13 @@ import repository.BookmarkRepository;
 public class BookmarkAddService {
 	@Autowired
 	BookmarkRepository bookmarkRepository;
-	public void bookmarkAdd(String menuNo, String memId,Model model) {
-			BookmarkDTO bookmarkDTO=new BookmarkDTO();
+	public void bookmarkAdd(String memId ,BookmarkDTO bookmarkDTO) {
 			bookmarkDTO.setBookMarkKind("1");
 			bookmarkDTO.setMemId(memId);
-			bookmarkDTO.setMenuNo(menuNo);
-			bookmarkRepository.bookmarkAdd(bookmarkDTO);
-			model.addAttribute("dto",bookmarkDTO);
+			System.out.println(memId);
+			System.out.println(bookmarkDTO.getMenuNo()); 
 			
+			bookmarkRepository.bookmarkAdd(bookmarkDTO);
 		
 	}
 }
