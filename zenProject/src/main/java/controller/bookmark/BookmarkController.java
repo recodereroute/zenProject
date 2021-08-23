@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import service.bookmark.BookmarkAddService;
+import service.bookmark.BookmarkDeleteService;
 import service.bookmark.BookmarkListService;
 
 @Controller
@@ -17,23 +18,25 @@ public class BookmarkController {
 	BookmarkAddService bookmarkAddService;
 	@Autowired
 	BookmarkListService bookmarkListService;
+	@Autowired
+	BookmarkDeleteService bookmarkDeleteService;
 	@RequestMapping("bookmarkAdd")
 	public String bookmarkAdd(
 			@RequestParam(value="menuNo") String menuNo,
 			@RequestParam(value="memId") String memId,
 			Model model
 			) {
-		bookmarkAddService.boomarkAdd(menuNo, memId, model);
+		bookmarkAddService.bookmarkAdd(menuNo, memId, model);
+		return "redirect:bookmarkList?memId="+memId;
 		
-		return "bookmark/bookmarkList";
 	}
 	@RequestMapping("bookmarkList")
 	public String bookmarkList(
-			@RequestParam(value="menuNo") String menuNo , Model model
+			@RequestParam(value="memId") String memId, Model model
 			) {
-		bookmarkListService.bookmarkList(menuNo, model);
-
-	return "redirect:bookmarkList";
+		bookmarkListService.bookmarkList(memId, model);
+	
+		return "bookmark/bookmarkList";
 	}
 	@RequestMapping("bookmarkDelete")
 	public String bookmarkDel(
@@ -41,7 +44,7 @@ public class BookmarkController {
 			@RequestParam(value="memId") String memId
 			
 			) {
-		
+		bookmarkDeleteService.bookmarkDel(menuNo,memId);
 		return "redirect:bookmarkList";
 	}
 	

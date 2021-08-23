@@ -9,12 +9,12 @@ import repository.BookmarkRepository;
 public class BookmarkAddService {
 	@Autowired
 	BookmarkRepository bookmarkRepository;
-	public void boomarkAdd(String menuNo, String memId,Model model) {
+	public void bookmarkAdd(String menuNo, String memId,Model model) {
 			BookmarkDTO bookmarkDTO=new BookmarkDTO();
 			bookmarkDTO.setBookMarkKind("1");
 			bookmarkDTO.setMemId(memId);
 			bookmarkDTO.setMenuNo(menuNo);
-			bookmarkRepository.boomarkAdd(bookmarkDTO);
+			bookmarkRepository.bookmarkAdd(bookmarkDTO);
 			model.addAttribute("dto",bookmarkDTO);
 			
 		

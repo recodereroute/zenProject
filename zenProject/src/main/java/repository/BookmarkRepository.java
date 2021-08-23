@@ -12,13 +12,13 @@ public class BookmarkRepository {
 	SqlSession sqlSession;
 	String namespace  = "mappers.BookmarkMapper";
 	String statement; 
-	public void boomarkAdd(BookmarkDTO dto) {
-		statement = namespace + ".boomarkAdd";
+	public void bookmarkAdd(BookmarkDTO dto) {
+		statement = namespace + ".bookmarkAdd";
 		sqlSession.insert(statement, dto);
 	}
-	public List<BookmarkDTO>  bookmarkList(String menuNo){
+	public List<BookmarkDTO> bookmarkList(String memId){
 		statement = namespace + ".bookmarkList";
-		return sqlSession.selectList(statement, menuNo);
+		return sqlSession.selectList(statement, memId);
 	}
 	public void bookmarkDel(BookmarkDTO dto) {
 		statement = namespace + ".bookmarkDel";

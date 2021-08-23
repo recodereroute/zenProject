@@ -11,9 +11,14 @@ import repository.BookmarkRepository;
 public class BookmarkListService {
  @Autowired
  BookmarkRepository bookmarkRepository;
-	public void bookmarkList(String menuNo , Model model) {
-		List<BookmarkDTO> list=bookmarkRepository.bookmarkList(menuNo);
+	public void bookmarkList(String memId , Model model) {
+		List<BookmarkDTO> list=bookmarkRepository.bookmarkList(memId);
 		model.addAttribute("bmkList",list);
+		List<BookmarkDTO> menuName=bookmarkRepository.bookmarkList(memId);
+		model.addAttribute("menuName",menuName);
+
+
+		
 	}
 	
 }

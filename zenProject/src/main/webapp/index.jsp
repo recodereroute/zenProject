@@ -45,7 +45,7 @@
                     <li><a href="search/findPassword">비밀번호 찾기</a></li>
                 </ul>
             </c:if>
-             <!--<c:if test="${!empty authInfo }">
+           <c:if test="${!empty authInfo }">
                     <ul class="">
                         <li><a href="login/logOut">로그아웃</a></li>
                     </ul>
@@ -68,7 +68,7 @@
                             <li><a href="employee/empList">직원리스트</a></li>
                         </ul>
                     </c:if>
-                </c:if>-->
+                </c:if>
         </form>
     </div>
 </header>
@@ -79,7 +79,7 @@
         <a href="board/boardList">게시판</a>
         <a href="menu/menuList">음식</a>
         <a href="column/columnList">칼럼</a>
-        <a href="bookmark">즐겨찾기</a>
+        <a href="bookmark/bookmarkList?memId=${authInfo.userId}">즐겨찾기</a>
     </div>
 
     <div class="menu-box">

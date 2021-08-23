@@ -3,18 +3,20 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mappers.BookmarkMapper">
 
-	<insert id="boomarkAdd" parameterType="Model.BookmarkDTO">
+	<insert id="bookmarkAdd" parameterType="Model.BookmarkDTO">
 		insert into bookmark
 		(menu_No,bookmark_kind,mem_id)
 		values(#{menuNo},1,#{memId})
 
 	</insert>
-	<select id="bookmarkList" parameterType="Model.BookmarkDTO"
-		resultType="string">
-		select menu_no menuNo,bookmark_kind bookmarkKind 
-		from bookmark 
+	<select id="bookmarkList"  parameterType="string"
+		resultType="Model.BookmarkDTO">
+		select b.menu_no menuNo,bookmark_kind bookmarkKind,m.menu_name menuName
+		from bookmark b left join menu m
+		on b.menu_no =m.menu_no
 		where mem_id=#{memId}
-
+		
+	
 	</select>
 	<delete id="bookmarkDel" parameterType="Model.BookmarkDTO">
 	delete from bookmark
