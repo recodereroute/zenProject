@@ -60,13 +60,12 @@ body{
 .td1{
 	border-right: 3px solid #3CB371;
 }
-
 #input-id,#input-pw{
     width: 90%;
     height: 30px;
     border-radius: 7px;
+    font-size: 25px;
 }
-
 .btn-td{
     padding: 0px 15px;
 }

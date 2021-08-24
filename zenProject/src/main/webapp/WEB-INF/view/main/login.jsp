@@ -36,19 +36,20 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="id-td td1">
+                    <td>
                         <label for="input-id">아이디</label>
                     </td>
-                    <td class="id-td td2">
-                        <form:input path="userId" placeholder="UserId" value="${isId }" id="input-id"/>
+                    <td>
+                    	<!--  <input type="text" name="userId" placeholder="UserId" value="${isId }" id="input-id"/>-->
+                    	<form:input path="userId" placeholder="UserId" value="${isId }" id="input-id"/>
                         <br><form:errors path="userId" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="pw-td td1">
+                    <td>
                         <label for="input-pw">비밀번호</label>
                     </td>
-                    <td class="pw-td td2">
+                    <td>
                         <form:password path="userPw" placeholder="UserPassword" id="input-pw"/>
                         <br><form:errors path="userPw" />
                     </td>
