@@ -13,12 +13,12 @@ public class SearchRepository {
 	String namespace = "mappers.SearchMapper";
 	String statement;
 	
-	public int count() {
+	public int count(String searchCon) {
 		statement = namespace + ".count";
-		return sqlSession.selectOne(statement);
+		return sqlSession.selectOne(statement, searchCon);
 	}
-	public List<MenuDTO> menuSearch(String searchCon){
+	public List<MenuDTO> menuSearch(MenuDTO dto){
 		statement = namespace + ".menuSearch";
-		return sqlSession.selectList(statement, searchCon);
+		return sqlSession.selectList(statement, dto);
 	}
 }
