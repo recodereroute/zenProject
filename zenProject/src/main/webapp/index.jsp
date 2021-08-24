@@ -102,13 +102,13 @@
 			<tr>
 				<td><a href="#"><button class="menu-btn">이전 메뉴</button></a></td>
 				<td><a href="#"><img
-						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUTplkei5m4FkmBCxyCT5XqC3r6ZUX-AiuPA&usqp=CAU"
+						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSTVsO0El80XdPmel6NNMVXntfcM1oqVlgmg&usqp=CAU"
 						alt="조회수가 높은 이미지">
 						<p>감자 튀김</p> </a></td>
 				<td><a href="#"><img
-						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTXUXD6uy6d1pD13j3vMpLBtlPvrmPOsJe-miZ2YXl8qQCJXZO&usqp=CAU"
+						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPyr8M00OTiOpagI92nCOo55eqo5N92w-_gGcW4jplWUg6hzZt&usqp=CAU"
 						alt="조회수가 높은 이미지">
-						<p>타코야키</p> </a></td>
+						<p>피자</p> </a></td>
 				<td><a href="#"><img
 						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE5e2tYS0SSRsYlyEAsei3y7091c1WVq4Lxw&usqp=CAU"
 						alt="조회수가 높은 이미지">
