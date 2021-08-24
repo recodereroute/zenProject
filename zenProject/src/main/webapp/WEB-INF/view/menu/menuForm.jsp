@@ -52,7 +52,6 @@
 <div class="form-group">
 <label for="name">메뉴이름:</label>
   <input type="text" class="form-control" name="menuName" id="name" placeholder="Enter name">
-  
  <form:errors path="menuName"/> 
 
 </div>
@@ -80,14 +79,17 @@
            
                
 <label for="content">조리법:</label> 
-<textarea class="form-control" rows="5" cols="60" name="menuRecipe" id="content" placeholder="Enter recipe"></textarea>
-<input type="hidden" name="menuRecipe"/>
+
+<textarea class="form-control" rows="5" cols="60" name="menuRecipe" 
+ id="content"  placeholder="Enter recipe"
+>${menuCommand.menuRecipe }</textarea>
+
 <form:errors path="menuRecipe" />
 
 <div class="filebox bs3-primary">
 <br>
 <label for="File">이미지 첨부:</label> 
-<input type="file" id="File" name="menuImg" multiple="multiple" onchange="setThumbNail(event);" 7>
+<input type="file" id="File" name="menuImg" multiple="multiple" onchange="setThumbNail(event);" >
  <div id="image-feild"></div>
 <br>
 
