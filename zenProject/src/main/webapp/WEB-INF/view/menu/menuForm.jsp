@@ -2,6 +2,7 @@
 <%@page import="java.io.File"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8" isELIgnored="false"%>
+   <%@ include file="../include/includeTags.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,7 +42,8 @@
 
 <body>
 
-<form action="menuWrite" method="post" enctype="multipart/form-data">
+<form:form action="menuWrite" method="post" enctype="multipart/form-data"
+	 modelAttribute="menuCommand">
    <input type="hidden" name="empNo" value="${authInfo.grade }"/>
 <div class="container">
 <h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
@@ -49,7 +51,10 @@
 <div class="col-md-6"> 
 <div class="form-group">
 <label for="name">메뉴이름:</label>
-<input type="text" class="form-control" name="menuName" id="name" placeholder="Enter name">
+  <input type="text" class="form-control" name="menuName" id="name" placeholder="Enter name">
+  
+ <form:errors path="menuName"/> 
+
 </div>
 </div>
 </div>
@@ -60,8 +65,9 @@
                     <input type="checkbox" name="menuMainItem" id="menuMainItem" value="유제품"/>
                     <label for="menuMainItem">유제품</label>
                   <input type="checkbox" name="menuMainItem" id="menuMainItem" value="생선류"/>
-                   <label for="menuMainItem">생선류</label><br />
-         부재료 : <input type="checkbox" name="menuSubItem" id="menuSubItem" value="소금"/>
+                   <label for="menuMainItem">생선류</label>&nbsp;&nbsp;&nbsp;<form:errors path="menuMainItem" /><br />
+                   
+부재료 : <input type="checkbox" name="menuSubItem" id="menuSubItem" value="소금"/>
                    <label for="menuSubItem">소금</label>
                     <input type="checkbox" name="menuSubItem" id="menuSubItem" value="간장"/>
                      <label for="menuSubItem">간장</label>
@@ -70,9 +76,14 @@
                      <input type="checkbox" name="menuSubItem" id="menuSubItem" value="마늘"/>
                      <label for="menuSubItem">마늘</label> <br />
                      <div class="form-group">
-                     <br>
+                     <br> 
+           
+               
 <label for="content">조리법:</label> 
 <textarea class="form-control" rows="5" cols="60" name="menuRecipe" id="content" placeholder="Enter recipe"></textarea>
+<input type="hidden" name="menuRecipe"/>
+<form:errors path="menuRecipe" />
+
 <div class="filebox bs3-primary">
 <br>
 <label for="File">이미지 첨부:</label> 
@@ -87,7 +98,7 @@
 </div>        
    
 </div>
-</form>
+</form:form>
 </body>
 <script>
 var lBar = $(".load");

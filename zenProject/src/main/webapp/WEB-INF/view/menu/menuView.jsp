@@ -96,13 +96,7 @@
    
    <c:if test="${authInfo.grade == 1 }">
    
-        <form action="../bookmark/bookmarkAdd" method="post" name="bmkfrm"
-     onsubmit="return bmkAddConfirm()">
-        <input type="hidden" name="memId"  value="${authInfo.userId}"/>
-      <input type ="hidden" name = "menuNo" value = "${dto.menuNo }"/>
-      <input type="submit" value="즐겨찾기 등록" class="button4"/>
-     </form>
-   
+   <button type="button" onclick='bmkAddConfirm();'>즐겨찾기 등록</button>
    
    <form action="mcmntWrite" method="post" >
       <input type="hidden" name="memId"  value="${authInfo.userId}"/>
@@ -159,17 +153,30 @@ function mcmntModify(ele,b,c){
 
 
 <script type="text/javascript">
-   
-      function bmkAddConfirm(){
-      if(confirm("이동하시겠습니까?")){
-         document.frm.submit();
-      }else{
-         return false;
-      }
-   }
-      
-   
-   </script>
+	
+	function bmkAddConfirm(){
+			
+			$.ajax({ //비동기식 - jquery.form.js가 있어야만 사용가능
+				type : "post",
+				url : "../bookmark/bookmarkAdd",// 여기로부터 받아온 값
+				dataType : "html",//보여주려는 결과 data-type
+				data : {"memId":${authInfo.userId},"menuNo":${dto.menuNo }},
+				//익명함수(이름이 없는 함수) : 직접 실행시킬수 없음 - 실행시키기 위한 객체가 필요
+				success : function(result){//result : data 넘겨줘서 나온 동기식 결과 페이지
+					if(confirm("즐겨 찾기로 이동하시겠습니까?")){
+						location.href='../bookmark/bookmarkList?memId='+${authInfo.userId}
+					}else{
+						return false;
+					}
+				},
+				error : function(){
+					alert("에러가 발생했습니다.");
+					return;
+				}
+			});
+	}
+	
+	</script>
    
    <!-- jquery -->
 

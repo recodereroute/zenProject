@@ -5,6 +5,9 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,10 +15,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import command.MenuCommand;
 import service.menu.MenuDeleteService;
 import service.menu.MenuDetailService;
-import service.menu.MenuModifyService;
 import service.menu.MenuListService;
+import service.menu.MenuModifyService;
 import service.menu.MenuWriteService;
 import service.menuComment.MenuCommentListService;
+import validator.MenuFormValidator;
 
 @Controller
 @RequestMapping("menu")
@@ -43,9 +47,16 @@ public class MenuController {
 		return "menu/menuForm";
 	}
 	@RequestMapping(value = "menuWrite", method = RequestMethod.POST)
-	public String menuWrite(MenuCommand menuCommand, HttpSession session) {
-		menuWriteService.menuWrite(menuCommand, session);
-		return "redirect:menuList";
+	public String menuWrite( MenuCommand menuCommand, HttpSession session ,Errors errors
+			 ) {
+		new MenuFormValidator().validate(menuCommand, errors);
+		if(errors.hasErrors()) {
+			return "menu/menuForm";
+		}else {
+			menuWriteService.menuWrite(menuCommand, session);
+			return "redirect:menuList";
+		}
+	
 	}
 	@RequestMapping("menuDetail")
 	public String menuDetail(@RequestParam(value = "menuNo")String menuNo, Model model) {

@@ -2,89 +2,94 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mappers.MenuMapper">
-	<select id="menuList" parameterType="Model.MenuDTO" resultType="Model.MenuDTO">
+	<select id="menuList" parameterType="Model.MenuDTO"
+		resultType="Model.MenuDTO">
 		select
-			MENU_NO menuNo,
-			MENU_NAME menuName,  
-			MENU_IMG menuImg,  
-			MENU_RECMND menuRecmnd,         
-			MENU_CNT menuCnt,         
-			EMP_NO empNo,         
-			MENU_DATE menuDate  
+		MENU_NO menuNo,
+		MENU_NAME menuName,
+		MENU_IMG menuImg,
+		MENU_RECMND menuRecmnd,
+		MENU_CNT menuCnt,
+		EMP_NO empNo,
+		MENU_DATE menuDate
 		from menu
 	</select>
-	
+
 	<select id="menuNo" resultType="string">
-		select nvl(max(MENU_NO),0) + 1 from menu
+		select nvl(max(MENU_NO),0) + 1
+		from menu
 	</select>
-	
-	<select id="menuDetail" parameterType="string" resultType="Model.MenuDTO">
+
+	<select id="menuDetail" parameterType="string"
+		resultType="Model.MenuDTO">
 		select
-			MENU_NO menuNo,
-			MENU_RECIPE menuRecipe, 
-			MENU_NAME menuName,  
-			MENU_IMG menuImg,  
-			MENU_MAIN_ITEM menuMainItem,  
-			MENU_SUB_ITEM menuSubItem,  
-			MENU_RECMND menuRecmnd,         
-			MENU_CNT menuCnt,         
-			EMP_NO empNo,         
-			MENU_DATE menuDate  
+		MENU_NO menuNo,
+		MENU_RECIPE menuRecipe,
+		MENU_NAME menuName,
+		MENU_IMG menuImg,
+		MENU_MAIN_ITEM menuMainItem,
+		MENU_SUB_ITEM menuSubItem,
+		MENU_RECMND menuRecmnd,
+		MENU_CNT menuCnt,
+		EMP_NO empNo,
+		MENU_DATE menuDate
 		from menu
 		where MENU_NO = #{menuNO}
 	</select>
-	
+
 	<insert id="menuWrite" parameterType="Model.MenuDTO">
 		insert into menu(
-			MENU_NAME, MENU_MAIN_ITEM, MENU_SUB_ITEM, MENU_RECIPE,
-			MENU_NO, MENU_DATE, MENU_IMG, MENU_CNT, MENU_RECMND, EMP_NO
+		MENU_NAME, MENU_MAIN_ITEM, MENU_SUB_ITEM, MENU_RECIPE,
+		MENU_NO, MENU_DATE, MENU_IMG, MENU_CNT, MENU_RECMND, EMP_NO
 		)
-		
+
 		values(
-			#{menuName},#{menuMainItem},#{menuSubItem},#{menuRecipe},
-			#{menuNo},sysdate,
-			<if test="menuImg == null">null</if>
-			<if test="menuImg != null">#{menuImg}</if>
-			,0,0, #{empNo}
+		#{menuName},#{menuMainItem},
+		<if test="menuSubItem == null">null</if>
+		<if test="menuSubItem != null">#{menuSubItem}</if>
+		,
+		#{menuRecipe},
+		#{menuNo},sysdate,
+
+		<if test="menuImg == null">null</if>
+		<if test="menuImg != null">#{menuImg}</if>
+		,0,0, #{empNo}
 		)
 	</insert>
-	
+
 	<select id="count" resultType="int">
 		select count(*) from menu
 	</select>
-	 
+
 	<delete id="menuDel" parameterType="string">
-		delete from menu 
-		where MENU_NO = #{menuNo} 
+		delete from menu
+		where MENU_NO = #{menuNo}
 	</delete>
-	 <update id="menuModify" parameterType="Model.MenuDTO">
-      update menu
-      set
-      menu_name = #{menuName},
-      menu_main_item = #{menuMainItem},
-      menu_sub_item = #{menuSubItem},
-      menu_recipe = #{menuRecipe},
-      menu_img = #{menuImg} 
-      where menu_no = #{menuNo}
-   </update>
-   
+	<update id="menuModify" parameterType="Model.MenuDTO">
+		update menu
+		set
+		menu_name = #{menuName},
+		menu_main_item = #{menuMainItem},
+		menu_sub_item =
+		<if test="menuSubItem == null">null</if>
+		<if test="menuSubItem != null">#{menuSubItem}</if>
+		,
+		menu_recipe = #{menuRecipe},
+		menu_img =
+		<if test="menuImg == null">null</if>
+		<if test="menuImg != null">#{menuImg}</if>
+
+		where menu_no = #{menuNo}
+	</update>
 	<update id="menuCnt" parameterType="string">
-	update menu
-	set menu_CNT = menu_CNT + 1
-	where menu_NO = #{menuNo}
-</update>
-	
-	
+		update menu
+		set menu_CNT = menu_CNT + 1
+		where menu_NO = #{menuNo}
+	</update>
+
+
 </mapper>
-<!-- 
-MENU_NO        NOT NULL NUMBER         
-MENU_RECIPE    NOT NULL VARCHAR2(3000) 
-MENU_NAME      NOT NULL VARCHAR2(200)  
-MENU_IMG                VARCHAR2(200)  
-MENU_MAIN_ITEM NOT NULL VARCHAR2(200)  
-MENU_SUB_ITEM           VARCHAR2(300)  
-MENU_RECMND    NOT NULL NUMBER         
-MENU_CNT       NOT NULL NUMBER         
-EMP_NO                  NUMBER         
-MENU_DATE      NOT NULL DATE         
- -->
+<!-- MENU_NO NOT NULL NUMBER MENU_RECIPE NOT NULL VARCHAR2(3000) MENU_NAME 
+	NOT NULL VARCHAR2(200) MENU_IMG VARCHAR2(200) MENU_MAIN_ITEM NOT NULL VARCHAR2(200) 
+	MENU_SUB_ITEM VARCHAR2(300) MENU_RECMND NOT NULL NUMBER MENU_CNT NOT NULL 
+	NUMBER EMP_NO NUMBER MENU_DATE NOT NULL DATE -->
