@@ -22,7 +22,7 @@ public class LoginController {
 	@Autowired
 	CookieService cookieService;
 	
-	@RequestMapping(value="login", method = RequestMethod.POST)
+	@RequestMapping(value="login")
 	public String main(LoginCommand loginCommand,HttpServletRequest request) {
 		cookieService.getCookie(request);
 		return "main/login";
