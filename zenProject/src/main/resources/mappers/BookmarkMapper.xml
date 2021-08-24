@@ -9,23 +9,14 @@
 		values(#{menuNo},1,#{memId})
 	</insert>
 
+
 	<select id="bookmarkList" parameterType="string"
-		resultType="Model.BookmarkDTO">
-		select menu_no menuNo,bookmark_kind bookmarkKind ,MEM_ID
-		memId
-		from bookmark
-		where mem_id=#{memId}
-
-
-	</select>
-	<select id="getMemName" parameterType="string"
-		resultType="string">
-		select menu_name
-		from menu
-		where menu_no =
-		( select menu_no from bookmark
-		where mem_id = #{memId})
-
+		resultType="command.BookmarkCommend">
+  select menu_name menuName, menu_no menuNo 
+        from menu
+        where menu_no in
+        (select menu_no 
+        from bookmark  where mem_id=#{memId})
 
 	</select>
 	<delete id="bookmarkDelete" parameterType="Model.BookmarkDTO">

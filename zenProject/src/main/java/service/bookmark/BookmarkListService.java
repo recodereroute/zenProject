@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 
 import Model.BoardDTO;
 import Model.BookmarkDTO;
+import command.BookmarkCommend;
 import repository.BookmarkRepository;
 
 public class BookmarkListService {
@@ -14,10 +15,8 @@ public class BookmarkListService {
  BookmarkRepository bookmarkRepository;
  
 	public void bookmarkList(String memId , Model model) {
-		List<BookmarkDTO> list=bookmarkRepository.bookmarkList(memId);
-		model.addAttribute("bmkList",list);
 		
-		List<String> menuName=bookmarkRepository.getMemName(memId);
+		List<BookmarkCommend> menuName=bookmarkRepository.bookmarkList(memId);
 		model.addAttribute("menuName",menuName);
 		
 		

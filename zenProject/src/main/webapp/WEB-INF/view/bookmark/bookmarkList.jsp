@@ -16,11 +16,11 @@
 		</tr>
 
 	
-		<c:forEach items="${bmkList }" var="bmk">
+		<c:forEach items="${menuName }" var="mn">
 	
 			<tr>
-				<td><a href="../menu/menuDetail?menuNo=${bmk.menuNo }">${menuName }</a></td>
-				<td><a href="bookmarkDelete?memId=${bmk.memId}&menuNo=${bmk.menuNo }">삭제</a>
+				<td><a href="../menu/menuDetail?menuNo=${mn.menuNo }">${mn.menuName }</a></td>
+				<td><a href="bookmarkDelete?memId=${authInfo.userId}&menuNo=${mn.menuNo }">삭제</a>
 				</td>
 			</tr>
 		</c:forEach>

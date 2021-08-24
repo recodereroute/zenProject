@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import Model.BookmarkDTO;
+import command.BookmarkCommend;
 
 public class BookmarkRepository {
 	@Autowired
@@ -16,16 +17,13 @@ public class BookmarkRepository {
 		statement = namespace + ".bookmarkAdd";
 		sqlSession.insert(statement, dto);
 	}
-	public List<BookmarkDTO> bookmarkList(String memId){
-		statement = namespace + ".bookmarkList";
-		return sqlSession.selectList(statement, memId);
-	}
+
 	public void bookmarkDelete(BookmarkDTO dto) {
 		statement = namespace + ".bookmarkDelete";
 		sqlSession.delete(statement,dto);
 	}
-	public List<String> getMemName(String memId) {
-		statement = namespace + ".getMemName";
+	public List<BookmarkCommend> bookmarkList(String memId) {
+		statement = namespace + ".bookmarkList";
 		return sqlSession.selectList(statement,memId);
 	}
 }

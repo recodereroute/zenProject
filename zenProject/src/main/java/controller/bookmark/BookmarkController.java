@@ -29,8 +29,7 @@ public class BookmarkController {
 			@RequestParam(value="memId") String memId,BookmarkDTO bookmarkDTO
 			) {
 		bookmarkAddService.bookmarkAdd(memId, bookmarkDTO);
-		return "redirect:bookmarkList?memId="+memId;
-		
+		return "bookmark/1";
 	}
 	@RequestMapping("bookmarkList")
 	public String bookmarkList(
