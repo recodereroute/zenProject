@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.SearchMapper">
+	<select id="menuSearch" parameterType="string" resultType="Model.MenuDTO">
+		SELECT MENU_NO menuNo, MENU_NAME menuName, MENU_IMG menuImg, 
+ 			   MENU_RECMND menuRecmnd, MENU_CNT menuCnt, EMP_NO empNo,         
+			   MENU_DATE menuDate  
+		FROM MENU
+		WHERE MENU_NAME LIKE '%'||#{searchCon}||'%'
+	</select>
+
+	<select id="count" resultType="int">
+		select max(rownum) from menu
+	</select>
+</mapper>

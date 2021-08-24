@@ -5,11 +5,8 @@
 	<select id="menuList" parameterType="Model.MenuDTO" resultType="Model.MenuDTO">
 		select
 			MENU_NO menuNo,
-			MENU_RECIPE menuRecipe, 
 			MENU_NAME menuName,  
 			MENU_IMG menuImg,  
-			MENU_MAIN_ITEM menuMainItem,  
-			MENU_SUB_ITEM menuSubItem,  
 			MENU_RECMND menuRecmnd,         
 			MENU_CNT menuCnt,         
 			EMP_NO empNo,         

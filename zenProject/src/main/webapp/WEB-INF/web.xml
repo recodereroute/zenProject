@@ -38,6 +38,7 @@
   			classpath:spring-menu.xml
   			classpath:spring-menu-comment.xml
   			classpath:spring-bookmark.xml
+  			classpath:spring-search.xml
   		</param-value>
   	</init-param>
   </servlet>

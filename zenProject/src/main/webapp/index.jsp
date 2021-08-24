@@ -30,10 +30,10 @@
 	</div>
 
 	<div class="search-space">
-		<form action="ezensearch">
+		<form action="menuSearch">
 			<div class="search-zone">
-				<input id="bar" type="search" placeholder="뭘 먹을까?"> <input
-					id="btn" type="submit" value="검색">
+				<input id="bar" type="search" name = "searchCon" placeholder="뭘 먹을까?"> 
+				<input id="btn" type="submit" value="검색">
 			</div>
 		</form>
 	</div>

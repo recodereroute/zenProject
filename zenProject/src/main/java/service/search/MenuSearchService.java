@@ -1,4 +1,4 @@
-package service.menu;
+package service.search;
 
 import java.util.List;
 
@@ -7,25 +7,21 @@ import org.springframework.ui.Model;
 
 import Model.MenuDTO;
 import Model.StartEndPageDTO;
-import command.MenuCommand;
 import controller.board.PageAction;
-import repository.MenuRepository;
+import repository.SearchRepository;
 
-public class MenuListService {
+public class MenuSearchService {
 	@Autowired
-	MenuRepository menuRepository;
+	SearchRepository searchRepository;
 	
-	public void menuList(Integer page, Model model) {
+	public void menuSearch(String searchCon, Integer page, Model model) {
 		MenuDTO dto = new MenuDTO();
-		
 		int limit = 3;//페이지에 보여지는 리스트
 		int limitPage = 5; //페이지 수
-		
-		List<MenuDTO> list = menuRepository.menuList(dto);
-		int count = menuRepository.count();
+		List<MenuDTO> list = searchRepository.menuSearch(searchCon);
+		int count = searchRepository.count();
 		model.addAttribute("lists", list);
 		model.addAttribute("count", count);
-		
 		if (page != null) {
 			//시작행
 			Long startRow = ((long) page - 1) * limit + 1;
@@ -36,7 +32,7 @@ public class MenuListService {
 			sep.setEndRow(endRow);
 			dto.setStartEndPageDTO(sep);
 			PageAction pageAction = new PageAction();
-			pageAction.page(count, limit, page, limitPage, model, "menuList");
+			pageAction.page(count, limit, page, limitPage, model, "searchList");
 		}
 	}
 }
