@@ -120,7 +120,6 @@ header {
 	text-align: center;
 	display: flex;
 	justify-content: center;
-	background-color: #EFFFE9;
 	padding: 20px;
 }
 
@@ -162,7 +161,6 @@ header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
-	background-color: #EFFFE9;
 	border-bottom: 3px #72CC82 solid;
 }
 

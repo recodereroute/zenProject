@@ -110,6 +110,7 @@
       </table>
    </form>
    </c:if>
+   <!-- 여기서 부터  댓글 테이블 생성 -->
    <c:forEach items="${mcmntList }" var="mcmnt" varStatus="cnt">
       <div id ="content${cnt.count }">
       <table border = 1>
