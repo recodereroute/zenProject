@@ -32,7 +32,7 @@ public class MenuSearchService {
 		model.addAttribute("count", count);
 		if (page != null) {
 			PageAction pageAction = new PageAction();
-			pageAction.page(count, limit, page, limitPage, model, "columnList");
+			pageAction.page(count, limit, page, limitPage, model, "menuSearch?searchCon="+searchCon+"&");
 		}
 	}
 }

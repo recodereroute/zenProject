@@ -3,13 +3,14 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mappers.SearchMapper">
 	<select id="menuSearch" parameterType="Model.MenuDTO" resultType="Model.MenuDTO">
-		SELECT ROWNUM rn, MENU_NO menuNo, MENU_NAME menuName, MENU_IMG menuImg, 
-			    MENU_RECMND menuRecmnd, MENU_CNT menuCnt, EMP_NO empNo,         
-		    	MENU_DATE menuDate  
-		FROM MENU
-		WHERE MENU_NAME LIKE '%'||#{menuName}||'%'
+		SELECT rn, menuNo, menuName, menuImg, menuRecmnd, menuCnt, empNo, menuDate
+		FROM 
+			(SELECT ROWNUM rn, MENU_NO menuNo, MENU_NAME menuName, MENU_IMG menuImg, 
+			        MENU_RECMND menuRecmnd, MENU_CNT menuCnt, EMP_NO empNo,         
+			        MENU_DATE menuDate  
+			FROM MENU WHERE MENU_NAME LIKE '%'||#{menuName}||'%')
 		<if test="startEndPageDTO != null">
-			and ROWNUM between #{startEndPageDTO.startRow} and #{startEndPageDTO.endRow}
+			WHERE rn between #{startEndPageDTO.startRow} and #{startEndPageDTO.endRow}
 		</if>
 	</select>
 
