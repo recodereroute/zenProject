@@ -1,0 +1,85 @@
+/* all */
+/* #72CC82 base #3CB371 main #109972 accent #EFFFE9 font #754F44 button*/
+/*
+<!--구글 폰트-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+*/
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Poor Story', cursive;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:link {
+	color: #EFFFE9;
+}
+
+a:visited {
+	color: #EFFFE9;
+}
+
+a:hover {
+	color: rgb(240, 236, 42);
+}
+
+li {
+	list-style: none;
+}
+
+/* login-box */
+body{
+    background-color: #EFFFE9;
+    color: #EFFFE9;
+    font-size: 25px;
+}
+.login-box{
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-250px, -250px);
+}
+.login-box table{
+    text-align: center;
+    width: 100%;
+    height: 500px;
+    background-color: #109972;
+    border-radius: 10px;
+}
+
+.id-td{
+	border-bottom: 3px solid #3CB371;
+}
+.td1{
+	border-right: 3px solid #3CB371;
+}
+
+#input-id,#input-pw{
+    width: 90%;
+    height: 30px;
+    border-radius: 7px;
+}
+
+.btn-td{
+    padding: 0px 15px;
+}
+.sing-btn{
+    width: 100%;
+    height: 90%;
+    border-radius: 10px;
+    background-color: #754F44;
+	border: 2px solid #EFFFE9;
+	color: #EFFFE9;
+    font-size: 20px;
+}
+.footer-td{
+    font-size: 17px;
+    height: 60px;
+}

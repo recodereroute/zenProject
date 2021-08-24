@@ -123,7 +123,7 @@ function mcmntModify(ele,b,c){
       success : function(result){//result : data 넘겨줘서 나온 동기식 결과 페이지
          $("#"+ele).html(result);
       },
-      error : function(){
+      error : function(){ 
          alert("에러가 발생했습니다.");
          return;
       }
