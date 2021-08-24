@@ -41,7 +41,7 @@
                     </td>
                     <td class="id-td td2">
                         <form:input path="userId" placeholder="UserId" value="${isId }" id="input-id"/>
-                        <form:errors path="userId" />
+                        <br><form:errors path="userId" />
                     </td>
                 </tr>
                 <tr>
@@ -50,7 +50,7 @@
                     </td>
                     <td class="pw-td td2">
                         <form:password path="userPw" placeholder="UserPassword" id="input-pw"/>
-                        <form:errors path="userPw" />
+                        <br><form:errors path="userPw" />
                     </td>
                 </tr>
                 <tr>
