@@ -17,7 +17,7 @@ ul, li { list-style:none;}
 ul{list-style:none; }
 .red_txt{color:#ee7272;}
 .blind {display:block;overflow:hidden;position:absolute;left:0;top:-5000px}
-.wrap{max-width:960px; margin: 0 auto;}
+.wrap{min-width:960px; margin: auto; padding: 100px}
 .wrap.wd668{max-width:628px;}
 .wrap.wd668.line{border:1px solid #ececec;padding:30px 20px;}
 .container{width:100%;}
@@ -83,7 +83,7 @@ ul{list-style:none; }
 .join_form table input.send_number::-ms-input-placeholder {text-align:right;}
 .overlayer {  position: fixed;display: none;width: 100%;  height: 100%;  top: 0;  left: 0;  right: 0;  bottom: 0;  background-color: rgba(0,0,0,0.5);  z-index: 2;  cursor: pointer;}
 .overlayer.is-open{  display: block;}
-@media ( max-width: 1023px ) {
+/*@media ( max-width: 1023px ) {
   .wrap{margin: 30px auto;}
   .wrap,.wrap.wd668.line{max-width:80vw;}
   .wrap.wd668{width:90vw;}
@@ -111,7 +111,7 @@ ul{list-style:none; }
   .join_form table td a.btn_confirm{width: 100px; height: 35px;line-height: 35px; font-size: 12px;margin:5px 0 0 ;}
   .join_form table input.send_number + a{margin:0 0 0 5px;}
   .content{min-height:100%; padding:20px; padding-bottom: 50px;}
-}
+}*/
 
 
 

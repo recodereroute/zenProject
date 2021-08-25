@@ -65,6 +65,14 @@
             }).open();
    }
 </script>
+<style type="text/css">
+	.container{
+		width: 1130px;
+		padding: 20px 30px;
+		min-width: 1190px;
+		margin: auto;
+	}
+</style>
 </head>
 <body>
 <div class="wrap wd668">

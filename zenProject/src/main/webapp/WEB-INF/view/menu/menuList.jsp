@@ -8,58 +8,59 @@
 <title>메뉴 리스트</title>
 </head>
 <style>
+	.container{
+	width: 1130px;
+	padding: 20px 30px;
+	min-width: 1190px;
+	margin: auto;
+}
 </style>
 <body>
-	<div class="row">
-		<div class="col-xs-2 col-md-2"></div>
-		<div class="col-xs-8 col-md-8">
-			<h1 class="h3 mb-3 fw-normal">
-				<a href="../index.jsp">EZEN FOOD</a>
-			</h1>
-			<h1 class="h3 mb-3 fw-normal">메뉴 게시판</h1>
-			<div class="table table-responsive">
-				<table class="table">
-					<c:forEach items="${lists }" var="dto" varStatus="cnt">
-						<tr>
-							<th class="success">메뉴번호</th>
-							<td>${cnt.count }</td>
-							<th class="success">조회수</th>
-							<td>${dto.menuCnt }</td>
-						</tr>
 
-						<tr>
-							<th class="success">작성자</th>
-							<td>${dto.empNo }</td>
-							<th class="success">작성일</th>
-							<td><fmt:formatDate value="${dto.menuDate }" type="date"
-									pattern="yy-MM-dd" /></td>
-						</tr>
-						</tr>
+	<div class="container">
+		<h1 class="h3 mb-3 fw-normal">
+			<a href="../index.jsp">EZEN FOOD</a>
+		</h1>
+		<h1 class="h3 mb-3 fw-normal">메뉴 게시판</h1>
+		<table class="table">
+			<c:forEach items="${lists }" var="dto" varStatus="cnt">
+				<tr>
+					<th class="success">메뉴번호</th>
+					<td>${cnt.count }</td>
+					<th class="success">조회수</th>
+					<td>${dto.menuCnt }</td>
+				</tr>
 
-						<tr>
-							<th class="success">메뉴이름</th>
-							<td><a href="menuDetail?menuNo=${dto.menuNo }">${dto.menuName }</a></td>
-						</tr>
-						<tr>
-							<th class="success">이미지</th>
-							<td><c:if test="${empty dto.menuImg }">
+				<tr>
+					<th class="success">작성자</th>
+					<td>${dto.empNo }</td>
+					<th class="success">작성일</th>
+					<td><fmt:formatDate value="${dto.menuDate }" type="date"
+							pattern="yy-MM-dd" /></td>
+				</tr>
+
+				<tr>
+					<th class="success">메뉴이름</th>
+					<td><a href="menuDetail?menuNo=${dto.menuNo }">${dto.menuName }</a></td>
+				</tr>
+				<tr>
+					<th class="success">이미지</th>
+					<td><c:if test="${empty dto.menuImg }">
 					등록된 이미지가 없습니다.			
 				</c:if> <c:if test="${!empty dto.menuImg }">
-									<img src='../menu/upload/${dto.menuImg.split(",")[0] }'
-										alt="이미지 불러오기 실패" width="300px" height="300px">
-								</c:if></td>
-						</tr>
+							<img src='../menu/upload/${dto.menuImg.split(",")[0] }'
+								alt="이미지 불러오기 실패" width="300px" height="300px">
+						</c:if></td>
+				</tr>
 
 
-					</c:forEach>
-					<tr>
-						<td colspan="5"><%@ include file="../include/includePage.jsp"%>
-					</tr>
-				</table>
-			</div>
-		</div>
+			</c:forEach>
+			<tr>
+				<td colspan="5"><%@ include file="../include/includePage.jsp"%>
+			</tr>
+		</table>
 	</div>
-	<div align="center">
+	<div align="center" class="container">
 		<c:if test="${authInfo.grade >1}">
 			<a class="btn btn-default" href="menuForm">메뉴 등록</a>
 		</c:if>

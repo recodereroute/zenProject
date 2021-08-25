@@ -6,14 +6,20 @@
 <head>
 <meta charset="UTF-8">
 <title>공지 사항</title>
+<style type="text/css">
+	.container{
+	width: 1130px;
+	padding: 20px 30px;
+	min-width: 1190px;
+	margin: auto;
+}
+</style>
 </head>
 <body>
-<div class="row">
-    <div class="col-xs-2 col-md-2"></div>
-    <div class="col-xs-8 col-md-8">
+
+    <div class="container">
    <h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
    <h1 class="h3 mb-3 fw-normal">공지사항</h1> 
-    <div class="table table-responsive">
         <table class="table">
         <tr>
             <th class="success">글번호</th>
@@ -49,10 +55,7 @@
         </tr>
 
         </table>
-
    </div>
-    </div>
-    </div>
 <div align="center">
    <c:if test="${authInfo.grade > 1 }">
    <a class="btn btn-default" href="noticeEdit?noticeNo=${dto.noticeNo }">수정</a>

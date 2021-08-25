@@ -6,6 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <title>게시판</title>
+<style type="text/css">
+	.container{
+		width: 1130px;
+		padding: 20px 30px;
+		min-width: 1190px;
+		margin: auto;
+	}
+</style>
+</style>
 </head>
 <body>
 <div class="container">

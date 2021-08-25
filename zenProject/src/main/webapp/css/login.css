@@ -34,16 +34,14 @@ li {
 
 /* login-box */
 body{
-    color: #EFFFE9;
     font-size: 25px;
 }
 .login-box{
     width: 500px;
     height: 500px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-250px, -250px);
+    padding: 100px;
+    color: #EFFFE9;
+    margin: auto;
 }
 .login-box table{
     text-align: center;

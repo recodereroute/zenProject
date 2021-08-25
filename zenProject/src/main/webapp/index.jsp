@@ -19,6 +19,7 @@
 	href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap"
 	rel="stylesheet">
 </head>
+<div class="wrapper">
 <header class="header">
 
 	<div class="project-logo">
@@ -196,5 +197,5 @@
 	</div>
 
 </footer>
-
+</div>
 </html>
