@@ -7,7 +7,14 @@
 <meta charset="UTF-8">
 <title>공지사항 등록</title>
 <style>
-*{background-color :#EFFFE9;}
+
+        .container{
+            width: 1130px;
+            max-width: 1190px;
+            min-width: 1190px;
+            padding: 20px 30px;
+            margin: auto;
+        }
 .button4 {
  
     font-family: Verdana, Geneva, sans-serif;
