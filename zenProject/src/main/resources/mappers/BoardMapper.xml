@@ -67,7 +67,7 @@
 		where board_no = #{boardNo}
 	</update>
 	<select id="count" resultType="int">
-		select count(*) from notice
+		select count(*) from board
 	</select>
 
 </mapper>
