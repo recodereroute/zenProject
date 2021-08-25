@@ -16,6 +16,7 @@ public class MenuCommand {
     String menuSubItem;
     String menuRecmnd;
     String menuCnt;
+    String menuDate;
     String empNo;
     String FileDel;
 }

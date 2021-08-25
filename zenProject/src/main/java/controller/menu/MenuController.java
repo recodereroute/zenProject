@@ -71,20 +71,19 @@ public class MenuController {
 		return "menu/menuModify";
 	}
 
+	@RequestMapping(value="menuModify", method= RequestMethod.POST)
+	public String menuModify(MenuCommand menuCommand, HttpSession session,Errors errors){
+		new MenuFormValidator().validate(menuCommand, errors);
+		if(errors.hasErrors()) {
+			return "menu/menuModify";
+		}
+		menuModifyService.menuModify(menuCommand, session);
+		return "redirect:menuList";
+	}
 	@RequestMapping("menuDel")
 	public String menuDel(@RequestParam(value = "menuNo") String menuNo, HttpSession session) {
 		menuDeleteService.menuDel(menuNo, session);
 		return "redirect:menuList";
 	}
 
-	@RequestMapping(value="menuModify", method= RequestMethod.POST)
-	public String menuModify(MenuCommand menuCommand, HttpSession session,Errors errors){	
-		new MenuFormValidator().validate(menuCommand, errors);
-		if(errors.hasErrors()) {
-			return "menu/menuModify";
-		}
-		else {
-		menuModifyService.menuModify(menuCommand, session);
-		return "redirect:menuList";}
-	}
 }

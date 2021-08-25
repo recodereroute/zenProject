@@ -37,9 +37,7 @@
 }</style>
 </head>
 <body>
-<form:form action="menuModify" method="post" enctype="multipart/form-data"
-	modelAttribute="menuCommand" >
-   <input type="hidden" name="menuNo" value="${dto.menuNo  }"/>
+<form:form action="menuModify" method="post" enctype="multipart/form-data" modelAttribute="menuCommand" >
 <div class="container">
 <h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
 <div class="row">
@@ -49,10 +47,10 @@
 
 	<label for="name">글번호:</label> 
 		<input type="text" readonly="readonly" class="form-control" name="menuNo"  value="${menuCommand.menuNo }" id="name">
-	<form:errors path="menuNo"/>
+		<form:errors path="menuNo"/>
 		<label for="name">메뉴 이름:</label>
   			<input type="text" class="form-control" name="menuName" id="name" value="${menuCommand.menuName }">
- 	<form:errors path="menuName"/> 
+  				<form:errors path="menuName"/>
 
 </div>
 </div>
@@ -64,7 +62,7 @@
                     <input type="checkbox" name="menuMainItem" id="menuMainItem" value="유제품"/>
                     <label for="menuMainItem">유제품</label>
                   <input type="checkbox" name="menuMainItem" id="menuMainItem" value="생선류"/>
-                   <label for="menuMainItem">생선류</label>&nbsp;&nbsp;&nbsp;<form:errors path="menuMainItem" /><br />
+                   <label for="menuMainItem">생선류</label>&nbsp;&nbsp;&nbsp;<form:errors path="menuMainItem"/><br />
                    
 부재료 : <input type="checkbox" name="menuSubItem" id="menuSubItem" value="소금"/>
                    <label for="menuSubItem">소금</label>
@@ -78,12 +76,12 @@
                      <br> 
 <label for="content">조리법:</label> 
 	<textarea class="form-control" rows="5" cols="60" name="menuRecipe" id="content" >${menuCommand.menuRecipe }</textarea>
-	<form:errors path="menuRecipe" />
+		<form:errors path="menuRecipe"/>
 <div class="filebox bs3-primary">
 <br>
 
 메뉴이미지:   <p>
-            <span id="file"> ${menuCommand.menuImg.split(',')[idx.index]}
+            <span id="file"> ${dto.menuImg.split(',')[idx.index]}
             </span> <input type="button" id="btn" onclick="fileDel1(this)"
                value="이미지 삭제" />
          </p>
