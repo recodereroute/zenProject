@@ -20,7 +20,7 @@
 		</tr>
 	<c:forEach items="${lists }" var="dto" varStatus="cnt">
 		<tr>
-			<td>${cnt.count }</td>
+			<td>${cnt.count + (page -1) * 3}</td>
 			<td>
 				<c:if test="${empty dto.menuImg }">
 					등록된 이미지가 없습니다.			
