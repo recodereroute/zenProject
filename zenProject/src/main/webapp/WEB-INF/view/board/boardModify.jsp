@@ -69,8 +69,8 @@
 		</c:forTokens>
 		파일 추가 : <input type="file" name="boardFile" multiple="multiple" /> 
 		<input type="hidden" name="fileDel" id="fileDel" size="100" />
-		<input type="submit" value="수정완료" />
-		<input type="button" value="삭제 "
+		<input type="submit" value="수정완료" class="button4"/>
+		<input type="button" value="삭제 " class="button4"
 			onclick="javascript:location.href='boardDel?boardNo=${dto.boardNo}'" />
 
 </div>

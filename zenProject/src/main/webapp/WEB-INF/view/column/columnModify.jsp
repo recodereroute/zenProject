@@ -57,8 +57,8 @@
 <label for="name">조회수:</label>
 <input type="text" value="${dto.noticeCnt }" readonly="readonly" class="form-control" name="noticeCnt" id="name">
 <br>
-		<input type="submit" value="수정완료"/>
-<input type="button" value="삭제 "
+		<input type="submit" value="수정완료" class="button4"/>
+<input type="button" value="삭제 " class="button4"
 onclick ="javascript:location.href='columnDel?noticeNo=${dto.noticeNo}'"/>
 </div>
 </div>

@@ -73,8 +73,8 @@
 <input type="text" value="${emp.empDetailAddr }"  class="form-control" name="empDetailAddr" id="name">
 
 
- <input type="submit" value="직원정보 수정" />
-			<input type="button" value="직원 삭제" 
+ <input type="submit" value="수정" class="button4" />
+			<input type="button" value="직원 삭제" class="button4"
 			onclick="javascript:location.href='empDelete?empNo=${emp.empNo }'"/>
 
 </div>

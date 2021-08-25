@@ -97,8 +97,8 @@
     </div>
     </div>
     <div align="center">
-    <a href="empModify?empNo=${emp.empNo }">수정</a> | 
-<a href="#" onclick = "javascript:history.back();">뒤로가기</a>
+    <a href="empModify?empNo=${emp.empNo }" class="button4">수정</a> 
+<a href="#" onclick = "javascript:history.back();" class="button4">뒤로가기</a>
 </div>
 </body>
 <!-- jquery -->

@@ -68,8 +68,8 @@
 		파일 추가 : 
 		<input type="file" name="noticeFile" multiple="multiple"/>
 		<input type="hidden" name="fileDel" id = "fileDel" size="100"/><br />
-		<input type="submit" value="게시글 수정" />
-		<input type="button" value="삭제" 
+		<input type="submit" value="게시글 수정" class="button4" />
+		<input type="button" value="삭제" class="button4"
 			onclick="javascript:location.href='noticeDel?noticeNo=${dto.noticeNo }'"/>
 
 </div>
