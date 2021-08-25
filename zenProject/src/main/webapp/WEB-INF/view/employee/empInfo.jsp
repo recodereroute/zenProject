@@ -7,43 +7,27 @@
 <meta charset="UTF-8">
 <title>직원 정보</title>
 <style type="text/css">
-  .button4 {
- 
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 24px;
-    color: #FFF;
-    padding: 5px 50px 5px 50px;
-    border: 1px solid #999;
- 
-    text-shadow: 0px 1px 1px #666;
-    text-decoration: none;
- 
-    -moz-box-shadow: 0 1px 3px #111;
-    -webkit-box-shadow: 0 1px 3px #111;
-    box-shadow: 0 1px 3px #111;
- 
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
- 
-    background: #64a724;
-    background: -moz-linear-gradient(top, #64a724 0%, #579727 50%, #58982a 51%, #498c25 100%);
-    background: -webkit-gradient(linear, left top, left bottom, from(#64a724), to(#498c25), color-stop(0.4, #579727), color-stop(0.5, #58982a), color-stop(.9, #498c25), color-stop(0.9, #498c25));
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#64a724', endColorstr='#498c25', GradientType=0 );
-    
-.button4:hover {
-    border: 1px solid #FFF;
+<style type="text/css">
+#container{
+	width: 700px;
+	padding:20px 30px;
+	margin: auto;
+}
+#table{
+	width: 100%;
+	max-width: 700px;
+	text-align: center;}
+th{
+	text-align: center;
+	width: 200px;
 }
 </style>
 </head>
 <body>
-<div class="row">
-    <div class="col-xs-2 col-md-2"></div>
-    <div class="col-xs-8 col-md-8">
+<div id="container">
    <h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
    <h1 class="h3 mb-3 fw-normal">직원 정보</h1> 
-    <div class="table table-responsive">
-        <table class="table">
+        <table class="table" id="table">
         <tr>
             <th class="success">사원번호</th>
             <td> ${emp.empNo }</td>
@@ -94,9 +78,7 @@
         </table>
 
    </div>
-    </div>
-    </div>
-    <div align="center">
+    <div align="center" id="container">
     <a href="empModify?empNo=${emp.empNo }" class="button4">수정</a> 
 <a href="#" onclick = "javascript:history.back();" class="button4">뒤로가기</a>
 </div>

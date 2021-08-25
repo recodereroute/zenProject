@@ -56,7 +56,7 @@
 
         </table>
    </div>
-<div align="center">
+<div align="center" class="container">
    <c:if test="${authInfo.grade > 1 }">
    <a class="btn btn-default" href="noticeEdit?noticeNo=${dto.noticeNo }">수정</a>
    </c:if>

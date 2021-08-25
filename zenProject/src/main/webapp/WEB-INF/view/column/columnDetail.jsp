@@ -6,16 +6,19 @@
 <head>
 <meta charset="UTF-8">
 <title>칼럼 게시판</title>
+<style type="text/css">
+	.container{
+		width: 1130px;
+		padding: 20px 30px;
+		min-width: 1160px;
+		margin: auto;
+	}
+</style>
 </head>
 <body>
-
-
-<div class="row">
-    <div class="col-xs-2 col-md-2"></div>
-    <div class="col-xs-8 col-md-8">
+    <div class="container">
    <h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1> 
    <h1 class="h3 mb-3 fw-normal">칼럼 게시판</h1> 
-    <div class="table table-responsive">
         <table class="table">
         <tr>
             <th class="success">글번호</th>
@@ -45,9 +48,7 @@
         </table>
 
    </div>
-    </div>
-    </div>
-    <div align="center">
+    <div align="center" class="container">
     <c:if test="${authInfo.grade > 1 }">
 <a class="btn btn-default" href="columnUpdate?noticeNo=${dto.noticeNo }">수정</a>
 </c:if>

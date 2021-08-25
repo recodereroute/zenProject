@@ -6,6 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>직원 리스트</title>
+<style type="text/css">
+	.container{
+		width: 1130px;
+		padding: 20px 30px;
+		min-width: 1190px;
+		margin: auto;
+	}
+</style>
 </head>
 <body>
 <div class="container">

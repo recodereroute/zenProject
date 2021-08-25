@@ -7,7 +7,12 @@
 <meta charset="UTF-8">
 <title>메뉴 수정</title>
 <style>
-*{background-color :#EFFFE9;}
+.container{
+		width: 1130px;
+		padding: 20px 30px;
+		min-width: 1160px;
+		margin: auto;
+	}
 .button4 {
  
     font-family: Verdana, Geneva, sans-serif;
