@@ -70,7 +70,7 @@
 					<ul class="">
 						<li><a href="employee/empMyPage">마이페이지</a></li>
 						<li><a href="memList">멤버리스트</a></li>
-						<li><a href="employee/empList">직원리스트</a></li>
+						<li><a href="empList">직원리스트</a></li>
 					</ul>
 				</c:if>
 			</c:if>

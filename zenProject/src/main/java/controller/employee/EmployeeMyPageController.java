@@ -37,8 +37,6 @@ public class EmployeeMyPageController {
 	EmployeePwConfirmService employeePwConfirmService;
 	@Autowired
 	EmployeePwUpdateService employeePwUpdateService;
-	@Autowired
-	EmployeeListService employeeListService;
 	
 	@RequestMapping("empMyPage")
 	public String empMyPage() {
@@ -105,12 +103,5 @@ public class EmployeeMyPageController {
 			return "employee/empPwEditOk";
 		}
 		return "redirect:/";
-	}
-	
-	//직원 리스트
-	@RequestMapping("empList")
-	public String empList(Model model, @RequestParam(value = "page", defaultValue = "1")int page) {
-		employeeListService.empList(model,page);
-		return "employee/empList";
-	}
+	}	
 }

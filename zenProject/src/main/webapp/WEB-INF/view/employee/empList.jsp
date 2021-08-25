@@ -13,11 +13,18 @@
 		min-width: 1190px;
 		margin: auto;
 	}
+	input.submitLink {
+    background-color: transparent;
+    text-decoration: none;
+    border: none;
+	color:blue;
+    cursor: pointer;
+    }
 </style>
 </head>
 <body>
 <div class="container">
-<h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
+<h1 class="h3 mb-3 fw-normal"><a  href="index.jsp">EZEN FOOD</a></h1>
 직원 리스트
    <c:if test="${empty list }">
       등록된 직원이 없습니다.
@@ -32,7 +39,10 @@
       </tr>
       <c:forEach var="empDTO" items="${list}">
       <tr>
-         <td><a href="empInfo?empNo=${empDTO.empNo }">${empDTO.empNo }</a></td>
+      <form action ="empListInfo" method="post" name = "frm">
+		 <input type = "hidden" name = "empNo" value=${empDTO.empNo } />
+         <td><input type="submit" value = "${empDTO.empNo }" class="submitLink"></td>
+      </form>
          <td>${empDTO.empName }</td>
          <td>${empDTO.empJob }</td>
          <td><fmt:formatDate value = "${empDTO.empHireDate }" type = "date" pattern = "yy-MM-dd"/></td>

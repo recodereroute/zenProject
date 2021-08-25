@@ -8,6 +8,7 @@
 >
 	<bean class = "repository.EmployeeRepository"/>
 	<bean class = "controller.employee.EmployeeMyPageController"/>
+	<bean class = "controller.employee.EmployeeController"/>
 	
 	<bean class = "service.employee.EmployeeNumService"/>
 	<bean class = "service.employee.EmployeeInfoService"/>

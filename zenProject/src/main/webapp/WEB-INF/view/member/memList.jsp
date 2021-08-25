@@ -13,6 +13,13 @@
 		min-width: 1190px;
 		margin: auto;
 	}
+	input.submitLink {
+    background-color: transparent;
+    text-decoration: none;
+    border: none;
+	color:blue;
+    cursor: pointer;
+    }
 </style>
 </head>
 <body>
@@ -23,7 +30,11 @@
 <table class = "table table-hover">
    <tr><td>닉네임</td><td>이름</td><td>이메일</td></tr>
    <c:forEach items="${memList }" var = "dto">
-      <tr><td><a href ="memInfo?${dto.memId}">${dto.memNick }</a></td>
+   	<tr>
+   	<form action ="memInfo" method="post" name="frm">
+   		<input type = "hidden" name = "memId" value="${dto.memId }"/>
+   		<td><input type = submit value="${dto.memNick }" class="submitLink"></td>
+   	</form>
       <td>${dto.memName }</td><td>${dto.memEmail }</td></tr>
    </c:forEach>
    <tr><td colspan="3">
@@ -36,21 +47,16 @@
 </c:if>
 </div>
 <!-- jquery -->
-
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
    
    <!-- BootStrap -->
-
       <!-- 합쳐지고 최소화된 최신 CSS -->
-
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
       <!-- 부가적인 테마 -->
-
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
  
       <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -17,4 +17,5 @@
 	<bean class = "service.member.MemberPwUpdateService"/>
 	<bean class = "service.member.MemberOutService"/>
 	<bean class = "service.member.MemberListService"/>
+	<bean class = "service.member.MemberInfoService"/>
 </beans>
