@@ -129,16 +129,16 @@
 					<td id="more-notice"><a href="notice/noticeList">더보기</a></td>
 				</tr>
 				<tr>
-					<td colspan="2"><a href="notice1">공지사항 1</a></td>
+					<td colspan="2"><a href="notice/noticeDetail?noticeNo=1">공지사항 1</a></td>
 				</tr>
 				<tr>
-					<td colspan="2"><a href="notice2">공지사항 2</a></td>
+					<td colspan="2"><a href="#">공지사항 2</a></td>
 				</tr>
 				<tr>
-					<td colspan="2"><a href="notice3">공지사항 3</a></td>
+					<td colspan="2"><a href="#">공지사항 3</a></td>
 				</tr>
 				<tr>
-					<td colspan="2"><a href="notice4">공지사항 4</a></td>
+					<td colspan="2"><a href="#">공지사항 4</a></td>
 				</tr>
 			</table>
 		</div>

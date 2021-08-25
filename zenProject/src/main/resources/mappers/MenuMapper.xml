@@ -4,15 +4,21 @@
 <mapper namespace="mappers.MenuMapper">
 	<select id="menuList" parameterType="Model.MenuDTO"
 		resultType="Model.MenuDTO">
-		select
-		MENU_NO menuNo,
-		MENU_NAME menuName,
-		MENU_IMG menuImg,
-		MENU_RECMND menuRecmnd,
-		MENU_CNT menuCnt,
-		EMP_NO empNo,
-		MENU_DATE menuDate
-		from menu
+		select rn, menuNo,menuName,menuImg,menuRecmnd,
+				menuCnt,empNo,menuDate
+				from(
+						select
+						rownum rn,
+						MENU_NO menuNo,
+						MENU_NAME menuName,
+						MENU_IMG menuImg,
+						MENU_RECMND menuRecmnd,
+						MENU_CNT menuCnt,
+						EMP_NO empNo,
+						MENU_DATE menuDate
+						from menu)
+		where rn between #{startEndPageDTO.startRow}
+		and #{startEndPageDTO.endRow}
 	</select>
 
 	<select id="menuNo" resultType="string">
@@ -34,7 +40,7 @@
 		EMP_NO empNo,
 		MENU_DATE menuDate
 		from menu
-		where MENU_NO = #{menuNO}
+		where MENU_NO = #{menuNo}
 	</select>
 
 	<insert id="menuWrite" parameterType="Model.MenuDTO">
@@ -78,7 +84,6 @@
 		menu_img =
 		<if test="menuImg == null">null</if>
 		<if test="menuImg != null">#{menuImg}</if>
-
 		where menu_no = #{menuNo}
 	</update>
 	<update id="menuCnt" parameterType="string">

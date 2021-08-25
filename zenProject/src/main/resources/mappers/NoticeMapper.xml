@@ -9,6 +9,7 @@
 	from NOTICE
 	where notice_kind = 1
 </select>
+
 <insert id="noticeWrite" parameterType="Model.NoticeDTO">
 	insert into NOTICE(NOTICE_NO, NOTICE_TITLE, NOTICE_CON, NOTICE_DATE, 
 				 NOTICE_KIND, NOTICE_CNT, EMP_NO, NOTICE_FILE,

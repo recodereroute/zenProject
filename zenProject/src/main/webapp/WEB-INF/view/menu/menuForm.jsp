@@ -51,7 +51,7 @@
 <div class="col-md-6"> 
 <div class="form-group">
 <label for="name">메뉴이름:</label>
-  <input type="text" class="form-control" name="menuName" id="name" placeholder="Enter name">
+  <input type="text" class="form-control" name="menuName" id="name" placeholder="Enter name" value="${menuCommand.menuName }">
  <form:errors path="menuName"/> 
 
 </div>
@@ -106,7 +106,6 @@
 var lBar = $(".load");
 var bar = $("button span");
 var button = $("button");
-
 button.on("click", function(){
      lBar.addClass("loading");
      setTimeout(function(){

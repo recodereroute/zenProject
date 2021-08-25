@@ -14,5 +14,6 @@ public class NoticeListService {
 	public void noticeList(Model model) {
 		List<NoticeDTO> list = noticeRepository.noticeList();
 		model.addAttribute("noticeList", list);
+		
 	}
 }

@@ -23,7 +23,6 @@ public class MenuWriteService {
 		dto.setMenuSubItem(menuCommand.getMenuSubItem());
 		dto.setMenuRecipe(menuCommand.getMenuRecipe());
 		dto.setMenuNo(menuNo);
-		System.out.println(menuCommand.getEmpNo());
 		dto.setEmpNo(menuCommand.getEmpNo());
 		
 		String path = session.getServletContext().getRealPath("WEB-INF/view/menu/upload");

@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -36,47 +34,57 @@ public class MenuController {
 	MenuModifyService menuModifyService;
 	@Autowired
 	MenuCommentListService menuCommentListService;
-	
+
 	@RequestMapping("menuList")
-	public String menuList(@RequestParam(value = "page", defaultValue = "1")Integer page, Model model){
+	public String menuList(@RequestParam(value = "page", defaultValue = "1") Integer page, Model model) {
 		menuListService.menuList(page, model);
 		return "menu/menuList";
 	}
+
 	@RequestMapping("menuForm")
 	public String menuForm() {
 		return "menu/menuForm";
 	}
+
 	@RequestMapping(value = "menuWrite", method = RequestMethod.POST)
-	public String menuWrite( MenuCommand menuCommand, HttpSession session ,Errors errors
-			 ) {
+	public String menuWrite(MenuCommand menuCommand, HttpSession session, Errors errors) {
 		new MenuFormValidator().validate(menuCommand, errors);
-		if(errors.hasErrors()) {
+		if (errors.hasErrors()) {
 			return "menu/menuForm";
-		}else {
+		} else {
 			menuWriteService.menuWrite(menuCommand, session);
 			return "redirect:menuList";
 		}
-	
+
 	}
+
 	@RequestMapping("menuDetail")
-	public String menuDetail(@RequestParam(value = "menuNo")String menuNo, Model model) {
-		menuDetailService.menuDetail(menuNo,model);
+	public String menuDetail(@RequestParam(value = "menuNo") String menuNo, Model model) {
+		menuDetailService.menuDetail(menuNo, model);
 		menuCommentListService.mcmntList(model, menuNo);
 		return "menu/menuView";
 	}
+
 	@RequestMapping("menuEdit")
-	public String menuEdit(@RequestParam(value = "menuNo")String menuNo,Model model) {
+	public String menuEdit(@RequestParam(value = "menuNo") String menuNo, Model model) {
 		menuDetailService.menuEdit(menuNo, model);
 		return "menu/menuModify";
 	}
+
 	@RequestMapping("menuDel")
-	public String menuDel(@RequestParam(value = "menuNo")String menuNo,HttpSession session){
-		menuDeleteService.menuDel(menuNo,session);
+	public String menuDel(@RequestParam(value = "menuNo") String menuNo, HttpSession session) {
+		menuDeleteService.menuDel(menuNo, session);
 		return "redirect:menuList";
 	}
+
 	@RequestMapping(value="menuModify", method= RequestMethod.POST)
-	public String menuModify(MenuCommand menuCommand, HttpSession session){	
-		menuModifyService.menuModify(menuCommand,session);
-		return "redirect:menuList";	
+	public String menuModify(MenuCommand menuCommand, HttpSession session,Errors errors){	
+		new MenuFormValidator().validate(menuCommand, errors);
+		if(errors.hasErrors()) {
+			return "menu/menuModify";
+		}
+		else {
+		menuModifyService.menuModify(menuCommand, session);
+		return "redirect:menuList";}
 	}
 }

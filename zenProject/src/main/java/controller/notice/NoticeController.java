@@ -44,6 +44,7 @@ public class NoticeController {
 	@RequestMapping("noticeList")
 	public String noticeList(Model model) {
 		noticeListService.noticeList(model);
+		
 		return "notice/noticeList";
 	}
 	@RequestMapping("noticePost")

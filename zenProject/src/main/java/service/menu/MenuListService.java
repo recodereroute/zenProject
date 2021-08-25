@@ -21,10 +21,6 @@ public class MenuListService {
 		int limit = 3;//페이지에 보여지는 리스트
 		int limitPage = 5; //페이지 수
 		
-		List<MenuDTO> list = menuRepository.menuList(dto);
-		int count = menuRepository.count();
-		model.addAttribute("lists", list);
-		model.addAttribute("count", count);
 		
 		if (page != null) {
 			//시작행
@@ -35,8 +31,13 @@ public class MenuListService {
 			sep.setStartRow(startRow);
 			sep.setEndRow(endRow);
 			dto.setStartEndPageDTO(sep);
-			PageAction pageAction = new PageAction();
-			pageAction.page(count, limit, page, limitPage, model, "menuList");
 		}
+		List<MenuDTO> list = menuRepository.menuList(dto);
+		int count = menuRepository.count();
+		model.addAttribute("lists", list);
+		model.addAttribute("count", count);
+		if(page!=null) {
+		PageAction pageAction = new PageAction();
+		pageAction.page(count, limit, page, limitPage, model, "menuList");}
 	}
 }

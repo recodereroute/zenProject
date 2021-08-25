@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
-<%@include file="../include/includeTags.jsp"%>
+ <%@ include file="../include/includeTags.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,19 +37,22 @@
 }</style>
 </head>
 <body>
-<form action="menuModify" method="post" enctype="multipart/form-data">
-
+<form:form action="menuModify" method="post" enctype="multipart/form-data"
+	modelAttribute="menuCommand" >
+   <input type="hidden" name="menuNo" value="${dto.menuNo  }"/>
 <div class="container">
 <h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
 <div class="row">
 <div class="col-md-6"> 
 <div class="form-group">
 
-<label for="name">글번호:</label>
-<input type="text" value="${dto.menuNo }" readonly="readonly" class="form-control" name="menuNo" id="name">
-<label for="name">메뉴 이름:</label>
-<input type="text" value="${dto.menuName }"  class="form-control" name="menuName" id="name">
 
+	<label for="name">글번호:</label> 
+		<input type="text" readonly="readonly" class="form-control" name="menuNo"  value="${menuCommand.menuNo }" id="name">
+	<form:errors path="menuNo"/>
+		<label for="name">메뉴 이름:</label>
+  			<input type="text" class="form-control" name="menuName" id="name" value="${menuCommand.menuName }">
+ 	<form:errors path="menuName"/> 
 
 </div>
 </div>
@@ -61,8 +64,9 @@
                     <input type="checkbox" name="menuMainItem" id="menuMainItem" value="유제품"/>
                     <label for="menuMainItem">유제품</label>
                   <input type="checkbox" name="menuMainItem" id="menuMainItem" value="생선류"/>
-                   <label for="menuMainItem">생선류</label><br />
-         부재료 : <input type="checkbox" name="menuSubItem" id="menuSubItem" value="소금"/>
+                   <label for="menuMainItem">생선류</label>&nbsp;&nbsp;&nbsp;<form:errors path="menuMainItem" /><br />
+                   
+부재료 : <input type="checkbox" name="menuSubItem" id="menuSubItem" value="소금"/>
                    <label for="menuSubItem">소금</label>
                     <input type="checkbox" name="menuSubItem" id="menuSubItem" value="간장"/>
                      <label for="menuSubItem">간장</label>
@@ -71,14 +75,15 @@
                      <input type="checkbox" name="menuSubItem" id="menuSubItem" value="마늘"/>
                      <label for="menuSubItem">마늘</label> <br />
                      <div class="form-group">
-                     <br>                 
+                     <br> 
 <label for="content">조리법:</label> 
-<textarea class="form-control" rows="5" cols="60" name="menuRecipe" id="content">${dto.menuRecipe }</textarea>
+	<textarea class="form-control" rows="5" cols="60" name="menuRecipe" id="content" >${menuCommand.menuRecipe }</textarea>
+	<form:errors path="menuRecipe" />
 <div class="filebox bs3-primary">
 <br>
 
 메뉴이미지:   <p>
-            <span id="file"> ${dto.menuImg.split(',')[idx.index]}
+            <span id="file"> ${menuCommand.menuImg.split(',')[idx.index]}
             </span> <input type="button" id="btn" onclick="fileDel1(this)"
                value="이미지 삭제" />
          </p>
@@ -86,9 +91,9 @@
    이미지 추가 : <input type="file" name="menuImg" multiple="multiple" /><br>
 <br>
 <label for="name">등록일:</label>
-<input type="text" value="${dto.menuDate }" readonly="readonly" class="form-control" name="menuDate" id="name">
+<input type="text" value="${menuCommand.menuDate }" readonly="readonly" class="form-control" name="menuDate" id="name">
 <label for="name">조회수:</label>
-<input type="text" value="${dto.menuCnt }" readonly="readonly" class="form-control" name="menuCnt" id="name">
+<input type="text" value="${menuCommand.menuCnt }" readonly="readonly" class="form-control" name="menuCnt" id="name">
 
    
          <a href="menuList">리스트로 돌아가기</a><br>
@@ -98,7 +103,7 @@
 </div>
 </div>        
 </div>
-</form>
+</form:form>
    
 </body>
 <!-- jquery -->
