@@ -6,6 +6,86 @@
 <head>
 <meta charset="UTF-8">
 <title>정보 수정</title>
+<style>
+*{background-color :#EFFFE9;}
+.button4 {
+ 
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 24px;
+    color: #FFF;
+    padding: 5px 50px 5px 50px;
+    border: 1px solid #999;
+ 
+    text-shadow: 0px 1px 1px #666;
+    text-decoration: none;
+ 
+    -moz-box-shadow: 0 1px 3px #111;
+    -webkit-box-shadow: 0 1px 3px #111;
+    box-shadow: 0 1px 3px #111;
+ 
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+ 
+    background: #64a724;
+    background: -moz-linear-gradient(top, #64a724 0%, #579727 50%, #58982a 51%, #498c25 100%);
+    background: -webkit-gradient(linear, left top, left bottom, from(#64a724), to(#498c25), color-stop(0.4, #579727), color-stop(0.5, #58982a), color-stop(.9, #498c25), color-stop(0.9, #498c25));
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#64a724', endColorstr='#498c25', GradientType=0 );
+    
+.button4:hover {
+    border: 1px solid #FFF;
+}
+</style>
+</head>
+<body>
+<form action="empModifyOk" method="post" name="frm">
+<div class="container">
+<h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
+<h1 class="h3 mb-3 fw-normal">직원 정보</h1> 
+<div class="row">
+<div class="col-md-6"> 
+<div class="form-group">
+
+<label for="name">사원번호:</label>
+<input type="text" value="${emp.empNo}" readonly="readonly" class="form-control" name="empNo" id="name">
+<label for="name">사원아이디:</label>
+<input type="text" value="${emp.empId}" readonly="readonly" class="form-control" name="empId" id="name">
+<label for="name">이름:</label>
+<input type="text" value="${emp.empName}" readonly="readonly" class="form-control" name="empName" id="name">
+<label for="name">입사일:</label>
+<input type="text" value=<fmt:formatDate value="${emp.empHireDate}" type="date" pattern="yyyy-MM-dd"/> readonly="readonly" class="form-control" name="empHireDate" id="name">
+<label for="name">직무:</label>
+<input type="text" value="${emp.empJob }" readonly="readonly" class="form-control" name="empJob" id="name">
+<label for="name">연락처:</label>
+<input type="text" value="${emp.empPhone }"  class="form-control" name="empPhone" id="name">
+<label for="name">사무실번호:</label>
+<input type="text" value="${emp.empOfficeNum }"  class="form-control" name="empOfficeNum" id="name">
+<label for="name">이메일:</label>
+<input type="text" value="${emp.empEmail }"  class="form-control" name="empEmail" id="name">
+<label for="name">우편번호:</label>
+<input type="text" value="${emp.empPost }"  class="form-control" name="empPost" id="sample4_postcode">
+<label for="name">주소:</label>
+<input type="text" value="${emp.empAddr }"  class="form-control" name="empAddr" id="sample4_roadAddress">
+
+<a href="javascript:sample4_execDaumPostcode();">주소 검색</a>
+<br>
+<label for="name">상세주소:</label>
+<input type="text" value="${emp.empDetailAddr }"  class="form-control" name="empDetailAddr" id="name">
+
+
+ <input type="submit" value="직원정보 수정" />
+			<input type="button" value="직원 삭제" 
+			onclick="javascript:location.href='empDelete?empNo=${emp.empNo }'"/>
+
+</div>
+</div>
+</div>
+</div>        
+
+</form>
+
+</form>
+</body>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
@@ -59,51 +139,21 @@
         }).open();
     }
 </script>
-</head>
-<body>
-<form action="empModifyOk" method="post" name="frm">
-<input type="hidden" name="empNo" value="${emp.empNo }"/>
-<table border = 1 align="center">
-	<tr><td>사원번호</td>
-		<td> ${emp.empNo}</td></tr>
-	<tr><td>사원아이디</td>
-		<td>${emp.empId}</td></tr>
-	<tr><td>이름</td>
-		<td>${emp.empName}</td></tr>
-	<tr><td>입사일</td>
-		<td><fmt:formatDate value="${emp.empHireDate}" type="date" pattern="yyyy-MM-dd"/> </td></tr>
-	<tr><td>직무</td>
-		<td>${emp.empJob }</td></tr>
-	<tr><td>연락처</td>
-		<td>
-			<input type="text" name="empPhone" placeholder="010-1234-1234" value="${emp.empPhone }"/>
-		</td></tr>
-	<tr><td>사무실번호</td>
-		<td>
-			<input type="text" name="empOfficeNum" placeholder="02-1234-1234" value="${emp.empOfficeNum }"/>
-		</td></tr>
-	<tr><td>이메일</td>
-		<td>
-			<input type="text" name="empEmail" value="${emp.empEmail }"/>
-		</td></tr>
-	<tr><td>우편번호</td>
-		<td>
-			<input name="empPost" value = "${emp.empPost }" id="sample4_postcode" readonly="readonly" />
-		</td></tr>
-	<tr><td>주소</td>
-		<td><input name ="empAddr" value = "${emp.empAddr }" id="sample4_roadAddress"  size="30"  readonly="readonly" />
-				<a href="javascript:sample4_execDaumPostcode();">주소 검색</a>
-			</td></tr>
-	<tr><td>상세주소</td>
-		<td>
-			<input type = "text" name = "empDetailAddr" value = "${emp.empDetailAddr }"/>
-		</td></tr>
-	<tr><td colspan="2" align="center">
-			<input type="submit" value="직원정보 수정" />
-			<input type="button" value="직원 삭제" 
-			onclick="javascript:location.href='empDelete?empNo=${emp.empNo }'"/>
-		</td></tr>
-</table>
-</form>
-</body>
+<!-- jquery -->
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   
+   <!-- BootStrap -->
+
+      <!-- 합쳐지고 최소화된 최신 CSS -->
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+      <!-- 부가적인 테마 -->
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+ 
+      <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </html>
