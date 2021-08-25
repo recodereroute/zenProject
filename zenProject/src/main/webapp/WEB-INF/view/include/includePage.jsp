@@ -10,7 +10,12 @@
 </c:if>
 
 <c:forEach begin="${startPage }" end="${endPage }" var="i" step="1">
-	<a href="${pageUrl }?page=${i }">[${i }]</a> &nbsp;
+	<c:if test="${page == i }">
+		[${i }]&nbsp;
+	</c:if>
+	<c:if test="${page != i }">
+		<a href="${pageUrl }?page=${i }">[${i }]</a> &nbsp;
+	</c:if>
 </c:forEach>
 
 <c:if test="${page >= maxPage }">

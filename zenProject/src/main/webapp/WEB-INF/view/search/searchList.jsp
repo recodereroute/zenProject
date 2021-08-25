@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container">
-<h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
+<h1 class="h3 mb-3 fw-normal"><a href="index.jsp">EZEN FOOD</a></h1>
 	<table class="table table-hover" border="1">
 		<tr>
 			<td>번호</td>
@@ -44,7 +44,12 @@
 				</c:if>
 				
 				<c:forEach begin="${startPage }" end="${endPage }" var="i" step="1">
-					<a href="${pageUrl }page=${i }">[${i }]</a> &nbsp;
+					<c:if test="${page == i }">
+						[${i }]&nbsp;
+					</c:if>
+					<c:if test="${page != i }">
+						<a href="${pageUrl }page=${i }">[${i }]</a> &nbsp;
+					</c:if>
 				</c:forEach>
 				
 				<c:if test="${page >= maxPage }">
