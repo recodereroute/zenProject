@@ -18,7 +18,7 @@ public class MenuListService {
 	public void menuList(Integer page, Model model) {
 		MenuDTO dto = new MenuDTO();
 		
-		int limit = 3;//페이지에 보여지는 리스트
+		int limit = 12;//페이지에 보여지는 리스트
 		int limitPage = 5; //페이지 수
 		
 		
