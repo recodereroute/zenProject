@@ -225,7 +225,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td id="menuNo-td">${cnt.count }번메뉴</td>
+                        <td id="menuNo-td">${cnt.count + (page - 1) * 12 }번메뉴</td>
                         <td id="viewCnt-td">
                             조회수 ${dto.menuCnt }
                         </td>
