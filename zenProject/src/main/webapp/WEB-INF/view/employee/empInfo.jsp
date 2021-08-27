@@ -5,98 +5,134 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>직원 정보</title>
-    <style type="text/css">
-        .container{
-            width: 700px;
-            padding: 20px 30px;
-            max-width: 760px;
-            margin: auto;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>직원 정보</title>
+<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Poor Story', cursive;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:link {
+	color: #EFFFE9;
+}
+
+a:visited {
+	color: #EFFFE9;
+}
+
+a:hover {
+	color: rgb(240, 236, 42);
+}
+
+li {
+	list-style: none;
+}
+
+/* table */
+body {
+	font-size: 30px;
+	color: #EFFFE9;
+}
+
+.container {
+	width: 700px;
+	padding: 100px;
+	max-width: 760px;
+	margin: auto;
+}
+
+table {
+	width: 500px;
+	height: 500px;
+	border: #72CC82 solid 1px;
+	background-color: #109972;
+	border-radius: 10px;
+	width: 500px;
+	height: 500px;
+	text-align: center;
+}
+
+button {
+	width: 90%;
+	height: 45px;
+	border-radius: 10px;
+	background-color: #754F44;
+	color: #EFFFE9;
+	font-size: 30px;
+	border: 2px #EFFFE9 solid;
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap"
+	rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="h3 mb-3 fw-normal">
-            <a href="../index.jsp">EZEN FOOD</a>
-        </h1>
-        <h1 class="h3 mb-3 fw-normal">직원 정보</h1>
-        <table class="table" id="table">
-            <tr>
-                <th class="success">사원번호</th>
-                <td>${emp.empNo }</td>
-            </tr>
+	<div class="container">
+		<table class="table" id="table">
+			<tr>
+				<td colspan="2">
+					<h1>직원 정보</h1>
+				</td>
+			</tr>
+			<tr>
+				<th>아이디</th>
+				<td>${emp.empId }</td>
+			</tr>
 
-            <tr>
-                <th class="success">아이디</th>
-                <td>${emp.empId }</td>
-            </tr>
-
-            <tr>
-                <th class="success">이름</th>
-                <td colspan="3">${emp.empName}</td>
-            </tr>
-            <tr>
-                <th class="success">입사일</th>
-                <td colspan="3">
-                    <fmt:formatDate value="${emp.empHireDate }" type="date" pattern="yyyy-MM-dd" />
-                </td>
-            </tr>
-            <tr>
-                <th class="success">직무</th>
-                <td colspan="3">${emp.empJob }</td>
-            </tr>
-            <tr>
-                <th class="success">연락처</th>
-                <td colspan="3">${emp.empPhone }</td>
-            </tr>
-            <tr>
-                <th class="success">사무실번호</th>
-                <td colspan="3">${emp.empOfficeNum }</td>
-            </tr>
-            <tr>
-                <th class="success">이메일</th>
-                <td colspan="3">${emp.empEmail }</td>
-            </tr>
-            <tr>
-                <th class="success">우편번호</th>
-                <td colspan="3">${emp.empPost}</td>
-            </tr>
-            <tr>
-                <th class="success">주소</th>
-                <td colspan="3">${emp.empAddr }</td>
-            </tr>
-            <tr>
-                <th class="success">상세주소</th>
-                <td colspan="3">${emp.empDetailAddr }</td>
-            </tr>
-
-        </table>
-
-        <div align="center">
-            <a href="empModify?empNo=${emp.empNo }" class="button4">수정</a> <a href="#"
-                onclick="javascript:history.back();" class="button4">뒤로가기</a>
-        </div>
-    </div>
+			<tr>
+				<th>이름</th>
+				<td>${emp.empName}</td>
+			</tr>
+			<tr>
+				<th>입사일</th>
+				<td><fmt:formatDate value="${emp.empHireDate }" type="date"
+						pattern="yyyy-MM-dd" /></td>
+			</tr>
+			<tr>
+				<th>직무</th>
+				<td>${emp.empJob }</td>
+			</tr>
+			<tr>
+				<th>연락처</th>
+				<td>${emp.empPhone }</td>
+			</tr>
+			<tr>
+				<th>사무실번호</th>
+				<td>${emp.empOfficeNum }</td>
+			</tr>
+			<tr>
+				<th>이메일</th>
+				<td>${emp.empEmail }</td>
+			</tr>
+			<tr>
+				<th>우편번호</th>
+				<td>${emp.empPost}</td>
+			</tr>
+			<tr>
+				<th>주소</th>
+				<td>${emp.empAddr }</td>
+			</tr>
+			<tr>
+				<th>상세주소</th>
+				<td>${emp.empDetailAddr }</td>
+			</tr>
+			<tr>
+				<td colspan="2"><a href="empModify?empNo=${emp.empNo }"><button>수정
+							완료</button></a></td>
+			</tr>
+			<tr>
+				<td colspan="2"><a href="../index.jsp">메인으로 돌아가기</a></td>
+			</tr>
+		</table>
+	</div>
 </body>
-<!-- jquery -->
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-<!-- BootStrap -->
-
-<!-- 합쳐지고 최소화된 최신 CSS -->
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<!-- 부가적인 테마 -->
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
 </html>

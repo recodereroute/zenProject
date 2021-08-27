@@ -21,15 +21,12 @@
 <h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
 	<table class="table table-hover">
 		<tr>
-			<td>번호</td>
 			<td>제목</td>
 			<td>등록일</td>
 			<td>조회수</td>
 		</tr>
 		<c:forEach items="${boardLists }" var="dto" varStatus="cnt"> <!--리스트 서비스에서name값을 가지고온다 -->
 		<tr>
-			<td>${(page-1) * 3 + cnt.count}</td>
-			
 			<td><a href="boardDetail?boardNo=${dto.boardNo }">${dto.boardTitle }</a></td>
 			<td><fmt:formatDate value="${dto.boardDate }" type="date" pattern="yy-MM-dd"/></td>
 			<td>${dto.boardCnt }</td>

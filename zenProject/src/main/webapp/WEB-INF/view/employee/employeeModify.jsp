@@ -13,6 +13,12 @@
             width: 700px;
             max-width: 700px;
         }
+        input{
+        	padding: 0px;
+        }
+        hr{
+        border: 1px black red;
+        }
 
         .button4 {
 
@@ -50,33 +56,38 @@
             <h1 class="h3 mb-3 fw-normal"><a href="../index.jsp">EZEN FOOD</a></h1>
             <h1 class="h3 mb-3 fw-normal">직원 정보</h1>
 
-            <label for="name">사원번호:</label>
-            <input type="text" value="${emp.empNo}" readonly="readonly" class="form-control" name="empNo" id="name">
             <label for="name">사원아이디:</label>
             <input type="text" value="${emp.empId}" readonly="readonly" class="form-control" name="empId" id="name">
+            <hr>
             <label for="name">이름:</label>
             <input type="text" value="${emp.empName}" readonly="readonly" class="form-control" name="empName" id="name">
+            <hr>
             <label for="name">입사일:</label>
-            <input type="text" value=<fmt:formatDate value="${emp.empHireDate}" type="date" pattern="yyyy-MM-dd" />
-            readonly="readonly" class="form-control" name="empHireDate"
-            id="name">
+            <input type="text" value=<fmt:formatDate value="${emp.empHireDate}" type="date" pattern="yyyy-MM-dd" /> readonly="readonly" class="form-control" name="empHireDate" id="name">
+            <hr>
             <label for="name">직무:</label>
-            <input type="text" value="${emp.empJob }" readonly="readonly" class="form-control" name="empJob" id="name">
+            <input type="text" value="${emp.empJob }"  class="form-control" name="empJob" id="name">
+            <hr>
             <label for="name">연락처:</label>
             <input type="text" value="${emp.empPhone }" class="form-control" name="empPhone" id="name">
+            <hr>
             <label for="name">사무실번호:</label>
             <input type="text" value="${emp.empOfficeNum }" class="form-control" name="empOfficeNum" id="name">
+            <hr>
             <label for="name">이메일:</label>
             <input type="text" value="${emp.empEmail }" class="form-control" name="empEmail" id="name">
+            <hr>
             <label for="name">우편번호:</label>
-            <input type="text" value="${emp.empPost }" class="form-control" name="empPost" id="sample4_postcode">
+            <input type="text" value="${emp.empPost }" class="form-control" name="empPost" id="sample4_postcode" readonly="readonly">
+            <hr>
             <label for="name">주소:</label>
-            <input type="text" value="${emp.empAddr }" class="form-control" name="empAddr" id="sample4_roadAddress">
+            <input type="text" value="${emp.empAddr }" class="form-control" name="empAddr" id="sample4_roadAddress" readonly="readonly">
 
             <a href="javascript:sample4_execDaumPostcode();">주소 검색</a>
-            <br>
+            <hr><br>
             <label for="name">상세주소:</label>
             <input type="text" value="${emp.empDetailAddr }" class="form-control" name="empDetailAddr" id="name">
+            <hr>
 
 
             <input type="submit" value="수정" class="button4" />

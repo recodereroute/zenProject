@@ -207,70 +207,79 @@ ul{list-style:none; }
          <div class="join_form">
    <form:form action="empJoin" method="post" name="frm"
       modelAttribute="employeeCommand">
+            <input name="empNo" type="hidden" value="${empNo }" />
+             <form:errors path="empNo" />
       <table>
       <colgroup>
       <col width="30%"/>
       <col width="auto"/>
     </colgroup>
-         <tr>
-            <th><span>사원번호</span></th>
-            <td><form:input path="empNo" value="${empNo }" /> <form:errors
-                  path="empNo" /></td>
-         </tr>
-         <tr>
+         <tr border=>
+            
             <th><span>사원아이디</span></th>
             <td><form:input path="empId" placeholder="ID를 입력하세요."/> <form:errors path="empId" /></td>
+            <td><hr></td>
          </tr>
          <tr>
             <th><span>비밀번호</span></th>
             <td><form:password path="empPw" placeholder="비밀번호를 입력하세요."/> <form:errors path="empPw" />
             </td>
+            <td><hr></td>
          </tr>
          <tr>
             <th><span>비밀번호 확인</span></th>
             <td><form:password path="empPwCon" placeholder="비밀번호를 확인하세요."/> <form:errors
                   path="empPwCon" /></td>
+                  <td><hr></td>
          </tr>
          <tr>
             <th><span>이름</span></th>
             <td><form:input path="empName" /> <form:errors path="empName" />
             </td>
+            <td><hr></td>
          </tr>
          <tr>
             <th><span>입사일</span></th>
             <td><input type="date" name="empHireDate" /> <form:errors
                   path="empHireDate" /></td>
+                  <td><hr></td>
          </tr>
          <tr>
             <th><span>직무</span></th>
             <td><form:input path="empJob" /> <form:errors path="empJob" /></td>
+            <td><hr></td>
          </tr>
          <tr>
             <th><span>연락처</span></th>
             <td><form:input path="empPhone" placeholder="010-1234-1234" />
                <form:errors path="empPhone" /></td>
+               <td><hr></td>
          </tr>
          <tr>
             <th><span>사무실번호</span></th>
             <td><form:input path="empOfficeNum" placeholder="02-1234-1234" />
                <form:errors path="empOfficeNum" /></td>
+               <td><hr></td>
          </tr>
          <tr>
             <th><span>이메일</span></th>
             <td><form:input path="empEmail" /> <form:errors
                   path="empEmail" /></td>
+                  <td><hr></td>
          </tr>
          <tr>
             <th><span>우편번호</span></th>
-            <td><form:input path="empPost" id="sample4_postcode"
+            <td><input type="text" name="empPost" id="sample4_postcode"
                   readonly="readonly" /> <form:errors path="empPost" /></td>
+                  <td><hr></td>
          </tr>
          <tr>
             <th><span>주소</span></th>
-            <td><form:input path="empAddr" id="sample4_roadAddress"
+            <td><input type="text" name="empAddr" id="sample4_roadAddress"
                   size="30" readonly="readonly" /> <a
                href="javascript:sample4_execDaumPostcode();">주소 검색</a> <form:errors
                   path="empAddr" /></td>
+                  <td><hr></td>
          </tr>
          <tr>
             <th><span>상세주소</span></th>
