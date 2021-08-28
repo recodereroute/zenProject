@@ -7,12 +7,13 @@
 <meta charset="UTF-8">
 <title>게시판</title>
 <style type="text/css">
-.container{
+.container {
 	width: 1130px;
 	padding: 20px 30px;
 	min-width: 1190px;
 	margin: auto;
 }
+
 .button4 {
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 24px;
@@ -38,14 +39,16 @@
 	button4: hover{
     border: 1px solid #FFF;
 }
+[href]{color: black;}
+.comment-table{border: 1px red solid;}
 </style>
 </head>
 <body>
 	<div class="container">
-	<h1 class="h3 mb-3 fw-normal">
-		<a href="../index.jsp">EZEN FOOD</a>
-	</h1>
-	<h1 class="h3 mb-3 fw-normal">일반 게시판</h1>
+		<h1 class="h3 mb-3 fw-normal">
+			<a href="../index.jsp">EZEN FOOD</a>
+		</h1>
+		<h1 class="h3 mb-3 fw-normal">일반 게시판</h1>
 		<table class="table">
 			<tr>
 				<th class="success">글번호</th>
@@ -85,7 +88,7 @@
 			</tr>
 
 		</table>
-		</div>
+	</div>
 	<div align="center" class="container">
 		<c:if test="${authInfo.userId == dto.memId }">
 			<a class="btn btn-default" href="boardUpdate?boardNo=${dto.boardNo }">수정</a>
@@ -95,37 +98,31 @@
 		<c:if test="${authInfo.grade == 1 }">
 			<form action="bcmntWrite" method="post">
 				<input type="hidden" name="cmntMemId" value="${authInfo.userId}" />
-				<input type="hidden" name="boardNo" value="${dto.boardNo }" /> <input
-					type="hidden" name="boardMemId" value="${dto.memId }" />
-				<table>
-					<tr>
-						<td>${authInfo.userId}</td>
-						<td><textarea rows="2" cols="30" name="boardCmntCon"></textarea></td>
-						<td><input type="submit" value="등록" class="button4" /></td>
-					</tr>
+				<input type="hidden" name="boardNo" value="${dto.boardNo }" />
+				<input type="hidden" name="boardMemId" value="${dto.memId }" />
+			<table border="1">
+				<tr>
+					<td>작성자</td>
+					<td rowspan="2"><textarea rows="2" cols="30" name="boardCmntCon"></textarea></td>
+					<td rowspan="2"><input type="submit" value="등록" class="button4" /></td>
+				</tr>
+				<tr>
+					<td>${authInfo.userId}</td>
+				</tr>
 				</table>
 			</form>
 		</c:if>
+		
 		<!-- 여기서 부터  댓글 테이블 생성 -->
 		<c:forEach items="${bcmntList }" var="bcmnt" varStatus="cnt">
-			<div id="content${cnt.count }">
-				<table border=1>
-					<tr>
-						<td>${bcmnt.cmntMemId }</td>
-						<td id="nowcomment">${bcmnt.boardCmntCon }</td>
-						<td id="nowdate">${bcmnt.boardCmntDate }</td>
+			<div class="comment-table" id="content${cnt.count }">
+						${bcmnt.cmntMemId }
+						${bcmnt.boardCmntCon }
+						${bcmnt.boardCmntDate }
 						<c:if test="${authInfo.userId == bcmnt.cmntMemId }">
-							<td>
-								<div>
-									<a
-										href="javascript:bcmntModify('content${cnt.count }','${bcmnt.boardCmntNo }','${dto.boardNo}');">수정</a>
-									/<a
-										href="bcmntDelete?boardCmntNo=${bcmnt.boardCmntNo }&boardNo=${dto.boardNo}">삭제</a>
-								</div>
-							</td>
+							<a href="javascript:bcmntModify('content${cnt.count }','${bcmnt.boardCmntNo }','${dto.boardNo}');">수정</a>
+							<a href="bcmntDelete?boardCmntNo=${bcmnt.boardCmntNo }&boardNo=${dto.boardNo}">삭제</a>
 						</c:if>
-					</tr>
-				</table>
 			</div>
 		</c:forEach>
 	</div>

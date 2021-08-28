@@ -42,7 +42,7 @@
       </td>
       <td>
         <!--  <input type="text" name="userId" placeholder="UserId" value="${isId }" id="input-id"/>-->
-        <form:input path="userId" placeholder="UserId" value="${isId }" id="input-id" />
+        <form:input path="userId" placeholder="UserId" value="${isId }" id="input-id" autofocus="autofocus"/>
         <br>
         <form:errors path="userId" />
       </td>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>게시글 작성</title>
 <style>
 *{background-color :#EFFFE9;}
 .button4 {
