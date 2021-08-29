@@ -4,12 +4,12 @@
 <mapper namespace="mappers.MenuMapper">
 	<select id="menuList" parameterType="Model.MenuDTO"
 		resultType="Model.MenuDTO">
-		select rn, menuNo,menuName,menuImg,menuRecmnd,menuCnt,empNo,menuDate, empName
+		select rn, menuNo,menuName,menuImg,menuRecmnd,menuCnt,empNo,menuDate, empId
 		from(
 	        select
 	        rownum rn, MENU_NO menuNo, MENU_NAME menuName,MENU_IMG menuImg,
 	        MENU_RECMND menuRecmnd, MENU_CNT menuCnt, m.EMP_NO empNo, MENU_DATE menuDate,
-	        emp_name empName
+	        emp_id empId
 	        from menu m, employees e
 	        where m.emp_no = e.emp_no)
 		<if test="startEndPageDTO != null">
@@ -25,7 +25,7 @@
 	<select id="menuDetail" parameterType="string" resultType="Model.MenuDTO">
 		select  MENU_NO menuNo, MENU_RECIPE menuRecipe, MENU_NAME menuName, MENU_IMG menuImg,
 				MENU_MAIN_ITEM menuMainItem, MENU_SUB_ITEM menuSubItem, MENU_RECMND menuRecmnd,
-				MENU_CNT menuCnt, m.EMP_NO empNo, MENU_DATE menuDate, emp_name empName
+				MENU_CNT menuCnt, m.EMP_NO empNo, MENU_DATE menuDate, emp_id empId
 		from menu m, employees e
 		where m.emp_no = e.emp_no and MENU_NO = #{menuNo}
 	</select>

@@ -36,6 +36,7 @@ public class MainController {
 	@Autowired
 	EmployeeJoinService employeeJoinService;
 	
+	
 	@RequestMapping("/search/findPasswordPro")
 	public String  findPasswordPro(MemberCommand memberCommand,
 			Model model) {

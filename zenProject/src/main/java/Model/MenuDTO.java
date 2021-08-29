@@ -23,5 +23,5 @@ public class MenuDTO {
     Date menuDate;
     
     StartEndPageDTO startEndPageDTO;
-    String empName;
+    String empId;
 }

@@ -238,7 +238,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td id="writer-td">${dto.empName }님</td>
+                        <td id="writer-td">${dto.empId }님</td>
                         <td id="date-td">
                             <fmt:formatDate value="${dto.menuDate }" type="date" pattern="yy-MM-dd" />
                         </td>
