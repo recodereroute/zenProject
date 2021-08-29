@@ -14,7 +14,7 @@ public class BoardListService {
 	@Autowired
 	BoardRepository boardRepository;
 
-	public void boardList(Model model, Integer page) {
+	public void boardList(Integer page, Model model) {
 		BoardDTO dto = new BoardDTO();
 		int limit = 3;
 		int limitPage = 10;

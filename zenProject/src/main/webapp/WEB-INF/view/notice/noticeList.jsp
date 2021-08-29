@@ -31,6 +31,10 @@
 			<td>${dto.noticeCnt }</td>
 		</tr>
 		</c:forEach>
+		<tr>
+				<td colspan="4"><%@ include file="../include/includePage.jsp"%>
+				</td>
+			</tr>
 	</table>
 	 <c:if test="${authInfo.grade > 1 }">
 	<a class="btn btn-default" href="noticePost">게시글 등록</a>

@@ -2,12 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mappers.noticeMapper">
-<select id="noticeList" resultType="Model.NoticeDTO">
-	select NOTICE_NO noticeNo, NOTICE_TITLE noticeTitle, NOTICE_CON noticeCon, 
+<select id="noticeList" resultType="Model.NoticeDTO" parameterType="Model.NoticeDTO">
+select  rn  noticeNo,  noticeTitle,  noticeCon, 
+		    noticeDate,  noticeKind,  noticeFile, 
+		    noticeCnt,  empNo
+	from (
+	select ROWNUM rn ,NOTICE_NO noticeNo, NOTICE_TITLE noticeTitle, NOTICE_CON noticeCon, 
 		   NOTICE_DATE noticeDate, NOTICE_KIND noticeKind, NOTICE_FILE noticeFile, 
 		   NOTICE_CNT noticeCnt, EMP_NO empNo
-	from NOTICE
-	where notice_kind = 1
+	from NOTICE)
+		<trim prefix="where">
+		<if test="startEndPageDTO != null">
+			rn between #{startEndPageDTO.startRow} and #{startEndPageDTO.endRow}
+		</if>
+		</trim>
 </select>
 
 <insert id="noticeWrite" parameterType="Model.NoticeDTO">
@@ -48,4 +56,8 @@
 		notice_file=#{noticeFile}
 	where notice_no = #{noticeNo}
 </update>
+	<select id="count" resultType="int">
+		select count(*) from notice
+	</select>
+
 </mapper>

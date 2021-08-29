@@ -42,8 +42,10 @@ public class NoticeController {
 	}
 	
 	@RequestMapping("noticeList")
-	public String noticeList(Model model) {
-		noticeListService.noticeList(model);
+	public String noticeList(
+			@RequestParam(value="page", defaultValue = "1") Integer page,
+			Model model) {
+		noticeListService.noticeList(page,model);
 		
 		return "notice/noticeList";
 	}

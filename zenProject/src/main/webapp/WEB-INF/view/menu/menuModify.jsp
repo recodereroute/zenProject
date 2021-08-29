@@ -109,6 +109,22 @@
 </form:form>
    
 </body>
+<script type="text/javascript">
+	function fileDel1(btn){
+		var fileDel = $("#fileDel").val();
+ 			if($(btn).attr("value") == "파일 삭제"){
+ 				$(btn).attr("value","파일 삭제 취소");
+ 				$("#fileDel").val($(btn).parent().children("#file").text().trim() + "/" + fileDel );
+ 			}else{
+ 				$(btn).attr("value","파일 삭제");
+ 				fileName= $(btn).parent().children("#file").text().trim();
+ 				$("#fileDel").val(fileDel.replace(fileName+"/",""));
+ 			}
+	}
+</script>
+
+
+
 <!-- jquery -->
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

@@ -13,13 +13,17 @@ public class NoticeRepository {
 	SqlSession sqlSession;
 	String namespace = "mappers.noticeMapper";
 	String statement;
+	public int count() {
+		statement = namespace +".count";
+		return sqlSession.selectOne(statement);
+	}
 	public void noticeWrite(NoticeDTO dto) {
 		statement = namespace + ".noticeWrite";
 		sqlSession.insert(statement, dto);
 	}
-	public List<NoticeDTO> noticeList(){
+	public List<NoticeDTO> noticeList(NoticeDTO dto){
 		statement = namespace + ".noticeList";
-		return sqlSession.selectList(statement);
+		return sqlSession.selectList(statement,dto);
 	}
 	public String noticeNo() {
 		statement = namespace + ".noticeNo";
@@ -43,4 +47,5 @@ public class NoticeRepository {
 		statement = namespace + ".noticeEdit";
 		sqlSession.update(statement,dto);
 	}
+	
 }

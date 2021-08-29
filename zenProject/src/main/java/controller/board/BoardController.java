@@ -18,6 +18,7 @@ import service.board.BoardListService;
 import service.board.BoardModifyService;
 import service.board.BoardWriteService;
 import service.boardComment.BoardCommentListService;
+import service.notice.NoticeListService;
 
 @Controller
 @RequestMapping("board")
@@ -34,9 +35,12 @@ public class BoardController {
 	BoardDeleteService boardDeleteService;
 	@Autowired
 	BoardCommentListService boardCommentListService;
+	@Autowired
+	NoticeListService noticeListService;
 	@RequestMapping("boardList")
 	public String boardList(@RequestParam(value="page",defaultValue = "1")Integer page, Model model) {
-		boardListService.boardList(model, page);
+		noticeListService.noticeList(page,model);
+		boardListService.boardList( page,model);
 		return "board/boardList";
 	}
 	@RequestMapping("boardWrite")
@@ -54,6 +58,7 @@ public class BoardController {
 	public String boardDetail(@RequestParam(value="boardNo")String boardNo, Model model) {
 		boardDetailService.boardDetail(boardNo, model);
 		boardCommentListService.cmntList(model,boardNo); 
+		
 		return "board/boardView";
 	}
 	@RequestMapping("boardUpdate")
