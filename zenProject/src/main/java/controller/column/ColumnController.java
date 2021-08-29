@@ -38,7 +38,7 @@ public class ColumnController {
 		 return "column/columnForm";
 		}
 	 @RequestMapping("columnWrite")
-	 public String columnWrite(
+	 public String columnWrite( 
 			 NoticeCommand noticeCommand,HttpSession session
 			 ) {
 		 columnWriteService.columnWrite(noticeCommand, session);
