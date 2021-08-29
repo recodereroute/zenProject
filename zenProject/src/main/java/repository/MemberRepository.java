@@ -13,9 +13,9 @@ public class MemberRepository {
 	String namespace = "mappers.memberMapper";
 	String statement;
 	
-	public List<MemberDTO> memList(){
+	public List<MemberDTO> memList(MemberDTO dto){
 		statement = namespace + ".memList";
-		return sqlSession.selectList(statement);
+		return sqlSession.selectList(statement, dto);
 	}
 	
 	public void memPwUpdate(MemberDTO dto) {
@@ -42,5 +42,9 @@ public class MemberRepository {
 	public int count() {
 		statement = namespace + ".count";
 		return sqlSession.selectOne(statement);
+	}
+	public void memDelete(String memId) {
+		statement = namespace + ".memDelete";
+		sqlSession.delete(statement, memId);
 	}
 }

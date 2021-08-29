@@ -18,4 +18,5 @@
 	<bean class = "service.member.MemberOutService"/>
 	<bean class = "service.member.MemberListService"/>
 	<bean class = "service.member.MemberInfoService"/>
+	<bean class = "service.member.MemberDeleteService"/>
 </beans>

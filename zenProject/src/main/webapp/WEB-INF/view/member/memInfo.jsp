@@ -72,7 +72,6 @@ button {
 </head>
 <body>
 <div class="container">
-        	
     <table>
         <tr>
             <td colspan="2"><h1>회원 정보</h1></td>
@@ -113,7 +112,7 @@ button {
             </td>
         </tr>
         <tr>
-	        	<td colspan="2"><a href="member/memOutOk">회원 강퇴 시키기</a></td>
+	        	<td colspan="2"><a href="memDelete?memId=${memberCommand.memId }">회원 강퇴 시키기</a></td>
         </tr>
         <tr>
             <td colspan="2" class="td1"><a href="index.jsp">메인으로 돌아가기</a></td>
