@@ -54,7 +54,7 @@
        
         <tr>
             <th class="success">작성자</th>
-            <td>${dto.empNo }</td>
+            <td>${dto.empName }</td>
             <th class="success">작성일</th>
             <td> <fmt:formatDate value="${dto.menuDate }" type="date" pattern="yy-MM-dd"/></td>
         </tr>

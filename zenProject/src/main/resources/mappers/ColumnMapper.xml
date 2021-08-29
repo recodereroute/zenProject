@@ -10,10 +10,10 @@
 		from(
 			select ROWNUM rn, NOTICE_NO noticeNo, NOTICE_TITLE noticeTitle, NOTICE_CON noticeCon, 
 				   NOTICE_DATE noticeDate, NOTICE_CNT noticeCnt, EMP_NO empNo, notice_kind
-			from NOTICE)
-		where notice_kind=2
+			from NOTICE
+			where notice_kind=2)
 		<if test="startEndPageDTO != null">
-			and rn between #{startEndPageDTO.startRow} and #{startEndPageDTO.endRow}
+			where rn between #{startEndPageDTO.startRow} and #{startEndPageDTO.endRow}
 		</if>
 	</select>
 	
