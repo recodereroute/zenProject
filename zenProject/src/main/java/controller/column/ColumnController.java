@@ -15,6 +15,7 @@ import service.column.ColumnDetailService;
 import service.column.ColumnListService;
 import service.column.ColumnModifyService;
 import service.column.ColumnWriteService;
+import service.notice.NoticeListService;
 
 @Controller
 @RequestMapping("column")
@@ -29,6 +30,8 @@ public class ColumnController {
 	ColumnModifyService columnModifyService;
 	@Autowired
 	ColumnDeleteService columnDeleteService;
+	@Autowired
+	NoticeListService noticeListService;
 	
 	 @RequestMapping("columnForm")
 		public String columnForm() {
@@ -44,6 +47,7 @@ public class ColumnController {
 	 @RequestMapping("columnList")
 	 public String columnList(@RequestParam(value="page",defaultValue = "1") Integer page, Model model) {
 		 columnListService.columnList(model,page);
+		 noticeListService.noticeList(page, model);
 		 return "column/columnList";
 	 }
 	 @RequestMapping("columnDetail")
