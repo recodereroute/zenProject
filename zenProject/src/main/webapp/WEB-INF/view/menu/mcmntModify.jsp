@@ -15,6 +15,7 @@
 			<td>${authInfo.userId}</td>
 			<td><textarea rows="2" cols="30" name="menuCmntCon" >${command.menuCmntCon }</textarea></td>
 			<td><input type = "submit" value="수정"/></td>
+			<td><button type="button" onclick="javascript:location.href=''">취소</button></td>
 		</tr>
 	</table>
 </form>
