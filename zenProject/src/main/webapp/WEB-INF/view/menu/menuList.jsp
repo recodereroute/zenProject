@@ -22,9 +22,6 @@
             text-decoration: none;
         }
 
-        a:link,a:visited {
-        	color: black;
-        }
 
         /* menu-chk-list */
         .chk-list {
