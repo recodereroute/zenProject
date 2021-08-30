@@ -8,6 +8,14 @@
 <title>메뉴 페이지</title>
 <style type="text/css">
 *{margin:0;padding:0;}li{list-style-type:none;}
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+
       .button4 {
  
     font-family: Verdana, Geneva, sans-serif;
@@ -46,8 +54,8 @@
     <div class="table table-responsive">
         <table class="table">
         <tr>
-            <th class="success">메뉴번호</th>
-            <td> ${dto.menuNo }</td>
+            <th class="success">메뉴이름</th>
+            <td >${dto.menuName }</td>
             <th class="success">조회수</th>
             <td>${dto.menuCnt }</td>
         </tr>
@@ -68,8 +76,7 @@
             <td colspan="3">${dto.menuSubItem }</td>
         </tr>
         <tr>
-            <th class="success">메뉴이름</th>
-            <td colspan="3">${dto.menuName }</td>
+            
         </tr>
          
         <tr>
@@ -97,37 +104,54 @@
    <c:if test="${authInfo.grade == 1 }">
    
    <button type="button" onclick='bmkAddConfirm();'>즐겨찾기 등록</button>
-   
+   <div class="container">
    <form action="mcmntWrite" method="post" >
       <input type="hidden" name="memId"  value="${authInfo.userId}"/>
       <input type ="hidden" name = "menuNo" value = "${dto.menuNo }"/>
-      <table>
+   
+      <table class="table table-striped table-bordered" border="1">
          <tr>
             <td>${authInfo.userId}</td>
             <td><textarea rows="2" cols="30" name="menuCmntCon"></textarea></td>
             <td><input type = "submit" value="등록" class="button4"/></td>
          </tr>
       </table>
+   
    </form>
+   </div>
    </c:if>
-   <!-- 여기서 부터  댓글 테이블 생성 -->
+   </div>
+<div class="container">
    <c:forEach items="${mcmntList }" var="mcmnt" varStatus="cnt">
       <div id ="content${cnt.count }">
-      <table border = 1>
+      <table class="table table-striped table-bordered"  border="1">
+               
          <tr>
-            <td>${mcmnt.memId }</td>
-            <td id="nowComment">${mcmnt.menuCmntCon }</td>
-            <td id ="nowDate">${mcmnt.menuCmntDate }</td>
+         <tr>
+                        <td colspan="2"><br></td>
+                    </tr>
+ 
+                    <tr>
+                        <td>닉네임 : ${mcmnt.memId }</td>
+                        <td id ="nowDate">작성일자 : ${mcmnt.menuCmntDate }</td>
+                    </tr>
+ 
+
+                    <tr>
+                        <td id="nowComment" colspan="2">댓글 내용 : ${mcmnt.menuCmntCon }</td>
+                    </tr>
+           
             <c:if test="${authInfo.userId == mcmnt.memId }">
-               <td>
-                  <a href="javascript:mcmntModify('content${cnt.count}','${mcmnt.menuCmntNo }','${dto.menuNo}');">수정</a>
-                  /<a href="mcmntDelete?menuCmntNo=${mcmnt.menuCmntNo }&menuNo=${dto.menuNo }">삭제</a></td>
+               <td colspan="2">
+                  <a href="javascript:mcmntModify('content${cnt.count}','${mcmnt.menuCmntNo }','${dto.menuNo}');" class="btn btn-default">수정</a>
+                  <a href="mcmntDelete?menuCmntNo=${mcmnt.menuCmntNo }&menuNo=${dto.menuNo }" class="btn btn-default">삭제</a></td>
             </c:if>
-         </tr>
+         
       </table>
       </div>
-   </c:forEach>
-   </div>
+
+    </c:forEach>
+</div>
 
 </body>
 
