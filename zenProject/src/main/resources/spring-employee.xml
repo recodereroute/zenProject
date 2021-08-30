@@ -18,4 +18,5 @@
 	<bean class = "service.employee.EmployeePwConfirmService"/>
 	<bean class = "service.employee.EmployeePwUpdateService"/>
 	<bean class = "service.employee.EmployeeListService"/>
+	<bean class = "service.employee.EmpListEditService"/>
 </beans>

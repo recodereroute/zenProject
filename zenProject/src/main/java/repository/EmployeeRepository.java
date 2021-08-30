@@ -32,6 +32,10 @@ public class EmployeeRepository {
 		statement = namespace + ".empModify";
 		sqlSession.update(statement, dto);
 	}
+	public void empListEdit(EmployeesDTO dto) {
+		statement = namespace + ".empListEdit";
+		sqlSession.update(statement, dto);
+	}
 	public void empDelete(String empNo) {
 		statement = namespace + ".empDelete";
 		sqlSession.delete(statement, empNo);

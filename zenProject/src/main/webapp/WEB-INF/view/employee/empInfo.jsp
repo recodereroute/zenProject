@@ -126,8 +126,8 @@ button {
 				<td>${emp.empDetailAddr }</td>
 			</tr>
 			<tr>
-				<td colspan="2"><a href="empModify?empNo=${emp.empNo }"><button>수정
-							완료</button></a></td>
+				<td colspan="2"><a href="empModify?empNo=${emp.empNo }">
+				<button>수정하기</button></a></td>
 			</tr>
 			<tr>
 				<td colspan="2"><a href="../index.jsp">메인으로 돌아가기</a></td>

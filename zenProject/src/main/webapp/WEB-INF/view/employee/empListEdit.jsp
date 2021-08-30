@@ -51,11 +51,11 @@
 </head>
 
 <body>
-    <form action="empModifyOk" method="post" name="frm">
+    <form action="empListEditOk" method="post" name="frm">
         <div class="container">
             <h1 class="h3 mb-3 fw-normal"><a href="../index.jsp">EZEN FOOD</a></h1>
             <h1 class="h3 mb-3 fw-normal">직원 정보</h1>
-
+			<input type = "hidden" value = "${emp.empNo }" name = "empNo"/>
             <label for="name">사원아이디:</label>
             <input type="text" value="${emp.empId}" readonly="readonly" class="form-control" name="empId" id="name">
             <hr>
@@ -66,7 +66,7 @@
             <input type="text" value=<fmt:formatDate value="${emp.empHireDate}" type="date" pattern="yyyy-MM-dd" /> readonly="readonly" class="form-control" name="empHireDate" id="name">
             <hr>
             <label for="name">직무:</label>
-            <input type="text" value="${emp.empJob }"  class="form-control" name="empJob" id="name" readonly="readonly">
+            <input type="text" value="${emp.empJob }"  class="form-control" name="empJob" id="name">
             <hr>
             <label for="name">연락처:</label>
             <input type="text" value="${emp.empPhone }" class="form-control" name="empPhone" id="name">
@@ -154,21 +154,13 @@
     }
 </script>
 <!-- jquery -->
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
 <!-- BootStrap -->
-
 <!-- 합쳐지고 최소화된 최신 CSS -->
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
 <!-- 부가적인 테마 -->
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 </html>

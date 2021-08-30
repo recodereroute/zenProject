@@ -121,7 +121,7 @@ button {
             </tr>
             <tr>
                 <td>
-                    <a href="employee/empModify?empNo=${emp.empNo }"><button>수정</button></a>
+                    <a href="empListEdit?empNo=${emp.empNo }"><button>수정</button></a>
                 </td>
                 <td><a href="index.jsp" ><button>메인으로</button></a></td>
             </tr>
