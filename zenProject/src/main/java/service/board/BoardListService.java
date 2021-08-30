@@ -27,6 +27,7 @@ public class BoardListService {
 			sep.setEndRow(endRow);
 			dto.setStartEndPageDTO(sep);
 		}
+		
 		List<BoardDTO> list = boardRepository.boardList(dto);
 		NoticeDTO noticeOne = boardRepository.noticeOne();
 		int count = boardRepository.count();

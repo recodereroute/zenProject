@@ -3,15 +3,16 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mappers.noticeMapper">
 <select id="noticeList" resultType="Model.NoticeDTO" parameterType="Model.NoticeDTO">
-select  rn  noticeNo,  noticeTitle,  noticeCon, 
+ select  rn,  noticeNo,  noticeTitle,  noticeCon, 
 		    noticeDate,  noticeKind,  noticeFile, 
 		    noticeCnt,  empNo
 	from (
-	select ROWNUM rn ,NOTICE_NO noticeNo, NOTICE_TITLE noticeTitle, NOTICE_CON noticeCon, 
+	select ROWNUM rn, NOTICE_NO noticeNo, NOTICE_TITLE noticeTitle, NOTICE_CON noticeCon, 
 		   NOTICE_DATE noticeDate, NOTICE_KIND noticeKind, NOTICE_FILE noticeFile, 
 		   NOTICE_CNT noticeCnt, EMP_NO empNo
 	from NOTICE
- 	where notice_kind=1)
+ 	where notice_kind=1
+    order by notice_no desc)
 		<trim prefix="where">
 		<if test="startEndPageDTO != null">
 			rn between #{startEndPageDTO.startRow} and #{startEndPageDTO.endRow}
@@ -59,6 +60,7 @@ select  rn  noticeNo,  noticeTitle,  noticeCon,
 </update>
 	<select id="count" resultType="int">
 		select count(*) from notice
+		where notice_kind=1
 	</select>
 
 </mapper>

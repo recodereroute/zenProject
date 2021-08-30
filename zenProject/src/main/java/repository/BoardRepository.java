@@ -14,6 +14,7 @@ public class BoardRepository {
 	SqlSession sqlSession;
 	String namespace  = "mappers.BoardMapper";
 	String statement; 
+	
 	public void boardDel(String boardNo) {
 		statement=namespace+".boardDel";
 		sqlSession.delete(statement,boardNo);

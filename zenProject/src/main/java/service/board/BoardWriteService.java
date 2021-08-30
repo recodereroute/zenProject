@@ -21,10 +21,12 @@ BoardRepository boardRepository;
 		AuthInfoDTO authInfo =(AuthInfoDTO)session.getAttribute("authInfo");
 		String memId=authInfo.getUserId();
 		BoardDTO dto= new BoardDTO();
-		dto.setBoardNo(boardCommand.getBoardNo());
 		dto.setBoardTitle(boardCommand.getBoardTitle());
 		dto.setBoardCon(boardCommand.getBoardCon());
 		dto.setMemId(memId);
+		
+		dto.setBoardNo(boardCommand.getBoardNo());
+		System.out.println(boardCommand.getBoardNo());
 		
 		String originalTotal="";
 		String storeTotal="";

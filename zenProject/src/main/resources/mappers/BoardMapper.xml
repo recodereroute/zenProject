@@ -8,7 +8,8 @@
 			   NOTICE_CNT noticeCnt, EMP_NO empNo
 		from (select *from notice order by notice_no desc )where notice_kind=1 and rownum=1
 	</select>
-	<sql id="boardNo">
+	
+	<sql id="boardNum">
 		select nvl(max(board_NO),0) + 1 from board
 	</sql>
 	<delete id="boardDel" parameterType="string">
@@ -20,11 +21,8 @@
 		board_no,board_title,board_con,board_cnt,mem_id, board_date,board_file
 		,board_org_file,board_file_size
 		)
-
 		values(
-		(
-		<include refid="boardNo" />
-		),#{boardTitle},#{boardCon},0,#{memId},sysdate,
+		(<include refid="boardNum"/>),#{boardTitle},#{boardCon},0,#{memId},sysdate,
 		<if test="boardFile == null">null,null,null</if>
 		<if test="boardFile != null">
 			#{boardFile},#{boardOrgFile},#{boardFileSize}
@@ -33,15 +31,16 @@
 
 	</insert>
 	<select id="boardList" parameterType="Model.BoardDTO" resultType="Model.BoardDTO">
-		select rn, boardNo, boardTitle, boardCon, boardDate, BOARD_FILE, boardCnt, memId
+	select ROWNUM, boardNo, boardTitle, boardCon, boardDate, BOARD_FILE, boardCnt, memId
 		from(
 			select
-			ROWNUM rn, Board_NO boardNo, board_title boardTitle,BOARD_CON boardCon,
+			 Board_NO boardNo, board_title boardTitle,BOARD_CON boardCon,
 			BOARD_DATE boardDate, BOARD_FILE, BOARD_CNT boardCnt, MEM_ID memId
-			from BOARD)
+			from BOARD
+			order by board_no desc)
 		<trim prefix="where">
 			<if test="startEndPageDTO != null">
-				rn between #{startEndPageDTO.startRow} and #{startEndPageDTO.endRow}
+				boardNo between #{startEndPageDTO.startRow} and #{startEndPageDTO.endRow}
 			</if>
 		</trim>
 	</select>

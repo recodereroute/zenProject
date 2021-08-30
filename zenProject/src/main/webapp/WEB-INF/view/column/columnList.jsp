@@ -39,7 +39,7 @@
 		
 		<c:forEach items="${columnLists }" var="dto" varStatus="cnt"> 
 		<tr>
-			<td>${cnt.count }</td>
+			<td>${cnt.count + (page-1) * 3}</td>
 			
 			<td><a href="columnDetail?noticeNo=${dto.noticeNo }">${dto.noticeTitle }</a></td>
 			<td><fmt:formatDate value="${dto.noticeDate }" type="date" pattern="yy-MM-dd"/> </td>

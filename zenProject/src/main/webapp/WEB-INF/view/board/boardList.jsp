@@ -23,21 +23,22 @@
 		</h1>
 		<table class="table table-hover">
 			<tr>
+			<td>번호</td>
 				<td>제목</td>
 				<td>등록일</td>
 				<td>조회수</td>
 			</tr>
 			
-<tr><td><a href="../notice/noticeDetail?noticeNo=${nOne.noticeNo }">${nOne.noticeTitle }</a></td>
+<tr>
+	<td>공지</td>
+	<td><a href="../notice/noticeDetail?noticeNo=${nOne.noticeNo }">${nOne.noticeTitle }</a></td>
 	<td><fmt:formatDate value="${nOne.noticeDate }" type="date" pattern="yy-MM-dd"/> </td>
 	<td>${nOne.noticeCnt }</td>
-	
 </tr>
-
-			
 			<c:forEach items="${boardLists }" var="dto" varStatus="cnt">
 				<!--리스트 서비스에서name값을 가지고온다 -->
 				<tr>
+				<td>${cnt.count +(page-1)*3}</td>
 					<td><a href="boardDetail?boardNo=${dto.boardNo }">${dto.boardTitle }</a></td>
 					<td><fmt:formatDate value="${dto.boardDate }" type="date"
 							pattern="yy-MM-dd" /></td>

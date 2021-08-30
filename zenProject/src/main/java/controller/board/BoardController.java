@@ -39,7 +39,6 @@ public class BoardController {
 	NoticeListService noticeListService;
 	@RequestMapping("boardList")
 	public String boardList(@RequestParam(value="page",defaultValue = "1")Integer page, Model model) {
-		noticeListService.noticeList(page,model);
 		boardListService.boardList( page,model);
 		return "board/boardList";
 	}

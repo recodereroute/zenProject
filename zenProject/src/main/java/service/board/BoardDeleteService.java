@@ -14,7 +14,9 @@ public class BoardDeleteService {
 BoardRepository boardRepository;
 	public void boardDel(String boardNo, HttpSession session) {
 		BoardDTO dto= boardRepository.boardDetail(boardNo);
-		String []fileNames=dto.getBoardFile().split(",");
+		
+		String []fileNames=
+					dto.getBoardFile().split(",");
 		
 		String realPath=session.getServletContext().getRealPath("WEB-INF/view/library/upload");
 		for(String fileName : fileNames) {
