@@ -13,23 +13,25 @@ import repository.EmployeeRepository;
 public class EmployeeListService {
 	@Autowired
 	EmployeeRepository employeeRepository;
-	public void empList(Model model, int page) {
+	public void empList(Model model, Integer page) {
+		EmployeesDTO dto = new EmployeesDTO();
 		int limit = 5;
 		int limitPage = 10;
-		
-		Long startRow = ((long)page - 1) * limit + 1;
-		Long endRow = startRow + limit - 1;
-		StartEndPageDTO sep = new StartEndPageDTO();
-		sep.setStartRow(startRow);
-		sep.setEndRow(endRow);
-		
-		EmployeesDTO dto = new EmployeesDTO();
-		dto.setStartEndPageDTO(sep);
-		List<EmployeesDTO> list = employeeRepository.empList();
+		if(page != null) {
+			Long startRow = ((long)page - 1) * limit + 1;
+			Long endRow = startRow + limit - 1;
+			StartEndPageDTO sep = new StartEndPageDTO();
+			sep.setStartRow(startRow);
+			sep.setEndRow(endRow);
+			dto.setStartEndPageDTO(sep);
+		}
+		List<EmployeesDTO> list = employeeRepository.empList(dto);
+		int count = employeeRepository.count();
 		model.addAttribute("list",list);
-		int count = list.size();
-		
-		PageAction pageAction = new PageAction();
-		pageAction.page(count, limit, page, limitPage, model, "empList");
+		model.addAttribute("count", count);
+		if(page != null) {
+			PageAction pageAction = new PageAction();
+			pageAction.page(count, limit, page, limitPage, model, "empList");
+		}
 	}
 }

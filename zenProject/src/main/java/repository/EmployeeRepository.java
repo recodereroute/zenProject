@@ -41,8 +41,12 @@ public class EmployeeRepository {
 		sqlSession.update(statement,dto);
 	}
 	//직원 리스트
-	public List<EmployeesDTO> empList(){
+	public List<EmployeesDTO> empList(EmployeesDTO dto){
 		statement = namespace + ".empList";
-		return sqlSession.selectList(statement);
+		return sqlSession.selectList(statement, dto);
+	}
+	public int count() {
+		statement = namespace + ".count";
+		return sqlSession.selectOne(statement);
 	}
 }

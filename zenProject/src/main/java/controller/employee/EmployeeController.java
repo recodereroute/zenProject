@@ -18,7 +18,7 @@ public class EmployeeController {
 	EmployeeInfoService employeeInfoService;
 	//직원 리스트
 	@RequestMapping("empList")
-	public String empList(Model model, @RequestParam(value = "page", defaultValue = "1")int page) {
+	public String empList(Model model, @RequestParam(value = "page", defaultValue = "1")Integer page) {
 		employeeListService.empList(model,page);
 		return "employee/empList";
 	}
