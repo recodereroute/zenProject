@@ -2,15 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mappers.BoardMapper">
-<select id="noticeOne" resultType="Model.NoticeDTO">
-	select  ROWNUM rn ,NOTICE_NO noticeNo, NOTICE_TITLE noticeTitle, NOTICE_CON noticeCon, 
-		   NOTICE_DATE noticeDate, NOTICE_KIND noticeKind, NOTICE_FILE noticeFile, 
-		   NOTICE_CNT noticeCnt, EMP_NO empNo
-from (select *from notice order by notice_no desc )where notice_kind=1 and rownum=1
-    
-    
-
-</select>
+	<select id="noticeOne" resultType="Model.NoticeDTO">
+		select  ROWNUM rn ,NOTICE_NO noticeNo, NOTICE_TITLE noticeTitle, NOTICE_CON noticeCon, 
+			   NOTICE_DATE noticeDate, NOTICE_KIND noticeKind, NOTICE_FILE noticeFile, 
+			   NOTICE_CNT noticeCnt, EMP_NO empNo
+		from (select *from notice order by notice_no desc )where notice_kind=1 and rownum=1
+	</select>
 	<sql id="boardNo">
 		select nvl(max(board_NO),0) + 1 from board
 	</sql>
@@ -35,8 +32,7 @@ from (select *from notice order by notice_no desc )where notice_kind=1 and rownu
 		)
 
 	</insert>
-	<select id="boardList" parameterType="Model.BoardDTO"
-		resultType="Model.BoardDTO">
+	<select id="boardList" parameterType="Model.BoardDTO" resultType="Model.BoardDTO">
 		select rn, boardNo, boardTitle, boardCon, boardDate, BOARD_FILE, boardCnt, memId
 		from(
 			select
@@ -44,11 +40,24 @@ from (select *from notice order by notice_no desc )where notice_kind=1 and rownu
 			BOARD_DATE boardDate, BOARD_FILE, BOARD_CNT boardCnt, MEM_ID memId
 			from BOARD)
 		<trim prefix="where">
-		<if test="startEndPageDTO != null">
-			rn between #{startEndPageDTO.startRow} and #{startEndPageDTO.endRow}
-		</if>
-	</trim>
+			<if test="startEndPageDTO != null">
+				rn between #{startEndPageDTO.startRow} and #{startEndPageDTO.endRow}
+			</if>
+		</trim>
 	</select>
+	
+	<select id="mainBoardList" resultType="Model.BoardDTO">
+		select rownum, boardNo, boardTitle,boardCon, boardDate, BOARD_FILE, boardCnt, memId
+		<![CDATA[
+		from   (select
+		        Board_NO boardNo, board_title boardTitle,BOARD_CON boardCon,
+		        BOARD_DATE boardDate, BOARD_FILE, BOARD_CNT boardCnt, MEM_ID memId
+		        from BOARD 
+		        order by Board_NO desc
+		)where rownum < 5
+		]]>
+	</select>
+	
 	<update id="boardCnt" parameterType="string">
 		update board
 		set board_Cnt =board_Cnt +1

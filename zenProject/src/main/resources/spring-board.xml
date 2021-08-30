@@ -6,17 +6,14 @@
 			http://www.springframework.org/schema/beans/spring-beans.xsd
 			"
 >
-<bean class="controller.board.BoardController"/>
-<!-- 서비스  -->
-<bean class="service.board.BoardWriteService"/>
-<bean class="service.board.BoardListService"/>
-<bean class="service.board.BoardDetailService"/>
-<bean class="service.board.BoardModifyService"/>
-<bean class="service.board.BoardDeleteService"/>
-
-
-
-
-
-<bean class="repository.BoardRepository"/>
+	<bean class="controller.board.BoardController"/>
+	<!-- 서비스  -->
+	<bean class="service.board.BoardWriteService"/>
+	<bean class="service.board.BoardListService"/>
+	<bean class="service.board.BoardDetailService"/>
+	<bean class="service.board.BoardModifyService"/>
+	<bean class="service.board.BoardDeleteService"/>
+	<bean class="service.board.MainBoardListService"/>
+	
+	<bean class="repository.BoardRepository"/>
 </beans>

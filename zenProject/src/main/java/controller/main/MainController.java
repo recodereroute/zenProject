@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import Model.AuthInfoDTO;
 import command.EmployeeCommand;
 import command.MemberCommand;
+import service.board.MainBoardListService;
 import service.employee.EmployeeNumService;
 import service.main.ChekcIdService;
 import service.main.EmployeeJoinService;
@@ -22,7 +23,6 @@ import validator.MemberCommandValidator;
 
 @Controller
 public class MainController {
-
 	@Autowired
 	IdFindFinishService idFindFinishService;
 	@Autowired
@@ -35,7 +35,14 @@ public class MainController {
 	EmployeeNumService employeeNumService;
 	@Autowired
 	EmployeeJoinService employeeJoinService;
+	@Autowired
+	MainBoardListService mainBoardListService;
 	
+	@RequestMapping("index")
+	public String goIndex(Model model) {
+		mainBoardListService.mainBoardList(model);
+		return "index";
+	}
 	
 	@RequestMapping("/search/findPasswordPro")
 	public String  findPasswordPro(MemberCommand memberCommand,

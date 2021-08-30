@@ -29,7 +29,6 @@ public class BoardListService {
 		}
 		List<BoardDTO> list = boardRepository.boardList(dto);
 		NoticeDTO noticeOne = boardRepository.noticeOne();
-		System.out.println(noticeOne.getNoticeTitle());
 		int count = boardRepository.count();
 		model.addAttribute("boardLists", list);
 		model.addAttribute("count", count);

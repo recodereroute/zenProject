@@ -43,6 +43,10 @@ public class BoardRepository {
 		statement = namespace +".count";
 		return sqlSession.selectOne(statement);
 	}
+	public List<BoardDTO> mainBoardList(){
+		statement = namespace + ".mainBoardList";
+		return sqlSession.selectList(statement);
+	}
 	public NoticeDTO noticeOne() {
 		statement=namespace+".noticeOne";
 		return sqlSession.selectOne(statement);

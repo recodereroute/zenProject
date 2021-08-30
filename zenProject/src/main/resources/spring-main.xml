@@ -6,12 +6,12 @@
 			http://www.springframework.org/schema/beans/spring-beans.xsd
 			"
 >
-		<bean class = "controller.main.MainController"/>
-		<bean class = "repository.RegisterRepository"/>
+		<bean class="controller.main.MainController"/>
+		<bean class="repository.RegisterRepository"/>
 		
-		<bean class = "service.main.MemberJoinService"/>
-		<bean class = "service.main.EmployeeJoinService"/>
-		<bean class = "service.main.ChekcIdService"/>
+		<bean class="service.main.MemberJoinService"/>
+		<bean class="service.main.EmployeeJoinService"/>
+		<bean class="service.main.ChekcIdService"/>
 		<bean class="service.main.CookieService"/>
 		<bean class="service.main.IdFindFinishService" />
 		<bean class="service.main.FindPasswordService" />

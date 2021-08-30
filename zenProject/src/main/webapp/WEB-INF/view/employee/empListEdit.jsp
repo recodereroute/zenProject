@@ -53,7 +53,7 @@
 <body>
     <form action="empListEditOk" method="post" name="frm">
         <div class="container">
-            <h1 class="h3 mb-3 fw-normal"><a href="../index.jsp">EZEN FOOD</a></h1>
+            <h1 class="h3 mb-3 fw-normal"><a href="index.jsp">EZEN FOOD</a></h1>
             <h1 class="h3 mb-3 fw-normal">직원 정보</h1>
 			<input type = "hidden" value = "${emp.empNo }" name = "empNo"/>
             <label for="name">사원아이디:</label>
