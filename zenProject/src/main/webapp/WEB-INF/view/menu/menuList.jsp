@@ -59,6 +59,7 @@
 
         .menu-chk-list hr {
             border: 1px solid #3CB371;
+            margin: 0;
         }
 
         .menu-chk-list label:hover {
@@ -75,7 +76,7 @@
             color: #66afe9;
         }
 
-        #btn {
+        .btn {
             width: 100px;
             height: 25px;
             background-color: #754F44;
@@ -131,7 +132,12 @@
         #include{
        	width: 200px;
        	max-width: 1000px;
-        margin: auto;}
+        margin: auto;
+        }
+        .btnContainer{
+        margin: auto;
+        text-align: center;
+        }
     </style>
 </head>
 
@@ -139,6 +145,8 @@
     <div class="chk-list container">
         <h1>
             <a href="../index.jsp">EZEN FOOD</a>
+            <br>
+             <h2>메뉴 리스트</h2>
         </h1>
         <div class="chkbox-btn">
         <form action="">
@@ -215,18 +223,19 @@
                  <td></td>
                 </tr>
             </table>
-            <div class ="container">
-            <input type="submit" value="검색" id="btn">
+            <div class="btnContainer">
+            <input type="submit" value="검색" class="btn">
+            <c:if test="${authInfo.grade >1}">
+            <a href="menuForm"><input type="button" value="메뉴등록" class="btn"></a>
+        </c:if>
             </div>
         </form>
         </div>
     </div>
 
     <div class="container">
-        <h2>메뉴 리스트</h2>
-        <c:if test="${authInfo.grade >1}">
-            <a class="btn btn-default" href="menuForm">메뉴 등록</a>
-        </c:if>
+       
+        
         <div class="list-box">
             <c:forEach items="${lists }" var="dto" varStatus="cnt">
                 <table class="menu-table">
