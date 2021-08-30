@@ -28,20 +28,21 @@
 			<td>등록일</td>
 			<td>조회수</td>
 		</tr>
-			<c:forEach items="${noticeList }" var="nlist"  begin="0" end="0">
+			
 			<tr> 
-				<td><a href="../notice/noticeDetail?noticeNo=${nlist.noticeNo }">${nlist.noticeTitle }</a></td>
-				<td><fmt:formatDate value="${nlist.noticeDate }" type="date" pattern="yy-MM-dd"/> </td>
-				<td>${nlist.noticeCnt }</td>
+			<td>공지</td>
+				<td><a href="../notice/noticeDetail?noticeNo=${columnOne.noticeNo }">${columnOne.noticeTitle }</a></td>
+				<td><fmt:formatDate value="${columnOne.noticeDate }" type="date" pattern="yy-MM-dd"/> </td>
+				<td>${columnOne.noticeCnt }</td>
 			</tr>
-			</c:forEach>
+		
 		
 		<c:forEach items="${columnLists }" var="dto" varStatus="cnt"> 
 		<tr>
 			<td>${cnt.count }</td>
 			
 			<td><a href="columnDetail?noticeNo=${dto.noticeNo }">${dto.noticeTitle }</a></td>
-			<td>${dto.noticeDate }</td>
+			<td><fmt:formatDate value="${dto.noticeDate }" type="date" pattern="yy-MM-dd"/> </td>
 			<td>${dto.noticeCnt }</td>
 		</tr>
 		</c:forEach>

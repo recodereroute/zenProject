@@ -27,8 +27,11 @@ public class ColumnListService {
 			dto.setStartEndPageDTO(sep);
 		}
 		List<NoticeDTO> list=columnRepository.columnList(dto);
+		NoticeDTO columnOne=columnRepository.columnOne();
+		
 		int count = columnRepository.count();
 		model.addAttribute("columnLists",list);
+		model.addAttribute("columnOne",columnOne);
 		if (page != null) {
 			PageAction pageAction = new PageAction();
 			pageAction.page(count, limit, page, limitPage, model, "columnList");

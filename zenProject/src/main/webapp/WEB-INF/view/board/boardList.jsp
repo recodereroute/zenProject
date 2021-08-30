@@ -27,13 +27,14 @@
 				<td>등록일</td>
 				<td>조회수</td>
 			</tr>
-			<c:forEach items="${noticeList }" var="nlist"  begin="0" end="0">
-			<tr> 
-				<td><a href="../notice/noticeDetail?noticeNo=${nlist.noticeNo }">${nlist.noticeTitle }</a></td>
-				<td><fmt:formatDate value="${nlist.noticeDate }" type="date" pattern="yy-MM-dd"/> </td>
-				<td>${nlist.noticeCnt }</td>
-			</tr>
-			</c:forEach>
+			
+<tr><td><a href="../notice/noticeDetail?noticeNo=${nOne.noticeNo }">${nOne.noticeTitle }</a></td>
+	<td><fmt:formatDate value="${nOne.noticeDate }" type="date" pattern="yy-MM-dd"/> </td>
+	<td>${nOne.noticeCnt }</td>
+	
+</tr>
+
+			
 			<c:forEach items="${boardLists }" var="dto" varStatus="cnt">
 				<!--리스트 서비스에서name값을 가지고온다 -->
 				<tr>
@@ -45,6 +46,7 @@
 			</c:forEach>
 			<tr>
 				<td colspan="4"><%@ include file="../include/includePage.jsp"%>
+				
 				</td>
 			</tr>
 		</table>

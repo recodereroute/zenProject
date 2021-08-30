@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import Model.BoardDTO;
+import Model.NoticeDTO;
 
 
 public class BoardRepository {
@@ -40,6 +41,10 @@ public class BoardRepository {
 	}
 	public int count() {
 		statement = namespace +".count";
+		return sqlSession.selectOne(statement);
+	}
+	public NoticeDTO noticeOne() {
+		statement=namespace+".noticeOne";
 		return sqlSession.selectOne(statement);
 	}
 }

@@ -10,7 +10,8 @@ select  rn  noticeNo,  noticeTitle,  noticeCon,
 	select ROWNUM rn ,NOTICE_NO noticeNo, NOTICE_TITLE noticeTitle, NOTICE_CON noticeCon, 
 		   NOTICE_DATE noticeDate, NOTICE_KIND noticeKind, NOTICE_FILE noticeFile, 
 		   NOTICE_CNT noticeCnt, EMP_NO empNo
-	from NOTICE)
+	from NOTICE
+ 	where notice_kind=1)
 		<trim prefix="where">
 		<if test="startEndPageDTO != null">
 			rn between #{startEndPageDTO.startRow} and #{startEndPageDTO.endRow}

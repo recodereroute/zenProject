@@ -46,8 +46,8 @@ public class ColumnController {
 	 }
 	 @RequestMapping("columnList")
 	 public String columnList(@RequestParam(value="page",defaultValue = "1") Integer page, Model model) {
-		 columnListService.columnList(model,page);
 		 noticeListService.noticeList(page, model);
+		 columnListService.columnList(model,page);
 		 return "column/columnList";
 	 }
 	 @RequestMapping("columnDetail")

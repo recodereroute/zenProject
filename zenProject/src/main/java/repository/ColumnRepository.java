@@ -12,7 +12,10 @@ public class ColumnRepository {
 	SqlSession sqlSession;
 	String namespace = "mappers.ColumnMapper";
 	String statement;
-	
+	public NoticeDTO columnOne() {
+		statement= namespace+".columnOne";
+		return sqlSession.selectOne(statement);
+	}
 	public void columnWrite(NoticeDTO dto) {
 		statement= namespace+".columnWrite";
 		sqlSession.insert(statement,dto);

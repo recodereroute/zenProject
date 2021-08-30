@@ -46,7 +46,6 @@ public class NoticeController {
 			@RequestParam(value="page", defaultValue = "1") Integer page,
 			Model model) {
 		noticeListService.noticeList(page,model);
-		
 		return "notice/noticeList";
 	}
 	@RequestMapping("noticePost")
@@ -68,13 +67,13 @@ public class NoticeController {
 		noticeDetailService.noticeInfo(noticeNo, model);
 		return "notice/noticeEdit";
 	}
-	//공지사항 삭제
+	//怨듭��궗�빆 �궘�젣
 	@RequestMapping("noticeDel")
 	public String noticeDel(String noticeNo) {
 		noticeDeleteService.noticeDel(noticeNo);
 		return "redirect:noticeList";
 	}
-	//공지사항 수정
+	//怨듭��궗�빆 �닔�젙
 	@RequestMapping(value = "noticeEditOk", method = RequestMethod.POST)
 	public String notieEditOk(NoticeCommand noticeCommand,HttpSession session) {
 		noticeEditService.notieceEdit(noticeCommand,session);

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 
 import Model.BoardDTO;
+import Model.NoticeDTO;
 import Model.StartEndPageDTO;
 import controller.board.PageAction;
 import repository.BoardRepository;
@@ -27,9 +28,13 @@ public class BoardListService {
 			dto.setStartEndPageDTO(sep);
 		}
 		List<BoardDTO> list = boardRepository.boardList(dto);
+		NoticeDTO noticeOne = boardRepository.noticeOne();
+		System.out.println(noticeOne.getNoticeTitle());
 		int count = boardRepository.count();
 		model.addAttribute("boardLists", list);
 		model.addAttribute("count", count);
+		model.addAttribute("nOne",noticeOne);
+		
 		if (page != null) {
 			PageAction pageAction = new PageAction();
 			pageAction.page(count, limit, page, limitPage, model, "boardList");

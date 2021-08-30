@@ -16,10 +16,8 @@ public class NoticeListService {
 	public void noticeList(Integer page,Model model) {
 		NoticeDTO dto= new NoticeDTO();
 		
-		int limit = 3;//페이지에 보여지는 리스트
-		int limitPage = 10; //페이지 수
-		
-		
+		int limit = 3;//
+		int limitPage = 10; 
 		if (page != null) {
 			Long startRow = ((long) page - 1) * limit + 1;
 			Long endRow = startRow + limit - 1;
@@ -28,7 +26,6 @@ public class NoticeListService {
 			sep.setEndRow(endRow);
 			dto.setStartEndPageDTO(sep);
 		}
-		
 		List<NoticeDTO> list = noticeRepository.noticeList(dto);
 		int count =noticeRepository.count();
 		model.addAttribute("noticeList", list);
