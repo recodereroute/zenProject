@@ -14,7 +14,8 @@
 		where menu_NO = #{menuNo}
 	</select>
 	<select id="mncntInfo" parameterType="mcDTO" resultType="mcDTO">
-		SELECT M_CMNT_NO menuCmntNo, MEM_ID memId, M_CMNT_CON menuCmntCon, MENU_NO menuNo
+		SELECT M_CMNT_NO menuCmntNo, MEM_ID memId, M_CMNT_CON menuCmntCon, MENU_NO menuNo,
+				M_CMNT_date menuCmntDate
 		FROM MENU_COMMENT
 		WHERE MENU_NO = #{menuNo} AND M_CMNT_NO = #{menuCmntNo}
 	</select>

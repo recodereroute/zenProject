@@ -20,7 +20,7 @@
  
                     <tr>
                         <td>닉네임 :${authInfo.userId}</td>
-                        <td id ="nowDate">작성일자 :${mcmnt.menuCmntDate }</td>
+                        <td id ="nowDate">작성일자 :${command.menuCmntDate }</td>
                     </tr>
  
 
