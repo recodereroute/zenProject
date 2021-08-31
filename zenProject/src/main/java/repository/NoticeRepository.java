@@ -47,5 +47,9 @@ public class NoticeRepository {
 		statement = namespace + ".noticeEdit";
 		sqlSession.update(statement,dto);
 	}
+	public List<NoticeDTO> mainNoticeList(){
+		statement = namespace + ".mainNoticeList";
+		return sqlSession.selectList(statement);
+	}
 	
 }

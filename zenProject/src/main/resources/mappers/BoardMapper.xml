@@ -31,18 +31,19 @@
 
 	</insert>
 	<select id="boardList" parameterType="Model.BoardDTO" resultType="Model.BoardDTO">
-	select ROWNUM, boardNo, boardTitle, boardCon, boardDate, BOARD_FILE, boardCnt, memId
-		from(
-			select
-			 Board_NO boardNo, board_title boardTitle,BOARD_CON boardCon,
-			BOARD_DATE boardDate, BOARD_FILE, BOARD_CNT boardCnt, MEM_ID memId
-			from BOARD
-			order by board_no desc)
-		<trim prefix="where">
+	select rn, boardNo, boardTitle,boardCon, boardDate, BOARD_FILE, boardCnt, memId
+from(
+    select rownum rn, boardNo, boardTitle,boardCon, boardDate, BOARD_FILE, boardCnt, memId
+    from   (select
+                    Board_NO boardNo, board_title boardTitle,BOARD_CON boardCon,
+                    BOARD_DATE boardDate, BOARD_FILE, BOARD_CNT boardCnt, MEM_ID memId
+            from BOARD 
+            order by Board_NO desc))
+		
 			<if test="startEndPageDTO != null">
-				boardNo between #{startEndPageDTO.startRow} and #{startEndPageDTO.endRow}
+				 where rn between #{startEndPageDTO.startRow} and #{startEndPageDTO.endRow}
 			</if>
-		</trim>
+	
 	</select>
 	
 	<select id="mainBoardList" resultType="Model.BoardDTO">
@@ -77,9 +78,18 @@
 		set
 		board_title = #{boardTitle},
 		board_Con = #{boardCon} ,
-		board_org_file =#{boardOrgFile},
-		board_file_size =#{boardFileSize},
-		board_file=#{boardFile}
+		board_org_file =
+		<if test="boardOrgFile==null">null</if>
+		<if test="boardOrgFile!=null">	#{boardOrgFile}</if>
+		,
+		board_file_size =
+		<if test="boardFileSize==null">null</if>
+		<if test="boardFileSize!=null">#{boardFileSize}</if>
+		,
+		board_file=
+		<if test="boardFile==null">null</if>
+		<if test="boardFile!=null">#{boardFile}</if>
+		
 		where board_no = #{boardNo}
 	</update>
 	<select id="count" resultType="int">

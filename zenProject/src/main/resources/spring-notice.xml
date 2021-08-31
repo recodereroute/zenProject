@@ -14,4 +14,6 @@
 	<bean class = "service.notice.NoticeDetailService"/>
 	<bean class = "service.notice.NoticeDeleteService"/>
 	<bean class = "service.notice.NoticeEditService"/>
+	<bean class = "service.notice.MainNoticeListService"/>
+	
 </beans>

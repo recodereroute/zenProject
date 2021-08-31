@@ -48,6 +48,21 @@
 	delete from notice
 	where NOTICE_NO = #{noticeNo}
 </delete>
+<select id="mainNoticeList" resultType="Model.NoticeDTO">
+select rownum,noticeNo,noticeTitle,noticeCon,noticeDate,notice_file,noticeCnt,noticeKind,empNo
+<![CDATA[
+from(
+	select NOTICE_NO noticeNo,NOTICE_TITLE noticeTitle,NOTICE_CON noticeCon,
+	NOTICE_DATE noticeDate,NOTICE_FILE notice_file,NOTICE_CNT noticeCnt,NOTICE_KIND noticeKind,emp_no empNo
+	from notice 
+	where notice_kind=1
+	order by Notice_No desc
+)
+where rownum<5
+]]>
+
+
+</select>
 <update id="noticeEdit" parameterType="Model.NoticeDTO">
 	update notice
 	set 

@@ -129,11 +129,15 @@
 					</td>
 					<td id="more-notice"><a href="notice/noticeList">더보기</a></td>
 				</tr>
-				<c:forEach items="${noticeList }" var="dto" >
-				<tr>
-					<td colspan="2"><a href="notice/noticeDetail?noticeNo=${dto.noticeNo }">${dto.noticeTitle }</a></td>
-				</tr>
-			</c:forEach>
+			<c:if test="${!empty mainNoticeList }">
+				<c:forEach items="${mainNoticeList }" var = "MNdto">
+					<tr><td><a href = "notice/noticeDetail?noticeNo=${MNdto.noticeNo }">${MNdto.noticeTitle }</a></td></tr>
+				</c:forEach>
+				</c:if>
+				<c:if test="${empty mainNoticeList }">
+					등록된 게시글이 없습니다.
+				</c:if>
+			
 			</table>
 		</div>
 
@@ -147,7 +151,7 @@
 				</tr>
 				<c:if test="${!empty mainBoardList }">
 				<c:forEach items="${mainBoardList }" var = "MBdto">
-					<tr><td><a href = "#">${MBdto.boardTitle }</a></td></tr>
+					<tr><td><a href = "board/boardDetail?boardNo=${MBdto.boardNo }">${MBdto.boardTitle }</a></td></tr>
 				</c:forEach>
 				</c:if>
 				<c:if test="${empty mainBoardList }">
