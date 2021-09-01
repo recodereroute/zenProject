@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>비밀번호 변경</title>
 <style>
-*{background-color :#EFFFE9;}
+
 
 </style>
 </head>

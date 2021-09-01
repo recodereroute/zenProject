@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>칼럼 수정</title>
 <style>
-*{background-color :#EFFFE9;}
+
 .button4 {
  
     font-family: Verdana, Geneva, sans-serif;
