@@ -13,13 +13,93 @@
 	min-width: 1190px;
 	margin: auto;
 }
+	* {
+      margin: 0px;
+   padding: 0px;
+}
+.ezen-login{
+display:flex;
+justify-content:space-between;
+}
+
+.login-box {
+   margin: 10px;
+   display: inline-block;
+   padding: 5px 10px;
+   background-color: #3CB371;
+   height: 100px;
+   border-radius: 7px;
+   color: white;
+   float:left;	
+   font-family: 'Poor Story', cursive;
+}
+li {
+   list-style: none;
+}
+#login-btn {
+   width: 100px;
+   height: 30px;
+   background-color: #754F44;
+   border: 0px;
+   color: #EFFFE9;
+   border-radius: 5px;
+   font-size: 15px;
+}
+a:hover {
+   color: rgb(240, 236, 42);
+}
+li a:link,li a:visited{
+color: white;}
+button a:link, button a:visited{
+color: white;
+}
 </style>
 </head>
 <body>
 
     <div class="container">
+    <div class="ezen-login">
+    <div class="ezen-board">
+    
    <h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
 <h1 class="h3 mb-3 fw-normal"> <a href="noticeList">공지사항</a></h1>
+</div>
+<div class="login-box">
+	<c:if test="${empty authInfo }">
+			<button id="login-btn">
+				<a href="../login/login?page=notice/noticeList">로그인</a>
+			</button>
+			<ul class="">
+				<li><a href="../register">회원가입</a></li>
+				<li><a href="../search/idFind">아이디 찾기</a></li>
+				<li><a href="../search/findPassword">비밀번호 찾기</a></li>
+			</ul>
+		</c:if>
+		<c:if test="${!empty authInfo }">
+			<ul class="">
+					<li><a href="../login/logOut">로그아웃</a></li>
+			</ul>
+		</c:if>
+
+
+		<c:if test="${!empty authInfo }">
+			<c:if test="${authInfo.grade == 1 }">
+
+				<ul class="">
+					<li><a href="../member/myPage">마이페이지</a></li>
+				</ul>
+			</c:if>
+
+			<c:if test="${authInfo.grade != 1 }">
+
+				<ul class="">
+					<li><a href="../employee/empMyPage">마이페이지</a></li>
+
+				</ul>
+			</c:if>
+		</c:if>
+		</div>
+		</div>
         <table class="table">
         <tr>
             <th class="success">글번호</th>

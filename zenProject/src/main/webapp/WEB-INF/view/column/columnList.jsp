@@ -16,6 +16,46 @@
 	.notice{
 background-color: aliceblue;
 }
+* {
+      margin: 0px;
+   padding: 0px;
+}
+.ezen-login{
+display:flex;
+justify-content:space-between;
+}
+
+.login-box {
+   margin: 10px;
+   display: inline-block;
+   padding: 5px 10px;
+   background-color: #3CB371;
+   height: 100px;
+   border-radius: 7px;
+   color: white;
+   float:left;	
+   font-family: 'Poor Story', cursive;
+}
+li {
+   list-style: none;
+}
+#login-btn {
+   width: 100px;
+   height: 30px;
+   background-color: #754F44;
+   border: 0px;
+   color: #EFFFE9;
+   border-radius: 5px;
+   font-size: 15px;
+}
+a:hover {
+   color: rgb(240, 236, 42);
+}
+li a:link,li a:visited{
+color: white;}
+button a:link, button a:visited{
+color: white;
+}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,8 +63,12 @@ background-color: aliceblue;
 </head>
 <body>
 <div class="container">
+<div class="ezen-login">
+<div class="ezen-board">
 <h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
 <h1 class="h3 mb-3 fw-normal"> <a href="columnList">칼럼 게시판 </a></h1>
+</div>
+<div class="login-box">
 	<c:if test="${empty authInfo }">
 			<button id="login-btn">
 				<a href="../login/login?page=column/columnList">로그인</a>
@@ -58,6 +102,8 @@ background-color: aliceblue;
 				</ul>
 			</c:if>
 		</c:if>
+		</div>
+		</div>
 <table class="table table-hover">
 		<tr>
 			<td>번호</td>
