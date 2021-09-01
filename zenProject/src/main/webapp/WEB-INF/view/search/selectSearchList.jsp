@@ -8,6 +8,9 @@
 <title>검색결과</title>
 </head>
 <body>
+<div class="container">
+<h1 class="h3 mb-3 fw-normal"><a href="index.jsp">EZEN FOOD</a></h1>
+<h1 class="h3 mb-3 fw-normal"> <a href="">검색 결과 </a></h1>
 <c:if test="${empty searchResult }">
 	검색결과가 없습니다.
 </c:if>
@@ -41,5 +44,18 @@
 	</c:forEach>
 	</table>
 </c:if>
+</div>
 </body>
+<!-- jquery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	
+	<!-- BootStrap -->
+      <!-- 합쳐지고 최소화된 최신 CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+      <!-- 부가적인 테마 -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+ 
+      <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </html>
