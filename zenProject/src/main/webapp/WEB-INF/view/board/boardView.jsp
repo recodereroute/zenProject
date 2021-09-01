@@ -51,7 +51,7 @@
 		<h1 class="h3 mb-3 fw-normal"> <a href="boardList">일반 게시판 </a></h1>
 				<c:if test="${empty authInfo }">
 			<button id="login-btn">
-				<a href="../login/login">로그인</a>
+				<a href="../login/login?page=board/boardDetail?boardNo=${dto.boardNo }">로그인</a>
 			</button>
 			<ul class="">
 				<li><a href="../register">회원가입</a></li>
