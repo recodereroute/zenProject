@@ -23,6 +23,7 @@
     <!-- login form {s} -->
     <c:if test="${empty authInfo }">
       <form:form action="loginOk" method="post" name="frm" modelAttribute="loginCommand">
+      <input type="hidden" name="page" value="${page }"/>
         <table>
           <tr>
             <td colspan="2">

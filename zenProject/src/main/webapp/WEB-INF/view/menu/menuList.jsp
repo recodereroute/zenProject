@@ -131,9 +131,10 @@
             <br>
              <h2>메뉴 리스트</h2>
         </h1>
+        	
         		<c:if test="${empty authInfo }">
 			<button id="login-btn">
-				<a href="../login/login">로그인</a>
+				<a href="../login/login?page=menu/menuList">로그인</a>
 			</button>
 			<ul class="">
 				<li><a href="../register">회원가입</a></li>

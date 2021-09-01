@@ -7,9 +7,11 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import command.LoginCommand;
 import service.main.CookieService;
@@ -23,15 +25,19 @@ public class LoginController {
 	CookieService cookieService;
 	
 	@RequestMapping(value="login")
-	public String main(LoginCommand loginCommand,HttpServletRequest request) {
+	public String main(@RequestParam(value="page" , defaultValue = "index")  String page,
+			LoginCommand loginCommand,HttpServletRequest request,
+			Model model) {
 		cookieService.getCookie(request);
+		model.addAttribute("page",page);
 		return "main/login";
 	}
 	@Autowired
 	LoginService loginService; 
 	@RequestMapping(value="loginOk", method = RequestMethod.POST)
 	public String login(LoginCommand loginCommand, Errors errors,
-			HttpSession session, HttpServletResponse response) {
+			HttpSession session, HttpServletResponse response,
+			@RequestParam(value="page") String page) {
 		new LoginCommandValidator().validate(loginCommand, errors);
 		if(errors.hasErrors()) {
 			return "main/login";
@@ -40,10 +46,11 @@ public class LoginController {
 		if(errors.hasErrors()) {
 			return "main/login";
 		}
-		return "redirect:/";		
+		return "redirect:/"+page;		
 	}
 	@RequestMapping("logOut")
-	public String logOut(HttpSession session, 
+	public String logOut(
+			HttpSession session, 
 			HttpServletResponse response) {
 		Cookie cookie = 
 				new Cookie("autoLogin", "");

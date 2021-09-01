@@ -27,7 +27,7 @@ background-color: aliceblue;
 		<h1 class="h3 mb-3 fw-normal"> <a href="boardList">일반 게시판 </a></h1>
 		<c:if test="${empty authInfo }">
 			<button id="login-btn">
-				<a href="../login/login">로그인</a>
+				<a href="../login/login?page=board/boardList">로그인</a>
 			</button>
 			<ul class="">
 				<li><a href="../register">회원가입</a></li>
@@ -37,7 +37,7 @@ background-color: aliceblue;
 		</c:if>
 		<c:if test="${!empty authInfo }">
 			<ul class="">
-				<li><a href="../login/logOut">로그아웃</a></li>
+					<li><a href="../login/logOut">로그아웃</a></li>
 			</ul>
 		</c:if>
 
