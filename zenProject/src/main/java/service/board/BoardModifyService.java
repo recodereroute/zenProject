@@ -53,7 +53,7 @@ public void boardModify(BoardCommand boardCommand,HttpSession session) {
 				}
 			}
 		}
-		//파일 추가
+		//�뙆�씪 異붽�
 		String originalTotal = "";
 		String storeTotal = "";
 		String fileSizeTotal ="";
@@ -64,7 +64,7 @@ public void boardModify(BoardCommand boardCommand,HttpSession session) {
 				String store1 = //xnbsvklbsvfwssvsvfws.hwp
 						UUID.randomUUID().toString().replace("-","")
 						+ originalExt;
-				String fileSize1 = Long.toString(mf.getSize());	
+				String fileSize1 =Double.toString(Math.round((mf.getSize()/1024.0) * 100)/(double)100);
 				originalTotal += original1 + ",";
 				storeTotal += store1 + ",";
 				fileSizeTotal += fileSize1 + ",";
