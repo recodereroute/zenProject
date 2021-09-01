@@ -13,8 +13,11 @@
 	min-width: 1190px;
 	margin: auto;
 }
+.notice{
+background-color: aliceblue;
+}
 </style>
-</style>
+
 </head>
 <body>
 	<div class="container">
@@ -63,7 +66,7 @@
 				<td>조회수</td>
 			</tr>
 
-			<tr>
+			<tr class="notice">
 				<td>공지</td>
 				<td><a href="../notice/noticeDetail?noticeNo=${nOne.noticeNo }">${nOne.noticeTitle }</a></td>
 				<td><fmt:formatDate value="${nOne.noticeDate }" type="date"

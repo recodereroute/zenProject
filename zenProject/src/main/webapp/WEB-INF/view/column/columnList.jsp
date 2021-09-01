@@ -13,6 +13,9 @@
 		min-width: 1190px;
 		margin: auto;
 	}
+	.notice{
+background-color: aliceblue;
+}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +33,7 @@
 			<td>조회수</td>
 		</tr>
 			
-			<tr> 
+			<tr class="notice"> 
 			<td>공지</td>
 				<td><a href="../notice/noticeDetail?noticeNo=${columnOne.noticeNo }">${columnOne.noticeTitle }</a></td>
 				<td><fmt:formatDate value="${columnOne.noticeDate }" type="date" pattern="yy-MM-dd"/> </td>
