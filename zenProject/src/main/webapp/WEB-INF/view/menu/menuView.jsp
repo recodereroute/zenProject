@@ -7,125 +7,82 @@
 <meta charset="UTF-8">
 <title>메뉴 페이지</title>
 <style type="text/css">
-*{margin:0;padding:0;}li{list-style-type:none;}
+*{margin:0;padding:0;}
 .container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: 15px;
   margin-left: 15px;
 }
-
-
-      .button4 {
- 
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 24px;
-    color: #FFF;
-    padding: 5px 50px 5px 50px;
-    border: 1px solid #999;
- 
-    text-shadow: 0px 1px 1px #666;
-    text-decoration: none;
- 
-    -moz-box-shadow: 0 1px 3px #111;
-    -webkit-box-shadow: 0 1px 3px #111;
-    box-shadow: 0 1px 3px #111;
- 
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
- 
-    background: #64a724;
-    background: -moz-linear-gradient(top, #64a724 0%, #579727 50%, #58982a 51%, #498c25 100%);
-    background: -webkit-gradient(linear, left top, left bottom, from(#64a724), to(#498c25), color-stop(0.4, #579727), color-stop(0.5, #58982a), color-stop(.9, #498c25), color-stop(0.9, #498c25));
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#64a724', endColorstr='#498c25', GradientType=0 );
-    
-.button4:hover {
-    border: 1px solid #FFF;
+.ezen-login{   display: flex; justify-content:space-between;
 }
-.ezen-login{
-display:flex;
+.login-btn{
+background-color: white; border: none;
+display: flex; 
+justify-content:space-between;}
+.login-btn a:link,.login-btn a:visited{
+color: black;
+}
+.login-box{display: flex; 
 justify-content:space-between;
-}
 
-
-li {
-   list-style: none;
 }
-#login-btn {
-   width: 100px;
-   height: 30px;
-   background-color: #754F44;
-   border: 0px;
-   color: #EFFFE9;
-   border-radius: 5px;
-   font-size: 15px;
-}
-a:hover {
-   color: rgb(240, 236, 42);
-}
-li a:link,li a:visited{
-color: white;}
-button a:link, button a:visited{
-color: white;
-}
-.login-box {
-   margin: 10px;
-   display: inline-block;
-   padding: 5px 10px;
-   background-color: #3CB371;
-   height: 100px;
-   border-radius: 7px;
-   color: white;
-   float:left;	
-   font-family: 'Poor Story', cursive;
+.after a:link,.after a:visited{
+color: black;
 }
 
 </style>
 </head>
 <body>
-    <div class="ezen-login">
-    <div class="ezen-board">
-
+  
+  <div class="ezen-login">
+  <div class="ezen-board">
    <h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
-   <h1 class="h3 mb-3 fw-normal"> <a href="menuList">메뉴 게시판 </a></h1>
+  
+     <h1 class="h3 mb-3 fw-normal"> <a href="menuList">메뉴 게시판 </a></h1>
    </div>
-   <div class="login-box">
-   		<c:if test="${empty authInfo }">
-			<button id="login-btn">
-				<a href="../login/login?page=menu/menuDetail?menuNo=${dto.menuNo }">로그인</a>
+
+      <div class="login-box">
+        	
+        		<c:if test="${empty authInfo }">
+			<button class="login-btn">
+				<a href="../login/login?page=menu/menuList">로그인</a>
+				<a href="../register">회원가입</a>
 			</button>
-			<ul class="">
-				<li><a href="../register">회원가입</a></li>
-				<li><a href="../search/idFind">아이디 찾기</a></li>
-				<li><a href="../search/findPassword">비밀번호 찾기</a></li>
-			</ul>
+			
 		</c:if>
+		<div class="after">
 		<c:if test="${!empty authInfo }">
-			<ul class="">
-				<li><a href="../login/logOut">로그아웃</a></li>
-			</ul>
+			
+				<a href="../login/logOut">로그아웃</a>
+			
 		</c:if>
 
 
 		<c:if test="${!empty authInfo }">
 			<c:if test="${authInfo.grade == 1 }">
 
-				<ul class="">
-					<li><a href="../member/myPage">마이페이지</a></li>
-				</ul>
+				
+					<a href="../member/myPage">마이페이지</a>
+				
 			</c:if>
 
 			<c:if test="${authInfo.grade != 1 }">
 
-				<ul class="">
-					<li><a href="../employee/empMyPage">마이페이지</a></li>
+				
+					<a href="../employee/empMyPage">마이페이지</a>
 
-				</ul>
+				
 			</c:if>
 		</c:if>
 		</div>
 		</div>
+		</div>
+
+   
+   
+   
+   
     <div class="table table-responsive">
         <table class="table">
         <tr>
@@ -166,8 +123,8 @@ color: white;
         </table>
 
    </div>
-    </div>
-    </div>
+
+
    <div align="center">
    <a class="btn btn-default" href="menuList">리스트로 돌아가기</a><br>
    <c:if test="${authInfo.grade == dto.empNo }">
@@ -196,6 +153,7 @@ color: white;
    </div>
    </c:if>
    </div>
+  
 <div class="container">
    <c:forEach items="${mcmntList }" var="mcmnt" varStatus="cnt">
       <div id ="content${cnt.count }">
@@ -224,6 +182,7 @@ color: white;
 
     </c:forEach>
 </div>
+
 
 </body>
 
@@ -258,16 +217,12 @@ function mcmntModify(ele,b,c){
 				dataType : "html",//보여주려는 결과 data-type
 				data : {"memId":${authInfo.userId},"menuNo":${dto.menuNo }},
 				//익명함수(이름이 없는 함수) : 직접 실행시킬수 없음 - 실행시키기 위한 객체가 필요
-				success : function(result){
-					swal({title:"",
-						text:"즐겨찾기로 이동하시겠습니까?",
-							icon:"success",
-								buttons:["아니요","네!"]}).then((value)=>{if(value){location.href='../bookmark/bookmarkList?memId='+${authInfo.userId}} 
-								
-								
-								})
-							
-				
+				success : function(result){//result : data 넘겨줘서 나온 동기식 결과 페이지
+					if(confirm("즐겨 찾기로 이동하시겠습니까?")){
+						location.href='../bookmark/bookmarkList?memId='+${authInfo.userId}
+					}else{
+						return false;
+					}
 				},
 				error : function(){
 				swal("","이미등록된 메뉴입니다.","info")

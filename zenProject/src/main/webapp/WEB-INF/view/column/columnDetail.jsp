@@ -6,6 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>칼럼 게시판</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap"
+	rel="stylesheet">
 <style type="text/css">
 	.container{
 		width: 1130px;
@@ -26,32 +31,54 @@ justify-content:space-between;
    margin: 10px;
    display: inline-block;
    padding: 5px 10px;
-   background-color: #3CB371;
+   background-color: white;
    height: 100px;
    border-radius: 7px;
-   color: white;
+   color: black;
    float:left;	
-   font-family: 'Poor Story', cursive;
+  
 }
 li {
    list-style: none;
 }
 #login-btn {
-   width: 100px;
+   width: 150px;
    height: 30px;
-   background-color: #754F44;
+   background-color: white;
    border: 0px;
-   color: #EFFFE9;
+   color: black;
    border-radius: 5px;
    font-size: 15px;
+   display: flex;
+   justify-content:space-between;
 }
 a:hover {
    color: rgb(240, 236, 42);
 }
 li a:link,li a:visited{
-color: white;}
+color: black;}
 button a:link, button a:visited{
-color: white;
+color: black;
+}
+.after{
+ width: 150px;
+   height: 30px;
+   background-color: white;
+   border: 0px;
+   color: black;
+   border-radius: 5px;
+   font-size: 15px;
+   display: flex;
+   justify-content:space-between;
+}
+.after a:link,.after a:visited{
+color:black;
+
+}
+.login-box a:link,.login-box a:visited{
+color:black;
+
+
 }
 </style>
 </head>
@@ -63,39 +90,37 @@ color: white;
 <h1 class="h3 mb-3 fw-normal"> <a href="columnList">칼럼 게시판 </a></h1>
 </div>
 <div class="login-box">
+
 	<c:if test="${empty authInfo }">
 			<button id="login-btn">
 				<a href="../login/login?page=column/columnList">로그인</a>
+				<a href="../register">회원가입</a>
+		
 			</button>
-			<ul class="">
-				<li><a href="../register">회원가입</a></li>
-				<li><a href="../search/idFind">아이디 찾기</a></li>
-				<li><a href="../search/findPassword">비밀번호 찾기</a></li>
-			</ul>
+		</c:if>
+		
+		
+		<div class="after">
+		<c:if test="${!empty authInfo }">
+		
+					<a href="../login/logOut">로그아웃</a>
+				
 		</c:if>
 		<c:if test="${!empty authInfo }">
-			<ul class="">
-					<li><a href="../login/logOut">로그아웃</a></li>
-			</ul>
-		</c:if>
+			<c:if test="${authInfo.grade == 1 }">	
+			
+				<a href="../member/myPage">마이페이지</a>
 
-
-		<c:if test="${!empty authInfo }">
-			<c:if test="${authInfo.grade == 1 }">
-
-				<ul class="">
-					<li><a href="../member/myPage">마이페이지</a></li>
-				</ul>
 			</c:if>
 
 			<c:if test="${authInfo.grade != 1 }">
-
-				<ul class="">
-					<li><a href="../employee/empMyPage">마이페이지</a></li>
-
-				</ul>
+		
+					<a href="../employee/empMyPage">마이페이지</a>
+					
 			</c:if>
+			
 		</c:if>
+		</div>
 		</div>
 		</div>
         <table class="table">
