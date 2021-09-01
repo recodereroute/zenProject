@@ -11,10 +11,7 @@
 <div class="container">
 <h1 class="h3 mb-3 fw-normal"><a href="index.jsp">EZEN FOOD</a></h1>
 <h1 class="h3 mb-3 fw-normal"> <a href="">검색 결과 </a></h1>
-<c:if test="${empty searchResult }">
-	검색결과가 없습니다.
-</c:if>
-<c:if test="${!empty searchResult }">
+
 <table class="table table-hover" border="1">
 	<tr>
 		<td>번호</td>
@@ -24,8 +21,7 @@
 		<td>조회수</td>	
 	</tr>
 	
-	<c:forEach items="${searchResult }" var="list" varStatus="cnt">
-		<c:forEach items="${list }" var="dto">
+	<c:forEach items="${searchResult }" var="dto" varStatus="cnt">
 			<tr>
 				<td>${cnt.count}</td>
 				<td>
@@ -40,10 +36,8 @@
 				<td><fmt:formatDate value="${dto.menuDate }" type="date" pattern="yy-MM-dd"/></td>
 				<td>${dto.menuCnt}</td>
 			</tr>
-		</c:forEach>		
 	</c:forEach>
-	</table>
-</c:if>
+</table>
 </div>
 </body>
 <!-- jquery -->
