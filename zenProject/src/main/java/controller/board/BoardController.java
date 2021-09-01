@@ -44,9 +44,9 @@ public class BoardController {
 	}
 	@RequestMapping("boardWrite")
 	public String bouarWrite(
-			BoardCommand boardCommand,HttpSession httpsession
+			BoardCommand boardCommand,HttpSession session
 			) {
-		boardWriteService.boardWrite(boardCommand, httpsession);
+		boardWriteService.boardWrite(boardCommand, session);
 		return "redirect:boardList";
 	}
 	@RequestMapping("boardForm")

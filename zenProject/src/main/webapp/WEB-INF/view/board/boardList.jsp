@@ -21,24 +21,58 @@
 		<h1 class="h3 mb-3 fw-normal">
 			<a href="../index.jsp">EZEN FOOD</a>
 		</h1>
+		<c:if test="${empty authInfo }">
+			<button id="login-btn">
+				<a href="../login/login">로그인</a>
+			</button>
+			<ul class="">
+				<li><a href="../register">회원가입</a></li>
+				<li><a href="../search/idFind">아이디 찾기</a></li>
+				<li><a href="../search/findPassword">비밀번호 찾기</a></li>
+			</ul>
+		</c:if>
+		<c:if test="${!empty authInfo }">
+			<ul class="">
+				<li><a href="../login/logOut">로그아웃</a></li>
+			</ul>
+		</c:if>
+
+
+		<c:if test="${!empty authInfo }">
+			<c:if test="${authInfo.grade == 1 }">
+
+				<ul class="">
+					<li><a href="../member/myPage">마이페이지</a></li>
+				</ul>
+			</c:if>
+
+			<c:if test="${authInfo.grade != 1 }">
+
+				<ul class="">
+					<li><a href="../employee/empMyPage">마이페이지</a></li>
+
+				</ul>
+			</c:if>
+		</c:if>
 		<table class="table table-hover">
 			<tr>
-			<td>번호</td>
+				<td>번호</td>
 				<td>제목</td>
 				<td>등록일</td>
 				<td>조회수</td>
 			</tr>
-			
-<tr>
-	<td>공지</td>
-	<td><a href="../notice/noticeDetail?noticeNo=${nOne.noticeNo }">${nOne.noticeTitle }</a></td>
-	<td><fmt:formatDate value="${nOne.noticeDate }" type="date" pattern="yy-MM-dd"/> </td>
-	<td>${nOne.noticeCnt }</td>
-</tr>
+
+			<tr>
+				<td>공지</td>
+				<td><a href="../notice/noticeDetail?noticeNo=${nOne.noticeNo }">${nOne.noticeTitle }</a></td>
+				<td><fmt:formatDate value="${nOne.noticeDate }" type="date"
+						pattern="yy-MM-dd" /></td>
+				<td>${nOne.noticeCnt }</td>
+			</tr>
 			<c:forEach items="${boardLists }" var="dto" varStatus="cnt">
 				<!--리스트 서비스에서name값을 가지고온다 -->
 				<tr>
-				<td>${cnt.count +(page-1)*3}</td>
+					<td>${cnt.count +(page-1)*3}</td>
 					<td><a href="boardDetail?boardNo=${dto.boardNo }">${dto.boardTitle }</a></td>
 					<td><fmt:formatDate value="${dto.boardDate }" type="date"
 							pattern="yy-MM-dd" /></td>
@@ -47,11 +81,11 @@
 			</c:forEach>
 			<tr>
 				<td colspan="4"><%@ include file="../include/includePage.jsp"%>
-				
+
 				</td>
 			</tr>
 		</table>
-		<c:if test="${!empty authInfo }">
+		<c:if test="${authInfo.grade == 1 }">
 			<a class="btn btn-default" href="boardForm">게시글 등록</a>
 		</c:if>
 	</div>

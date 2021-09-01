@@ -139,6 +139,7 @@
         text-align: center;
         }
     </style>
+    
 </head>
 
 <body>
@@ -148,6 +149,39 @@
             <br>
              <h2>메뉴 리스트</h2>
         </h1>
+        		<c:if test="${empty authInfo }">
+			<button id="login-btn">
+				<a href="../login/login">로그인</a>
+			</button>
+			<ul class="">
+				<li><a href="../register">회원가입</a></li>
+				<li><a href="../search/idFind">아이디 찾기</a></li>
+				<li><a href="../search/findPassword">비밀번호 찾기</a></li>
+			</ul>
+		</c:if>
+		<c:if test="${!empty authInfo }">
+			<ul class="">
+				<li><a href="../login/logOut">로그아웃</a></li>
+			</ul>
+		</c:if>
+
+
+		<c:if test="${!empty authInfo }">
+			<c:if test="${authInfo.grade == 1 }">
+
+				<ul class="">
+					<li><a href="../member/myPage">마이페이지</a></li>
+				</ul>
+			</c:if>
+
+			<c:if test="${authInfo.grade != 1 }">
+
+				<ul class="">
+					<li><a href="../employee/empMyPage">마이페이지</a></li>
+
+				</ul>
+			</c:if>
+		</c:if>
         <div class="chkbox-btn">
         <form action="">
             <table class="menu-chk-list">

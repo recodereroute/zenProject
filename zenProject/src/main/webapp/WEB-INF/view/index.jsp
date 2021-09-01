@@ -173,10 +173,10 @@
 
 	<div class="team-name-box">
 		<ul>
-			<li>팀원 1</li>
-			<li>팀원 2</li>
-			<li>팀원 3</li>
-			<li>팀원 4</li>
+			<li>고 명 현</li>
+			<li>김 현 우</li>
+			<li>박 지 현</li>
+			<li>이 근 호</li>
 		</ul>
 	</div>
 

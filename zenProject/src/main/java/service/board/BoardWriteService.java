@@ -24,9 +24,7 @@ BoardRepository boardRepository;
 		dto.setBoardTitle(boardCommand.getBoardTitle());
 		dto.setBoardCon(boardCommand.getBoardCon());
 		dto.setMemId(memId);
-		
 		dto.setBoardNo(boardCommand.getBoardNo());
-		System.out.println(boardCommand.getBoardNo());
 		
 		String originalTotal="";
 		String storeTotal="";

@@ -51,6 +51,39 @@
     <div class="col-xs-8 col-md-8">
    <h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
    <h1 class="h3 mb-3 fw-normal">메뉴 게시판</h1> 
+   		<c:if test="${empty authInfo }">
+			<button id="login-btn">
+				<a href="../login/login">로그인</a>
+			</button>
+			<ul class="">
+				<li><a href="../register">회원가입</a></li>
+				<li><a href="../search/idFind">아이디 찾기</a></li>
+				<li><a href="../search/findPassword">비밀번호 찾기</a></li>
+			</ul>
+		</c:if>
+		<c:if test="${!empty authInfo }">
+			<ul class="">
+				<li><a href="../login/logOut">로그아웃</a></li>
+			</ul>
+		</c:if>
+
+
+		<c:if test="${!empty authInfo }">
+			<c:if test="${authInfo.grade == 1 }">
+
+				<ul class="">
+					<li><a href="../member/myPage">마이페이지</a></li>
+				</ul>
+			</c:if>
+
+			<c:if test="${authInfo.grade != 1 }">
+
+				<ul class="">
+					<li><a href="../employee/empMyPage">마이페이지</a></li>
+
+				</ul>
+			</c:if>
+		</c:if>
     <div class="table table-responsive">
         <table class="table">
         <tr>
@@ -173,7 +206,6 @@ function mcmntModify(ele,b,c){
 }
 </script>
 
-
 <script type="text/javascript">
 	
 	function bmkAddConfirm(){
@@ -192,13 +224,15 @@ function mcmntModify(ele,b,c){
 					}
 				},
 				error : function(){
-					alert("에러가 발생했습니다.");
+				swal("","이미등록된 메뉴입니다.","info")
 					return;
 				}
 			});
 	}
 	
 	</script>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
    
    <!-- jquery -->
 

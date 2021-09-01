@@ -49,6 +49,40 @@
 			<a href="../index.jsp">EZEN FOOD</a>
 		</h1>
 		<h1 class="h3 mb-3 fw-normal">일반 게시판</h1>
+				<c:if test="${empty authInfo }">
+			<button id="login-btn">
+				<a href="../login/login">로그인</a>
+			</button>
+			<ul class="">
+				<li><a href="../register">회원가입</a></li>
+				<li><a href="../search/idFind">아이디 찾기</a></li>
+				<li><a href="../search/findPassword">비밀번호 찾기</a></li>
+			</ul>
+		</c:if>
+		<c:if test="${!empty authInfo }">
+			<ul class="">
+				<li><a href="../login/logOut">로그아웃</a></li>
+			</ul>
+		</c:if>
+
+
+		<c:if test="${!empty authInfo }">
+			<c:if test="${authInfo.grade == 1 }">
+
+				<ul class="">
+		
+					<li><a href="../member/myPage">마이페이지</a></li>
+				</ul>
+			</c:if>
+
+			<c:if test="${authInfo.grade != 1 }">
+
+				<ul class="">
+					<li><a href="../employee/empMyPage">마이페이지</a></li>
+
+				</ul>
+			</c:if>
+		</c:if>
 		<table class="table">
 			<tr>
 				<th class="success">글번호</th>
