@@ -50,7 +50,7 @@
     <div class="col-xs-2 col-md-2"></div>
     <div class="col-xs-8 col-md-8">
    <h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
-   <h1 class="h3 mb-3 fw-normal">메뉴 게시판</h1> 
+   <h1 class="h3 mb-3 fw-normal"> <a href="menuList">메뉴 게시판 </a></h1>
    		<c:if test="${empty authInfo }">
 			<button id="login-btn">
 				<a href="../login/login">로그인</a>

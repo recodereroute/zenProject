@@ -192,7 +192,7 @@ footer {
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
-	background-color: #085c44;
+	background-color: black;
 	padding: 15px;
 }
 
@@ -203,5 +203,5 @@ footer {
 
 .team-name-box li, .team-addr-box li {
 	margin: 5px;
-	color: #EFFFE9;
+	color: black;
 }

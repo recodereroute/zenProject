@@ -18,7 +18,7 @@
 <body>
     <div class="container">
    <h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1> 
-   <h1 class="h3 mb-3 fw-normal">칼럼 게시판</h1> 
+<h1 class="h3 mb-3 fw-normal"> <a href="columnList">칼럼 게시판 </a></h1>
         <table class="table">
         <tr>
             <th class="success">글번호</th>

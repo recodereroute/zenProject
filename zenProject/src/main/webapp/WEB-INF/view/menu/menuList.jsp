@@ -144,11 +144,9 @@
 
 <body>
     <div class="chk-list container">
-        <h1>
-            <a href="../index.jsp">EZEN FOOD</a>
-            <br>
-             <h2>메뉴 리스트</h2>
-        </h1>
+        <h1><a href="../index.jsp">EZEN FOOD</a></h1>
+            <h1 class="h3 mb-3 fw-normal"> <a href="menuList">메뉴 게시판 </a></h1>
+       
         		<c:if test="${empty authInfo }">
 			<button id="login-btn">
 				<a href="../login/login">로그인</a>

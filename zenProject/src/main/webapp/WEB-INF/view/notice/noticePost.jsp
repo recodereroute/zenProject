@@ -48,7 +48,7 @@
 <form action="noticeWrite" method="post" name = "frm" enctype="multipart/form-data">
 <div class="container">
 <h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
-<h1 class="h3 mb-3 fw-normal">공지사항</h1> 
+<h1 class="h3 mb-3 fw-normal"> <a href="noticeList">공지사항</a></h1>
 <div class="row">
 <div class="col-md-6"> 
 <div class="form-group">
