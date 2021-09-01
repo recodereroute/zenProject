@@ -50,9 +50,9 @@ a {
      </c:if>  
 
     <div class="btnArea">
-       <a href="../login/login" class="btnSubmit">로그인</a>
-        <a href="../search/findPassword" class="btnEm">비밀번호 찾기</a>
-        	<a href="../" >메인 페이지로 가기</a>
+       <a href="../login/login" class="btnSubmit">로그인</a> |
+        <a href="../search/findPassword" class="btnEm">비밀번호 찾기</a> |
+        	<a href="../" >메인 페이지로가기</a>
     </div>
 
 

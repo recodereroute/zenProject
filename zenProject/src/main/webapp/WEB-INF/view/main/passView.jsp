@@ -35,7 +35,7 @@ a {
   
 
     <div class="btnArea">
-       <a href="../login/login" class="btnSubmit">로그인</a>
+       <a href="../login/login" class="btnSubmit">로그인</a>  |
         	<a href="../" >메인 페이지로 가기</a>
     </div>
 
