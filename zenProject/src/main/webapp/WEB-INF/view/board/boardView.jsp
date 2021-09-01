@@ -89,42 +89,57 @@
 
 		</table>
 	</div>
+	
+
 	<div align="center" class="container">
 		<c:if test="${authInfo.userId == dto.memId }">
 			<a class="btn btn-default" href="boardUpdate?boardNo=${dto.boardNo }">수정</a>
 		</c:if>
-
-
-		<c:if test="${authInfo.grade == 1 }">
-			<form action="bcmntWrite" method="post">
-				<input type="hidden" name="cmntMemId" value="${authInfo.userId}" />
+<div class="container">
+   <form action="bcmntWrite" method="post">
+      <input type="hidden" name="cmntMemId" value="${authInfo.userId}" />
 				<input type="hidden" name="boardNo" value="${dto.boardNo }" />
 				<input type="hidden" name="boardMemId" value="${dto.memId }" />
-			<table border="1">
-				<tr>
-					<td>작성자</td>
-					<td rowspan="2"><textarea rows="2" cols="30" name="boardCmntCon"></textarea></td>
-					<td rowspan="2"><input type="submit" value="등록" class="button4" /></td>
-				</tr>
-				<tr>
-					<td>${authInfo.userId}</td>
-				</tr>
-				</table>
-			</form>
-		</c:if>
+      <table class="table table-striped table-bordered" border="1">
+         <tr>
+            <td>${authInfo.userId}</td>
+            <td><textarea rows="2" cols="30" name="boardCmntCon"></textarea></td>
+            <td><input type = "submit" value="등록" class="button4"/></td>
+         </tr>
+      </table>
+   
+   </form>
+   </div>
 		
-		<!-- 여기서 부터  댓글 테이블 생성 -->
-		<c:forEach items="${bcmntList }" var="bcmnt" varStatus="cnt">
-			<div class="comment-table" id="content${cnt.count }">
-						${bcmnt.cmntMemId }
-						${bcmnt.boardCmntCon }
-						${bcmnt.boardCmntDate }
-						<c:if test="${authInfo.userId == bcmnt.cmntMemId }">
-							<a href="javascript:bcmntModify('content${cnt.count }','${bcmnt.boardCmntNo }','${dto.boardNo}');">수정</a>
-							<a href="bcmntDelete?boardCmntNo=${bcmnt.boardCmntNo }&boardNo=${dto.boardNo}">삭제</a>
-						</c:if>
-			</div>
-		</c:forEach>
+		<div class="container">
+  <c:forEach items="${bcmntList }" var="bcmnt" varStatus="cnt">
+      <div id ="content${cnt.count }">
+      <table class="table table-striped table-bordered"  border="1">
+               
+         <tr>
+                    <tr>
+                        <td>닉네임 : ${bcmnt.cmntMemId }</td>
+                        <td id ="nowDate">작성일자 : ${bcmnt.boardCmntDate }</td>
+                    </tr>
+ 
+
+                    <tr>
+                        <td id="nowComment" colspan="2">댓글 내용 : ${bcmnt.boardCmntCon }</td>
+                    </tr>
+           
+            <c:if test="${authInfo.userId == bcmnt.cmntMemId }">
+               <td colspan="2">
+                  <a href="javascript:bcmntModify('content${cnt.count}','${bcmnt.boardCmntNo }','${dto.boardNo}');" class="btn btn-default">수정</a>
+                  <a href="bcmntDelete?boardCmntNo=${bcmnt.boardCmntNo }&boardNo=${dto.boardNo }" class="btn btn-default">삭제</a></td>
+            </c:if>
+         
+      </table>
+      </div>
+
+    </c:forEach>
+</div>
+
+		
 	</div>
 
 

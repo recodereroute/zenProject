@@ -14,7 +14,7 @@
 		where BOARD_NO = #{boardNo}
 	</select>
 	<select id="bcmntInfo" parameterType="bcDTO" resultType="bcDTO">
-		select B_CMNT_NO boardCmntNo, BOARD_NO boardNo, CMNT_MEM_ID cmntMemId, B_CMNT_CON boardCmntCon
+		select B_CMNT_NO boardCmntNo, BOARD_NO boardNo, CMNT_MEM_ID cmntMemId, B_CMNT_CON boardCmntCon, B_CMNT_date boardCmntDate
 		from board_comment
 		where BOARD_NO = #{boardNo} and B_CMNT_NO = #{boardCmntNo}
 	</select>

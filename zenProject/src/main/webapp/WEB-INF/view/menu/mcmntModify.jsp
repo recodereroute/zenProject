@@ -13,10 +13,7 @@
 	<input type ="hidden" name = "menuCmntNo" value = "${command.menuCmntNo }"/>
       <table class="table table-striped table-bordered"  border="1">
                
-         <tr>
-         <tr>
-                        <td colspan="2"><br></td>
-                    </tr>
+         
  
                     <tr>
                         <td>닉네임 :${authInfo.userId}</td>
@@ -40,7 +37,7 @@
       </div>
 
     
-</div>
+
 
 </body>
 </html>

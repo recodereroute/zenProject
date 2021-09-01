@@ -128,10 +128,7 @@
                
          <tr>
          <tr>
-                        <td colspan="2"><br></td>
-                    </tr>
  
-                    <tr>
                         <td>닉네임 : ${mcmnt.memId }</td>
                         <td id ="nowDate">작성일자 : ${mcmnt.menuCmntDate }</td>
                     </tr>
