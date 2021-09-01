@@ -33,15 +33,15 @@
 .menu-chk-list th {
 	background-color: #3CB371;
 	text-align: center;
-	min-width: 120px;
+	min-width: 110px;
 	border-radius: 10px;
 	color: #EFFFE9;
 }
 
 .menu-chk-list td {
 	padding: 5px;
-	min-width: 120px;
-	width: 120px;
+	min-width: 110px;
+	width: 110px;
 }
 
 .menu-chk-list hr {
