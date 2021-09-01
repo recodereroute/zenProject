@@ -267,16 +267,18 @@ button.on("click", function(){
    function setThumbNail(event) {
       for(var image of event.target.files){
          var reader = new FileReader();
-         reader.onload = function(event){ 
-            var idNum = 0;
+         reader.onload = function(event){
             var img = document.createElement("img");
+            if(image.name.split(".")[1] === "jpg" || image.name.split(".")[1] === "png"){
             img.setAttribute("src",event.target.result);
             img.style.width = "300px";
             img.style.height = "300px";
             document.querySelector("#image-field").appendChild(img);
-            if(img.src.indexOf("jpeg") < 0 && img.src.indexOf("png") < 0){
-               alert("jpg, png 파일만 등록할 수 있습니다.");
-               img.parentNode.removeChild(img);
+            }
+            else{
+            	alert("jpg, png 파일만 등록 할 수 있습니다.");
+            	img.parentNode.removeChild(img);
+            	console.log(event.target.value);
             }
          }
          reader.readAsDataURL(image);         
