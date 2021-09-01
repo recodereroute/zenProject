@@ -19,4 +19,6 @@ public class MenuCommand {
     String menuDate;
     String empNo;
     String FileDel;
+    
+    String[] menuItems;
 }

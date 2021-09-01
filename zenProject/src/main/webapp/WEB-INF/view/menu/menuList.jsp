@@ -152,39 +152,39 @@
         <form action="">
             <table class="menu-chk-list">
                 <tr>
-                    <th rowspan="3">main item
+                    <th rowspan="3">주재료
                      
                     </th>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="돼지고기"><label for="menuMainItem">돼지고기</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="소고기"><label for="menuMainItem">소고기</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="닭고기"><label for="menuMainItem">닭고기</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="오리고기"><label for="menuMainItem">오리고기</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="달걀"><label for="menuMainItem">달걀</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="감자"><label for="menuMainItem">감자</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="베이컨"><label for="menuMainItem">베이컨</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="버섯"><label for="menuMainItem">버섯</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="양파"><label for="menuMainItem">양파</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="마늘"><label for="menuMainItem">마늘</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="돼지고기"><label for="menuMainItem">돼지고기</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="소고기"><label for="menuMainItem">소고기</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="닭고기"><label for="menuMainItem">닭고기</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="오리고기"><label for="menuMainItem">오리고기</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="달걀"><label for="menuMainItem">달걀</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="감자"><label for="menuMainItem">감자</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="베이컨"><label for="menuMainItem">베이컨</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="버섯"><label for="menuMainItem">버섯</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="양파"><label for="menuMainItem">양파</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="마늘"><label for="menuMainItem">마늘</label></td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="치즈"><label for="menuMainItem" >치즈</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="빵"><label for="menuMainItem">빵</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="파스타면"><label for="menuMainItem">파스타면</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="중화면"><label for="menuMainItem">중화면</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="새우"><label for="menuMainItem">새우</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="두부"><label for="menuMainItem">두부</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="연어"><label for="menuMainItem">연어</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="오징어"><label for="menuMainItem">오징어</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="대파"><label for="menuMainItem">대파</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="파프리카"><label for="menuMainItem">파프리카</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="치즈"><label for="menuMainItem" >치즈</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="빵"><label for="menuMainItem">빵</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="파스타면"><label for="menuMainItem">파스타면</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="중화면"><label for="menuMainItem">중화면</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="새우"><label for="menuMainItem">새우</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="두부"><label for="menuMainItem">두부</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="연어"><label for="menuMainItem">연어</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="오징어"><label for="menuMainItem">오징어</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="대파"><label for="menuMainItem">대파</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="파프리카"><label for="menuMainItem">파프리카</label></td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="밥"><label for="menuMainItem">밥</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="메밀소바"><label for="menuMainItem">메밀소바</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="우동사리"><label for="menuMainItem">우동사리</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="양배추"><label for="menuMainItem">양배추</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="오이"><label for="menuMainItem">오이</label></td>
-                    <td><input type="checkbox" name="menuMainItem" id="menuMainItem" value="가지"><label for="menuMainItem">가지</label></td>   
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="밥"><label for="menuMainItem">밥</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="메밀소바"><label for="menuMainItem">메밀소바</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="우동사리"><label for="menuMainItem">우동사리</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="양배추"><label for="menuMainItem">양배추</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="오이"><label for="menuMainItem">오이</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuMainItem" value="가지"><label for="menuMainItem">가지</label></td>   
                 </tr>
                 <tr>
                     <td colspan="11">
@@ -192,34 +192,34 @@
                     </td>
                 </tr>
                 <tr>
-                    <th rowspan="3">sub item
+                    <th rowspan="3">부재료
                     </th>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="식용유"><label for="menuSubItem">식용유</label></td>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="소금"><label for="menuSubItem">소금</label></td>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="와인"><label for="menuSubItem">와인</label></td>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="우유"><label for="menuSubItem">우유</label></td>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="마요네즈"><label for="menuSubItem">마요네즈</label></td>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="후추"><label for="menuSubItem">후추</label></td>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="굴소스"><label for="menuSubItem">굴소스</label></td>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="간장"><label for="menuSubItem">간장</label></td>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="설탕"><label for="menuSubItem">설탕</label></td>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="고추가루"><label for="menuSubItem">고추가루</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="식용유"><label for="menuSubItem">식용유</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="소금"><label for="menuSubItem">소금</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="와인"><label for="menuSubItem">와인</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="우유"><label for="menuSubItem">우유</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="마요네즈"><label for="menuSubItem">마요네즈</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="후추"><label for="menuSubItem">후추</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="굴소스"><label for="menuSubItem">굴소스</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="간장"><label for="menuSubItem">간장</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="설탕"><label for="menuSubItem">설탕</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="고추가루"><label for="menuSubItem">고추가루</label></td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="식초"><label for="menuSubItem">식초</label></td>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="케첩"><label for="menuSubItem">케첩</label></td>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="참기름"><label for="menuSubItem">참기름</label></td>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="전분"><label for="menuSubItem">전분</label></td>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="맛술"><label for="menuSubItem">맛술</label></td>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="혼다시"><label for="menuSubItem">혼다시</label></td>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="올리고당"><label for="menuSubItem">올리고당</label></td>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="와사비"><label for="menuSubItem">와사비</label></td>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="돈까스소스"><label for="menuSubItem">돈까스소스</label></td>
-                    <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="된장"><label for="menuSubItem">된장</label></td>          
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="식초"><label for="menuSubItem">식초</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="케첩"><label for="menuSubItem">케첩</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="참기름"><label for="menuSubItem">참기름</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="전분"><label for="menuSubItem">전분</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="맛술"><label for="menuSubItem">맛술</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="혼다시"><label for="menuSubItem">혼다시</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="올리고당"><label for="menuSubItem">올리고당</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="와사비"><label for="menuSubItem">와사비</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="돈까스소스"><label for="menuSubItem">돈까스소스</label></td>
+                    <td><input type="checkbox" name="menuItems" id="menuSubItem" value="된장"><label for="menuSubItem">된장</label></td>          
                 </tr>
                 <tr>
-                <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="다시마"><label for="menuSubItem">다시마</label></td> 
-                <td><input type="checkbox" name="menuSubItem" id="menuSubItem" value="육수"><label for="menuSubItem">육수</label></td>                   
+                <td><input type="checkbox" name="menuItems" id="menuSubItem" value="다시마"><label for="menuSubItem">다시마</label></td> 
+                <td><input type="checkbox" name="menuItems" id="menuSubItem" value="육수"><label for="menuSubItem">육수</label></td>                   
                  <td></td>
                 </tr>
             </table>
