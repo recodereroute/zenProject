@@ -21,4 +21,8 @@ public class SearchRepository {
 		statement = namespace + ".menuSearch";
 		return sqlSession.selectList(statement, dto);
 	}
+	public List<MenuDTO> selectSearch(String menuItem){
+		statement = namespace + ".selectSearch";
+		return sqlSession.selectList(statement, menuItem);
+	}
 }

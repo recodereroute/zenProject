@@ -24,4 +24,5 @@ public class MenuDTO {
     
     StartEndPageDTO startEndPageDTO;
     String empId;
+    String menuItems;
 }

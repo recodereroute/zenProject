@@ -10,4 +10,5 @@
 	<bean class = "repository.SearchRepository"/>
 	
 	<bean class = "service.search.MenuSearchService"/>
+	<bean class = "service.search.SelectSearchService"/>
 </beans>
