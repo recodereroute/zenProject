@@ -7,7 +7,7 @@
 <title>비밀번호 찾기</title>
 </head>
 <body>
- 임시 비밀번호가 ${email }으로 전송되었습니다.< br>
+ 임시 비밀번호가 ${email }으로 전송되었습니다.<br/>
 <a href="../" >홈으로 가기</a> 
 </body>
 </html>

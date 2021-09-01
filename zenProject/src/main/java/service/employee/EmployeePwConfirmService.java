@@ -21,7 +21,7 @@ public class EmployeePwConfirmService {
 		if(bCryptPasswordEncoder.matches(empPw, dto.getEmpPw())) {
 			return "employee/empPwEditOk";
 		}else {
-			model.addAttribute("pwFail","ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë¦½ë‹ˆë‹¤.");
+			model.addAttribute("pwFail","ºñ¹Ð¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
 			return "employee/empPwChk";
 		}
 	}

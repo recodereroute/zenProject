@@ -258,12 +258,16 @@ function mcmntModify(ele,b,c){
 				dataType : "html",//보여주려는 결과 data-type
 				data : {"memId":${authInfo.userId},"menuNo":${dto.menuNo }},
 				//익명함수(이름이 없는 함수) : 직접 실행시킬수 없음 - 실행시키기 위한 객체가 필요
-				success : function(result){//result : data 넘겨줘서 나온 동기식 결과 페이지
-					if(confirm("즐겨 찾기로 이동하시겠습니까?")){
-						location.href='../bookmark/bookmarkList?memId='+${authInfo.userId}
-					}else{
-						return false;
-					}
+				success : function(result){
+					swal({title:"",
+						text:"즐겨찾기로 이동하시겠습니까?",
+							icon:"success",
+								buttons:["아니요","네!"]}).then((value)=>{if(value){location.href='../bookmark/bookmarkList?memId='+${authInfo.userId}} 
+								
+								
+								})
+							
+				
 				},
 				error : function(){
 				swal("","이미등록된 메뉴입니다.","info")
