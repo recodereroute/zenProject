@@ -2,6 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mappers.MenuMapper">
+<select id="mainMenuList" resultType="Model.MenuDTO">
+	select rownum,menuNo,menuRecipe,menuName,menuImg,menuMainItem,menuSubItem,menuRecmnd,menuCnt,empNo,menuDate
+	<![CDATA[
+		from(
+			select 
+			rownum rn , MENU_NO menuNo,MENU_RECIPE menuRecipe,MENU_NAME menuName,menu_img menuImg,MENU_MAIN_ITEM menuMainItem,MENU_SUB_ITEM menuSubItem,
+			MENU_RECMND menuRecmnd,MENU_CNT menuCnt,EMP_NO empNo,MENU_DATE menuDate from menu 
+			where menu_date LIKE (select to_char(sysdate,'YY/MM/DD') FROM DUAL)
+			order by menu_Cnt desc
+			) where rownum <4
+	]]>
+
+</select>
+
+
 	<select id="menuList" parameterType="Model.MenuDTO"
 		resultType="Model.MenuDTO">
 		select rn, menuNo,menuName,menuImg,menuRecmnd,menuCnt,empNo,menuDate, empId

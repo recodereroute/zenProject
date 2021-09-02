@@ -11,6 +11,7 @@
 	<bean class="service.menu.MenuWriteService"/>
 	<bean class="service.menu.MenuDeleteService"/>
 	<bean class="service.menu.MenuModifyService"/>
+	<bean class="service.menu.MainMenuListService"/>
 	
 	<bean class="repository.MenuRepository"/>
 </beans>

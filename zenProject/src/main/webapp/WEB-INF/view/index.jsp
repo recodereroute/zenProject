@@ -101,20 +101,11 @@
 				</td>
 			</tr>
 			<tr>
-				<td><a href="#"><button class="menu-btn">이전 메뉴</button></a></td>
-				<td><a href="#"><img
-						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSTVsO0El80XdPmel6NNMVXntfcM1oqVlgmg&usqp=CAU"
-						alt="조회수가 높은 이미지">
-						<p>감자 튀김</p> </a></td>
-				<td><a href="#"><img
-						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPyr8M00OTiOpagI92nCOo55eqo5N92w-_gGcW4jplWUg6hzZt&usqp=CAU"
-						alt="조회수가 높은 이미지">
-						<p>피자</p> </a></td>
-				<td><a href="#"><img
-						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE5e2tYS0SSRsYlyEAsei3y7091c1WVq4Lxw&usqp=CAU"
-						alt="조회수가 높은 이미지">
-						<p>어떤 음식</p> </a></td>
-				<td><a href="#"><button class="menu-btn">다음 메뉴</button></a></td>
+			<c:forEach items="${mainMenuList }" var="MMdto">
+			<td>
+			<a href="menu/menuDetail?menuNo=${MMdto.menuNo }"><img alt="" src=" "> </a>			
+			</td>
+			</c:forEach>
 			</tr>
 		</table>
 	</div>

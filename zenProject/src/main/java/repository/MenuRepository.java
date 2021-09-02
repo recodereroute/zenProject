@@ -13,32 +13,30 @@ public class MenuRepository {
 	String nameSpace = "mappers.MenuMapper";
 	String statement;
 	
-	//硫붾돱 由ъ뒪�듃 遺덈윭�삤湲�
+	public List<MenuDTO> mainMenuList(){
+		statement = nameSpace + ".mainMenuList";
+		return sqlSession.selectList(statement);
+	}
 	public List<MenuDTO> menuList(MenuDTO dto){
 		statement = nameSpace + ".menuList";
 		return sqlSession.selectList(statement,dto);
 	}
-	//硫붾돱 踰덊샇
 	public String menuNo() {
 		statement = nameSpace +".menuNo";
 		return sqlSession.selectOne(statement);
 	}
-	//硫붾돱 �옉�꽦 
 	public void menuWrite(MenuDTO dto) {
 		statement = nameSpace + ".menuWrite";
 		sqlSession.selectList(statement,dto);
 	} 
-	//硫붾돱 �뵒�뀒�씪
 	public MenuDTO menuDetail(String menuNo) {
 		statement = nameSpace + ".menuDetail";
 		return sqlSession.selectOne(statement,menuNo);
 	}
-	//硫붾돱 �궘�젣
 	public void menuDel(String menuNo) {
 		statement = nameSpace + ".menuDel";
 		sqlSession.delete(statement,menuNo);
 	}
-	//硫붾돱 �닔�젙
 	
 	public int count() {
 		statement = nameSpace +".count";
