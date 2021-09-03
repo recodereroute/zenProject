@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 
 import Model.MenuDTO;
 import command.MenuCommand;
+import controller.board.PageAction;
 import repository.SearchRepository;
 
 public class SelectSearchService {
@@ -34,6 +35,38 @@ public class SelectSearchService {
 				}
 			}
 		}
+		// 정렬을 해줘야 하는 경우만
+		if (list.size() > 1) {
+			list = quickSort(list, 0, list.size()-1);
+		}
+		
+		
+		// 리스트의 사이즈 이용해서 페이징 해줄수 있을거 같음.
+		System.out.println("리스트의 사이즈 : " + list.size());
 		model.addAttribute("searchResult", list);
+
+
+	}
+	
+	public List<MenuDTO> quickSort(List<MenuDTO> list, int l, int r) {
+		int left = l;
+		int right = r;
+		// 중앙의 조회수
+		int pivot = list.get((left + right) / 2).getMenuCnt();
+		do {
+			while(list.get(left).getMenuCnt() > pivot) left++;
+			while(list.get(right).getMenuCnt() < pivot) right--;
+			if (left <= right) {
+				MenuDTO tmp = list.get(left);
+				list.set(left, list.get(right));
+				list.set(right, tmp);
+				left++;
+				right--;
+			}
+		}while(left <= right);
+		if(l < right) quickSort(list, l, right);
+        if(r > left) quickSort(list, left, r);
+
+		return list;
 	}
 }

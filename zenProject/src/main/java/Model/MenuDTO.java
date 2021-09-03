@@ -18,7 +18,7 @@ public class MenuDTO {
     String menuMainItem;
     String menuSubItem;
     String menuRecmnd;
-    String menuCnt;
+    int menuCnt;
     String empNo;
     Date menuDate;
     
