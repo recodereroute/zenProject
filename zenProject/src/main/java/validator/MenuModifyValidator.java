@@ -14,6 +14,7 @@ public void validate(Object target, Errors errors) {
 	ValidationUtils.rejectIfEmpty(errors, "menuRecipe", "required");
 	ValidationUtils.rejectIfEmpty(errors, "menuMainItem", "selectRequired");
 	ValidationUtils.rejectIfEmpty(errors, "menuName", "required");
+
 	}
 
 }

@@ -8,8 +8,8 @@
 		from(
 			select 
 			rownum rn , MENU_NO menuNo,MENU_RECIPE menuRecipe,MENU_NAME menuName,menu_img menuImg,MENU_MAIN_ITEM menuMainItem,MENU_SUB_ITEM menuSubItem,
-			MENU_RECMND menuRecmnd,MENU_CNT menuCnt,EMP_NO empNo,MENU_DATE menuDate from menu 
-			where menu_date LIKE (select to_char(sysdate,'YY/MM/DD') FROM DUAL)
+			MENU_RECMND menuRecmnd,MENU_CNT menuCnt,EMP_NO empNo,MENU_DaTE menuDate from menu 
+			  WHERE to_char(menu_date,'yy/mm') like ( select to_char(ADD_MONTHS(SYSDATE,-1),'YY/MM') FROM DUAL)
 			order by menu_Cnt desc
 			) where rownum <4
 	]]>
@@ -26,7 +26,9 @@
 	        MENU_RECMND menuRecmnd, MENU_CNT menuCnt, m.EMP_NO empNo, MENU_DATE menuDate,
 	        emp_id empId
 	        from menu m, employees e
-	        where m.emp_no = e.emp_no)
+	        where m.emp_no = e.emp_no
+	          order by menu_no desc
+	        )
 		<if test="startEndPageDTO != null">
 			where rn between #{startEndPageDTO.startRow} and #{startEndPageDTO.endRow}
 		</if>
