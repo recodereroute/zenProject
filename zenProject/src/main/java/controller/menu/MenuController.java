@@ -18,6 +18,7 @@ import service.menu.MenuModifyService;
 import service.menu.MenuWriteService;
 import service.menuComment.MenuCommentListService;
 import validator.MenuFormValidator;
+import validator.MenuModifyValidator;
 
 @Controller
 @RequestMapping("menu")
@@ -74,7 +75,7 @@ public class MenuController {
 	@RequestMapping(value="menuModify", method= RequestMethod.POST)
 	public String menuModify(MenuCommand menuCommand, HttpSession session,Errors errors){
 		System.out.println("컨트롤러 진입");
-		new MenuFormValidator().validate(menuCommand, errors);
+		new MenuModifyValidator().validate(menuCommand, errors);
 		if(errors.hasErrors()) {
 			System.out.println("에러발생");
 			return "menu/menuModify";
