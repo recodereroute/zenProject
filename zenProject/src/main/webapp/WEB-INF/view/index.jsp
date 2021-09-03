@@ -97,7 +97,7 @@
 			<table>
 				<tr>
 					<td colspan="5" id="menu-title">
-						<h1>오늘의 추천 메뉴</h1>
+						<h1>추천 메뉴 TOP 3</h1>
 					</td>
 				</tr>
 				<tr>
