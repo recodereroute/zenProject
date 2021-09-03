@@ -215,8 +215,8 @@ button a:link, button a:visited {
 
 				<c:if test="${empty authInfo }">
 					<button id="login-btn">
-						<a href="../login/login?page=menu/menuList">로그인</a> <a
-							href="../register">회원가입</a>
+						<a href="../login/login?page=menu/menuList">로그인</a> 
+						<a href="../register">회원가입</a>
 					</button>
 
 				</c:if>
@@ -355,8 +355,7 @@ button a:link, button a:visited {
 				<div class="btnContainer">
 					<input type="submit" value="검색" class="btn">
 					<c:if test="${authInfo.grade >1}">
-						<a href="menuForm"><input type="button" value="메뉴등록"
-							class="btn"></a>
+						<a href="menuForm"><input type="button" value="메뉴등록" class="btn"></a>
 					</c:if>
 				</div>
 			</form>

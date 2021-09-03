@@ -11,6 +11,7 @@
 <div class="container">
 <h1 class="h3 mb-3 fw-normal"><a href="index.jsp">EZEN FOOD</a></h1>
 <h1 class="h3 mb-3 fw-normal"> <a href="">검색 결과 </a></h1>
+<h2 class="h3 mb-3 fw-normal"> <a href="">상세검색결과는 조회수 상위 10개 까지만 출력합니다. </a></h2>
 
 
 <c:if test="${empty searchResult }">
@@ -26,7 +27,7 @@
 		<td>조회수</td>	
 	</tr>
 	
-	<c:forEach items="${searchResult }" var="dto" varStatus="cnt">
+	<c:forEach items="${searchResult }" var="dto" varStatus="cnt" begin="0" end="9">
 			<tr>
 				<td>${cnt.count}</td>
 				<td>
