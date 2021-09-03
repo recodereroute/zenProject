@@ -18,6 +18,7 @@ import service.main.EmployeeJoinService;
 import service.main.FindPasswordService;
 import service.main.IdFindFinishService;
 import service.main.MemberJoinService;
+import service.menu.MainMenuListService;
 import service.notice.MainNoticeListService;
 import validator.EmployeeCommandValidator;
 import validator.MemberCommandValidator;
@@ -40,10 +41,13 @@ public class MainController {
 	MainBoardListService mainBoardListService;
 	@Autowired
 	MainNoticeListService mainNoticeListService;
+	@Autowired
+	MainMenuListService mainMenuListService;
 	@RequestMapping("index")
 	public String goIndex(Model model) {
 		mainBoardListService.mainBoardList(model);
 		mainNoticeListService.mainNoticeList(model);
+		mainMenuListService.mainMenuList(model);
 		return "index";
 	}
 	

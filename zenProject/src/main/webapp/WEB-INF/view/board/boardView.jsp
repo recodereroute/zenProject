@@ -194,6 +194,7 @@ background-color: aliceblue;
       <input type="hidden" name="cmntMemId" value="${authInfo.userId}" />
 				<input type="hidden" name="boardNo" value="${dto.boardNo }" />
 				<input type="hidden" name="boardMemId" value="${dto.memId }" />
+					<c:if test="${authInfo.grade == 1 }">
       <table class="table table-striped table-bordered" border="1">
          <tr>
             <td>${authInfo.userId}</td>
@@ -201,7 +202,7 @@ background-color: aliceblue;
             <td><input type = "submit" value="등록" class="button4"/></td>
          </tr>
       </table>
-   
+   </c:if>
    </form>
    </div>
 		

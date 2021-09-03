@@ -12,6 +12,11 @@
 <h1 class="h3 mb-3 fw-normal"><a href="index.jsp">EZEN FOOD</a></h1>
 <h1 class="h3 mb-3 fw-normal"> <a href="">검색 결과 </a></h1>
 
+
+<c:if test="${empty searchResult }">
+	검색결과가 없습니다.
+</c:if>
+<c:if test="${!empty searchResult }">
 <table class="table table-hover" border="1">
 	<tr>
 		<td>번호</td>
@@ -38,6 +43,7 @@
 			</tr>
 	</c:forEach>
 </table>
+</c:if>
 </div>
 </body>
 <!-- jquery -->

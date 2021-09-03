@@ -61,12 +61,16 @@
 </body>
 <script type="text/javascript">
 	function outConfirm(){
+
 		if(confirm("정말로 탈퇴하시겠습니까?")){
 			document.frm.submit();
 		}else{
 			return false;
 		}
 	}
+			
+			
+			
 </script>
 <!-- jquery -->
 

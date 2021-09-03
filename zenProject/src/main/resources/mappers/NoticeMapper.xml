@@ -57,6 +57,7 @@ from(
 	from notice 
 	where notice_kind=1
 	order by Notice_No desc
+	
 )
 where rownum<5
 ]]>

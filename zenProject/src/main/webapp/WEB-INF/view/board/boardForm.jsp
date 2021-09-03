@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>게시글 작성</title>
 <style>
-*{background-color :#EFFFE9;}
+
 .button4 {
  
     font-family: Verdana, Geneva, sans-serif;
