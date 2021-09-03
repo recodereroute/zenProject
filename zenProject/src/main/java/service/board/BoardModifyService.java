@@ -27,7 +27,7 @@ public void boardModify(BoardCommand boardCommand,HttpSession session) {
 		String store = fdto.getBoardFile();
 		String fileSize = fdto.getBoardFileSize();
 		String realPath = session.getServletContext().getRealPath("WEB-INF/view/library/upload");
-		
+		System.out.println(boardCommand.getFileDel());
 		String [] fileNames = boardCommand.getFileDel().split("/");
 		if(!fileNames[0].equals("")) {
 			String org = "";
@@ -53,7 +53,7 @@ public void boardModify(BoardCommand boardCommand,HttpSession session) {
 				}
 			}
 		}
-		//�뙆�씪 異붽�
+		
 		String originalTotal = "";
 		String storeTotal = "";
 		String fileSizeTotal ="";

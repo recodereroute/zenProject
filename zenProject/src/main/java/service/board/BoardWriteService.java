@@ -35,7 +35,7 @@ BoardRepository boardRepository;
 				String originalExt=
 						original.substring(original.lastIndexOf("."));
 				String store=
-						UUID.randomUUID().toString().replace("- ", "")+
+						UUID.randomUUID().toString().replace("-", "")+
 						originalExt;
 				String fileSize =Double.toString(Math.round((mf.getSize()/1024.0) * 100)/(double)100);
 				originalTotal+=original+",";

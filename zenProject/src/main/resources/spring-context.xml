@@ -17,6 +17,27 @@
 	<mvc:annotation-driven />
 	<!-- root 설정 -->
 	<mvc:default-servlet-handler/>
+	
+	<mvc:interceptors>
+			<mvc:interceptor>
+			<mvc:mapping path="/employee/**" />
+			<bean class="interceptor.AuthCheckInterceptor" />
+		</mvc:interceptor>
+		
+		<mvc:interceptor>
+			<mvc:mapping path="/bookmark/**" />
+			<bean class="interceptor.AuthCheckInterceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/member/**" />
+			<bean class="interceptor.AuthCheckInterceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/search/**" />
+			<bean class="interceptor.AuthCheckInterceptor" />
+		</mvc:interceptor>
+		
+	</mvc:interceptors>
 	<mvc:view-resolvers>
 		<mvc:jsp prefix="/WEB-INF/view/"/>
 		<mvc:jsp suffix=".jsp"/>

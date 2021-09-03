@@ -117,7 +117,9 @@
                 id="menuMainItem8" value="양파"><label for="menuMainItem8">양파</label></td>
             <td><input type="checkbox" name="menuMainItem"
                 id="menuMainItem9" value="마늘"><label for="menuMainItem9">마늘</label></td>
+      
         </tr>
+         
         <tr>
             <td><input type="checkbox" name="menuMainItem"
                 id="menuMainItem11" value="치즈"><label for="menuMainItem11">치즈</label></td>
@@ -212,23 +214,24 @@
                 id="menuSubItem22" value="육수"><label for="menuSubItem22">육수</label></td>
             <td></td>
         </tr>
+            
     </table>
+     <form:errors path="menuMainItem"/>    </br> 
 <label for="content">조리법:</label> 
 	<textarea class="form-control" rows="5" cols="60" name="menuRecipe" id="content" >${menuCommand.menuRecipe }</textarea>
 		<form:errors path="menuRecipe"/>
 <div class="filebox bs3-primary">
-<br>
+	<br>
 
-메뉴이미지:   <p>
-            <span id="file"> ${menuCommand.menuImg.split(',')[idx.index]}
-            </span> <input type="button" id="btn" onclick="fileDel1(this)"
-               value="이미지 삭제" />
-         </p>
-         
-   이미지 추가 : <input type="file" name="menuImg" multiple="multiple" /><br>
-<br>
+	  이미지 추가 : <input type="file" name="menuImg" accept="image/*" multiple="multiple" />
+	  <form:errors path="menuImg"/>
+	  
+	  
+	<br>
 <label for="name">등록일:</label>
-<input type="text" value="${menuCommand.menuDate }" readonly="readonly" class="form-control" name="menuDate" id="name">
+<input type="hidden" value="${menuCommand.menuDate }" readonly="readonly" class="form-control" name="menuDate" id="name">
+          <input type = "text" value ="<fmt:formatDate value="${menuCommand.menuDate }" type="date"  pattern="yy-MM-dd"/>" readonly="readonly" class="form-control" id = "name">
+          <br /> 
 <label for="name">조회수:</label>
 <input type="text" value="${menuCommand.menuCnt }" readonly="readonly" class="form-control" name="menuCnt" id="name">
 
@@ -244,19 +247,20 @@
    
 </body>
 <script type="text/javascript">
-	function fileDel1(btn){
-		var fileDel = $("#fileDel").val();
- 			if($(btn).attr("value") == "파일 삭제"){
- 				$(btn).attr("value","파일 삭제 취소");
- 				$("#fileDel").val($(btn).parent().children("#file").text().trim() + "/" + fileDel );
- 			}else{
- 				$(btn).attr("value","파일 삭제");
- 				fileName= $(btn).parent().children("#file").text().trim();
- 				$("#fileDel").val(fileDel.replace(fileName+"/",""));
- 			}
+	function fileDel(btn){
+			var fileDel = $("#fileDel").val()
+			if($(btn).attr("value") == "삭제"){
+				$(btn).attr("value","삭제취소");
+				$("#fileDel").val(
+						$(btn).parent().children("#fileName").text().trim()+"," 
+						+ delFile)
+			}else{
+				$(btn).attr("value","삭제");
+				fileName = $(btn).parent().children("#fileName").text().trim()+",";
+				$("#fileDel1").val(delFile.replace(fileName,""));
+			}
 	}
 </script>
-
 
 
 <!-- jquery -->

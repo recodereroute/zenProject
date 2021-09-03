@@ -73,11 +73,15 @@ public class MenuController {
 
 	@RequestMapping(value="menuModify", method= RequestMethod.POST)
 	public String menuModify(MenuCommand menuCommand, HttpSession session,Errors errors){
+		System.out.println("컨트롤러 진입");
 		new MenuFormValidator().validate(menuCommand, errors);
 		if(errors.hasErrors()) {
+			System.out.println("에러발생");
 			return "menu/menuModify";
 		}
+		System.out.println("서비스진입");
 		menuModifyService.menuModify(menuCommand, session);
+		System.out.println("서비스완료");
 		return "redirect:menuList";
 	}
 	@RequestMapping("menuDel")

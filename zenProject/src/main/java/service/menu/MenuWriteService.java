@@ -30,8 +30,8 @@ public class MenuWriteService {
 		if(!menuCommand.getMenuImg()[0].getOriginalFilename().equals("")) {
 			for(MultipartFile mf : menuCommand.getMenuImg()) {
 				String original = mf.getOriginalFilename();
-				originalTotal += original + ",";
-				File file = new File(path + "/" + original);
+				originalTotal += original + ","; 
+				File file = new File(path + "/" + original);//복사될 위치
 				try {
 					mf.transferTo(file);
 				} catch (Exception e) { 
