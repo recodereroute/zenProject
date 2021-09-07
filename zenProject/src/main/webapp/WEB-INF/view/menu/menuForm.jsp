@@ -290,23 +290,14 @@ img {
 	});
 </script>
 <script type="text/javascript">
-function setThumbnail(event) { 
-	var reader = new FileReader(); 
-	reader.onload = function(event) { 
-		var img = document.createElement("img"); 
-		img.setAttribute("src", event.target.result); 
-		img.style.width = "300px";
-		img.style.heigth = "300px";
-		document.querySelector(".recipe-field").appendChild(img); }; 
-		reader.readAsDataURL(event.target.files[0]); 
-	}
-</script>
-<script type="text/javascript">
+	var classNum = 1;
 	function addForm(){
 		var inputFile = document.createElement("input");
 		var txt = document.createElement("textarea");
 		var img = document.createElement("img");
+		var div = document.createElement("div");
 		var reader = new FileReader();
+		
 		inputFile.type = "file";
 		inputFile.name = "menuImg";
 		inputFile.setAttribute("accept","image/jpeg,image/png");
@@ -314,8 +305,22 @@ function setThumbnail(event) {
 		txt.name = "menuRecipe";
 		txt.cols = 100;
 		txt.rows = 3;
+		div.setAttribute("class","img-field"+classNum);
 		document.querySelector(".recipe-field").appendChild(inputFile);
+		document.querySelector(".recipe-field").appendChild(div);
 		document.querySelector(".recipe-field").appendChild(txt);
+	}
+</script>
+<script type="text/javascript">
+function setThumbnail(event) { 
+	var reader = new FileReader(); 
+	reader.onload = function(event) { 
+		var img = document.createElement("img"); 
+		img.setAttribute("src", event.target.result); 
+		img.style.width = "300px";
+		img.style.heigth = "300px";
+		document.querySelector(".img-field"+classNum).appendChild(img); }; 
+		reader.readAsDataURL(event.target.files[0]); 
 	}
 </script>
 <script type="text/javascript">

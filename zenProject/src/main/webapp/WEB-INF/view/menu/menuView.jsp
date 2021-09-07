@@ -244,9 +244,12 @@ input[type="submit"] {
 			<tr>
 				<th class="success">조리법</th>
 
-				<td><c:forEach items="${dto.menuImg }" var="img">
+				<td>
+					<c:forEach items="${dto.menuImg }" var="img" varStatus="cnt">
 						<img src="../menu/upload/${img}" width="250px" height="250px" />
-					</c:forEach> <p>${dto.menuRecipe }</p></td>
+						<p>${dto.menuRecipe.split(",")[cnt.index] }</p>
+					</c:forEach>
+				</td>
 		</table>
 
 	</div>
