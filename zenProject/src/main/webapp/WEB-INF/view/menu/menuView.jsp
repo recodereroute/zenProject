@@ -156,10 +156,16 @@ input[type="submit"] {
 .after a:link, .after a:visited {
 	color: black;
 }
+.all{
+	width: 1130px;
+	max-width: 1190px;
+	padding: 20px,50px;
+	margin: auto;
+}
 </style>
 </head>
 <body>
-
+<div class="all">
 	<div class="ezen-login">
 		<div class="ezen-board">
 			<h1 class="h3 mb-3 fw-normal">
@@ -213,22 +219,24 @@ input[type="submit"] {
 
 
 	<div class="table table-responsive">
-		<table class="table">
+		<table class="table" >
 			<tr>
 				<th class="success">메뉴이름</th>
 				<td>${dto.menuName }</td>
+			</tr>
+			<tr>
 				<th class="success">조회수</th>
 				<td>${dto.menuCnt }</td>
 			</tr>
-
 			<tr>
 				<th class="success">작성자</th>
 				<td>${dto.empId }</td>
+			</tr>
+			<tr>
 				<th class="success">작성일</th>
 				<td><fmt:formatDate value="${dto.menuDate }" type="date"
 						pattern="yy-MM-dd" /></td>
 			</tr>
-
 			<tr>
 				<th class="success">주재료</th>
 				<td colspan="3">${dto.menuMainItem }</td>
@@ -244,7 +252,7 @@ input[type="submit"] {
 			<tr>
 				<th class="success">조리법</th>
 
-				<td>
+				<td style="text-align: center;">
 					<c:forEach items="${dto.menuImg }" var="img" varStatus="cnt">
 						<img src="../menu/upload/${img}" width="250px" height="250px" />
 						<p>${dto.menuRecipe.split(",")[cnt.index] }</p>
@@ -253,7 +261,7 @@ input[type="submit"] {
 		</table>
 
 	</div>
-
+</div>
 
 	<div align="center">
 		<a class="btn btn-default" href="menuList">리스트로 돌아가기</a><br>
