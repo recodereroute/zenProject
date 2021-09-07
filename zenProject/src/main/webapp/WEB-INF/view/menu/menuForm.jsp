@@ -272,10 +272,9 @@ img {
 			</fieldset>
 
 			<div class="filebox bs3-primary">
-				<br> <label for="File">조리법 추가:</label> <input type="file" multiple="multiple"
-					id="File"accept="image/jpeg,image/field" name="menuImg"
-					onchange="addTable(event)"> <input type="submit"
-					value="submit" class="button4"> <input type="reset"
+				<br> <label for="File">조리법 추가:</label> <input type="file" 
+					id="File"accept="image/jpeg,image/field" onchange="addTable(event)">
+					 <input type="submit" value="submit" class="button4"> <input type="reset"
 					value="reset" class="button4" onclick="deleteImg();" />
 			</div>
 		</div>
@@ -298,29 +297,36 @@ function addTable(event){
 	var tr = document.createElement("tr");
 	var imgTd = document.createElement("td");
 	var img = document.createElement("img");
+	var input = document.createElement("input");
 	var txtTd = document.createElement("td");
 	var txt = document.createElement("textarea");
+	var filenames;
 	
 	document.querySelector(".recipe-table").appendChild(tr);
 		
 	tr.appendChild(imgTd);
-	for(var file of event.target.files){
-		var reader = new FileReader();
-		reader.onload = function(event){
-			img.setAttribute("src", event.target.result);
-			img.style.width='300px';
-			img.style.height='300px';
-			imgTd.appendChild(img);
-		}
-	reader.readAsDataURL(file);
+	input.type = "hidden";
+	input.name = "menuImg";
+	imgTd.appendChild(input);
+	
+	var reader = new FileReader();
+	reader.onload = function(event){
+	img.setAttribute("src", event.target.result);
+	img.style.width='300px';
+	img.style.height='300px';
+	imgTd.appendChild(img);
 	}
+	input.value = event.target.files[0].name;
+	console.log(input.value);
+	reader.readAsDataURL(event.target.files[0]);
+
 	
 	tr.appendChild(txtTd);
 	txt.name="menuRecipe";
 	txt.cols="100";
 	txt.rows="10";
 	txtTd.appendChild(txt);
-	 
+	
 }
 	
 </script>
