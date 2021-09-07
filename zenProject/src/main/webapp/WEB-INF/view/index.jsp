@@ -163,32 +163,70 @@
 		</div>
 	</body>
 
-	<footer>
+<footer>
+  <!-- Footer main -->
+  <section class="ft-main">
+  <div class="team-logo-box">
+		<img
+			src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0itTHT2c-YUs4XTgSWRfruN6wAMDNJKt_dv_F69pvU3e45EjusjxDPexHDd--vf6QWnQ&usqp=CAU"
+			alt="팀 로고">
+	</div>
+	<div class="ft-main-item">
+      <h2 class="ft-title">프로젝트명</h2>
+      <ul>
+        <li><a href="#">EZEN FOOD</a></li>
 
-		<div class="team-logo-box">
-			<img
-				src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0itTHT2c-YUs4XTgSWRfruN6wAMDNJKt_dv_F69pvU3e45EjusjxDPexHDd--vf6QWnQ&usqp=CAU"
-				alt="팀 로고">
-		</div>
+      </ul>
+    </div>
+    <div class="ft-main-item">
+      <h2 class="ft-title">팀원</h2>
+      <ul>
+        <li><a href="#">고명현</a></li>
+        <li><a href="#">김현우</a></li>
+        <li><a href="#">박지현</a></li>
+        <li><a href="#">이근호</a></li>
+      </ul>
+    </div>
+    <div class="ft-main-item">
+      <h2 class="ft-title">이메일</h2>
+      <ul>
+        <li><a href="#">aaaa@naver.com</a></li>
+        <li><a href="#">bbbb@naver.com</a></li>
+        <li><a href="#">cccc@naver.com</a></li>
+        <li><a href="#">dddd@naver.com</a></li>
+      </ul>
+    </div>
+    
+    <div class="ft-main-item">
+      <h2 class="ft-title">Stay Updated</h2>
+      <p>Subscribe to our newsletter to get our latest news.</p>
+      <form>
+        <input type="email" name="email" placeholder="Enter email address">
+        <input type="submit" value="Subscribe">
+      </form>
+    </div>
+  </section>
 
-		<div class="team-name-box">
-			<ul>
-				<li>고 명 현</li>
-				<li>김 현 우</li>
-				<li>박 지 현</li>
-				<li>이 근 호</li>
-			</ul>
-		</div>
+  <!-- Footer social -->
+  <section class="ft-social">
+    <ul class="ft-social-list">
+      <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="#"><i class="fab fa-github"></i></a></li>
+      <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+    </ul>
+  </section>
 
-		<div class="team-addr-box">
-			<ul>
-				<li>팀원 1 메일 주소</li>
-				<li>팀원 2 메일 주소</li>
-				<li>팀원 3 메일 주소</li>
-				<li>팀원 4 메일 주소</li>
-			</ul>
-		</div>
-
-	</footer>
+  <!-- Footer legal -->
+  <section class="ft-legal">
+    <ul class="ft-legal-list">
+      <li><a href="#">Terms &amp; Conditions</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li>&copy; 2019 Copyright Nowrap Inc.</li>
+    </ul>
+  </section>
+</footer>
 </div>
 </html>
