@@ -19,16 +19,18 @@
 
 	<select id="menuList" parameterType="Model.MenuDTO"
 		resultType="Model.MenuDTO">
-		select rn, menuNo,menuName,menuImg,menuRecmnd,menuCnt,empNo,menuDate, empId
+	select rn, menuNo,menuName,menuImg,menuRecmnd,menuCnt,empNo,menuDate, empId
 		from(
 	        select
-	        rownum rn, MENU_NO menuNo, MENU_NAME menuName,MENU_IMG menuImg,
-	        MENU_RECMND menuRecmnd, MENU_CNT menuCnt, m.EMP_NO empNo, MENU_DATE menuDate,
-	        emp_id empId
-	        from menu m, employees e
-	        where m.emp_no = e.emp_no
-	          order by menu_no desc
-	        )
+	        rownum rn,  menuNo,  menuName, menuImg,
+	         menuRecmnd,  menuCnt,  empNo,  menuDate,
+	         empId
+	        from (select menu_no menuNo, menu_name  menuName, menu_img menuImg, menu_Recmnd menuRecmnd,menu_cnt menuCnt, m.emp_no empNo , menu_date menuDate,
+            e.emp_id empId
+            from menu m , employees e
+            where m.emp_no=e.emp_no
+            order by menu_no desc
+            ))
 		<if test="startEndPageDTO != null">
 			where rn between #{startEndPageDTO.startRow} and #{startEndPageDTO.endRow}
 		</if>
