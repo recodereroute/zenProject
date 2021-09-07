@@ -97,7 +97,7 @@ img {
 <body>
 
 	<form:form action="menuWrite" method="post"
-		enctype="multipart/form-data" modelAttribute="menuCommand">	
+		enctype="multipart/form-data" modelAttribute="menuCommand">
 		<input type="hidden" name="empNo" value="${authInfo.grade }" />
 		<div class="container">
 			<h1 class="h3 mb-3 fw-normal">
@@ -263,103 +263,68 @@ img {
 		<div class="container">
 			<fieldset>
 				<legend>조리법</legend>
-				<table class="recipe-table">
-				</table>
-				
-				
+				<button onclick="addForm()" type="button">조리법 추가</button>
+				<div class="recipe-field"></div>
 				<!-- <textarea class="form-control" rows="10" cols="150" name="menuRecipe"
 						id="content" placeholder="Enter recipe">${menuCommand.menuRecipe }</textarea> -->
 			</fieldset>
 
 			<div class="filebox bs3-primary">
-				<br> <label for="File">조리법 추가:</label> <input type="file" 
-					id="File"accept="image/jpeg,image/field" onchange="addTable(event)">
-					 <input type="submit" value="submit" class="button4"> <input type="reset"
-					value="reset" class="button4" onclick="deleteImg();" />
+				<!-- <input type="file" name="menuImg" accept="image/jpeg, image/png"onchange="previewImg(event)" multiple="multiple"> -->
+				<input type="submit" value="submit" class="button4">
+				<input type="reset" value="reset" class="button4" onclick="deleteImg();" />
 			</div>
 		</div>
 	</form:form>
 </body>
 <script>
-var lBar = $(".load");
-var bar = $("button span");
-var button = $("button");
-button.on("click", function(){
-     lBar.addClass("loading");
-     setTimeout(function(){
-        lBar.removeClass("loading");
-        button.addClass("complete");
-     },500);
-});
+	var lBar = $(".load");
+	var bar = $("button span");
+	var button = $("button");
+	button.on("click", function() {
+		lBar.addClass("loading");
+		setTimeout(function() {
+			lBar.removeClass("loading");
+			button.addClass("complete");
+		}, 500);
+	});
 </script>
-<script>
-function addTable(event){
-	var tr = document.createElement("tr");
-	var imgTd = document.createElement("td");
-	var img = document.createElement("img");
-	var input = document.createElement("input");
-	var txtTd = document.createElement("td");
-	var txt = document.createElement("textarea");
-	var filenames;
-	
-	document.querySelector(".recipe-table").appendChild(tr);
-		
-	tr.appendChild(imgTd);
-	input.type = "hidden";
-	input.name = "menuImg";
-	imgTd.appendChild(input);
-	
-	var reader = new FileReader();
-	reader.onload = function(event){
-	img.setAttribute("src", event.target.result);
-	img.style.width='300px';
-	img.style.height='300px';
-	imgTd.appendChild(img);
-	}
-	input.value = event.target.files[0].name;
-	console.log(input.value);
-	reader.readAsDataURL(event.target.files[0]);
-
-	
-	tr.appendChild(txtTd);
-	txt.name="menuRecipe";
-	txt.cols="100";
-	txt.rows="10";
-	txtTd.appendChild(txt);
-	
-}
-	
-</script>
-<!-- <script type="text/javascript">
-var classNumber = 1;
-   function setThumbNail(event) {
-	   var imgField = document.querySelector(".img-td"+classNumber);
-	   for(var file of event.target.files){
-		var reader = new FileReader();
-		reader.onload = function(event){
-			var img = document.createElement("img");
-			img.setAttribute("src", event.target.result);
-			img.style.width='300px';
-			img.style.height='300px';
-			img.name="menuImg";
-			imgField.appendChild(img);
-		}
-		classNumber++;
-		reader.readAsDataURL(file);
-       }
-   }
-</script>-->
 <script type="text/javascript">
-   function deleteImg(){
-      var imgField = document.getElementById("image-field")
-      var img = document.querySelector("img");
-      imgField.removeChild(img);
-   }
+function setThumbnail(event) { 
+	var reader = new FileReader(); 
+	reader.onload = function(event) { 
+		var img = document.createElement("img"); 
+		img.setAttribute("src", event.target.result); 
+		img.style.width = "300px";
+		img.style.heigth = "300px";
+		document.querySelector(".recipe-field").appendChild(img); }; 
+		reader.readAsDataURL(event.target.files[0]); 
+	}
 </script>
-<!-- jquery -->
-
-
-
+<script type="text/javascript">
+	function addForm(){
+		var inputFile = document.createElement("input");
+		var txt = document.createElement("textarea");
+		var img = document.createElement("img");
+		var reader = new FileReader();
+		inputFile.type = "file";
+		inputFile.name = "menuImg";
+		inputFile.setAttribute("accept","image/jpeg,image/png");
+		inputFile.setAttribute("onchange","setThumbnail(event)");
+		txt.name = "menuRecipe";
+		txt.cols = 100;
+		txt.rows = 3;
+		document.querySelector(".recipe-field").appendChild(inputFile);
+		document.querySelector(".recipe-field").appendChild(txt);
+	}
+</script>
+<script type="text/javascript">
+	function deleteImg() {
+		var imgField = document.getElementById("image-field")
+		var img = document.querySelector("img");
+		imgField.removeChild(img);
+	}
+</script>
 <!-- BootStrap -->
 
 <!-- 합쳐지고 최소화된 최신 CSS -->
