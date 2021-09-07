@@ -162,7 +162,7 @@ input[type="submit"] {
 	padding: 20px,50px;
 	margin: auto;
 }
-</style>
+</style>     
 </head>
 <body>
 <div class="all">
