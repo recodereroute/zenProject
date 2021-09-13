@@ -299,9 +299,11 @@ img {
 		
 		inputFile.type = "file";
 		inputFile.name = "menuImg";
+		inputFile.setAttribute("class","inputFile");
 		inputFile.setAttribute("accept","image/jpeg,image/png");
 		inputFile.setAttribute("onchange","setThumbnail(event)");
 		txt.name = "menuRecipe";
+		txt.setAttribute("class","txt");
 		txt.cols = 100;
 		txt.rows = 3;
 		div.setAttribute("class","img-field");
@@ -315,7 +317,7 @@ function setThumbnail(event) {
 	var reader = new FileReader(); 
 	reader.onload = function(event) { 
 		var img = document.createElement("img"); 
-		img.setAttribute("src", event.target.result); 
+		img.setAttribute("src", event.target.result);
 		img.style.width = "250px";
 		img.style.heigth = "250px";
 		document.querySelector(".img-field").appendChild(img); }; 
@@ -324,9 +326,10 @@ function setThumbnail(event) {
 </script>
 <script type="text/javascript">
 	function deleteImg() {
-		var imgField = document.getElementById("image-field")
-		var img = document.querySelector("img");
-		imgField.removeChild(img);
+		var recipeField = document.querySelector(".recipe-field");
+		while ( recipeField.hasChildNodes()){
+			recipeField.removeChild( recipeField.firstChild );
+		}
 	}
 </script>
 <!-- BootStrap -->

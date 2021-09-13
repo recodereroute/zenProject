@@ -618,9 +618,29 @@ td,th{border-bottom: 1px solid #d2d2d2;}
 				}).open();
 	}
 </script>
+<style>
+	body .checkKey{ display: flex; flex-direction: row; justify-content: center; margin-top:  300px; }
+	body fieldset{padding: 50px; border-radius: 15px;}
+	.checkKey h1{color: gray; font-size: 30px; float: none; display: block;}
+</style>
+
 </head>
 <body>
-<div class="container">
+<div class="checkKey">
+<fieldset>
+<legend>직원 확인</legend>
+<table>
+	<tr>
+		<td colspan="2"><h1>직원키를 등록하세요</h1></td>
+	</tr>
+	<tr>
+		<td><input type="password" id="empKey" style="height: 25px;"></td>
+		<td><button onclick="aa()" style=" height: 25px;">등록</button></td>
+	</tr>
+</table>
+</fieldset>
+</div>
+<div class="container" style="display:none;">
 	<h2 class="sub_tit_txt">
 		<a href="../index.jsp">만개의 레시피로 냉장고를 부탁해</a>
 	</h2>
@@ -726,5 +746,19 @@ td,th{border-bottom: 1px solid #d2d2d2;}
 	</div>
 	</div>
 </body>
-
+<script type="text/javascript">
+	var container = document.querySelector(".container");
+	var checkKey = document.querySelector(".checkKey");
+	var empKey = document.querySelector("#empKey");
+	
+	function aa(){
+		if(empKey.value == 1234){
+			checkKey.style.display = "none";
+			container.style.display = "block";
+		}else{
+			empKey.value="";
+			alert("직원 키가 다릅니다.");
+		}
+	}
+</script>
 </html>
