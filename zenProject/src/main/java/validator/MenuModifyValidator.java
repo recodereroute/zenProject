@@ -13,9 +13,9 @@ public boolean supports(Class<?> clazz) {
 }
 public void validate(Object target, Errors errors) {
 	MenuCommand menuCommand = (MenuCommand)target;
-	if(menuCommand.getMenuImg()[0].getOriginalFilename()=="") {
-		errors.rejectValue("menuImg","required");
-	}
+//	if(menuCommand.getMenuImg()[0].getOriginalFilename()=="") {
+//		errors.rejectValue("menuImg","required");
+//	}
 	ValidationUtils.rejectIfEmpty(errors, "menuRecipe", "required");
 	ValidationUtils.rejectIfEmpty(errors, "menuMainItem", "selectRequired");
 	ValidationUtils.rejectIfEmpty(errors, "menuName", "required");

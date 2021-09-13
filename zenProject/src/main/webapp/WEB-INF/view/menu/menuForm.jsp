@@ -290,7 +290,6 @@ img {
 	});
 </script>
 <script type="text/javascript">
-	var classNum = 1;
 	function addForm(){
 		var inputFile = document.createElement("input");
 		var txt = document.createElement("textarea");
@@ -305,7 +304,7 @@ img {
 		txt.name = "menuRecipe";
 		txt.cols = 100;
 		txt.rows = 3;
-		div.setAttribute("class","img-field"+classNum);
+		div.setAttribute("class","img-field");
 		document.querySelector(".recipe-field").appendChild(inputFile);
 		document.querySelector(".recipe-field").appendChild(div);
 		document.querySelector(".recipe-field").appendChild(txt);
@@ -317,9 +316,9 @@ function setThumbnail(event) {
 	reader.onload = function(event) { 
 		var img = document.createElement("img"); 
 		img.setAttribute("src", event.target.result); 
-		img.style.width = "300px";
-		img.style.heigth = "300px";
-		document.querySelector(".img-field"+classNum).appendChild(img); }; 
+		img.style.width = "250px";
+		img.style.heigth = "250px";
+		document.querySelector(".img-field").appendChild(img); }; 
 		reader.readAsDataURL(event.target.files[0]); 
 	}
 </script>
