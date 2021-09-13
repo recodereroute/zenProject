@@ -136,7 +136,7 @@ ul{list-style:none; }
    <div class="container">
       <div class="form_txtInput">
          <h2 class="sub_tit_txt">   
-          <a href="../index.jsp">EZEN FOOD</a>
+          <a href="../index.jsp">만개의 레시피로 냉장고를 부탁해</a>
          </h2>
          <div class="join_form">
          
