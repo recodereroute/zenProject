@@ -32,10 +32,7 @@
 			<mvc:mapping path="/member/**" />
 			<bean class="interceptor.AuthCheckInterceptor" />
 		</mvc:interceptor>
-		<mvc:interceptor>
-			<mvc:mapping path="/search/**" />
-			<bean class="interceptor.AuthCheckInterceptor" />
-		</mvc:interceptor>
+	
 		
 	</mvc:interceptors>
 	<mvc:view-resolvers>

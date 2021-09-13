@@ -61,13 +61,13 @@ public class MainController {
 	public String findPassword() {
 		return "main/findPassword";
 	}
-	@RequestMapping("/search/idFindFinish")
+	@RequestMapping("search/idFindFinish")
 	public String idFindFinish(MemberCommand memberCommand,
 			Model model) {
 		idFindFinishService.idFind(memberCommand, model);
 		return "main/idFindFinish";
 	}
-	@RequestMapping("/search/idFind")
+	@RequestMapping("search/idFind")
 	public String idFind() {
 		return "main/idSearch";
 	}
