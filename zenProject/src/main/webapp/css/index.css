@@ -53,14 +53,19 @@ header {
   margin-top: 10px;
   margin-left: 10px;
 }
-
+#logo-link{
+	font-size: 25px;
+}
+#secondName{
+	font-size: 15px;
+}
 .search-space {
 	display: flex;
 	align-items: center;
 }
 #bar {
 	width: 400px;
-	height: 35px;
+	height: 42px;
 	border-radius: 5px;
 	border: #72CC82 solid 2px;
 	font-size: 20px;
@@ -68,7 +73,7 @@ header {
 
 #btn {
 	width: 100px;
-	height: 25px;
+	height: 35px;
 	background-color: #754F44;
 	border: 0px;
 	border-radius: 5px;
@@ -86,7 +91,6 @@ header {
 }
 
 .login-box li {
-	margin: 2px;
 	color: rgb(190, 161, 150);
 }
 
@@ -124,6 +128,7 @@ header {
 }
 
 .menu-box h1 {
+	padding: 20px;
 	color: #d7ffc8;
 	margin-bottom: 10px;
 }
@@ -140,7 +145,9 @@ header {
 	margin: 10px;
 	font-size: 17px;
 }
-
+#noMenu{
+	color: #d7ffc8;
+}
 .menu-btn {
 	background-color: #754F44;
 	border: 0px;
