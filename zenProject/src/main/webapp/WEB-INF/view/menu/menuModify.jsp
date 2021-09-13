@@ -76,7 +76,7 @@
 <body>
 <form:form action="menuModify" method="post" enctype="multipart/form-data" modelAttribute="menuCommand" >
 <div class="container">
-<h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
+<h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">만개의 레시피로 냉장고를 부탁해</a></h1>
 <h1 class="h3 mb-3 fw-normal"> <a href="menuList">메뉴 게시판 </a></h1>
 <div class="row">
 <div class="col-md-6"> 
@@ -236,7 +236,7 @@
 <input type="text" value="${menuCommand.menuCnt }" readonly="readonly" class="form-control" name="menuCnt" id="name">
 
    
-         <a href="menuList">리스트로 돌아가기</a><br>
+<br>
       <input type="submit" value="수정 완료" class="button4"/>
          <div id="image-feild"></div>
          

@@ -189,7 +189,7 @@ color:black;
 <div class="container">
 <div class="ezen-login">
 <div class="ezen-board">
-<h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
+<h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">만개의 레시피로 냉장고를 부탁해</a></h1>
 <h1 class="h3 mb-3 fw-normal"> <a href="noticeList">공지사항</a></h1>
 </div>
 <div class="login-box">
@@ -261,57 +261,48 @@ color:black;
 	<div class="ft-main-item">
       <h2 class="ft-title">프로젝트명</h2>
       <ul>
-        <li><a href="#">EZEN FOOD</a></li>
+        <li>만개의 레시피로 냉장고를 부탁해</li>
 
       </ul>
     </div>
     <div class="ft-main-item">
       <h2 class="ft-title">팀원</h2>
       <ul>
-        <li><a href="#">고명현</a></li>
-        <li><a href="#">김현우</a></li>
-        <li><a href="#">박지현</a></li>
-        <li><a href="#">이근호</a></li>
+        <li>고명현</li>
+        <li>김현우</li>
+        <li>박지현</li>
+        <li>이근호</li>
       </ul>
     </div>
     <div class="ft-main-item">
       <h2 class="ft-title">이메일</h2>
       <ul>
-        <li><a href="#">aaaa@naver.com</a></li>
-        <li><a href="#">bbbb@naver.com</a></li>
-        <li><a href="#">cccc@naver.com</a></li>
-        <li><a href="#">dddd@naver.com</a></li>
+        <li>gogoom123@naver.com</li>
+        <li>prince0628@naver.com</li>
+        <li>jammm093@gmail.com</li>
+        <li>rmsgh0726@naver.com</li>
       </ul>
-    </div>
-    
-    <div class="ft-main-item">
-      <h2 class="ft-title">Stay Updated</h2>
-      <p>Subscribe to our newsletter to get our latest news.</p>
-      <form>
-        <input type="email" name="email" placeholder="Enter email address">
-        <input type="submit" value="Subscribe">
-      </form>
     </div>
   </section>
 
   <!-- Footer social -->
   <section class="ft-social">
     <ul class="ft-social-list">
-      <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-      <li><a href="#"><i class="fab fa-github"></i></a></li>
-      <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-      <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+      <li><i class="fab fa-facebook"></i></a></li>
+      <li><i class="fab fa-twitter"></i></a></li>
+      <li><i class="fab fa-instagram"></i></a></li>
+      <li><i class="fab fa-github"></i></a></li>
+      <li><i class="fab fa-linkedin"></i></a></li>
+      <li><i class="fab fa-youtube"></i></li>
     </ul>
   </section>
 
   <!-- Footer legal -->
   <section class="ft-legal">
     <ul class="ft-legal-list">
-      <li><a href="#">Terms &amp; Conditions</a></li>
-      <li><a href="#">Privacy Policy</a></li>
-      <li>&copy; 2019 Copyright Nowrap Inc.</li>
+      <li>Terms &amp; Conditions</a></li>
+      <li>Privacy Policy</a></li>
+      <li>&copy; 2021 Copyright Ezen Inc.</li>
     </ul>
   </section>
 </footer>

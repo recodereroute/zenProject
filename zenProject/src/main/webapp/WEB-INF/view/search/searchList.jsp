@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container">
-<h1 class="h3 mb-3 fw-normal"><a href="index.jsp">EZEN FOOD</a></h1>
+<h1 class="h3 mb-3 fw-normal"><a href="index.jsp">만개의 레시피로 냉장고를 부탁해</a></h1>
 <h1 class="h3 mb-3 fw-normal"> <a href="">검색 결과 </a></h1>
 	<table class="table table-hover" border="1">
 		<tr>

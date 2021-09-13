@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>회원 가입</title>
 <style>
+
 * {
 	margin: 0;
 	padding: 0;
@@ -561,7 +562,7 @@ table input[type="text"],table input[type="password"]{width: 370px;}
 <body>
 <div class="container">
 	<h2 class="sub_tit_txt">
-		<a href="../index.jsp">EZEN FOOD</a>
+		<a href="../index.jsp">만개의 레시피로 냉장고를 부탁해</a>
 	</h2>
 	<div class="join_form">
 		<form:form action="memRegist" method="post" name="frm"
@@ -653,17 +654,5 @@ table input[type="text"],table input[type="password"]{width: 370px;}
 	</div>
 	</div>
 </body>
-<footer class="container">
-	<div class="foo_div">
-		<img
-			src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0itTHT2c-YUs4XTgSWRfruN6wAMDNJKt_dv_F69pvU3e45EjusjxDPexHDd--vf6QWnQ&usqp=CAU"
-			alt="불러오기 실패">
-	</div>
-	<div class="foo_div1">
-		<span>EZEN FOOD</span>
-		<p>팀원: 111, 222, 333, 444</p>
-		<p>팀원 이메일: 111, 222, 333, 444</p>
-		<img src="https://t1.daumcdn.net/cfile/tistory/2764774853DBB4C927">
-	</div>
-</footer>
+
 </html>

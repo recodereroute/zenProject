@@ -622,7 +622,7 @@ td,th{border-bottom: 1px solid #d2d2d2;}
 <body>
 <div class="container">
 	<h2 class="sub_tit_txt">
-		<a href="../index.jsp">EZEN FOOD</a>
+		<a href="../index.jsp">만개의 레시피로 냉장고를 부탁해</a>
 	</h2>
 	<div class="join_form" id="join-form">
 		<form:form action="empJoin" method="post" name="frm"
@@ -726,18 +726,5 @@ td,th{border-bottom: 1px solid #d2d2d2;}
 	</div>
 	</div>
 </body>
-<footer class="container">
-	<div class="foo_div">
-		<img
-			src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0itTHT2c-YUs4XTgSWRfruN6wAMDNJKt_dv_F69pvU3e45EjusjxDPexHDd--vf6QWnQ&usqp=CAU"
-			alt="불러오기 실패">
-	</div>
-	<div class="foo_div1">
-		<span>EZEN FOOD</span>
-		<p>팀원: 111, 222, 333, 444</p>
-		<p>팀원 이메일: 111, 222, 333, 444</p>
-		<img src="https://t1.daumcdn.net/cfile/tistory/2764774853DBB4C927">
 
-	</div>
-</footer>
 </html>

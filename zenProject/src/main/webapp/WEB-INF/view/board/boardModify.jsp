@@ -42,7 +42,7 @@
 <body>
 <form action="boardModify" method="post" enctype="multipart/form-data">
 <div class="container">
-<h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
+<h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">만개의 레시피로 냉장고를 부탁해</a></h1>
 <h1 class="h3 mb-3 fw-normal"> <a href="boardList">일반 게시판 </a></h1>
 <div class="row">
 <div class="col-md-6"> 

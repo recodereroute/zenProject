@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="container">
-<h1 class="h3 mb-3 fw-normal"><a href="index.jsp">EZEN FOOD</a></h1>
+<h1 class="h3 mb-3 fw-normal"><a href="index.jsp">만개의 레시피로 냉장고를 부탁해</a></h1>
 <h1 class="h3 mb-3 fw-normal"> 검색 결과 </a></h1>
 <div class="info">
  <p><span>상세검색결과는 조회수 상위 10개 까지만 출력합니다. </span></p>

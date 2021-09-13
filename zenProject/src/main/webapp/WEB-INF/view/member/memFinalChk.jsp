@@ -40,7 +40,7 @@
 <form action="memOutOk" method="post" name="frm"
 	onsubmit="return outConfirm()">
 <div class="container">
-<h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
+<h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">만개의 레시피로 냉장고를 부탁해</a></h1>
 <h1 class="h3 mb-3 fw-normal">회원 탈퇴</h1> 
 <div class="row">
 <div class="col-md-6"> 

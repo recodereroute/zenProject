@@ -101,7 +101,7 @@ img {
 		<input type="hidden" name="empNo" value="${authInfo.grade }" />
 		<div class="container">
 			<h1 class="h3 mb-3 fw-normal">
-				<a href="../index.jsp">EZEN FOOD</a>
+				<a href="../index.jsp">만개의 레시피로 냉장고를 부탁해</a>
 				<h1 class="h3 mb-3 fw-normal">
 					<a href="menuList">메뉴 게시판 </a>
 				</h1>
@@ -271,8 +271,8 @@ img {
 
 			<div class="filebox bs3-primary">
 				<!-- <input type="file" name="menuImg" accept="image/jpeg, image/png"onchange="previewImg(event)" multiple="multiple"> -->
-				<input type="submit" value="submit" class="button4">
-				<input type="reset" value="reset" class="button4" onclick="deleteImg();" />
+				<input type="submit" value="등록" class="button4">
+				<input type="reset" value="초기화" class="button4" onclick="deleteImg();" />
 			</div>
 		</div>
 	</form:form>

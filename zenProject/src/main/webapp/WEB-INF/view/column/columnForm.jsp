@@ -39,7 +39,7 @@
 <body>
 <form action ="columnWrite" method="post">
 <div class="container">
-<h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">EZEN FOOD</a></h1>
+<h1 class="h3 mb-3 fw-normal"><a  href="../index.jsp">만개의 레시피로 냉장고를 부탁해</a></h1>
 <h1 class="h3 mb-3 fw-normal"> <a href="columnList">칼럼 게시판 </a></h1>
 <div class="row">
 <div class="col-md-6"> 
@@ -59,8 +59,8 @@
 
 <form:errors path="noticeCon" />
 <br>
-<input type="submit" value="submit" class="button4">
-         <input type="reset" value="reset" class="button4" />
+<input type="submit" value="등록" class="button4">
+         <input type="reset" value="초기화" class="button4" />
          <div id="image-feild"></div>
 </div>        
    
