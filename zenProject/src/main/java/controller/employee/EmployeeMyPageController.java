@@ -64,12 +64,7 @@ public class EmployeeMyPageController {
 		employeeModifyService.empModify(employeeCommand, session);
 		return "redirect:empDetail";
 	}
-	// 직원 강퇴기능 - 본인 포함 암호 없이 강퇴 가능해서 master만 사용할 수 있게 내용 구현 해줘야 할듯.
-	@RequestMapping("empDelete")
-	public String empDelete(@RequestParam(value = "empNo")String empNo, HttpSession session){
-		String path = employeeDeleteService.empDelete(empNo, session);
-		return path;
-	}
+	
 	@RequestMapping("empOut")
 	public String empOut() {
 		return "employee/empFinalChk";

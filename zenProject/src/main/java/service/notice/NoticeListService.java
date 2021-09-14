@@ -15,8 +15,7 @@ public class NoticeListService {
 	NoticeRepository noticeRepository;
 	public void noticeList(Integer page,Model model) {
 		NoticeDTO dto= new NoticeDTO();
-		
-		int limit = 3;//
+		int limit = 3;
 		int limitPage = 10; 
 		if (page != null) {
 			Long startRow = ((long) page - 1) * limit + 1;

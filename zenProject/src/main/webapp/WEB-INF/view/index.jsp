@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>이젠 푸드 프로젝트</title>
+<title>만개의 레시피로 냉장고를 부탁해</title>
 <link rel="stylesheet" href="css/index.css">
 <!--구글 폰트-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -196,7 +196,7 @@
       <h2 class="ft-title">이메일</h2>
       <ul>
         <li>gogoom123@naver.com</li>
-        <li>prince0628@naver.com</li>
+        <li>prince628@naver.com</li>
         <li>jammm093@gmail.com</li>
         <li>rmsgh0726@naver.com</li>
       </ul>

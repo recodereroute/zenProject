@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>이젠 푸드 프로젝트</title>
+<title>만개의 레시피로 냉장고를 부탁해</title>
 </head>
 <body>
 <script>

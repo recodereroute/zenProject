@@ -15,10 +15,7 @@ import repository.SearchRepository;
 public class SelectSearchService {
 	@Autowired
 	SearchRepository searchRepository;
-	public void selectSearch(MenuCommand menuCommand, Integer page, Model model) {
-//		List<List<MenuDTO>> list = new ArrayList<List<MenuDTO>>();
-//		HashSet<MenuDTO> set = new HashSet<MenuDTO>();
-		
+	public void selectSearch(MenuCommand menuCommand, Integer page, Model model) {		
 		List<MenuDTO> list = new ArrayList<MenuDTO>();
 		List<String> forComparison = new ArrayList<String>();
 		String[] items = menuCommand.getMenuItems();
@@ -39,14 +36,10 @@ public class SelectSearchService {
 		if (list.size() > 1) {
 			list = quickSort(list, 0, list.size()-1);
 		}
-		
-		
-		// 리스트의 사이즈 이용해서 페이징 해줄수 있을거 같음.
-		System.out.println("리스트의 사이즈 : " + list.size());
+
 		model.addAttribute("searchResult", list);
-
-
 	}
+	
 	
 	public List<MenuDTO> quickSort(List<MenuDTO> list, int l, int r) {
 		int left = l;
