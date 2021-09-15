@@ -250,13 +250,19 @@ input[type="submit"] {
 			</tr>
 
 			<tr>
-				<th class="success">조리법</th>
+				<th class="success" style="width: 10%;">조리법</th>
 
-				<td style="text-align: center;">
+				<td style="text-align: center; width: 90%;">
+					<c:if test="${!empty dto.menuImg }">
 					<c:forEach items="${dto.menuImg }" var="img" varStatus="cnt">
 						<img src="../menu/upload/${img}" width="250px" height="250px" />
+						
 						<p>${dto.menuRecipe.split(",")[cnt.index] }</p>
 					</c:forEach>
+					</c:if>
+					<c:if test="${empty dto.menuImg }">
+						<p>${dto.menuRecipe }</p>
+					</c:if>
 				</td>
 		</table>
 
