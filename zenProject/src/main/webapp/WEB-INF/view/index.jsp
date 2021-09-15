@@ -124,15 +124,15 @@
 			<div class="notice-box">
 				<table>
 					<tr>
-						<td>
+						<td style="height: 50px;">
 							<h3>공지사항</h3>
 						</td>
-						<td id="more-notice"><a href="notice/noticeList">더보기</a></td>
+						<td id="more-notice" style="height: 50px;"><a href="notice/noticeList">더보기</a></td>
 					</tr>
 					<c:if test="${!empty mainNoticeList }">
 						<c:forEach items="${mainNoticeList }" var="MNdto">
 							<tr>
-								<td><a
+								<td colspan="2"><a
 									href="notice/noticeDetail?noticeNo=${MNdto.noticeNo }">${MNdto.noticeTitle }</a></td>
 							</tr>
 						</c:forEach>
@@ -145,17 +145,17 @@
 			</div>
 
 			<div class="board-box">
-				<table>
+				<table style="height: 100%;">
 					<tr>
-						<td>
+						<td style="height: 50px;">
 							<h3>게시판</h3>
 						</td>
-						<td id="more-board"><a href="board/boardList">더보기</a></td>
+						<td id="more-board" style="height: 50px;"><a href="board/boardList">더보기</a></td>
 					</tr>
 					<c:if test="${!empty mainBoardList }">
 						<c:forEach items="${mainBoardList }" var="MBdto">
 							<tr>
-								<td><a href="board/boardDetail?boardNo=${MBdto.boardNo }">${MBdto.boardTitle }</a></td>
+								<td colspan="2"><a href="board/boardDetail?boardNo=${MBdto.boardNo }">${MBdto.boardTitle }</a></td>
 							</tr>
 						</c:forEach>
 					</c:if>
