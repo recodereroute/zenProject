@@ -236,6 +236,7 @@
 			<form:errors path="menuMainItem" />
 			<input type="hidden" value="${menuCommand.menuImg }" id="imgNames">
 			<div>
+				<c:if test="${!empty menuCommand.menuImg}">
 				<label for="content">수정 전 이미지:</label><br>
 				<c:forTokens items="${menuCommand.menuImg }" var="img" delims=",">
 					<img src="../menu/upload/${img}" width="250px" height="250px">
@@ -244,6 +245,11 @@
 				<c:forTokens items="${menuCommand.menuImg }" var="img" delims=",">
 					<input type="file" name="menuImg" accept="image/jpeg,image/png" onchange="setThumbnail(event)">
 				</c:forTokens>
+				</c:if>
+				<c:if test="${empty menuCommand.menuImg }">
+					<label for= "content">이미지 추가</label>
+					<input type="file" name="menuImg" accetp="image/jpeg,image/png" onchange="setThumbnail(event)" multiple="multiple"> 
+				</c:if>
 				<div class="img-field"></div>
 			</div>
 			<label for="content">조리법:</label>
